@@ -1,0 +1,77 @@
+{
+	"ISO 639-1": {
+		"fonte": "https://pt.wikipedia.org/wiki/ISO_639",
+		"codigos": [
+			{
+				"codigo": "ca",
+				"nomePortugues": "Catalão",
+				"nomeNativo": "Català"
+			},
+			{
+				"codigo": "de",
+				"nomePortugues": "Alemão",
+				"nomeNativo": "Deutsch"
+			},
+			{
+				"codigo": "el",
+				"nomePortugues": "Grego",
+				"nomeNativo": "Ελληνικά"
+			},
+			{
+				"codigo": "en",
+				"nomePortugues": "Inglês",
+				"nomeNativo": "English"
+			},
+			{
+				"codigo": "es",
+				"nomePortugues": "Espanhol",
+				"nomeNativo": "Español"
+			},
+			{
+				"codigo": "fi",
+				"nomePortugues": "Finlandês",
+				"nomeNativo": "Suomi"
+			},
+			{
+				"codigo": "fr",
+				"nomePortugues": "Francês",
+				"nomeNativo": "Français"
+			},
+			{
+				"codigo": "hr",
+				"nomePortugues": "Croata",
+				"nomeNativo": "Hrvatski"
+			},
+			{
+				"codigo": "hu",
+				"nomePortugues": "Húngaro",
+				"nomeNativo": "Magyar"
+			},
+			{
+				"codigo": "it",
+				"nomePortugues": "Italiano",
+				"nomeNativo": "Italiano"
+			},
+			{
+				"codigo": "la",
+				"nomePortugues": "Latim",
+				"nomeNativo": "Latine"
+			},
+			{
+				"codigo": "pl",
+				"nomePortugues": "Polonês",
+				"nomeNativo": "Polski"
+			},
+			{
+				"codigo": "pt",
+				"nomePortugues": "Português",
+				"nomeNativo": "Português"
+			},
+			{
+				"codigo": "ro",
+				"nomePortugues": "Romeno",
+				"nomeNativo": "Română"
+			}
+		]
+	}
+}
