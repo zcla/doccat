@@ -1,14 +1,14 @@
-﻿Clear-Host
+﻿Set-Location (Get-Item $MyInvocation.MyCommand.Path).Directory.FullName
+
+Clear-Host
 
 Function LogFileName($str) {
-    $item = Get-Item $PSCommandPath
-    $result = "$($item.Directory.FullName)\..\log\$($item.Name)($str).log"
+    $result = "..\log\$((Get-Item $MyInvocation.MyCommand.Path).Name)($str).log"
     return $result
 }
 
 Function JsonFileName($str) {
-    $item = Get-Item $PSCommandPath
-    $result = "$($item.Directory.FullName)\..\download\bibliacatolica.com.br"
+    $result = "..\download\bibliacatolica.com.br"
     If ($str) {
         $result += ".$str"
     }
