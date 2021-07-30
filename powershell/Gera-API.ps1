@@ -40,17 +40,20 @@ Try {
 
     Write-Host "  biblia"
     Write-Host "    livro"
-    $livroIndex = @()
+    $apiLivro = @{
+        "index.json" = @()
+    }
     ForEach ($livro In $config.biblia.livro) {
-        $livroIndex += [ordered]@{
+        $id = $livro.sigla
+        $apiLivro."index.json" += [ordered]@{
+            id = $id
 			sigla = $livro.sigla
 			nomeCurto = $livro.nomeCurto
 			nomeLongo = $livro.nomeLongo
         }
+        $apiLivro.$id = @()
     }
-    $api.$apiVersion.biblia.livro = @{
-        "index.json" = $livroIndex
-    }
+    $api.$apiVersion.biblia.livro = $apiLivro
 
     Write-Host "Bíblias"
     $versaoIndex = @()
@@ -58,14 +61,20 @@ Try {
     Write-Host "  bibliacatolica.com.br"
     $fonte = "bibliacatolica.com.br"
     $json = Get-Content "..\download\$fonte.json" | ConvertFrom-Json
+    $apiVersao = @{
+        "index.json" = @()
+    }
     ForEach ($biblia In $json) {
         Write-Host "    $($biblia.nome)"
-        $versaoIndex += [ordered]@{
+        $id = "$($fonte)_$($biblia.nome)"
+        $apiVersao."index.json" += [ordered]@{
+            id = $id
             nome = $biblia.nome
             fonte = $fonte
             idioma = $biblia.lang
             url = $biblia.url
         }
+        $apiVersao.$id = @()
 
         $arqBiblia = "..\download\$fonte.$($biblia.nome).json"
 <#
@@ -82,9 +91,7 @@ Try {
     }
 
     # Bíblias - fim
-    $api.$apiVersion.biblia.versao = @{
-        "index.json" = $versaoIndex
-    }
+    $api.$apiVersion.biblia.versao = $apiVersao
 
     # Geração dos arquivos da API
     $pasta = Get-Item("..\api")
