@@ -1,4 +1,450 @@
-{
+﻿{
+	"biblia": {
+		"livro": [
+			{
+				"sigla": "Gn",
+				"nomeCurto": "Gênesis",
+				"nomeLongo": "Gênesis"
+			},
+			{
+				"sigla": "Ex",
+				"nomeCurto": "Êxodo",
+				"nomeLongo": "Êxodo"
+			},
+			{
+				"sigla": "Lv",
+				"nomeCurto": "Levítico",
+				"nomeLongo": "Levítico"
+			},
+			{
+				"sigla": "Nm",
+				"nomeCurto": "Números",
+				"nomeLongo": "Números"
+			},
+			{
+				"sigla": "Dt",
+				"nomeCurto": "Deuteronômio",
+				"nomeLongo": "Deuteronômio"
+			},
+			{
+				"sigla": "Js",
+				"nomeCurto": "Josué",
+				"nomeLongo": "Josué"
+			},
+			{
+				"sigla": "Jz",
+				"nomeCurto": "Juízes",
+				"nomeLongo": "Juízes"
+			},
+			{
+				"sigla": "Rt",
+				"nomeCurto": "Rute",
+				"nomeLongo": "Rute"
+			},
+			{
+				"sigla": "1Sm",
+				"nomeCurto": "I Samuel",
+				"nomeLongo": "Primeiro Livro de Samuel"
+			},
+			{
+				"sigla": "2Sm",
+				"nomeCurto": "II Samuel",
+				"nomeLongo": "Segundo Livro de Samuel"
+			},
+			{
+				"sigla": "1Rs",
+				"nomeCurto": "I Reis",
+				"nomeLongo": "Primeiro Livro dos Reis"
+			},
+			{
+				"sigla": "2Rs",
+				"nomeCurto": "II Reis",
+				"nomeLongo": "Segundo Livro dos Reis"
+			},
+			{
+				"sigla": "1Cr",
+				"nomeCurto": "I Crônicas",
+				"nomeLongo": "Primeiro Livro das Crônicas"
+			},
+			{
+				"sigla": "2Cr",
+				"nomeCurto": "II Crônicas",
+				"nomeLongo": "Segundo Livro das Crônicas"
+			},
+			{
+				"sigla": "Esd",
+				"nomeCurto": "Esdras",
+				"nomeLongo": "Esdras"
+			},
+			{
+				"sigla": "Ne",
+				"nomeCurto": "Neemias",
+				"nomeLongo": "Neemias"
+			},
+			{
+				"sigla": "Tb",
+				"nomeCurto": "Tobias",
+				"nomeLongo": "Tobias"
+			},
+			{
+				"sigla": "Jt",
+				"nomeCurto": "Judite",
+				"nomeLongo": "Judite"
+			},
+			{
+				"sigla": "Est",
+				"nomeCurto": "Ester",
+				"nomeLongo": "Ester"
+			},
+			{
+				"sigla": "Jó",
+				"nomeCurto": "Jó",
+				"nomeLongo": "Jó"
+			},
+			{
+				"sigla": "Sl",
+				"nomeCurto": "Salmos",
+				"nomeLongo": "Salmos"
+			},
+			{
+				"sigla": "Pr",
+				"nomeCurto": "Provérbios",
+				"nomeLongo": "Provérbios"
+			},
+			{
+				"sigla": "Ecl",
+				"nomeCurto": "Eclesiastes",
+				"nomeLongo": "Eclesiastes (Coélet)"
+			},
+			{
+				"sigla": "Ct",
+				"nomeCurto": "Cântico dos Cânticos",
+				"nomeLongo": "Cântico dos Cânticos"
+			},
+			{
+				"sigla": "Sb",
+				"nomeCurto": "Sabedoria",
+				"nomeLongo": "Sabedoria de Salomão"
+			},
+			{
+				"sigla": "Eclo",
+				"nomeCurto": "Eclesiástico",
+				"nomeLongo": "Eclesiástico (Sirácida)"
+			},
+			{
+				"sigla": "Is",
+				"nomeCurto": "Isaías",
+				"nomeLongo": "Isaías"
+			},
+			{
+				"sigla": "Jr",
+				"nomeCurto": "Jeremias",
+				"nomeLongo": "Jeremias"
+			},
+			{
+				"sigla": "Lm",
+				"nomeCurto": "Lamentações",
+				"nomeLongo": "Lamentações"
+			},
+			{
+				"sigla": "Br",
+				"nomeCurto": "Baruc",
+				"nomeLongo": "Baruc"
+			},
+			{
+				"sigla": "Ez",
+				"nomeCurto": "Ezequiel",
+				"nomeLongo": "Ezequiel"
+			},
+			{
+				"sigla": "Dn",
+				"nomeCurto": "Daniel",
+				"nomeLongo": "Daniel"
+			},
+			{
+				"sigla": "Os",
+				"nomeCurto": "Oseias",
+				"nomeLongo": "Oseias"
+			},
+			{
+				"sigla": "Jl",
+				"nomeCurto": "Joel",
+				"nomeLongo": "Joel"
+			},
+			{
+				"sigla": "Am",
+				"nomeCurto": "Amós",
+				"nomeLongo": "Amós"
+			},
+			{
+				"sigla": "Ab",
+				"nomeCurto": "Abdias",
+				"nomeLongo": "Abdias"
+			},
+			{
+				"sigla": "Jn",
+				"nomeCurto": "Jonas",
+				"nomeLongo": "Jonas"
+			},
+			{
+				"sigla": "Mq",
+				"nomeCurto": "Miqueias",
+				"nomeLongo": "Miqueias"
+			},
+			{
+				"sigla": "Na",
+				"nomeCurto": "Naum",
+				"nomeLongo": "Naum"
+			},
+			{
+				"sigla": "Hab",
+				"nomeCurto": "Habacuc",
+				"nomeLongo": "Habacuc"
+			},
+			{
+				"sigla": "Sf",
+				"nomeCurto": "Sofonias",
+				"nomeLongo": "Sofonias"
+			},
+			{
+				"sigla": "Ag",
+				"nomeCurto": "Ageu",
+				"nomeLongo": "Ageu"
+			},
+			{
+				"sigla": "Zc",
+				"nomeCurto": "Zacarias",
+				"nomeLongo": "Zacarias"
+			},
+			{
+				"sigla": "Ml",
+				"nomeCurto": "Malaquias",
+				"nomeLongo": "Malaquias"
+			},
+			{
+				"sigla": "1Mc",
+				"nomeCurto": "I Macabeus",
+				"nomeLongo": "Primeiro Livro dos Macabeus"
+			},
+			{
+				"sigla": "2Mc",
+				"nomeCurto": "II Macabeus",
+				"nomeLongo": "Segundo Livro dos Macabeus"
+			},
+			{
+				"sigla": "Mt",
+				"nomeCurto": "Mateus",
+				"nomeLongo": "Evangelho Segundo São Mateus"
+			},
+			{
+				"sigla": "Mc",
+				"nomeCurto": "Marcos",
+				"nomeLongo": "Evangelho Segundo São Marcos"
+			},
+			{
+				"sigla": "Lc",
+				"nomeCurto": "Lucas",
+				"nomeLongo": "Evangelho Segundo São Lucas"
+			},
+			{
+				"sigla": "Jo",
+				"nomeCurto": "João",
+				"nomeLongo": "Evangelho Segundo São João"
+			},
+			{
+				"sigla": "At",
+				"nomeCurto": "Atos dos Apóstolos",
+				"nomeLongo": "Atos dos Apóstolos"
+			},
+			{
+				"sigla": "Rm",
+				"nomeCurto": "Romanos",
+				"nomeLongo": "Epístola aos Romanos"
+			},
+			{
+				"sigla": "1Cor",
+				"nomeCurto": "I Coríntios",
+				"nomeLongo": "Primeira Epístola aos Coríntios"
+			},
+			{
+				"sigla": "2Cor",
+				"nomeCurto": "II Coríntios",
+				"nomeLongo": "Segunda Epístola aos Coríntios"
+			},
+			{
+				"sigla": "Gl",
+				"nomeCurto": "Gálatas",
+				"nomeLongo": "Epístola aos Gálatas"
+			},
+			{
+				"sigla": "Ef",
+				"nomeCurto": "Efésios",
+				"nomeLongo": "Epístola aos Efésios"
+			},
+			{
+				"sigla": "Fl",
+				"nomeCurto": "Filipenses",
+				"nomeLongo": "Epístola aos Filipenses"
+			},
+			{
+				"sigla": "Cl",
+				"nomeCurto": "Colossenses",
+				"nomeLongo": "Epístola aos Colossenses"
+			},
+			{
+				"sigla": "1Ts",
+				"nomeCurto": "I Tessalonicenses",
+				"nomeLongo": "Primeira Epístola aos Tessalonicenses"
+			},
+			{
+				"sigla": "2Ts",
+				"nomeCurto": "II Tessalonicenses",
+				"nomeLongo": "Segunda Epístola aos Tessalonicenses"
+			},
+			{
+				"sigla": "1Tm",
+				"nomeCurto": "I Timóteo",
+				"nomeLongo": "Primeira Epístola a Timóteo"
+			},
+			{
+				"sigla": "2Tm",
+				"nomeCurto": "II Timóteo",
+				"nomeLongo": "Segunda Epístola a Timóteo"
+			},
+			{
+				"sigla": "Tt",
+				"nomeCurto": "Tito",
+				"nomeLongo": "Epístola a Tito"
+			},
+			{
+				"sigla": "Fm",
+				"nomeCurto": "Filêmon",
+				"nomeLongo": "Epístola a Filêmon"
+			},
+			{
+				"sigla": "Hb",
+				"nomeCurto": "Hebreus",
+				"nomeLongo": "Epístola aos Hebreus"
+			},
+			{
+				"sigla": "Tg",
+				"nomeCurto": "Tiago",
+				"nomeLongo": "Epístola de São Tiago"
+			},
+			{
+				"sigla": "1Pd",
+				"nomeCurto": "I Pedro",
+				"nomeLongo": "Primeira Epístola de São Pedro"
+			},
+			{
+				"sigla": "2Pd",
+				"nomeCurto": "II Pedro",
+				"nomeLongo": "Segunda Epístola de São Pedro"
+			},
+			{
+				"sigla": "1Jo",
+				"nomeCurto": "I João",
+				"nomeLongo": "Primeira Epístola de São João"
+			},
+			{
+				"sigla": "2Jo",
+				"nomeCurto": "II João",
+				"nomeLongo": "Segunda Epístola de São João"
+			},
+			{
+				"sigla": "3Jo",
+				"nomeCurto": "III João",
+				"nomeLongo": "Terceira Epístola de São João"
+			},
+			{
+				"sigla": "Jd",
+				"nomeCurto": "Judas",
+				"nomeLongo": "Epístola de São Judas"
+			},
+			{
+				"sigla": "Ap",
+				"nomeCurto": "Apocalipse",
+				"nomeLongo": "Apocalipse"
+			}
+		],
+		"bibliacatolica.com.br": {
+			"mapa-livro": {
+				"1": "Gn",
+				"2": "Ex",
+				"3": "Lv",
+				"4": "Nm",
+				"5": "Dt",
+				"6": "Js",
+				"7": "Jz",
+				"8": "Rt",
+				"9": "1Sm",
+				"10": "2Sm",
+				"11": "1Rs",
+				"12": "2Rs",
+				"13": "1Cr",
+				"14": "2Cr",
+				"15": "Esd",
+				"16": "Ne",
+				"17": "Tb",
+				"18": "Jt",
+				"19": "Est",
+				"20": "Jó",
+				"21": "Sl",
+				"22": "1Mc",
+				"23": "2Mc",
+				"24": "Pr",
+				"25": "Ecl",
+				"26": "Ct",
+				"27": "Sb",
+				"28": "Eclo",
+				"29": "Is",
+				"30": "Jr",
+				"31": "Lm",
+				"32": "Br",
+				"33": "Ez",
+				"34": "Dn",
+				"35": "Os",
+				"36": "Jl",
+				"37": "Am",
+				"38": "Ab",
+				"39": "Jn",
+				"40": "Mq",
+				"41": "Na",
+				"42": "Hab",
+				"43": "Sf",
+				"44": "Ag",
+				"45": "Zc",
+				"46": "Ml",
+				"47": "Mt",
+				"48": "Mc",
+				"49": "Lc",
+				"50": "Jo",
+				"51": "At",
+				"52": "Rm",
+				"53": "1Cor",
+				"54": "2Cor",
+				"55": "Gl",
+				"56": "Ef",
+				"57": "Fl",
+				"58": "Cl",
+				"59": "1Ts",
+				"60": "2Ts",
+				"61": "1Tm",
+				"62": "2Tm",
+				"63": "Tt",
+				"64": "Fm",
+				"65": "Hb",
+				"66": "Tg",
+				"67": "1Pd",
+				"68": "2Pd",
+				"69": "1Jo",
+				"70": "2Jo",
+				"71": "3Jo",
+				"72": "Jd",
+				"73": "Ap"
+			}
+		}
+	},
 	"ISO 639-1": {
 		"fonte": "https://pt.wikipedia.org/wiki/ISO_639",
 		"codigos": [
