@@ -45,13 +45,16 @@ Try {
     }
     ForEach ($livro In $config.biblia.livro) {
         $id = $livro.sigla
-        $apiLivro."index.json" += [ordered]@{
+        $objLivro = [ordered]@{
             id = $id
 			sigla = $livro.sigla
 			nomeCurto = $livro.nomeCurto
 			nomeLongo = $livro.nomeLongo
         }
-        $apiLivro.$id = @()
+        $apiLivro."index.json" += $objLivro
+        $apiLivro.$id = [ordered]@{
+            "index.json" = $objLivro
+        }
     }
     $api.$apiVersion.biblia.livro = $apiLivro
 
@@ -77,7 +80,6 @@ Try {
         $apiVersao.$id = @()
 
         $arqBiblia = "..\download\$fonte.$($biblia.nome).json"
-<#
         $jsonBiblia = Get-Content $arqBiblia | ConvertFrom-Json
         ForEach ($grupoProp In ($jsonBiblia.grupos | Get-Member -MemberType NoteProperty)) {
             $grupo = $jsonBiblia.grupos."$($grupoProp.Name)"
@@ -87,7 +89,6 @@ Try {
                 Write-Host "        $($livro.nome)"
             }
         }
-#>
     }
 
     # Bíblias - fim
