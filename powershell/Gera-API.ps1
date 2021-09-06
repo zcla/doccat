@@ -27,7 +27,7 @@ Function GeraAPI($objeto, $pasta) {
 
 Start-Transcript ("..\log\$((Get-Item $MyInvocation.MyCommand.Path).Name).log") -Force
 Try {
-    # Inicialização
+    # InicializaÃ§Ã£o
     $api = @{
         "$apiVersion" = @{
             biblia = @{
@@ -35,7 +35,7 @@ Try {
         }
     }
 
-    Write-Host "Configuração"
+    Write-Host "ConfiguraÃ§Ã£o"
     $config = Get-Content "..\config\config.json" | ConvertFrom-Json
 
     Write-Host "  biblia"
@@ -58,7 +58,7 @@ Try {
     }
     $api.$apiVersion.biblia.livro = $apiLivro
 
-    Write-Host "Bíblias"
+    Write-Host "BÃ­blias"
     $versaoIndex = @()
 
     Write-Host "  bibliacatolica.com.br"
@@ -91,10 +91,10 @@ Try {
         }
     }
 
-    # Bíblias - fim
+    # BÃ­blias - fim
     $api.$apiVersion.biblia.versao = $apiVersao
 
-    # Geração dos arquivos da API
+    # GeraÃ§Ã£o dos arquivos da API
     $pasta = Get-Item("..\api")
     GeraAPI $api $pasta
 } Finally {
