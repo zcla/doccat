@@ -93,6 +93,10 @@ thead th {
     background-color: #eee;
 }
 
+#tribosDeIsrael tbody td .ordem {
+    background-color: #60c;
+}
+
 #tribosDeIsrael tbody th .pericope {
     background-color: #06c;
 }
