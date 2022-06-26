@@ -1,0 +1,121 @@
+/* Geral */
+
+#doccat {
+    padding-top: var(--bs-gutter-x,.75rem);
+}
+
+/* Catecismo - Geral */
+
+#catecismo #detalhes {
+    display: none;
+}
+
+#catecismo a {
+    cursor: pointer;
+}
+
+#catecismo a:hover {
+    color: #006;
+    text-decoration: underline;
+}
+
+#catecismo .citacao {
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+#catecismo .paragrafo {
+    text-align: right;
+}
+
+#catecismo .paragrafos {
+    text-align: center;
+}
+
+#catecismo .nota {
+    border-top: 1px solid #999;
+}
+
+#catecismo .numero {
+    font-weight: bold;
+}
+
+#catecismo .texto {
+    font-size: 16px;
+}
+
+#catecismo .titulo1,
+#catecismo .titulo2,
+#catecismo .titulo3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Catecismo - Indentação */
+
+#catecismo .indent1 {
+    padding-left: 20px !important;
+}
+
+#catecismo .indent2 {
+    padding-left: 40px !important;
+}
+
+#catecismo .indent3 {
+    padding-left: 60px !important;
+}
+
+/*
+#catecismo .indent4 {
+    padding-left: 80px !important;
+}
+
+#catecismo .indent5 {
+    padding-left: 100px !important;
+}
+
+#catecismo .indent6 {
+    padding-left: 120px !important;
+}
+*/
+
+/* Tribos de Israel - Geral */
+
+#tribosDeIsrael {
+    font-size: 10pt;
+}
+
+#tribosDeIsrael tbody th {
+    background-color: #eee;
+}
+
+#tribosDeIsrael tbody th .pericope {
+    background-color: #06c;
+}
+
+#tribosDeIsrael tfoot {
+    background-color: #eee;
+}
+
+#tribosDeIsrael thead th {
+    background-color: #eee;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Tribos de Israel - Mães */
+#tribosDeIsrael .bala {
+    background-color: #cfc !important;
+}
+
+#tribosDeIsrael .lia {
+    background-color: #f99 !important;
+}
+
+#tribosDeIsrael .raquel {
+    background-color: #9f9 !important;
+}
+
+#tribosDeIsrael .zelfa {
+    background-color: #fcc !important;
+}
