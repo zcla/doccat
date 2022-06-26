@@ -56,5 +56,6 @@ class Catecismo {
 
     static texto(nome) {
         loadHtml('catecismo/cic_' + nome + '.html', '#texto');
+        // TODO "Navegadores". Ordem: prologo -> 1-184 -> credo -> 185...
     }
 }
