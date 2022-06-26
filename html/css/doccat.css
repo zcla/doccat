@@ -1,5 +1,9 @@
 /* Geral */
 
+thead th {
+    text-align: center;
+}
+
 #doccat {
     padding-top: var(--bs-gutter-x,.75rem);
 }
