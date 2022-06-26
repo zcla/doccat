@@ -37,6 +37,12 @@ $(document).ready(function () {
             case "pagina":
                 loadHtml(value + '.html', '#doccat');
                 break;
+            case "detalhe":
+                // TODO Fazer só quando "pagina=catecismo"
+                setTimeout(function() {
+                    Catecismo.detalhe(value);
+                }, 100); // TODO deixar mais "profissional" (carregar depois de loadHtml() terminar)
+                break;
             default:
                 throw "Parâmetro desconhecido";
         }
