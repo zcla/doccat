@@ -50,7 +50,8 @@ thead th {
 
 #catecismo .titulo1,
 #catecismo .titulo2,
-#catecismo .titulo3 {
+#catecismo .titulo3,
+#catecismo .titulo4 {
     font-size: 20px;
     font-weight: bold;
 }
