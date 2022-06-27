@@ -86,7 +86,7 @@ thead th {
 /* Tribos de Israel - Geral */
 
 #tribosDeIsrael {
-    font-size: 10pt;
+    font-size: .8em;
 }
 
 #tribosDeIsrael tbody th {
@@ -95,6 +95,12 @@ thead th {
 
 #tribosDeIsrael tbody td .ordem {
     background-color: #60c;
+    border-radius: 0.25rem;
+    color: #fff;
+    font-size: .75em;
+    font-weight: bold;
+    padding: 0.25rem;
+    margin-right: 0.25rem;
 }
 
 #tribosDeIsrael tbody th .pericope {
