@@ -20,7 +20,8 @@ function refReplace() {
         $(this).replaceWith(replacement);
     });
 
-    $('ref-catecismotexto').each(function() {
+    $('ref-cec').each(function() {
+        // TODO Se o elemento já estiver no texto, jogar em outro lugar e formatar como no documento, em itálico.
         let name = $(this).attr('name');
         name = name ? name : this.innerText;
         const replacement = $('<a onclick="javascript:Catecismo.texto(\'' + name + '\');">').append(this.innerHTML);
