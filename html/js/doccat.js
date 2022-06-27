@@ -3,11 +3,11 @@
 function loadHtml(arquivo, selector) {
     $(selector).empty();
     $(selector).load(arquivo, function() {
-        refReplace();
+        refReplace(selector);
     });
 }
 
-function refReplace() {
+function refReplace(selector) {
     $('ref-biblia').each(function() {
         const replacement = this.innerHTML;
         $(this).replaceWith(replacement);
@@ -21,10 +21,12 @@ function refReplace() {
     });
 
     $('ref-cec').each(function() {
-        // TODO Se o elemento já estiver no texto, jogar em outro lugar e formatar como no documento, em itálico.
         let name = $(this).attr('name');
         name = name ? name : this.innerText;
-        const replacement = $('<a onclick="javascript:Catecismo.texto(\'' + name + '\');">').append(this.innerHTML);
+        let replacement = $('<a onclick="javascript:Catecismo.referencia(\'' + name + '\');">').append(this.innerHTML);
+        if (selector == '#detalhe') { // Se o link vier da barra de detalhe, colocar na estrutura do texto
+            replacement = $('<a onclick="javascript:Catecismo.texto(\'' + name + '\');">').append(this.innerHTML);
+        }
         $(this).replaceWith(replacement);
     });
 }
@@ -51,10 +53,17 @@ $(document).ready(function () {
 });
 
 class Catecismo {
+    // "Detalhe" da estrutura do catecismo (subestrutura de um trecho)
     static detalhe(nome) {
         loadHtml('catecismo/' + nome + '.html', '#detalhe');
     }
 
+    // Mostra o texto como referência
+    static referencia(nome) {
+        loadHtml('catecismo/cic_' + nome + '.html', '#referencia');
+    }
+
+    // Mostra o texto dentro da estrutura
     static texto(nome) {
         loadHtml('catecismo/cic_' + nome + '.html', '#texto');
         // TODO "Navegadores". Ordem: prologo -> 1-184 -> credo -> 185...
