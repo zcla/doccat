@@ -77,12 +77,15 @@ thead th {
 #catecismo .indent5 {
     padding-left: 100px !important;
 }
-
 /*
 #catecismo .indent6 {
     padding-left: 120px !important;
 }
 */
+
+#catecismo .referencia {
+    font-style: italic;
+}
 
 /* Tribos de Israel - Geral */
 
