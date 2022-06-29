@@ -51,7 +51,9 @@ thead th {
 #catecismo .titulo1,
 #catecismo .titulo2,
 #catecismo .titulo3,
-#catecismo .titulo4 {
+#catecismo .titulo4,
+#catecismo .titulo5,
+#catecismo .titulo6 {
     font-size: 20px;
     font-weight: bold;
 }
@@ -77,6 +79,7 @@ thead th {
 #catecismo .indent5 {
     padding-left: 100px !important;
 }
+
 /*
 #catecismo .indent6 {
     padding-left: 120px !important;
