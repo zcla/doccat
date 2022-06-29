@@ -140,3 +140,24 @@ thead th {
 #tribosDeIsrael .zelfa {
     background-color: #fcc !important;
 }
+
+/* Tribos de Israel - Posição */
+#tribosDeIsrael .leste {
+    background-color: #ffc !important;
+}
+
+#tribosDeIsrael .sul {
+    background-color: #fcc !important;
+}
+
+#tribosDeIsrael .meio {
+    background-color: #ccc !important;
+}
+
+#tribosDeIsrael .oeste {
+    background-color: #ccf !important;
+}
+
+#tribosDeIsrael .norte {
+    background-color: #cff !important;
+}
