@@ -111,11 +111,8 @@ thead th {
 }
 
 #tribosDeIsrael tbody td .ordemAusente {
-    border-color: #60c;
-    border-style: solid;
-    border-width: 0 2px;
-    background-color: #c9f;
-    color: #60c;
+    background-color: #f00;
+    color: #ff0;
 }
 
 #tribosDeIsrael tbody th .pericope {
