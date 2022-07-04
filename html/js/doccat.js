@@ -7,7 +7,7 @@ function loadHtml(arquivo, selector, callback) {
         if (callback) {
             callback();
         }
-    });
+    }); // TODO Mostrar erro quando não encontrar
 }
 
 function getUrlParams() {
@@ -29,9 +29,9 @@ function refReplace(selector) {
     $('ref-cic').each(function() {
         let name = $(this).attr('name');
         name = name ? name : this.innerText;
-        let replacement = $('<a onclick="javascript:Catecismo.referencia(\'' + name + '\');">').append(this.innerHTML); // TODO Trocar por href
+        let replacement = $('<a onclick="javascript:Catecismo.referencia(\'' + name + '\');">').append(this.innerHTML); // TODO Trocar por href: buscar o que já tem e acrescentar "referencia"
         if (selector == '#grupo') { // Se o link vier da barra de grupo, colocar na estrutura do texto
-            replacement = $('<a onclick="javascript:Catecismo.texto(\'' + name + '\');">').append(this.innerHTML); // TODO Trocar por href
+            replacement = $('<a onclick="javascript:Catecismo.texto(\'' + name + '\');">').append(this.innerHTML); // TODO Trocar por href: buscar o que já tem e acrescentar "cic" (ou id, ou...)
         }
         $(this).replaceWith(replacement);
     });
