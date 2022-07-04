@@ -11,7 +11,9 @@ thead th {
 /* Catecismo - Geral */
 
 #catecismo a {
+    color: #009;
     cursor: pointer;
+    text-decoration: none;
 }
 
 #catecismo a:hover {
