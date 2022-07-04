@@ -10,10 +10,6 @@ thead th {
 
 /* Catecismo - Geral */
 
-#catecismo #detalhes {
-    display: none;
-}
-
 #catecismo a {
     cursor: pointer;
 }
