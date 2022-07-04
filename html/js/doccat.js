@@ -62,6 +62,8 @@ class Catecismo {
     // "Grupo" da estrutura do catecismo (subestrutura de um trecho)
     static grupo(nome) {
         loadHtml('catecismo/' + nome + '.html', '#grupo');
+        // <a href="?pagina=catecismo&amp;grupo=p1s1c1">
+        $('#mestre a[href="?pagina=catecismo&grupo=' + nome + '"]').parent().parent().addClass('selecionado');
     }
 
     // Mostra o texto como referência
