@@ -10,25 +10,28 @@ function loadHtml(arquivo, selector, callback) {
     });
 }
 
+function getUrlParams() {
+    const paramArray = location.search.replace('?', '').split('&');
+    const result = {};
+    for (const param of paramArray) {
+        const [key, value] = param.split('=');
+        result[key] = value;
+    }
+    return result;
+}
+
 function refReplace(selector) {
     $('ref-biblia').each(function() {
         const replacement = this.innerHTML;
         $(this).replaceWith(replacement);
     });
 
-    $('ref-catecismogrupo').each(function() {
-        let name = $(this).attr('name');
-        name = name ? name : this.innerText;
-        const replacement = $('<a href="?pagina=catecismo&grupo=' + name + '\">').append(this.innerHTML);
-        $(this).replaceWith(replacement);
-    });
-
     $('ref-cec').each(function() {
         let name = $(this).attr('name');
         name = name ? name : this.innerText;
-        let replacement = $('<a onclick="javascript:Catecismo.referencia(\'' + name + '\');">').append(this.innerHTML);
+        let replacement = $('<a onclick="javascript:Catecismo.referencia(\'' + name + '\');">').append(this.innerHTML); // TODO Trocar por href
         if (selector == '#grupo') { // Se o link vier da barra de grupo, colocar na estrutura do texto
-            replacement = $('<a onclick="javascript:Catecismo.texto(\'' + name + '\');">').append(this.innerHTML);
+            replacement = $('<a onclick="javascript:Catecismo.texto(\'' + name + '\');">').append(this.innerHTML); // TODO Trocar por href
         }
         $(this).replaceWith(replacement);
     });
@@ -36,12 +39,7 @@ function refReplace(selector) {
 
 $(document).ready(function () {
     // Trata parâmetros na URL
-    const paramArray = location.search.replace('?', '').split('&');
-    const params = {};
-    for (const param of paramArray) {
-        const [key, value] = param.split('=');
-        params[key] = value;
-    }
+    const params = getUrlParams();
     if (params.pagina) {
         loadHtml(params.pagina + '.html', '#doccat', function() {
             switch (params.pagina) {
