@@ -26,7 +26,7 @@ function refReplace(selector) {
         $(this).replaceWith(replacement);
     });
 
-    $('ref-cec').each(function() {
+    $('ref-cic').each(function() {
         let name = $(this).attr('name');
         name = name ? name : this.innerText;
         let replacement = $('<a onclick="javascript:Catecismo.referencia(\'' + name + '\');">').append(this.innerHTML); // TODO Trocar por href
