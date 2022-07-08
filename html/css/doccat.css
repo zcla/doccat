@@ -8,7 +8,7 @@ thead th {
     padding-top: var(--bs-gutter-x,.75rem);
 }
 
-/* Catecismo - Geral */
+/* Catecismo - geral */
 
 #catecismo a {
     color: #009;
@@ -92,7 +92,7 @@ thead th {
     font-style: italic;
 }
 
-/* Tribos de Israel - Geral */
+/* Tribos de Israel - geral */
 
 #tribosDeIsrael {
     font-size: .8em;
@@ -131,7 +131,7 @@ thead th {
     vertical-align: middle;
 }
 
-/* Tribos de Israel - Mães */
+/* Tribos de Israel - mães */
 #tribosDeIsrael .bala {
     background-color: #cfc !important;
 }
@@ -148,7 +148,7 @@ thead th {
     background-color: #fcc !important;
 }
 
-/* Tribos de Israel - Posição */
+/* Tribos de Israel - posição */
 #tribosDeIsrael .leste {
     background-color: #ffc !important;
 }
@@ -167,4 +167,13 @@ thead th {
 
 #tribosDeIsrael .norte {
     background-color: #cff !important;
+}
+
+/* Tribos de Israel - bênção/maldição */
+#tribosDeIsrael .bencao {
+    background-color: #cfc !important;
+}
+
+#tribosDeIsrael .maldicao {
+    background-color: #fcc !important;
 }
