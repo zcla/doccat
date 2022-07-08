@@ -2,12 +2,32 @@
 
 function loadHtml(arquivo, selector, callback) {
     $(selector).empty();
-    $(selector).load(arquivo, function() {
-        refReplace(selector);
-        if (callback) {
-            callback();
+    $(selector).append('<div class="spinner-border" role="status">');
+    $(selector).load(arquivo, function(response, status, xhr) {
+        switch (status) {
+            case 'success':
+                refReplace(selector);
+                if (callback) {
+                    callback();
+                }
+                break;
+                
+            case 'error':
+                $(selector).empty();
+                $(selector)
+                    .append($('<div class="alert alert-danger">')
+                        .append(response)
+                        .append('<hr>')
+                        .append(xhr.status)
+                        .append(' ')
+                        .append(xhr.statusText));
+                break;
+
+            default: // TODO Tratar "notmodified", "nocontent", "timeout", "abort", or "parsererror"
+                console.log('Não sei tratar "' + status + '"');
+                break;
         }
-    }); // TODO Mostrar erro quando não encontrar
+    });
 }
 
 function getUrlParams() {
