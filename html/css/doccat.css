@@ -8,6 +8,12 @@ thead th {
     padding-top: var(--bs-gutter-x,.75rem);
 }
 
+/* Bíblias - geral */
+
+#biblias {
+    font-size: .8em;
+}
+
 /* Catecismo - geral */
 
 #catecismo a {
