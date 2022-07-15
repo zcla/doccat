@@ -366,8 +366,10 @@
 				"nomeCurto": "Apocalipse",
 				"nomeLongo": "Apocalipse de São João"
 			}
-		],
-		"vatican.va.Biblia.lt": {
+		]
+	},
+	"download": {
+		"Biblia_vatican.va_lt": {
 			"urls": [
 				"https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_vetus-testamentum_lt.html",
 				"https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_novum-testamentum_lt.html"
