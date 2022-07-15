@@ -36,7 +36,7 @@ If (Test-Path $fileName) {
             $livro = $urlLivro.href -replace '^nova-vulgata_(v|n)t_(.*)_lt.html', '$2'
             Write-Host "      $livro" -ForegroundColor Cyan -NoNewline
             $iwrLivro = Invoke-WebRequest "$($url.substring(0, $url.LastIndexOf('/')))/$($urlLivro.href)"
-            $result.$livro = "$($iwrLivro.Content)"
+            $result.$livro = "$($iwrLivro.Content)" # TODO Adicionar fonte (url) e nome do livro (tem no link)
             Write-Host " $($result.$livro.Length) bytes" -ForegroundColor Green
         }
     }
@@ -57,6 +57,6 @@ ForEach ($keyLivro In $dados.Keys) {
     Write-Host "    $keyLivro" -ForegroundColor Cyan -NoNewline
     $htmlDom = ConvertFrom-Html -Content $dados.$keyLivro
     Write-Host " $($htmlDom.OuterLength) bytes" -ForegroundColor Green
-    
+
     # TODO https://html-agility-pack.net/documentation
 }
