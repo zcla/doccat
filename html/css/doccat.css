@@ -18,6 +18,14 @@ thead th {
     background-color: #fcc;
 }
 
+#biblias .vulgata {
+    background-color: #ccf;
+}
+
+#biblias .neovulgata {
+    background-color: #cfc;
+}
+
 /* Catecismo - geral */
 
 #catecismo a {
