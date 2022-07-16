@@ -52,6 +52,14 @@ thead th {
     text-align: center;
 }
 
+#catecismo .paragrafos a {
+    background-color: #36c;
+    border-radius: 0.5em;
+    color: #fff;
+    font-size: 0.8em;
+    padding: 0.2em 0.5em;
+}
+
 #catecismo .nota {
     border-top: 1px solid #999;
 }
