@@ -16,11 +16,11 @@ function loadHtml(arquivo, selector, callback) {
                 $(selector).empty();
                 $(selector)
                     .append($('<div class="alert alert-danger">')
-                        .append(response)
-                        .append('<hr>')
-                        .append(xhr.status)
-                        .append(' ')
-                        .append(xhr.statusText));
+                        .append($('<b>')
+                            .append(xhr.status)
+                            .append(' ')
+                            .append(xhr.statusText))
+                        .append(response));
                 break;
 
             default:
