@@ -23,9 +23,8 @@ function loadHtml(arquivo, selector, callback) {
                         .append(xhr.statusText));
                 break;
 
-            default: // TODO Tratar "notmodified", "nocontent", "timeout", "abort", or "parsererror"
-                console.log('Não sei tratar "' + status + '"');
-                break;
+            default:
+                throw 'Não sei tratar "' + status + '"'; // TODO Tratar "notmodified", "nocontent", "timeout", "abort", or "parsererror"
         }
     });
 }
@@ -81,10 +80,10 @@ class Catecismo {
     static montaPagina(params) {
         if (params.grupo) {
             $('#mestre a[href="?pagina=catecismo&grupo=' + params.grupo + '"]').parent().parent().addClass('selecionado');
-            loadHtml('catecismo/grupo/' + params.grupo + '.html', '#grupo', function() {
+            loadHtml('catecismo/' + params.grupo, '#grupo', function() {
                 if (params.cic) {
                     $('#grupo a[href^="?pagina=catecismo"][href$="&cic=' + params.cic + '"]').parent().parent().addClass('selecionado');
-                    loadHtml('catecismo/cic_' + params.cic + '.html', '#texto');
+                    loadHtml('catecismo/' + params.grupo + '/cic_' + params.cic + '.html', '#texto');
                     // TODO "Navegadores". Ordem: prologo -> 1-184 -> credo -> 185...
                 }
             });
