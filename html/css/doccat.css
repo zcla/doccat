@@ -188,3 +188,16 @@ thead th {
 #tribosDeIsrael .maldicao {
     background-color: #fcc !important;
 }
+
+/* Tribos de Israel - repartição das terras */
+#tribosDeIsrael .ocidental {
+    background-color: #ccf !important;
+}
+
+#tribosDeIsrael .oriental {
+    background-color: #cfc !important;
+}
+
+#tribosDeIsrael .semHeranca {
+    background-color: #fcc !important;
+}
