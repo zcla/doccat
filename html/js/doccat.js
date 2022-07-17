@@ -48,7 +48,7 @@ function refReplace(selector) {
     $('ref-cic').each(function() {
         let name = $(this).attr('name');
         name = name ? name : this.innerText;
-        let replacement = $('<a onclick="javascript:Catecismo.referencia(\'' + name + '\');">').append(this.innerHTML); // TODO Trocar por href: buscar o que já tem e acrescentar "referencia"
+        let replacement = $('<a onclick="javascript:Catecismo.referencia(\'' + name + '\');">').append(this.innerHTML);
         if (selector == '#grupo') { // Se o link vier da barra de grupo, colocar na estrutura do texto
             const params = getUrlParams();
             replacement = $('<a href="?pagina=' + params.pagina + '&grupo=' + params.grupo + '&cic=' + name + '">').append(this.innerHTML);
@@ -92,6 +92,8 @@ class Catecismo {
 
     // Mostra o texto como referência
     static referencia(referencia) {
+        // TODO Está qubrado; falta o grupo: http://127.0.0.1:5501/html/?pagina=catecismo&grupo=p1s1c1&cic=35
+        // TODO Tratar referências múltiplas: http://127.0.0.1:5501/html/?pagina=catecismo&grupo=p1s1c2a2&cic=85
         loadHtml('catecismo/cic_' + referencia + '.html', '#referencia');
     }
 }
