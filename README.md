@@ -21,3 +21,5 @@
     * https://www.vatican.va/archive/ccc/index_po.htm
     * https://catecismo-az.tripod.com/conteudo/cic/ig.html
       * https://angelgireh.tripod.com/
+  * Liturgia diária
+    * https://api-liturgia.edicoescnbb.com.br/contents/in/date/1971-10-05
