@@ -1,13 +1,9 @@
+# Baixa páginas do site vatican.va.
+
 Clear-Host
 
 Write-Host "Inicializando" -ForegroundColor Cyan
-If (-not (Get-Module -ListAvailable PowerHTML)) {
-    #####
-    Write-Host "  Instalando PowerHTML" -ForegroundColor Cyan -NoNewline
-    Install-Module PowerHTML -Force
-    Write-Host " ok" -ForegroundColor Green
-}
-Import-Module PowerHTML
+.\Import-PowerHTML.ps1
 
 $prjPath = ((Get-Item $MyInvocation.MyCommand.Path).Directory.Parent.FullName)
 
