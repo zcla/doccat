@@ -1,11 +1,11 @@
 # Baixa páginas do site vatican.va.
 
+$prjPath = ((Get-Item $MyInvocation.MyCommand.Path).Directory.Parent.FullName)
+
 Clear-Host
 
 Write-Host "Inicializando" -ForegroundColor Cyan
 .\Import-PowerHTML.ps1
-
-$prjPath = ((Get-Item $MyInvocation.MyCommand.Path).Directory.Parent.FullName)
 
 $config = Get-Content -Path "$prjPath\config\config.json" | ConvertFrom-Json
 
