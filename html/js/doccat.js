@@ -1,11 +1,32 @@
 "use strict";
 
+function getUrlParams() {
+    const paramArray = location.search.replace('?', '').split('&');
+    const result = {};
+    for (const param of paramArray) {
+        const [key, value] = param.split('=');
+        result[key] = value;
+    }
+    return result;
+}
+
+function inicializa() {
+    let catecismo = null;
+    $.getJSON("json/catecismo.json", function(data) {
+        Catecismo.json = data;
+    });
+}
+
 function loadHtml(arquivo, selector, callback) {
     $(selector).empty();
     $(selector).append('<div class="spinner-border" role="status">');
     $(selector).load(arquivo, function(response, status, xhr) {
         switch (status) {
             case 'success':
+                if (selector == '#referencia') {
+                    $(selector).prepend($('<label class="form-label">').append('Referência'));
+                }
+
                 refReplace(selector);
                 if (callback) {
                     callback();
@@ -29,16 +50,6 @@ function loadHtml(arquivo, selector, callback) {
     });
 }
 
-function getUrlParams() {
-    const paramArray = location.search.replace('?', '').split('&');
-    const result = {};
-    for (const param of paramArray) {
-        const [key, value] = param.split('=');
-        result[key] = value;
-    }
-    return result;
-}
-
 function refReplace(selector) {
     $('ref-biblia').each(function() {
         // TODO Fazer uma pesquisa no Google ou mandar pra algum site enquanto não tenho o texto.
@@ -51,14 +62,16 @@ function refReplace(selector) {
         name = name ? name : this.innerText;
         let replacement = $('<a onclick="javascript:Catecismo.referencia(\'' + name + '\');">').append(this.innerHTML);
         if (selector == '#grupo') { // Se o link vier da barra de grupo, colocar na estrutura do texto
-            const params = getUrlParams();
-            replacement = $('<a href="?pagina=' + params.pagina + '&grupo=' + params.grupo + '&cic=' + name + '">').append(this.innerHTML);
+            const grupo = Catecismo.cic2grupo(name);
+            replacement = $('<a href="?pagina=catecismo&grupo=' + grupo + '&cic=' + name + '">').append(this.innerHTML);
         }
         $(this).replaceWith(replacement);
     });
 }
 
 $(document).ready(function () {
+    inicializa();
+
     // Trata parâmetros na URL
     const params = getUrlParams();
     if (params.pagina) {
@@ -78,6 +91,21 @@ $(document).ready(function () {
 });
 
 class Catecismo {
+    static json = null;
+    static #cic2grupo = null;
+
+    static cic2grupo(cic) {
+        if (!this.#cic2grupo) {
+            this.#cic2grupo = {};
+            for (const grupo of this.json) {
+                for (const cic of grupo.cic) {
+                    this.#cic2grupo[cic] = grupo.grupo;
+                }
+            }
+        }
+        return this.#cic2grupo[cic];
+    }
+
     static montaPagina(params) {
         if (params.grupo) {
             $('#mestre a[href="?pagina=catecismo&grupo=' + params.grupo + '"]').parent().parent().addClass('selecionado');
@@ -93,8 +121,8 @@ class Catecismo {
 
     // Mostra o texto como referência
     static referencia(referencia) {
-        // TODO Está qubrado; falta o grupo: http://127.0.0.1:5501/html/?pagina=catecismo&grupo=p1s1c1&cic=35
         // TODO Tratar referências múltiplas: http://127.0.0.1:5501/html/?pagina=catecismo&grupo=p1s1c2a2&cic=85
-        loadHtml('catecismo/cic_' + referencia + '.html', '#referencia');
+        const grupo = Catecismo.cic2grupo(referencia);
+        loadHtml('catecismo/' + grupo + '/cic_' + referencia + '.html', '#referencia');
     }
 }

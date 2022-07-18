@@ -40,17 +40,21 @@ thead th {
 }
 
 #catecismo #anotacoes {
-    border-top: 1px dashed #99f;
-    padding-top: 1em;
+    background-color: #ddd;
 }
 
 #catecismo #anotacoes label {
+    font-style: italic;
     font-weight: bold;
 }
 
 #catecismo #referencia {
-    border-top: 1px dashed #99f;
-    padding-top: 1em;
+    background-color: #ddd;
+}
+
+#catecismo #referencia label {
+    font-style: italic;
+    font-weight: bold;
 }
 
 #catecismo .citacao {
