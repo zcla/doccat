@@ -41,6 +41,7 @@ function getUrlParams() {
 
 function refReplace(selector) {
     $('ref-biblia').each(function() {
+        // TODO Fazer uma pesquisa no Google ou mandar pra algum site enquanto não tenho o texto.
         const replacement = this.innerHTML;
         $(this).replaceWith(replacement);
     });
