@@ -39,9 +39,31 @@ thead th {
     text-decoration: underline;
 }
 
+#catecismo #anotacoes {
+    border-top: 1px dashed #99f;
+    padding-top: 1em;
+}
+
+#catecismo #anotacoes label {
+    font-weight: bold;
+}
+
+#catecismo #referencia {
+    border-top: 1px dashed #99f;
+    padding-top: 1em;
+}
+
 #catecismo .citacao {
     font-size: 14px;
     padding-left: 20px;
+}
+
+#catecismo .notas {
+    border-top: 1px solid #999;
+}
+
+#catecismo .numero {
+    font-weight: bold;
 }
 
 #catecismo .paragrafo {
@@ -58,14 +80,6 @@ thead th {
     color: #fff;
     font-size: 0.8em;
     padding: 0.2em 0.5em;
-}
-
-#catecismo .notas {
-    border-top: 1px solid #999;
-}
-
-#catecismo .numero {
-    font-weight: bold;
 }
 
 #catecismo .selecionado {
