@@ -121,8 +121,45 @@ class Catecismo {
 
     // Mostra o texto como referência
     static referencia(referencia) {
-        // TODO Tratar referências múltiplas: http://127.0.0.1:5501/html/?pagina=catecismo&grupo=p1s1c2a2&cic=85
-        const grupo = Catecismo.cic2grupo(referencia);
-        loadHtml('catecismo/' + grupo + '/cic_' + referencia + '.html', '#referencia');
+        const spl = referencia.split('-');
+        switch (spl.length) {
+            case 1: {
+                const grupo = Catecismo.cic2grupo(referencia);
+                loadHtml('catecismo/' + grupo + '/cic_' + referencia + '.html', '#referencia');
+                break;
+            }
+
+            case 2:
+                $('#referencia').empty();
+                let status = 'procurando';
+                for (const grupo of this.json) {
+                    for (const cic of grupo.cic) {
+                        if (cic == spl[0]) {
+                            status = 'achei';
+                        }
+                        if (status == 'achei') {
+                            $('#referencia').append('<div id="referencia_' + cic + '">');
+                            loadHtml('catecismo/' + grupo.grupo + '/cic_' + cic + '.html', '#referencia_' + cic);
+                        }
+                        if (cic == spl[1]) {
+                            status = 'acabou';
+                            break;
+                        }
+                    }
+                    if (status == 'acabou') {
+                        break;
+                    }
+                }
+                if (status == 'procurando') {
+                    $('#referencia')
+                    .append($('<div class="alert alert-danger">')
+                        .append("Não encontrado"));
+                }
+                break;
+
+            default:
+                throw "Referência inválida."
+                break;
+        }
     }
 }
