@@ -21,7 +21,11 @@ $links | ForEach-Object {
 }
 
 $estrutura = @()
+$ultGrupo = $null
 $grupos | ForEach-Object {
+    If ($_ -eq $ultGrupo) {
+        Return
+    }
     $html = ConvertFrom-Html -Path "$pathCatecismo\$_\index.html"
     $refs = $html.SelectNodes('//ref-cic')
     $grupo = @()
@@ -36,5 +40,6 @@ $grupos | ForEach-Object {
         grupo = $_
         cic = $grupo
     }
+    $ultGrupo = $_
 }
 $estrutura | ConvertTo-Json -Depth 100 | Out-File "$prjPath\html\json\catecismo.json"
