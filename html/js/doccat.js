@@ -11,7 +11,6 @@ function getUrlParams() {
 }
 
 function inicializa() {
-    let catecismo = null;
     $.getJSON("json/catecismo.json", function(data) {
         Catecismo.json = data;
     });
@@ -93,6 +92,7 @@ $(document).ready(function () {
 class Catecismo {
     static json = null;
     static #cic2grupo = null;
+    static #cicEmOrdem = null;
 
     static cic2grupo(cic) {
         if (!this.#cic2grupo) {
@@ -106,14 +106,53 @@ class Catecismo {
         return this.#cic2grupo[cic];
     }
 
+    static cicAnterior(cic) {
+        const pos = this.cicPosicao(cic);
+        if (pos > 0) {
+            return this.#cicEmOrdem[pos - 1];
+        }
+        return null;
+    }
+
+    static cicPosicao(cic) {
+        if (!this.#cicEmOrdem) {
+            this.#cicEmOrdem = [];
+            for (const grupo of this.json) {
+                for (const cic of grupo.cic) {
+                    this.#cicEmOrdem.push(cic);
+                }
+            }
+        }
+        return this.#cicEmOrdem.indexOf(cic);
+    }
+
+    static cicPosterior(cic) {
+        const pos = this.cicPosicao(cic);
+        if (pos < this.#cicEmOrdem.length) {
+            return this.#cicEmOrdem[pos + 1];
+        }
+        return null;
+    }
+
     static montaPagina(params) {
         if (params.grupo) {
             $('#mestre a[href="?pagina=catecismo&grupo=' + params.grupo + '"]').parent().parent().addClass('selecionado');
             loadHtml('catecismo/' + params.grupo, '#grupo', function() {
                 if (params.cic) {
                     $('#grupo a[href^="?pagina=catecismo"][href$="&cic=' + params.cic + '"]').parent().parent().addClass('selecionado');
-                    loadHtml('catecismo/' + params.grupo + '/cic_' + params.cic + '.html', '#texto');
-                    // TODO "Navegadores". Ordem: prologo -> 1-184 -> credo -> 185...
+                    loadHtml('catecismo/' + params.grupo + '/cic_' + params.cic + '.html', '#texto', function() {
+                        const navegador = $('<div class="navegador">');
+                        const anterior = Catecismo.cicAnterior(params.cic);
+                        if (anterior != null) {
+                            navegador.append($('<ref-cic name="' + anterior + '">&#129152;</ref-cic>'));
+                        }
+                        const posterior = Catecismo.cicPosterior(params.cic);
+                        if (posterior != null) {
+                            navegador.append($('<ref-cic name="' + posterior + '">&#129154;</ref-cic>'));
+                        }
+                        $('#texto').append(navegador);
+                        refReplace("#grupo");
+                    });
                 }
             });
         }

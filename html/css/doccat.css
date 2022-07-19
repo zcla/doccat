@@ -132,6 +132,20 @@ thead th {
 }
 */
 
+#catecismo .navegador {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+#catecismo .navegador a {
+    background-color: #36c;
+    border-radius: 0.5em;
+    color: #fff;
+    font-size: 0.8em;
+    margin: 1em;
+    padding: 0.2em 0.5em;
+}
+
 #catecismo .referencia {
     font-style: italic;
 }
