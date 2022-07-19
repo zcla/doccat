@@ -144,11 +144,11 @@ class Catecismo {
                         const navegador = $('<div class="navegador">');
                         const anterior = Catecismo.cicAnterior(params.cic);
                         if (anterior != null) {
-                            navegador.append($('<ref-cic name="' + anterior + '">&#129152;</ref-cic>'));
+                            navegador.append($('<ref-cic name="' + anterior + '">&#129092;</ref-cic>'));
                         }
                         const posterior = Catecismo.cicPosterior(params.cic);
                         if (posterior != null) {
-                            navegador.append($('<ref-cic name="' + posterior + '">&#129154;</ref-cic>'));
+                            navegador.append($('<ref-cic name="' + posterior + '">&#129094;</ref-cic>'));
                         }
                         $('#texto').append(navegador);
                         refReplace("#grupo");
