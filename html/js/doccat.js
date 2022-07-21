@@ -53,7 +53,7 @@ function refReplace(selector) {
     $('ref-biblia').each(function() {
         // TODO Fazer uma pesquisa no Google ou mandar pra algum site enquanto não tenho o texto.
         const replacement = this.innerHTML;
-        $(this).replaceWith($('<span style="background: repeating-linear-gradient(135deg, #ccc, #ccc 5px, #ddd 5px, #ddd 10px);">').append(replacement));
+        $(this).replaceWith($('<span style="border: 1px dashed #00f !important; border-radius: 4px;">').append(replacement));
     });
 
     $('ref-cic').each(function() {
