@@ -61,6 +61,11 @@
     text-align: right;
 }
 
+#catecismo .outroGrupo {
+    color: #999;
+    font-style: italic;
+}
+
 #catecismo .paragrafos {
     text-align: center;
 }
