@@ -1,0 +1,99 @@
+#tribosDeIsrael {
+    font-size: .8em;
+}
+
+#tribosDeIsrael tbody th {
+    background-color: #eee;
+}
+
+#tribosDeIsrael tbody td .ordem {
+    background-color: #60c;
+    border-radius: 0.25rem;
+    color: #fff;
+    font-size: .75em;
+    font-weight: bold;
+    padding: 0.25rem;
+    margin-bottom: 1px;
+    margin-right: 0.25rem;
+}
+
+#tribosDeIsrael tbody td .ordemAusente {
+    background-color: #f00;
+    color: #ff0;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+}
+
+#tribosDeIsrael tbody th .pericope {
+    background-color: #06c;
+}
+
+#tribosDeIsrael tfoot {
+    background-color: #eee;
+}
+
+#tribosDeIsrael thead th {
+    background-color: #eee;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Mães */
+#tribosDeIsrael .bala {
+    background-color: #cfc !important;
+}
+
+#tribosDeIsrael .lia {
+    background-color: #f99 !important;
+}
+
+#tribosDeIsrael .raquel {
+    background-color: #9f9 !important;
+}
+
+#tribosDeIsrael .zelfa {
+    background-color: #fcc !important;
+}
+
+/* Posição */
+#tribosDeIsrael .leste {
+    background-color: #ffc !important;
+}
+
+#tribosDeIsrael .sul {
+    background-color: #fcc !important;
+}
+
+#tribosDeIsrael .meio {
+    background-color: #ccc !important;
+}
+
+#tribosDeIsrael .oeste {
+    background-color: #ccf !important;
+}
+
+#tribosDeIsrael .norte {
+    background-color: #cff !important;
+}
+
+/* Bênção/maldição */
+#tribosDeIsrael .bencao {
+    background-color: #cfc !important;
+}
+
+#tribosDeIsrael .maldicao {
+    background-color: #fcc !important;
+}
+
+/* Repartição das terras */
+#tribosDeIsrael .ocidental {
+    background-color: #ccf !important;
+}
+
+#tribosDeIsrael .oriental {
+    background-color: #cfc !important;
+}
+
+#tribosDeIsrael .semHeranca {
+    background-color: #fcc !important;
+}

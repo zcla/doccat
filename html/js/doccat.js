@@ -19,6 +19,9 @@ function inicializa() {
 function loadHtml(arquivo, selector, callback) {
     $(selector).empty();
     $(selector).append('<div class="spinner-border" role="status">');
+    if (!arquivo.match('/')) {
+        $('<link href="css/' + arquivo.replace('.html', '') + '.css" rel="stylesheet">').appendTo("head");
+    }
     $(selector).load(arquivo, function(response, status, xhr) {
         switch (status) {
             case 'success':

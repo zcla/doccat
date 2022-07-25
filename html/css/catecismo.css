@@ -1,0 +1,138 @@
+#catecismo a {
+    color: #009;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#catecismo a:hover {
+    color: #006;
+    text-decoration: underline;
+}
+
+/*
+#catecismo #mestre td:nth-child(1) {
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 0;
+    text-overflow: ellipsis;
+}
+
+#catecismo #mestre td:nth-child(2) {
+    width: 0;
+}
+
+#catecismo #mestre td:nth-child(3) {
+    width: 0;
+}
+*/
+
+#catecismo #anotacoes {
+    background-color: #ddd;
+}
+
+#catecismo #anotacoes label {
+    font-style: italic;
+    font-weight: bold;
+}
+
+#catecismo #referencia {
+    background-color: #ddd;
+}
+
+#catecismo #referencia label {
+    font-style: italic;
+    font-weight: bold;
+}
+
+#catecismo .citacao {
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+#catecismo .notas {
+    border-top: 1px solid #999;
+}
+
+#catecismo .numero {
+    font-weight: bold;
+}
+
+#catecismo .paragrafo {
+    text-align: right;
+}
+
+#catecismo .paragrafos {
+    text-align: center;
+}
+
+#catecismo .paragrafos a {
+    background-color: #36c;
+    border-radius: 0.5em;
+    color: #fff;
+    font-size: 0.8em;
+    padding: 0.2em 0.5em;
+}
+
+#catecismo .selecionado {
+    background-color: #ccf;
+}
+
+#catecismo .texto {
+    font-size: 16px;
+}
+
+#catecismo .titulo1,
+#catecismo .titulo2,
+#catecismo .titulo3,
+#catecismo .titulo4,
+#catecismo .titulo5,
+#catecismo .titulo6 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Indentação */
+
+#catecismo .indent1 {
+    padding-left: 20px !important;
+}
+
+#catecismo .indent2 {
+    padding-left: 40px !important;
+}
+
+#catecismo .indent3 {
+    padding-left: 60px !important;
+}
+
+#catecismo .indent4 {
+    padding-left: 80px !important;
+}
+
+#catecismo .indent5 {
+    padding-left: 100px !important;
+}
+
+/*
+#catecismo .indent6 {
+    padding-left: 120px !important;
+}
+*/
+
+#catecismo .navegador {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+#catecismo .navegador a {
+    background-color: #36c;
+    border-radius: 0.5em;
+    color: #fff;
+    font-size: 0.8em;
+    margin: 1em;
+    padding: 0.2em 0.5em;
+}
+
+#catecismo .referencia {
+    font-style: italic;
+}
