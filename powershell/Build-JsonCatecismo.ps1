@@ -42,4 +42,4 @@ $grupos | ForEach-Object {
     }
     $ultGrupo = $_
 }
-$estrutura | ConvertTo-Json -Depth 100 | Out-File "$prjPath\html\json\catecismo.json"
+$estrutura | ConvertTo-Json -Depth 100 -Compress | Out-File "$prjPath\html\json\catecismo.json"
