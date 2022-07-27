@@ -144,11 +144,11 @@ class Catecismo {
         if (params.grupo) {
             estruturaClasses = [ 'col-6' ];
             grupoTextoReferenciaClasses = [ 'col-6' ];
-            $('#mestre a[href="?pagina=catecismo&grupo=' + params.grupo + '"]').parent().parent().addClass('selecionado');
+            $('#estrutura a[href="?pagina=catecismo&grupo=' + params.grupo + '"]').parent().parent().addClass('selecionado');
             if (params.cic) {
-                estruturaClasses = [ 'col-4' ];
-                grupoTextoReferenciaClasses = [ 'col-5' ];
-                anotacoesPreviewClasses = [ 'col-3' ];
+                estruturaClasses = [ 'col-2', 'tresColunas' ];
+                grupoTextoReferenciaClasses = [ 'col-6' ];
+                anotacoesPreviewClasses = [ 'col-4' ];
             }
             loadHtml('catecismo/' + params.grupo, '#grupo', function() {
                 if (params.cic) {
