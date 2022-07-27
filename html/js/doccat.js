@@ -92,10 +92,47 @@ class DocCat {
     }
 }
 
+class Storage {
+    static export() {
+        const result = {};
+        for (var key in localStorage){
+            result[key] = localStorage[key];
+        }
+        console.log(result);
+    }
+
+    static import() {
+
+    }
+
+    static getItem(key) {
+        try {
+            return localStorage[key];
+        } catch {
+            return null;
+        }
+    }
+
+    static setItem(key, val) {
+        if (val) {
+            localStorage[key] = val;
+        } else {
+            localStorage.removeItem(key);
+        }
+    }
+}
+
 class Catecismo {
     static json = null;
     static #cic2grupo = null;
     static #cicEmOrdem = null;
+
+    static anotacoesOnInput() {
+        const key = 'catecismo.' + $('#texto div')[0].id;
+        const val = $('#anotacoes textarea').val();
+        Storage.setItem(key, val);
+        $('#preview').html(marked.parse(val));
+    }
 
     static cic2grupo(cic) {
         if (!this.#cic2grupo) {
@@ -164,6 +201,7 @@ class Catecismo {
                             navegador.append($('<ref-cic name="' + posterior + '">&#129094;</ref-cic>'));
                         }
                         $('#texto').append(navegador);
+                        $('#anotacoes textarea').val(Storage.getItem('catecismo.cic_' + params.cic));
                         DocCat.refReplace("#grupo");
                     });
                 }
