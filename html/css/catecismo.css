@@ -9,23 +9,6 @@
     text-decoration: underline;
 }
 
-/*
-#catecismo #mestre td:nth-child(1) {
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 0;
-    text-overflow: ellipsis;
-}
-
-#catecismo #mestre td:nth-child(2) {
-    width: 0;
-}
-
-#catecismo #mestre td:nth-child(3) {
-    width: 0;
-}
-*/
-
 #catecismo #anotacoes {
     background-color: #ddd;
 }

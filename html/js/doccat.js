@@ -138,8 +138,18 @@ class Catecismo {
     }
 
     static montaPagina(params) {
+        let estruturaClasses = [ 'col-12' ];
+        let grupoTextoReferenciaClasses = [ 'd-none' ];
+        let anotacoesPreviewClasses = [ 'd-none' ];
         if (params.grupo) {
+            estruturaClasses = [ 'col-6' ];
+            grupoTextoReferenciaClasses = [ 'col-6' ];
             $('#mestre a[href="?pagina=catecismo&grupo=' + params.grupo + '"]').parent().parent().addClass('selecionado');
+            if (params.cic) {
+                estruturaClasses = [ 'col-4' ];
+                grupoTextoReferenciaClasses = [ 'col-5' ];
+                anotacoesPreviewClasses = [ 'col-3' ];
+            }
             loadHtml('catecismo/' + params.grupo, '#grupo', function() {
                 if (params.cic) {
                     $('#grupo a[href^="?pagina=catecismo"][href$="&cic=' + params.cic + '"]').parent().parent().addClass('selecionado');
@@ -159,6 +169,12 @@ class Catecismo {
                 }
             });
         }
+        $('#estrutura').removeClass();
+        estruturaClasses.forEach(function(className) { $('#estrutura').addClass(className) });
+        $('#grupoTextoReferencia').removeClass();
+        grupoTextoReferenciaClasses.forEach(function(className) { $('#grupoTextoReferencia').addClass(className) });
+        $('#anotacoesPreview').removeClass();
+        anotacoesPreviewClasses.forEach(function(className) { $('#anotacoesPreview').addClass(className) });
     }
 
     // Mostra o texto como referência
