@@ -27,9 +27,24 @@
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Estudos</a>
-							<ul class="dropdown-menu" aria-labelledby="dropdownAgenda">
+							<ul class="dropdown-menu">
 								<li><a class="dropdown-item" href="?pagina=biblias">Bíblias</a></li>
 								<li><a class="dropdown-item" href="?pagina=tribos">Tribos de Israel</a></li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="storageUploadSpinner" class="navbar-nav mb-2 mb-sm-0 text-end d-none">
+						<div class="spinner-border spinner-border-sm" role="status" style="color: #fff;"></div>
+					</ul>
+					<ul id="storageUpload" class="navbar-nav mb-2 mb-sm-0 text-end d-none">
+						<input class="form-control form-control-sm" id="formFileSm" type="file" onchange="javascript:Storage.importarOnChange();">
+					</ul>
+					<ul id="storageMenu" class="navbar-nav mb-2 mb-sm-0 text-end">
+						<li class="nav-item dropdown">
+							<a class="d-block nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Anotações</a>
+							<ul class="dropdown-menu text-small">
+								<li><a class="dropdown-item" onclick="javascript:Storage.exportar();">Exportar</a></li>
+								<li><a class="dropdown-item" onclick="javascript:Storage.importar();">Importar</a></li>
 							</ul>
 						</li>
 					</ul>

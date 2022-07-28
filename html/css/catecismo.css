@@ -35,6 +35,16 @@
     font-weight: bold;
 }
 
+#catecismo #preview {
+    background-color: #ddd;
+}
+
+#catecismo #preview tr,
+#catecismo #preview th,
+#catecismo #preview td {
+    border: 1px solid #666;
+}
+
 #catecismo #referencia {
     background-color: #ddd;
 }

@@ -1,6 +1,15 @@
 "use strict";
 
 class Utils {
+    static downloadString(str, fileName) {
+        const downloader = document.createElement('a');
+        downloader.style.display = 'none';
+        downloader.href = 'data:attachment/text,' + encodeURIComponent(str);
+        downloader.target = '_blank';
+        downloader.download = fileName;
+        downloader.click();
+    }
+
     static getUrlParams() {
         const paramArray = location.search.replace('?', '').split('&');
         const result = {};
@@ -70,6 +79,7 @@ class DocCat {
                 }
             });
         }
+        Storage.updateMenu();
     }
     
     static refReplace(selector) {
@@ -93,16 +103,37 @@ class DocCat {
 }
 
 class Storage {
-    static export() {
+    static exportar() {
         const result = {};
         for (var key in localStorage){
             result[key] = localStorage[key];
         }
-        console.log(result);
+        Utils.downloadString(JSON.stringify(result), 'doccat.anotacoes.json');
     }
 
-    static import() {
+    static importar() {
+        $('#storageUpload').removeClass('d-none');
+    }
 
+    static importarOnChange(evt) {
+        $('#storageUpload').addClass('d-none');
+        $('#storageUploadSpinner').removeClass('d-none');
+        const file = $('#storageUpload input')[0].files[0];
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const result = JSON.parse(event.target.result);
+            for (var key in result){
+                if (key == 'length') {
+                    continue;
+                }
+                console.log(result[key]);
+                Storage.setItem(key, result[key]);
+            }
+            $('#storageUploadSpinner').addClass('d-none');
+            $('#storageUpload input').val(null);
+            window.location.reload();
+        }
+        reader.readAsText(file);
     }
 
     static getItem(key) {
@@ -119,6 +150,11 @@ class Storage {
         } else {
             localStorage.removeItem(key);
         }
+        Storage.updateMenu();
+    }
+    
+    static updateMenu() {
+        $($('#storageMenu a')[0]).text('Anotações (' + localStorage.length + ')');
     }
 }
 
@@ -132,6 +168,7 @@ class Catecismo {
         const val = $('#anotacoes textarea').val();
         Storage.setItem(key, val);
         $('#preview').html(marked.parse(val));
+        DocCat.refReplace("#preview");
     }
 
     static cic2grupo(cic) {
@@ -202,6 +239,7 @@ class Catecismo {
                         }
                         $('#texto').append(navegador);
                         $('#anotacoes textarea').val(Storage.getItem('catecismo.cic_' + params.cic));
+                        Catecismo.anotacoesOnInput();
                         DocCat.refReplace("#grupo");
                     });
                 }
