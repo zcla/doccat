@@ -238,9 +238,9 @@ class Catecismo {
                             navegador.append($('<ref-cic name="' + posterior + '">&#129094;</ref-cic>'));
                         }
                         $('#texto').append(navegador);
+						DocCat.refReplace("#grupo");
                         $('#anotacoes textarea').val(Storage.getItem('catecismo.cic_' + params.cic));
                         Catecismo.anotacoesOnInput();
-                        DocCat.refReplace("#grupo");
                     });
                 }
             });
