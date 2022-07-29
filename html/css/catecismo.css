@@ -9,6 +9,10 @@
     text-decoration: underline;
 }
 
+#catecismo #estrutura p {
+    margin-bottom: 0%;
+}
+
 #catecismo #estrutura.tresColunas {
     font-size: 12px;
 }
