@@ -39,6 +39,16 @@
     padding: 0.2em 0.5em;
 }
 
+#documento #preview {
+    background-color: #ddd;
+}
+
+#documento #preview tr,
+#documento #preview th,
+#documento #preview td {
+    border: 1px solid #666;
+}
+
 #documento .selecionado {
     background-color: #ccf;
 }
