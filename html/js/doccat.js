@@ -173,7 +173,7 @@ class Catecismo {
     static #cicEmOrdem = null;
 
     static anotacoesOnInput() {
-        const key = 'catecismo.' + $('#texto div')[0].id;
+        const key = 'catecismo.' + $('#texto div')[0].id; // TODO Usar URL
         const val = $('#anotacoes textarea').val();
         Storage.setItem(key, val);
         $('#preview').html(marked.parse(val));
@@ -249,7 +249,7 @@ class Catecismo {
                             }
                             $('#texto').append(navegador);
                             DocCat.refReplace("#grupo");
-                            $('#anotacoes textarea').val(Storage.getItem('catecismo.cic_' + params.cic));
+                            $('#anotacoes textarea').val(Storage.getItem('catecismo.cic_' + params.cic)); // TODO Usar URL
                             Catecismo.anotacoesOnInput();
                         });
                     }
@@ -314,7 +314,8 @@ class Documento {
         // TODO Não está funcionando
         const key = 'documento.' + $('#texto div')[0].id;
         const val = $('#anotacoes textarea').val();
-        Storage.setItem(key, val);
+        Storage.setItem(key, val); // TODO Usar URL
+        // TODO Não está carregando o que está gravado
         $('#preview').html(marked.parse(val));
         DocCat.refReplace("#preview");
     }

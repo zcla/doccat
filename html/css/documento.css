@@ -47,6 +47,11 @@
     font-size: 16px;
 }
 
+#documento .titulo1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .tipodocumento-cartaapostolica {
     background-color: #009;
 }
