@@ -1,0 +1,45 @@
+<div id="documentoLista">
+	<div class="row">
+		<div>
+			<table class="table table-sm table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>Data</th>
+						<th>Documento</th>
+						<th>Autor</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>29/06/2022</td>
+						<td>
+							<a href="?pagina=documento&nome=DesiderioDesideravi">Desiderio Desideravi</a>
+							<span class="badge float-end tipodocumento-cartaapostolica">Carta apostólica</span>
+						</td>
+						<td>Papa Francisco</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<div id="documento">
+	<div class="row">
+		<div id="estrutura" class="col-4">
+		</div>
+		<div id="textoReferencia" class="col-5">
+			<div id="texto">
+			</div>
+			<div id="referencia">
+			</div>
+		</div>
+		<div id="anotacoesPreview" class="col-3">
+			<div id="anotacoes">
+				<label class="form-label" title="Você pode usar Markdown e HTML aqui">Anotações</label>
+				<textarea class="form-control" rows="20" oninput="Documento.anotacoesOnInput();"></textarea>
+			</div>
+			<div id="preview" class="mt-4">
+			</div>
+		</div>
+	</div>
+</div>

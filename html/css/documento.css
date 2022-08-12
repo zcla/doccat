@@ -1,0 +1,35 @@
+#documento #estrutura.tresColunas {
+    font-size: 12px;
+}
+
+#documento .notas {
+    border-top: 1px solid #999;
+}
+
+#documento .numero {
+    font-weight: bold;
+}
+
+#documento .paragrafos {
+    text-align: center;
+}
+
+#documento .paragrafos a {
+    background-color: #36c;
+    border-radius: 0.5em;
+    color: #fff;
+    font-size: 0.8em;
+    padding: 0.2em 0.5em;
+}
+
+#documento .selecionado {
+    background-color: #ccf;
+}
+
+#documento .texto {
+    font-size: 16px;
+}
+
+#documentoLista .tipodocumento-cartaapostolica {
+    background-color: #009;
+}

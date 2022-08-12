@@ -66,18 +66,20 @@ class DocCat {
         // Trata parâmetros na URL
         const params = Utils.getUrlParams();
         if (params.pagina) {
-            Utils.loadHtml(params.pagina + '.html', '#doccat', function() {
-                switch (params.pagina) {
-                    case 'catecismo':
-                        Catecismo.montaPagina(params);
-                        break;
-                    case 'tribos':
-                        // Nada
-                        break;
-                    default:
-                        break;
-                }
-            });
+            switch (params.pagina) {
+                case 'catecismo':
+                    Catecismo.montaPagina(params);
+                    break;
+                case 'documento':
+                    // TODO Está carregando a página errada acima, e depois a certa por cima.
+                    Documento.montaPagina(params);
+                    break;
+                case 'tribos':
+                    // Nada
+                    break;
+                default:
+                    throw "Página desconhecida";
+            }
         }
         Storage.updateMenu();
     }
@@ -97,6 +99,13 @@ class DocCat {
                 const grupo = Catecismo.cic2grupo(name);
                 replacement = $('<a href="?pagina=catecismo&grupo=' + grupo + '&cic=' + name + '">').append(this.innerHTML);
             }
+            $(this).replaceWith(replacement);
+        });
+
+        $('ref-doc').each(function() {
+            const doc = $(this).attr('nome');
+            const paragrafo = this.innerText;
+            const replacement = $('<a href="?pagina=documento&nome=' + doc + '&paragrafo=' + paragrafo + '">').append(this.innerHTML);
             $(this).replaceWith(replacement);
         });
     }
@@ -212,45 +221,47 @@ class Catecismo {
     }
 
     static montaPagina(params) {
-        let estruturaClasses = [ 'col-12' ];
-        let grupoTextoReferenciaClasses = [ 'd-none' ];
-        let anotacoesPreviewClasses = [ 'd-none' ];
-        if (params.grupo) {
-            estruturaClasses = [ 'col-6' ];
-            grupoTextoReferenciaClasses = [ 'col-6' ];
-            $('#estrutura a[href="?pagina=catecismo&grupo=' + params.grupo + '"]').parent().parent().addClass('selecionado');
-            if (params.cic) {
-                estruturaClasses = [ 'col-2', 'tresColunas' ];
+        Utils.loadHtml('catecismo.html', '#doccat', function() {
+            let estruturaClasses = [ 'col-12' ];
+            let grupoTextoReferenciaClasses = [ 'd-none' ];
+            let anotacoesPreviewClasses = [ 'd-none' ];
+            if (params.grupo) {
+                estruturaClasses = [ 'col-6' ];
                 grupoTextoReferenciaClasses = [ 'col-6' ];
-                anotacoesPreviewClasses = [ 'col-4' ];
-            }
-            Utils.loadHtml('catecismo/' + params.grupo, '#grupo', function() {
+                $('#estrutura a[href="?pagina=catecismo&grupo=' + params.grupo + '"]').parent().parent().addClass('selecionado');
                 if (params.cic) {
-                    $('#grupo a[href^="?pagina=catecismo"][href$="&cic=' + params.cic + '"]').parent().parent().addClass('selecionado');
-                    Utils.loadHtml('catecismo/' + params.grupo + '/cic_' + params.cic + '.html', '#texto', function() {
-                        const navegador = $('<div class="navegador">');
-                        const anterior = Catecismo.cicAnterior(params.cic);
-                        if (anterior != null) {
-                            navegador.append($('<ref-cic name="' + anterior + '">&#129092;</ref-cic>'));
-                        }
-                        const posterior = Catecismo.cicPosterior(params.cic);
-                        if (posterior != null) {
-                            navegador.append($('<ref-cic name="' + posterior + '">&#129094;</ref-cic>'));
-                        }
-                        $('#texto').append(navegador);
-						DocCat.refReplace("#grupo");
-                        $('#anotacoes textarea').val(Storage.getItem('catecismo.cic_' + params.cic));
-                        Catecismo.anotacoesOnInput();
-                    });
+                    estruturaClasses = [ 'col-2', 'tresColunas' ];
+                    grupoTextoReferenciaClasses = [ 'col-6' ];
+                    anotacoesPreviewClasses = [ 'col-4' ];
                 }
-            });
-        }
-        $('#estrutura').removeClass();
-        estruturaClasses.forEach(function(className) { $('#estrutura').addClass(className) });
-        $('#grupoTextoReferencia').removeClass();
-        grupoTextoReferenciaClasses.forEach(function(className) { $('#grupoTextoReferencia').addClass(className) });
-        $('#anotacoesPreview').removeClass();
-        anotacoesPreviewClasses.forEach(function(className) { $('#anotacoesPreview').addClass(className) });
+                Utils.loadHtml('catecismo/' + params.grupo, '#grupo', function() { // TODO Está carregando duas vezes o grupo, sei lá por quê.
+                    if (params.cic) {
+                        $('#grupo a[href^="?pagina=catecismo"][href$="&cic=' + params.cic + '"]').parent().parent().addClass('selecionado');
+                        Utils.loadHtml('catecismo/' + params.grupo + '/cic_' + params.cic + '.html', '#texto', function() {
+                            const navegador = $('<div class="navegador">');
+                            const anterior = Catecismo.cicAnterior(params.cic);
+                            if (anterior != null) {
+                                navegador.append($('<ref-cic name="' + anterior + '">&#129092;</ref-cic>'));
+                            }
+                            const posterior = Catecismo.cicPosterior(params.cic);
+                            if (posterior != null) {
+                                navegador.append($('<ref-cic name="' + posterior + '">&#129094;</ref-cic>'));
+                            }
+                            $('#texto').append(navegador);
+                            DocCat.refReplace("#grupo");
+                            $('#anotacoes textarea').val(Storage.getItem('catecismo.cic_' + params.cic));
+                            Catecismo.anotacoesOnInput();
+                        });
+                    }
+                });
+            }
+            $('#estrutura').removeClass();
+            estruturaClasses.forEach(function(className) { $('#estrutura').addClass(className) });
+            $('#grupoTextoReferencia').removeClass();
+            grupoTextoReferenciaClasses.forEach(function(className) { $('#grupoTextoReferencia').addClass(className) });
+            $('#anotacoesPreview').removeClass();
+            anotacoesPreviewClasses.forEach(function(className) { $('#anotacoesPreview').addClass(className) });
+        });
     }
 
     // Mostra o texto como referência
@@ -295,6 +306,66 @@ class Catecismo {
                 throw "Referência inválida."
                 break;
         }
+    }
+}
+
+class Documento {
+    static anotacoesOnInput() {
+        // TODO Não está funcionando
+        const key = 'documento.' + $('#texto div')[0].id;
+        const val = $('#anotacoes textarea').val();
+        Storage.setItem(key, val);
+        $('#preview').html(marked.parse(val));
+        DocCat.refReplace("#preview");
+    }
+
+    static montaPagina(params) {
+        Utils.loadHtml('documento.html', '#doccat', function() {
+            // if (params.nome) {
+            //     Utils.loadHtml(params.pagina + '/' + params.nome + '.html', '#doccat');
+            // }
+
+            let estruturaClasses = [ 'col-12' ];
+            let textoReferenciaClasses = [ 'd-none' ];
+            let anotacoesPreviewClasses = [ 'd-none' ];
+            if (params.nome) {
+                $('#documentoLista').empty();
+                // TODO Adicionar os dados do documento
+                Utils.loadHtml('documento/' + params.nome, '#estrutura', function() { // TODO Está carregando duas vezes o documento, sei lá por quê.
+                    if (params.paragrafo) {
+                        $('#estrutura a[href^="?pagina=documento&nome=' + params.nome + '"][href$="&paragrafo=' + params.paragrafo + '"]').parent().parent().addClass('selecionado');
+                        Utils.loadHtml('documento/' + params.nome + '/' + params.paragrafo + '.html', '#texto', function() {
+            //                 const navegador = $('<div class="navegador">');
+            //                 const anterior = Catecismo.cicAnterior(params.cic);
+            //                 if (anterior != null) {
+            //                     navegador.append($('<ref-cic name="' + anterior + '">&#129092;</ref-cic>'));
+            //                 }
+            //                 const posterior = Catecismo.cicPosterior(params.cic);
+            //                 if (posterior != null) {
+            //                     navegador.append($('<ref-cic name="' + posterior + '">&#129094;</ref-cic>'));
+            //                 }
+            //                 $('#texto').append(navegador);
+            // 				DocCat.refReplace("#grupo");
+            //                 $('#anotacoes textarea').val(Storage.getItem('catecismo.cic_' + params.cic));
+            //                 Catecismo.anotacoesOnInput();
+                        });
+                    }
+                });
+                //     }
+                if (params.paragrafo) {
+                    estruturaClasses = [ 'col-3', 'tresColunas' ];
+                    textoReferenciaClasses = [ 'col-5' ];
+                    anotacoesPreviewClasses = [ 'col-4' ];
+                    $('#estrutura a[href="?pagina=documento&nome=' + params.nome + '"]').parent().parent().addClass('selecionado');
+                }
+            }
+            $('#estrutura').removeClass();
+            estruturaClasses.forEach(function(className) { $('#estrutura').addClass(className) });
+            $('#textoReferencia').removeClass();
+            textoReferenciaClasses.forEach(function(className) { $('#textoReferencia').addClass(className) });
+            $('#anotacoesPreview').removeClass();
+            anotacoesPreviewClasses.forEach(function(className) { $('#anotacoesPreview').addClass(className) });
+        });
     }
 }
 
