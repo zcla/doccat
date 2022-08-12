@@ -321,37 +321,22 @@ class Documento {
 
     static montaPagina(params) {
         Utils.loadHtml('documento.html', '#doccat', function() {
-            // if (params.nome) {
-            //     Utils.loadHtml(params.pagina + '/' + params.nome + '.html', '#doccat');
-            // }
-
             let estruturaClasses = [ 'col-12' ];
             let textoReferenciaClasses = [ 'd-none' ];
             let anotacoesPreviewClasses = [ 'd-none' ];
             if (params.nome) {
+                const tds = $('#documentoLista a[href*="?pagina=' + params.pagina + '&nome=' + params.nome + '"]').parent().parent()[0].children;
+                $('#documentoNome').append(tds[1].children[0].innerText);
+                $('#documentoTipo').append(tds[1].children[1].innerText);
+                $('#documentoAutor').append(tds[2].innerText);
+                $('#documentoData').append(tds[0].innerText);
                 $('#documentoLista').empty();
-                // TODO Adicionar os dados do documento
                 Utils.loadHtml('documento/' + params.nome, '#estrutura', function() { // TODO Está carregando duas vezes o documento, sei lá por quê.
                     if (params.paragrafo) {
                         $('#estrutura a[href^="?pagina=documento&nome=' + params.nome + '"][href$="&paragrafo=' + params.paragrafo + '"]').parent().parent().addClass('selecionado');
-                        Utils.loadHtml('documento/' + params.nome + '/' + params.paragrafo + '.html', '#texto', function() {
-            //                 const navegador = $('<div class="navegador">');
-            //                 const anterior = Catecismo.cicAnterior(params.cic);
-            //                 if (anterior != null) {
-            //                     navegador.append($('<ref-cic name="' + anterior + '">&#129092;</ref-cic>'));
-            //                 }
-            //                 const posterior = Catecismo.cicPosterior(params.cic);
-            //                 if (posterior != null) {
-            //                     navegador.append($('<ref-cic name="' + posterior + '">&#129094;</ref-cic>'));
-            //                 }
-            //                 $('#texto').append(navegador);
-            // 				DocCat.refReplace("#grupo");
-            //                 $('#anotacoes textarea').val(Storage.getItem('catecismo.cic_' + params.cic));
-            //                 Catecismo.anotacoesOnInput();
-                        });
+                        Utils.loadHtml('documento/' + params.nome + '/' + params.paragrafo + '.html', '#texto');
                     }
                 });
-                //     }
                 if (params.paragrafo) {
                     estruturaClasses = [ 'col-3', 'tresColunas' ];
                     textoReferenciaClasses = [ 'col-5' ];
