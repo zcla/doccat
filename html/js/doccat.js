@@ -10,6 +10,10 @@ class Utils {
         downloader.click();
     }
 
+    static getUrlParam(param) {
+        return this.getUrlParams()[param];
+    }
+
     static getUrlParams() {
         const paramArray = location.search.replace('?', '').split('&');
         const result = {};
@@ -59,19 +63,20 @@ class Utils {
 
 class DocCat {
     static inicializa() {
-        $.getJSON("json/catecismo.json", function(data) {
-            Catecismo.json = data;
-        });
-
         // Trata parâmetros na URL
         const params = Utils.getUrlParams();
         if (params.pagina) {
             switch (params.pagina) {
                 case 'catecismo':
+                    $.getJSON("json/catecismo.json", function(data) {
+                        Catecismo.json = data;
+                    });
                     Catecismo.montaPagina(params);
                     break;
                 case 'documento':
-                    // TODO Está carregando a página errada acima, e depois a certa por cima.
+                    $.getJSON("json/documento.json", function(data) {
+                        Documento.json = data;
+                    });
                     Documento.montaPagina(params);
                     break;
                 case 'tribos':
@@ -104,7 +109,8 @@ class DocCat {
 
         $('ref-doc').each(function() {
             const doc = $(this).attr('nome');
-            const paragrafo = this.innerText;
+            let paragrafo = $(this).attr('paragrafo');
+            paragrafo = paragrafo ? paragrafo : this.innerText;
             const replacement = $('<a href="?pagina=documento&nome=' + doc + '&paragrafo=' + paragrafo + '">').append(this.innerHTML);
             $(this).replaceWith(replacement);
         });
@@ -173,8 +179,7 @@ class Catecismo {
     static #cicEmOrdem = null;
 
     static anotacoesOnInput() {
-        const urlParams = Utils.getUrlParams();
-        const key = 'catecismo.' + urlParams.cic;
+        const key = 'catecismo.' + Utils.getUrlParam('cic');
         const val = $('#anotacoes textarea').val();
         Storage.setItem(key, val);
         $('#preview').html(marked.parse(val));
@@ -311,6 +316,9 @@ class Catecismo {
 }
 
 class Documento {
+    static json = null;
+    static #paragrafoEmOrdem = null;
+
     static anotacoesOnInput() {
         const urlParams = Utils.getUrlParams();
         const key = 'documento.' + urlParams.nome + '.' + urlParams.paragrafo;
@@ -336,7 +344,20 @@ class Documento {
                     if (params.paragrafo) {
                         $('#estrutura a[href^="?pagina=documento&nome=' + params.nome + '"][href$="&paragrafo=' + params.paragrafo + '"]').parent().parent().addClass('selecionado');
                         Utils.loadHtml('documento/' + params.nome + '/' + params.paragrafo + '.html', '#texto', function() {
+                            const navegador = $('<div class="navegador">');
+                            const anterior = Documento.paragrafoAnterior(params.paragrafo);
+                            if (anterior != null) {
+                                navegador.append($('<ref-doc nome="' + params.nome + '" paragrafo="' + anterior + '">&#129092;</ref-paragrafo>'));
+                            }
+                            const posterior = Documento.paragrafoPosterior(params.paragrafo);
+                            if (posterior != null) {
+                                navegador.append($('<ref-doc nome="' + params.nome + '" paragrafo="' + posterior + '">&#129094;</ref-paragrafo>'));
+                            }
+                            $('#texto').append(navegador);
+                            // DocCat.refReplace("#grupo"); // TODO O que viria aqui?
+                            // TODO O navegador está desformatado
                             $('#anotacoes textarea').val(Storage.getItem('documento.' + params.nome + '.' + params.paragrafo));
+                            Documento.anotacoesOnInput();
                         });
                     }
                 });
@@ -354,6 +375,33 @@ class Documento {
             $('#anotacoesPreview').removeClass();
             anotacoesPreviewClasses.forEach(function(className) { $('#anotacoesPreview').addClass(className) });
         });
+    }
+
+    static paragrafoAnterior(paragrafo) {
+        const pos = this.paragrafoPosicao(paragrafo);
+        if (pos > 0) {
+            return this.#paragrafoEmOrdem[pos - 1];
+        }
+        return null;
+    }
+
+    static paragrafoPosicao(paragrafo) {
+        // TODO Precisa mesmo disso aqui?
+        if (!this.#paragrafoEmOrdem) {
+            this.#paragrafoEmOrdem = [];
+            for (const paragrafo of this.json[Utils.getUrlParam('nome')].paragrafo) {
+                this.#paragrafoEmOrdem.push(paragrafo);
+            }
+        }
+        return this.#paragrafoEmOrdem.indexOf(paragrafo);
+    }
+
+    static paragrafoPosterior(paragrafo) {
+        const pos = this.paragrafoPosicao(paragrafo);
+        if (pos < this.#paragrafoEmOrdem.length) {
+            return this.#paragrafoEmOrdem[pos + 1];
+        }
+        return null;
     }
 }
 

@@ -19,6 +19,20 @@
     font-size: 12px;
 }
 
+#documento .navegador {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+#documento .navegador a {
+    background-color: #36c;
+    border-radius: 0.5em;
+    color: #fff;
+    font-size: 0.8em;
+    margin: 1em;
+    padding: 0.2em 0.5em;
+}
+
 #documento .notas {
     border-top: 1px solid #999;
 }
