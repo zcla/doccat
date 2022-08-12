@@ -173,7 +173,8 @@ class Catecismo {
     static #cicEmOrdem = null;
 
     static anotacoesOnInput() {
-        const key = 'catecismo.' + $('#texto div')[0].id; // TODO Usar URL
+        const urlParams = Utils.getUrlParams();
+        const key = 'catecismo.' + urlParams.cic;
         const val = $('#anotacoes textarea').val();
         Storage.setItem(key, val);
         $('#preview').html(marked.parse(val));
@@ -249,7 +250,7 @@ class Catecismo {
                             }
                             $('#texto').append(navegador);
                             DocCat.refReplace("#grupo");
-                            $('#anotacoes textarea').val(Storage.getItem('catecismo.cic_' + params.cic)); // TODO Usar URL
+                            $('#anotacoes textarea').val(Storage.getItem('catecismo.' + params.cic));
                             Catecismo.anotacoesOnInput();
                         });
                     }
@@ -311,11 +312,10 @@ class Catecismo {
 
 class Documento {
     static anotacoesOnInput() {
-        // TODO Não está funcionando
-        const key = 'documento.' + $('#texto div')[0].id;
+        const urlParams = Utils.getUrlParams();
+        const key = 'documento.' + urlParams.nome + '.' + urlParams.paragrafo;
         const val = $('#anotacoes textarea').val();
-        Storage.setItem(key, val); // TODO Usar URL
-        // TODO Não está carregando o que está gravado
+        Storage.setItem(key, val);
         $('#preview').html(marked.parse(val));
         DocCat.refReplace("#preview");
     }
@@ -335,7 +335,9 @@ class Documento {
                 Utils.loadHtml('documento/' + params.nome, '#estrutura', function() { // TODO Está carregando duas vezes o documento, sei lá por quê.
                     if (params.paragrafo) {
                         $('#estrutura a[href^="?pagina=documento&nome=' + params.nome + '"][href$="&paragrafo=' + params.paragrafo + '"]').parent().parent().addClass('selecionado');
-                        Utils.loadHtml('documento/' + params.nome + '/' + params.paragrafo + '.html', '#texto');
+                        Utils.loadHtml('documento/' + params.nome + '/' + params.paragrafo + '.html', '#texto', function() {
+                            $('#anotacoes textarea').val(Storage.getItem('documento.' + params.nome + '.' + params.paragrafo));
+                        });
                     }
                 });
                 if (params.paragrafo) {
