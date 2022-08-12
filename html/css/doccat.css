@@ -1,3 +1,14 @@
+#doccat a {
+    color: #009;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#doccat a:hover {
+    color: #006;
+    text-decoration: underline;
+}
+
 footer a {
     color: #fff;
     text-decoration: none;

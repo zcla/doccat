@@ -1,14 +1,3 @@
-#catecismo a {
-    color: #009;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-#catecismo a:hover {
-    color: #006;
-    text-decoration: underline;
-}
-
 #catecismo #estrutura p {
     margin-bottom: 0%;
 }
@@ -23,9 +12,11 @@
     max-width: 0;
     text-overflow: ellipsis;
 }
+
 #catecismo #estrutura.tresColunas td:nth-child(2) {
     width: 0;
 }
+
 #catecismo #estrutura.tresColunas td:nth-child(3) {
     width: 0;
 }
@@ -71,13 +62,13 @@
     font-weight: bold;
 }
 
-#catecismo .paragrafo {
-    text-align: right;
-}
-
 #catecismo .outroGrupo {
     color: #999;
     font-style: italic;
+}
+
+#catecismo .paragrafo {
+    text-align: right;
 }
 
 #catecismo .paragrafos {
