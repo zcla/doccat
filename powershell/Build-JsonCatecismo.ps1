@@ -20,7 +20,7 @@ $links | ForEach-Object {
     $grupos += $grupo
 }
 
-$estrutura = @()
+$result = @()
 $ultGrupo = $null
 $grupos | ForEach-Object {
     If ($_ -eq $ultGrupo) {
@@ -36,10 +36,11 @@ $grupos | ForEach-Object {
         }
         $grupo += $cic
     }
-    $estrutura += [ordered]@{
+    $result += [ordered]@{
         grupo = $_
         cic = $grupo
     }
     $ultGrupo = $_
 }
-$estrutura | ConvertTo-Json -Depth 100 -Compress | Out-File "$prjPath\html\json\catecismo.json"
+
+$result | ConvertTo-Json -Depth 100 -Compress | Out-File "$prjPath\html\json\catecismo.json"
