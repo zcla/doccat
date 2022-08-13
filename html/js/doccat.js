@@ -123,7 +123,7 @@ class Storage {
         for (var key in localStorage){
             result[key] = localStorage[key];
         }
-        Utils.downloadString(JSON.stringify(result), 'doccat.anotacoes.json');
+        Utils.downloadString(JSON.stringify(result), 'doccat.anotacoes.json'); // TODO Colocar data e hora no nome do arquivo.
     }
 
     static importar() {
