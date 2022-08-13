@@ -109,9 +109,12 @@ class DocCat {
 
         $('ref-doc').each(function() {
             const doc = $(this).attr('nome');
-            let paragrafo = $(this).attr('paragrafo');
-            paragrafo = paragrafo ? paragrafo : this.innerText;
-            const replacement = $('<a href="?pagina=documento&nome=' + doc + '&paragrafo=' + paragrafo + '">').append(this.innerHTML);
+            let hrefReplacement = '?pagina=documento&nome=' + doc;
+            const paragrafo = $(this).attr('paragrafo');
+            if (paragrafo) {
+                hrefReplacement += '&paragrafo=' + paragrafo;
+            }
+            const replacement = $('<a href="' + hrefReplacement + '">').append(this.innerHTML);
             $(this).replaceWith(replacement);
         });
     }
