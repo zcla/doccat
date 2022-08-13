@@ -97,12 +97,12 @@ class DocCat {
         });
     
         $('ref-cic').each(function() {
-            let name = $(this).attr('name');
-            name = name ? name : this.innerText;
-            let replacement = $('<a onclick="javascript:Catecismo.referencia(\'' + name + '\');">').append(this.innerHTML);
+            let numero = $(this).attr('numero');
+            numero = numero ? numero : this.innerText;
+            let replacement = $('<a onclick="javascript:Catecismo.referencia(\'' + numero + '\');">').append(this.innerHTML);
             if (selector == '#grupo') { // Se o link vier da barra de grupo, colocar na estrutura do texto
-                const grupo = Catecismo.cic2grupo(name);
-                replacement = $('<a href="?pagina=catecismo&grupo=' + grupo + '&cic=' + name + '">').append(this.innerHTML);
+                const grupo = Catecismo.cic2grupo(numero);
+                replacement = $('<a href="?pagina=catecismo&grupo=' + grupo + '&cic=' + numero + '">').append(this.innerHTML);
             }
             $(this).replaceWith(replacement);
         });
@@ -247,11 +247,11 @@ class Catecismo {
                             const navegador = $('<div class="navegador">');
                             const anterior = Catecismo.cicAnterior(params.cic);
                             if (anterior != null) {
-                                navegador.append($('<ref-cic name="' + anterior + '">&#129092;</ref-cic>'));
+                                navegador.append($('<ref-cic numero="' + anterior + '">&#129092;</ref-cic>'));
                             }
                             const posterior = Catecismo.cicPosterior(params.cic);
                             if (posterior != null) {
-                                navegador.append($('<ref-cic name="' + posterior + '">&#129094;</ref-cic>'));
+                                navegador.append($('<ref-cic numero="' + posterior + '">&#129094;</ref-cic>'));
                             }
                             $('#texto').append(navegador);
                             DocCat.refReplace("#grupo");
