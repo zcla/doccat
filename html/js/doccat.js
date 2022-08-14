@@ -337,39 +337,44 @@ class Documento {
             let textoReferenciaClasses = [ 'd-none' ];
             let anotacoesPreviewClasses = [ 'd-none' ];
             if (params.nome) {
-                const tds = $('#documentoLista a[href*="?pagina=' + params.pagina + '&nome=' + params.nome + '"]').parent().parent()[0].children;
-                $('#documentoNome').append(tds[1].children[0].innerText);
-                $('#documentoTipo').append(tds[1].children[1].innerText);
-                $('#documentoAutor').append(tds[2].innerText);
-                $('#documentoData').append(tds[0].innerText);
-                $('#documentoLista').empty();
-                Utils.loadHtml('documento/' + params.nome, '#estrutura', function() { // TODO Está carregando duas vezes o documento, sei lá por quê.
+                const a = $('#documentoLista a[href*="?pagina=' + params.pagina + '&nome=' + params.nome + '"]');
+                if (a.length) {
+                    const tds = a.parent().parent()[0].children;
+                    $('#documentoNome').append(tds[1].children[0].innerText);
+                    $('#documentoTipo').append(tds[1].children[1].innerText);
+                    $('#documentoAutor').append(tds[2].innerText);
+                    $('#documentoData').append(tds[0].innerText);
+                    Utils.loadHtml('documento/' + params.nome, '#estrutura', function() { // TODO Está carregando duas vezes o documento, sei lá por quê.
+                        if (params.paragrafo) {
+                            $('#estrutura a[href^="?pagina=documento&nome=' + params.nome + '"][href$="&paragrafo=' + params.paragrafo + '"]').parent().parent().addClass('selecionado');
+                            Utils.loadHtml('documento/' + params.nome + '/' + params.paragrafo + '.html', '#texto', function() {
+                                const navegador = $('<div class="navegador">');
+                                const anterior = Documento.paragrafoAnterior(params.paragrafo);
+                                if (anterior != null) {
+                                    navegador.append($('<ref-doc nome="' + params.nome + '" paragrafo="' + anterior + '">&#129092;</ref-paragrafo>'));
+                                }
+                                const posterior = Documento.paragrafoPosterior(params.paragrafo);
+                                if (posterior != null) {
+                                    navegador.append($('<ref-doc nome="' + params.nome + '" paragrafo="' + posterior + '">&#129094;</ref-paragrafo>'));
+                                }
+                                $('#texto').append(navegador);
+                                // DocCat.refReplace("#grupo"); // TODO O que viria aqui?
+                                // TODO O navegador está desformatado
+                                $('#anotacoes textarea').val(Storage.getItem('documento.' + params.nome + '.' + params.paragrafo));
+                                Documento.anotacoesOnInput();
+                            });
+                        }
+                    });
                     if (params.paragrafo) {
-                        $('#estrutura a[href^="?pagina=documento&nome=' + params.nome + '"][href$="&paragrafo=' + params.paragrafo + '"]').parent().parent().addClass('selecionado');
-                        Utils.loadHtml('documento/' + params.nome + '/' + params.paragrafo + '.html', '#texto', function() {
-                            const navegador = $('<div class="navegador">');
-                            const anterior = Documento.paragrafoAnterior(params.paragrafo);
-                            if (anterior != null) {
-                                navegador.append($('<ref-doc nome="' + params.nome + '" paragrafo="' + anterior + '">&#129092;</ref-paragrafo>'));
-                            }
-                            const posterior = Documento.paragrafoPosterior(params.paragrafo);
-                            if (posterior != null) {
-                                navegador.append($('<ref-doc nome="' + params.nome + '" paragrafo="' + posterior + '">&#129094;</ref-paragrafo>'));
-                            }
-                            $('#texto').append(navegador);
-                            // DocCat.refReplace("#grupo"); // TODO O que viria aqui?
-                            // TODO O navegador está desformatado
-                            $('#anotacoes textarea').val(Storage.getItem('documento.' + params.nome + '.' + params.paragrafo));
-                            Documento.anotacoesOnInput();
-                        });
+                        estruturaClasses = [ 'col-3', 'tresColunas' ];
+                        textoReferenciaClasses = [ 'col-5' ];
+                        anotacoesPreviewClasses = [ 'col-4' ];
+                        $('#estrutura a[href="?pagina=documento&nome=' + params.nome + '"]').parent().parent().addClass('selecionado');
                     }
-                });
-                if (params.paragrafo) {
-                    estruturaClasses = [ 'col-3', 'tresColunas' ];
-                    textoReferenciaClasses = [ 'col-5' ];
-                    anotacoesPreviewClasses = [ 'col-4' ];
-                    $('#estrutura a[href="?pagina=documento&nome=' + params.nome + '"]').parent().parent().addClass('selecionado');
+                } else {
+                    $('#documento').append($('<div class="alert alert-danger">').append('Documento "' + params.nome + '" não encontrado.'));
                 }
+                $('#documentoLista').empty();
             }
             $('#estrutura').removeClass();
             estruturaClasses.forEach(function(className) { $('#estrutura').addClass(className) });
