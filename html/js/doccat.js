@@ -359,7 +359,6 @@ class Documento {
                                 }
                                 $('#texto').append(navegador);
                                 // DocCat.refReplace("#grupo"); // TODO O que viria aqui?
-                                // TODO O navegador está desformatado
                                 $('#anotacoes textarea').val(Storage.getItem('documento.' + params.nome + '.' + params.paragrafo));
                                 Documento.anotacoesOnInput();
                             });
