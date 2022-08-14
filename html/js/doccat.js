@@ -44,6 +44,7 @@ class Utils {
                     break;
                     
                 case 'error':
+                    // TODO Fazer um script PowerShell pra identificar o que deveria existir, para distinguiar o que ainda não foi feito do que realmente não existe (se xhr.status for 404)
                     $(selector).empty();
                     $(selector)
                         .append($('<div class="alert alert-danger">')
@@ -371,6 +372,9 @@ class Documento {
                         $('#estrutura a[href="?pagina=documento&nome=' + params.nome + '"]').parent().parent().addClass('selecionado');
                     }
                 } else {
+                    // TODO Criar "banco" de links para documentos ainda não colocados aqui:
+                    // EvangeliiGaudium https://www.vatican.va/content/francesco/pt/apost_exhortations/documents/papa-francesco_esortazione-ap_20131124_evangelii-gaudium.html
+                    // TraditionisCustodes https://www.vatican.va/content/francesco/la/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html
                     $('#documento').append($('<div class="alert alert-danger">').append('Documento "' + params.nome + '" não encontrado.'));
                 }
                 $('#documentoLista').empty();
