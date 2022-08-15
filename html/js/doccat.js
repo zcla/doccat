@@ -110,12 +110,25 @@ class DocCat {
 
         $('ref-doc').each(function() {
             const doc = $(this).attr('nome');
-            let hrefReplacement = '?pagina=documento&nome=' + doc;
             const paragrafo = $(this).attr('paragrafo');
+            let replacement = $(this);
             if (paragrafo) {
-                hrefReplacement += '&paragrafo=' + paragrafo;
+                // Se o link for para um parágrafo...
+                if (selector == '#estrutura' || selector == '#textoNavegador') {
+                    // ...vai para a página do item
+                    let hrefReplacement = '?pagina=documento&nome=' + doc;
+                    hrefReplacement += '&paragrafo=' + paragrafo;
+                    replacement = $('<a href="' + hrefReplacement + '">').append(this.innerHTML);
+                } else {
+                    // ...coloca o conteúdo na área de referência
+                    let hrefReplacement = '?pagina=documento&nome=' + doc;
+                    hrefReplacement += '&paragrafo=' + paragrafo;
+                    replacement = $('<a onclick="javascript:Documento.referencia(\'' + doc + '\', \'' + paragrafo + '\');">').append(this.innerHTML);
+                }
+            } else {
+                // Se o link for para o documento, abre em uma outra aba
+                replacement = $('<a href="?pagina=documento&nome=' + doc + '" target="_blank">').append(this.innerHTML);
             }
-            const replacement = $('<a href="' + hrefReplacement + '">').append(this.innerHTML);
             $(this).replaceWith(replacement);
         });
     }
@@ -314,7 +327,6 @@ class Catecismo {
 
             default:
                 throw "Referência inválida."
-                break;
         }
     }
 }
@@ -349,7 +361,7 @@ class Documento {
                         if (params.paragrafo) {
                             $('#estrutura a[href^="?pagina=documento&nome=' + params.nome + '"][href$="&paragrafo=' + params.paragrafo + '"]').parent().parent().addClass('selecionado');
                             Utils.loadHtml('documento/' + params.nome + '/' + params.paragrafo + '.html', '#texto', function() {
-                                const navegador = $('<div class="navegador">');
+                                const navegador = $('<div id="textoNavegador" class="navegador">');
                                 const anterior = Documento.paragrafoAnterior(params.paragrafo);
                                 if (anterior != null) {
                                     navegador.append($('<ref-doc nome="' + params.nome + '" paragrafo="' + anterior + '">&#129092;</ref-paragrafo>'));
@@ -359,7 +371,7 @@ class Documento {
                                     navegador.append($('<ref-doc nome="' + params.nome + '" paragrafo="' + posterior + '">&#129094;</ref-paragrafo>'));
                                 }
                                 $('#texto').append(navegador);
-                                // DocCat.refReplace("#grupo"); // TODO O que viria aqui?
+                                DocCat.refReplace("#textoNavegador");
                                 $('#anotacoes textarea').val(Storage.getItem('documento.' + params.nome + '.' + params.paragrafo));
                                 Documento.anotacoesOnInput();
                             });
@@ -413,6 +425,31 @@ class Documento {
             return this.#paragrafoEmOrdem[pos + 1];
         }
         return null;
+    }
+
+    // Mostra o texto como referência
+    static referencia(documento, numero) {
+        if (this.json[documento]) {
+            const spl = numero.split('-');
+            switch (spl.length) {
+                case 1: {
+                    Utils.loadHtml('documento/' + documento + '/' + numero + '.html', '#referencia');
+                    break;
+                }
+
+                case 2:
+                    throw "Tratar referência de múltiplos números"
+                    break;
+
+                default:
+                    throw "Referência inválida."
+            }
+        } else {
+            $('#referencia').empty();
+            $('#referencia')
+                .append($('<div class="alert alert-danger">')
+                    .append("Documento não encontrado"));
+        }
     }
 }
 
