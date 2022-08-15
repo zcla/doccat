@@ -28,6 +28,11 @@
     font-size: 12px;
 }
 
+#documento .citacao {
+    font-size: 14px;
+    padding-left: 20px;
+}
+
 #documento .navegador {
     margin-bottom: 1em;
     text-align: center;
