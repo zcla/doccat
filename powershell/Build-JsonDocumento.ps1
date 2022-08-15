@@ -24,8 +24,9 @@ $documentos | ForEach-Object {
         $paragrafo = $_.InnerText
         $documento += $paragrafo
     }
-    $result[$docName] = [ordered]@{
-        paragrafo = $documento
+    $result[$docName] = [ordered]@{}
+    if ($documento) {
+        $result[$docName].paragrafo = $documento
     }
 }
 

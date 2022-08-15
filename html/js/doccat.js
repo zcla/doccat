@@ -384,10 +384,11 @@ class Documento {
                         $('#estrutura a[href="?pagina=documento&nome=' + params.nome + '"]').parent().parent().addClass('selecionado');
                     }
                 } else {
-                    // TODO Criar "banco" de links para documentos ainda não colocados aqui:
-                    // EvangeliiGaudium https://www.vatican.va/content/francesco/pt/apost_exhortations/documents/papa-francesco_esortazione-ap_20131124_evangelii-gaudium.html
-                    // TraditionisCustodes https://www.vatican.va/content/francesco/la/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html
-                    $('#documento').append($('<div class="alert alert-danger">').append('Documento "' + params.nome + '" não encontrado.'));
+                    if (Documento.json[params.nome]) {
+                        Utils.loadHtml('documento/' + params.nome, '#estrutura');
+                    } else {
+                        $('#documento').append($('<div class="alert alert-danger">').append('Documento "' + params.nome + '" não encontrado.'));
+                    }
                 }
                 $('#documentoLista').empty();
             }
@@ -412,7 +413,7 @@ class Documento {
         // TODO Precisa mesmo disso aqui?
         if (!this.#paragrafoEmOrdem) {
             this.#paragrafoEmOrdem = [];
-            for (const paragrafo of this.json[Utils.getUrlParam('nome')].paragrafo) {
+            for (const paragrafo of Documento.json[Utils.getUrlParam('nome')].paragrafo) {
                 this.#paragrafoEmOrdem.push(paragrafo);
             }
         }
