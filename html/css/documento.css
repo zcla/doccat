@@ -77,6 +77,15 @@
     border: 1px solid #666;
 }
 
+#documento #referencia {
+    background-color: #ddd;
+}
+
+#documento #referencia label {
+    font-style: italic;
+    font-weight: bold;
+}
+
 #documento .selecionado {
     background-color: #ccf;
 }
