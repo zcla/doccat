@@ -100,5 +100,29 @@
 }
 
 .tipodocumento-cartaapostolica {
-    background-color: #009;
+    background-color: #a09600;
+}
+
+.tipodocumento-cartaenciclica {
+    background-color: #985006;
+}
+
+.tipodocumento-constituicaoapostolica {
+    background-color: #94070a;
+}
+
+.tipodocumento-constituicaoconciliar {
+    background-color: #680059;
+}
+
+.tipodocumento-constituicaodogmatica {
+    background-color: #0d1f63;
+}
+
+.tipodocumento-constituicaopastoral {
+    background-color: #006d6f;
+}
+
+.tipodocumento-exortacaoapostolica {
+    background-color: #407927;
 }
