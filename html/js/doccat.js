@@ -354,9 +354,15 @@ class Documento {
                 if (a.length) {
                     const tds = a.parent().parent()[0].children;
                     $('#documentoNome').append(tds[1].children[0].innerText);
-                    $('#documentoTipo').append(tds[1].children[1].innerText);
-                    $('#documentoAutor').append(tds[2].innerText);
-                    $('#documentoData').append(tds[0].innerText);
+                    if (tds[1].children.length > 1) {
+                        $('#documentoTipo').append(tds[1].children[1].innerText);
+                    }
+                    if (tds[2].innerText != '-') {
+                        $('#documentoAutor').append(tds[2].innerText);
+                    }
+                    if (tds[0].innerText != '-') {
+                        $('#documentoData').append(tds[0].innerText);
+                    }
                     Utils.loadHtml('documento/' + params.nome, '#estrutura', function() { // TODO Está carregando duas vezes o documento, sei lá por quê.
                         if (params.paragrafo) {
                             $('#estrutura a[href^="?pagina=documento&nome=' + params.nome + '"][href$="&paragrafo=' + params.paragrafo + '"]').parent().parent().addClass('selecionado');
