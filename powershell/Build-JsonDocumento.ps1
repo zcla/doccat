@@ -16,7 +16,7 @@ $result = [ordered]@{}
 $documentos | ForEach-Object {
     $docName = $_.Name
     $path = "$pathDocumentos\$docName\index.html"
-    Write-Host "$docName" -ForegroundColor Cyan
+    Write-Host "  $docName" -ForegroundColor Cyan
     $html = ConvertFrom-Html -Path "$path"
     $refs = $html.SelectNodes('//ref-doc[@nome="' + $docName + '"]')
     $documento = @()
