@@ -127,7 +127,9 @@ class DocCat {
                 }
             } else {
                 // Se o link for para o documento, abre em uma outra aba
-                replacement = $('<a href="?pagina=documento&nome=' + doc + '" target="_blank">').append(this.innerHTML);
+                replacement = $('<a href="?pagina=documento&nome=' + doc + '" target="_blank">')
+                    .append(this.innerHTML)
+                    .append('<img class="align-text-bottom" src="img/linkExterno.png">');
             }
             $(this).replaceWith(replacement);
         });
