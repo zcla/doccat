@@ -439,7 +439,7 @@ class Documento {
                 }
 
                 case 2:
-                    throw "Tratar referência de múltiplos números"
+                    throw "Tratar referência de múltiplos números"// TODO
                     break;
 
                 default:
