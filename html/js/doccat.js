@@ -80,8 +80,9 @@ class DocCat {
                     });
                     Documento.montaPagina(params);
                     break;
+                case 'biblias':
                 case 'tribos':
-                    // Nada
+                    Utils.loadHtml(params.pagina + '.html', '#doccat');
                     break;
                 default:
                     throw "Página desconhecida";
