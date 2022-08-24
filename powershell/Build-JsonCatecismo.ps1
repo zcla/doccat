@@ -5,7 +5,7 @@ $prjPath = ((Get-Item $MyInvocation.MyCommand.Path).Directory.Parent.FullName)
 Clear-Host
 
 Write-Host "Inicializando" -ForegroundColor Cyan
-.\Import-PowerHTML.ps1
+.\Import-ModulePowerHTML.ps1
 
 $pathCatecismo = "$prjPath\html\catecismo"
 
