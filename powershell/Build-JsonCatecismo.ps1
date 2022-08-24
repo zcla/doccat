@@ -30,7 +30,7 @@ $grupos | ForEach-Object {
     $refs = $html.SelectNodes('//ref-cic')
     $grupo = @()
     $refs | ForEach-Object {
-        $cic = $_.Attributes['name'].Value
+        $cic = $_.Attributes['numero'].Value
         If (-not $cic) {
             $cic = $_.InnerText
         }
