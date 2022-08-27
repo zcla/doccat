@@ -138,13 +138,18 @@ If (Test-Path $fileName) {
                             If ($child.Name -eq 'i') {
                                 $texto = "<i>$texto</i>"
                             }
+
                             $numVersiculo = ''
-                            If ($texto -match '^\(?\d{1,3}[a-z]?\)? ') {
+                            If ($texto -match '^\(?\d{1,3}[a-z]{0,2}\)?( |\\r\\n)') {
                                 $numVersiculo = $texto.Split(' ')[0]
                                 $texto = $texto.Substring($numVersiculo.Length).Trim()
                             }
+                            If ($texto -match '^\d{1,3}$') {
+                                $numVersiculo = $texto
+                                $texto = ''
+                            }
 
-                            # >>> Gambiarras por defeitos no texto >>>
+                            # >>> Gambiarras por características ou defeitos na fonte >>>
                             $sigCap = "$sigla $numCapitulo"
                             # Textos com o primeiro versículo sem número
                             If (@('Br 6', 'Jz 19', 'Nm 1') -contains $sigCap) {
@@ -165,8 +170,7 @@ If (Test-Path $fileName) {
                                     }
                                 }
                             }
-                            # TODO Muitas gambiarras pendentes; procuar "*" no Biblia_vatican.va_lt.json
-                            # <<< Gambiarras por defeitos no texto <<<
+                            # <<< Gambiarras por características ou defeitos na fonte <<<
                             
                             If ($numVersiculo) {
                                 If ($numVersiculo -match '^\(') {
@@ -211,6 +215,13 @@ If (Test-Path $fileName) {
         }
         Write-Host ""
         # Referências: https://html-agility-pack.net/documentation   https://devhints.io/xpath
+    }
+
+    $temp = $result
+    $result = [ordered]@{}
+    ForEach ($livro In $config.biblia.livro) {
+        $sigla = "$($livro.sigla)"
+        $result.$sigla = $temp.$sigla
     }
 
     Write-Host "    Gravando" -ForegroundColor Cyan -NoNewline
