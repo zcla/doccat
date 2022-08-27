@@ -29,9 +29,13 @@ If (Test-Path $fileName) {
             #####
             $livro = $urlLivro.href -replace '^nova-vulgata_(v|n)t_(.*)_lt.html', '$2'
             Write-Host "      $livro" -ForegroundColor Cyan -NoNewline
-            $iwrLivro = Invoke-WebRequest "$($url.substring(0, $url.LastIndexOf('/')))/$($urlLivro.href)"
-            $result.$livro = "$($iwrLivro.Content)" # TODO Adicionar fonte (url) e nome do livro (tem no link)
-            Write-Host " $($result.$livro.Length) bytes" -ForegroundColor Green
+            $urlLivro = "$($url.substring(0, $url.LastIndexOf('/')))/$($urlLivro.href)"
+            $iwrLivro = Invoke-WebRequest $urlLivro
+            $result.$livro = @{
+                texto = "$($iwrLivro.Content)"
+                fonte = $urlLivro
+            }
+            Write-Host " $($result.$livro.texto.Length) bytes" -ForegroundColor Green
         }
     }
 
@@ -47,7 +51,6 @@ Write-Host " $($dados.Keys.Count) livros" -ForegroundColor Green
 $fileName = "$prjPath\temp\json\$id.json"
 
 Write-Host "  JSON" -ForegroundColor Cyan -NoNewline
-If (Test-Path $fileName) { Remove-Item $fileName } # TODO Excluir
 If (Test-Path $fileName) {
     Write-Host " ok" -ForegroundColor Green
 } Else {
@@ -57,8 +60,10 @@ If (Test-Path $fileName) {
     ForEach ($keyLivro In $dados.Keys) {
         $sigla = $config.download.'Biblia_vatican.va_lt'.'mapa-livro'.$keyLivro
         Write-Host "    $sigla ($keyLivro)" -ForegroundColor Cyan -NoNewline
-        $result.$sigla = [ordered]@{}
-        $htmlDom = ConvertFrom-Html -Content $dados.$keyLivro
+        $result.$sigla = [ordered]@{
+            "#fonte" = $dados.$keyLivro.fonte
+        }
+        $htmlDom = ConvertFrom-Html -Content $dados.$keyLivro.texto
         $ancoras = $htmlDom.SelectNodes("//a[@name]") | Where-Object { $_.InnerText }
         If ($ancoras.Count -eq 0) {
             $ancoras = $htmlDom.SelectNodes("//p") | Where-Object { $_.InnerHTML -match '\<br\>' }
@@ -114,10 +119,10 @@ If (Test-Path $fileName) {
 
                     (($fase -eq 'titulo') -and ($child.Name -eq '#text')) {
                         If ($texto) {
-                            If ($result.$sigla.$numCapitulo.'#comment') {
-                                $result.$sigla.$numCapitulo.'#comment' += "`n`r$texto" # Precaução; nunca chega aqui
+                            If ($result.$sigla.$numCapitulo.'#vulgata') {
+                                $result.$sigla.$numCapitulo.'#vulgata' += "`n`r$texto" # Precaução; nunca chega aqui
                             } Else {
-                                $result.$sigla.$numCapitulo.'#comment' = $texto
+                                $result.$sigla.$numCapitulo.'#vulgata' = $texto
                             }
                         }
                         Continue
