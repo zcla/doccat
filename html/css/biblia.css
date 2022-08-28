@@ -11,3 +11,7 @@
 #biblia .indent3 {
     padding-left: 60px !important;
 }
+
+#biblia tfoot {
+    font-size: .8em;
+}
