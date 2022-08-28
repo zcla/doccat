@@ -5,9 +5,11 @@ $id = (Get-Item $PSCommandPath).Name -replace '\.ps1', ''
 Write-Host "Inicializando" -ForegroundColor Cyan
 ..\utils\Import-ModulePowerHTML.ps1
 
-$config = Get-Content -Path "$prjPath\config\config.json" | ConvertFrom-Json
+$config = Get-Content -Path "$prjPath\config\config.json" | ConvertFrom-Json -AsHashtable
 
 Write-Host "Biblia" -ForegroundColor Cyan
+
+$dados = Get-Content -Path "$prjPath\temp\download\$id.json" | ConvertFrom-Json -AsHashtable
 
 $fileName = "$prjPath\temp\json\$id.json"
 Write-Host "  JSON" -ForegroundColor Cyan -NoNewline
@@ -21,6 +23,7 @@ If (Test-Path $fileName) {
         $sigla = $config.download.'Biblia_vatican.va_lt'.'mapa-livro'.$keyLivro
         Write-Host "    $sigla ($keyLivro)" -ForegroundColor Cyan -NoNewline
         $result.$sigla = [ordered]@{
+            "#dataHora" = $dados.$keyLivro.dataHora
             "#fonte" = $dados.$keyLivro.fonte
         }
         $htmlDom = ConvertFrom-Html -Content $dados.$keyLivro.texto

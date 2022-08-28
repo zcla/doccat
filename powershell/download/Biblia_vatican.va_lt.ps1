@@ -19,6 +19,7 @@ If (Test-Path $fileName) {
     $result = [ordered]@{}
     ForEach ($url In $config.download.$id.urls) {
         Write-Host "    $url" -ForegroundColor Cyan -NoNewline
+        $dataHora = Get-Date
         $iwr = Invoke-WebRequest $url
         $urlsLivros = $iwr.Links | Where-Object { $_.href -match '^nova-vulgata_(v|n)t_' }
         Write-Host " $($urlsLivros.Length) livros" -ForegroundColor Green
@@ -31,6 +32,7 @@ If (Test-Path $fileName) {
             $result.$livro = @{
                 texto = "$($iwrLivro.Content)"
                 fonte = $urlLivro
+                dataHora = $dataHora
             }
             Write-Host " $($result.$livro.texto.Length) bytes" -ForegroundColor Green
         }
