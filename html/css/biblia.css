@@ -1,0 +1,27 @@
+/* Indentação */
+
+#biblia .indent1 {
+    padding-left: 20px !important;
+}
+
+#biblia .indent2 {
+    padding-left: 40px !important;
+}
+
+#biblia .indent3 {
+    padding-left: 60px !important;
+}
+
+/*
+#biblia .indent4 {
+    padding-left: 80px !important;
+}
+
+#biblia .indent5 {
+    padding-left: 100px !important;
+}
+
+#biblia .indent6 {
+    padding-left: 120px !important;
+}
+*/

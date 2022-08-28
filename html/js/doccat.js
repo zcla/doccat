@@ -68,6 +68,9 @@ class DocCat {
         const params = Utils.getUrlParams();
         if (params.pagina) {
             switch (params.pagina) {
+                case 'biblia':
+                    Utils.loadHtml(params.pagina + '.html', '#doccat');
+                    break;
                 case 'catecismo':
                     $.getJSON("json/catecismo.json", function(data) {
                         Catecismo.json = data;
