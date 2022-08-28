@@ -186,10 +186,30 @@ If (Test-Path $fileName) {
     }
 
     $temp = $result
-    $result = [ordered]@{}
+    $result = [ordered]@{
+        '#ordem' = @()
+    }
     ForEach ($livro In $config.biblia.livro) {
         $sigla = "$($livro.sigla)"
         $result.$sigla = $temp.$sigla
+        $capitulos = @()
+        ForEach ($capitulo In ($result.$sigla.Keys | Where-Object { $_ -notmatch '#' })) {
+            $versiculos = @()
+            ForEach ($versiculo In ($result.$sigla.$capitulo.Keys | Where-Object { $_ -notmatch '#' })) {
+                $versiculos += @{
+                    versiculo = $versiculo
+                    texto = $result.$sigla.$capitulo.$versiculo
+                }
+                }
+            $capitulos += @{
+                capitulo = $capitulo
+                versiculos = $versiculos
+            }
+        }
+        $result.'#ordem' += @{
+            sigla = $sigla
+            capitulos = $capitulos
+        }
     }
 
     Write-Host "    Gravando" -ForegroundColor Cyan -NoNewline
