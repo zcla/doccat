@@ -196,10 +196,7 @@ If (Test-Path $fileName) {
         ForEach ($capitulo In ($result.$sigla.Keys | Where-Object { $_ -notmatch '#' })) {
             $versiculos = @()
             ForEach ($versiculo In ($result.$sigla.$capitulo.Keys | Where-Object { $_ -notmatch '#' })) {
-                $versiculos += @{
-                    versiculo = $versiculo
-                    texto = $result.$sigla.$capitulo.$versiculo
-                }
+                $versiculos += $versiculo
                 }
             $capitulos += @{
                 capitulo = $capitulo
