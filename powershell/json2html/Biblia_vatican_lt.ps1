@@ -49,7 +49,7 @@ ForEach ($objLivro In $biblia.'#ordem') {
     </p>
 </div>
 "@
-    $fileName = "$prjPath\html\biblia\$idBiblia\$sigla.html"
+    $fileName = "$prjPath\html\biblia\$idBiblia\$sigla\index.html"
     $htmlLivro | Out-File (New-Item $fileName -Force)
     Write-Host ""
 }

@@ -72,7 +72,7 @@ class DocCat {
                     Utils.loadHtml(params.pagina + '.html', '#doccat', function() {
                         if (params.livro) {
                             // TODO Ler esse "vatican_lt" de algum lugar
-                            Utils.loadHtml('biblia/vatican_lt/' + params.livro + '.html', '#livro');
+                            Utils.loadHtml('biblia/vatican_lt/' + params.livro, '#livro');
                         }
                     });
                     break;
