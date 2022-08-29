@@ -53,7 +53,6 @@ ForEach ($objLivro In $biblia.'#ordem') {
         $fileName = "$prjPath\html\biblia\$idBiblia\$sigla\$numCapitulo\index.html"
         $htmlCapitulo | Out-File (New-Item $fileName -Force)
     }
-    $fonte = $livro.'#fonte'
     $htmlLivro += @"
 
     </p>
