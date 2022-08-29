@@ -1,5 +1,21 @@
 /* Indentação */
 
+#biblia #livro .capitulos {
+    text-align: center;
+}
+
+#biblia #livro .capitulos a {
+    background-color: #36c;
+    border-radius: 0.5em;
+    color: #fff;
+    font-size: 0.8em;
+    padding: 0.2em 0.5em;
+}
+
+#biblia tfoot {
+    font-size: .8em;
+}
+
 #biblia .indent1 {
     padding-left: 20px !important;
 }
@@ -12,6 +28,7 @@
     padding-left: 60px !important;
 }
 
-#biblia tfoot {
-    font-size: .8em;
+#biblia .nome {
+    font-size: 20px;
+    font-weight: bold;
 }

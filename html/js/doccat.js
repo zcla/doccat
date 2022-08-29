@@ -69,7 +69,12 @@ class DocCat {
         if (params.pagina) {
             switch (params.pagina) {
                 case 'biblia':
-                    Utils.loadHtml(params.pagina + '.html', '#doccat');
+                    Utils.loadHtml(params.pagina + '.html', '#doccat', function() {
+                        if (params.livro) {
+                            // TODO Ler esse "vatican_lt" de algum lugar
+                            Utils.loadHtml('biblia/vatican_lt/' + params.livro + '.html', '#livro');
+                        }
+                    });
                     break;
                 case 'catecismo':
                     $.getJSON("json/catecismo.json", function(data) {
