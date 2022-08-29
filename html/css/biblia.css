@@ -1,4 +1,13 @@
-/* Indentação */
+#biblia .capitulo {
+    float: left;
+    font-size: 2em;
+    font-weight: bold;
+    margin-right: 0.2em;
+}
+
+#biblia .versiculo {
+    display: block;
+}
 
 #biblia #livro .capitulos {
     text-align: center;

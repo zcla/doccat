@@ -36,16 +36,26 @@ ForEach ($objLivro In $biblia.'#ordem') {
 "@
         Write-Host " $numCapitulo" -ForegroundColor Cyan -NoNewline
         $capitulo = $livro.$numCapitulo
-        ForEach ($keyVersiculo In $capitulo.Keys) {
+        $htmlCapitulo = @"
+<div>
+    <span class="capitulo">$numCapitulo</span>
+"@
+        ForEach ($numVersiculo In $objCapitulo.versiculos) {
+            $htmlCapitulo += @"
 
+    <span class="versiculo"><sup>$numVersiculo</sup> $($capitulo.$numVersiculo)</span>
+"@
         }
+        $htmlCapitulo += @"
+
+</div>
+"@
+        $fileName = "$prjPath\html\biblia\$idBiblia\$sigla\$numCapitulo\index.html"
+        $htmlCapitulo | Out-File (New-Item $fileName -Force)
     }
     $fonte = $livro.'#fonte'
     $htmlLivro += @"
 
-    </p>
-    <p class="alert alert-info">
-	    <b>Fonte:</b> <a href="$fonte" target="_blank">Site do Vaticano<img class="align-text-bottom" src="img/linkExterno.png"></a>.
     </p>
 </div>
 "@
