@@ -2,10 +2,8 @@
 
 $prjPath = ((Get-Item $MyInvocation.MyCommand.Path).Directory.Parent.FullName)
 
-Clear-Host
-
 Write-Host "Inicializando" -ForegroundColor Cyan
-.\Import-ModulePowerHTML.ps1
+.\utils\Import-ModulePowerHTML.ps1
 
 $pathDocumentos = "$prjPath\html\documento"
 
