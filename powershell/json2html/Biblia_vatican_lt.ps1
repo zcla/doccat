@@ -20,9 +20,9 @@ ForEach ($objLivro In $biblia.'#ordem') {
     $livro = $biblia.$sigla
     $configLivro = $config.biblia.livro | Where-Object { $_.sigla -eq $sigla }
     $htmlLivro = @"
-<div id=`"$sigla`">
-	<p class=`"nome`">$($configLivro.nomeLongo)</p>
-	<p class=`"capitulos`">
+<div id="$sigla">
+	<p class="nome">$($configLivro.nomeLongo)</p>
+	<p class="capitulos">
 "@
     ForEach ($objCapitulo In $objLivro.capitulos) {
         $numCapitulo = $objCapitulo.capitulo
