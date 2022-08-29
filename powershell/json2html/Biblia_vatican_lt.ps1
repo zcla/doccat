@@ -22,40 +22,66 @@ ForEach ($objLivro In $biblia.'#ordem') {
     $htmlLivro = @"
 <div id="$sigla">
 	<p class="nome">$($configLivro.nomeLongo)</p>
+"@
+    If ($objLivro.capitulos.Count -gt 1) {
+        $htmlLivro += @"
+
 	<p class="capitulos">
 "@
+    }
     ForEach ($objCapitulo In $objLivro.capitulos) {
         $numCapitulo = $objCapitulo.capitulo
         If ($numCapitulo -match '^#') {
             Continue
         }
-        # TODO Tratar livros com um capítulo só
-        $htmlLivro += @"
+        If ($numCapitulo -ne '-') {
+            $htmlLivro += @"
 
         <a href="?pagina=biblia&amp;livro=$sigla&amp;capitulo=$numCapitulo">$numCapitulo</a>
 "@
+        }
         Write-Host " $numCapitulo" -ForegroundColor Cyan -NoNewline
         $capitulo = $livro.$numCapitulo
         $htmlCapitulo = @"
 <div>
+"@
+        If ($numCapitulo -ne '-') {
+            $htmlCapitulo += @"
+
     <span class="capitulo">$numCapitulo</span>
 "@
+
+        }
         ForEach ($numVersiculo In $objCapitulo.versiculos) {
-            $htmlCapitulo += @"
+            If ($numCapitulo -eq '-') {
+                $htmlLivro += @"
 
     <span class="versiculo"><sup>$numVersiculo</sup> $($capitulo.$numVersiculo)</span>
 "@
+            } Else {
+                $htmlCapitulo += @"
+
+    <span class="versiculo"><sup>$numVersiculo</sup> $($capitulo.$numVersiculo)</span>
+"@
+            }
         }
         $htmlCapitulo += @"
 
 </div>
 "@
         $fileName = "$prjPath\html\biblia\$idBiblia\$sigla\$numCapitulo\index.html"
-        $htmlCapitulo | Out-File (New-Item $fileName -Force)
+        If ($numCapitulo -ne '-') {
+            $htmlCapitulo | Out-File (New-Item $fileName -Force)
+        }
+    }
+    If ($objLivro.capitulos.Count -gt 1) {
+        $htmlLivro += @"
+
+    </p>
+"@
     }
     $htmlLivro += @"
 
-    </p>
 </div>
 "@
     $fileName = "$prjPath\html\biblia\$idBiblia\$sigla\index.html"
