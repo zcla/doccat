@@ -20,7 +20,7 @@ If (Test-Path $fileName) {
 
     $result = [ordered]@{}
     ForEach ($keyLivro In $dados.Keys) {
-        $sigla = $config.download.'Biblia_vatican.va_lt'.'mapa-livro'.$keyLivro
+        $sigla = $config.download.'Biblia_vatican_lt'.'mapa-livro'.$keyLivro
         Write-Host "    $sigla ($keyLivro)" -ForegroundColor Cyan -NoNewline
         $result.$sigla = [ordered]@{
             "#dataHora" = $dados.$keyLivro.dataHora
