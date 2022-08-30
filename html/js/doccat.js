@@ -10,6 +10,10 @@ class Utils {
         downloader.click();
     }
 
+    static formatDateYYYYMMDDHHNNSS(date) {
+        return new Date(date.getTime() - (date.getTimezoneOffset() * 60000)).toISOString().replace('T', '-').replaceAll(':', '-').split('.')[0];
+    }
+
     static getUrlParam(param) {
         return this.getUrlParams()[param];
     }
@@ -155,7 +159,7 @@ class Storage {
         for (var key in localStorage){
             result[key] = localStorage[key];
         }
-        Utils.downloadString(JSON.stringify(result), 'doccat.anotacoes.json'); // TODO Colocar data e hora no nome do arquivo.
+        Utils.downloadString(JSON.stringify(result), 'doccat.anotacoes.' + Utils.formatDateYYYYMMDDHHNNSS(new Date()) + '.json');
     }
 
     static importar() {
