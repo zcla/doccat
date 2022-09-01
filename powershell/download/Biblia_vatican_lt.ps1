@@ -22,7 +22,7 @@ If (Test-Path $fileName) {
         $dataHora = Get-Date
         $iwr = Invoke-WebRequest $url
         $urlsLivros = $iwr.Links | Where-Object { $_.href -match '^nova-vulgata_(v|n)t_' }
-        Write-Host " $($urlsLivros.Length) livros" -ForegroundColor Green
+        Write-Host " $($urlsLivros.Count) livros" -ForegroundColor Green
         ForEach ($urlLivro In $urlsLivros) {
             #####
             $livro = $urlLivro.href -replace '^nova-vulgata_(v|n)t_(.*)_lt.html', '$2'
