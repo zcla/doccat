@@ -16,27 +16,55 @@ If (Test-Path $fileName) {
 } Else {
     Write-Host " fazendo..." -ForegroundColor Yellow
     
-    $result = [ordered]@{}
     $url = $config.download.$id.url
     Write-Host "    $url" -ForegroundColor Cyan -NoNewline
     $dataHora = Get-Date
+    $result = [ordered]@{
+		dataHora = $dataHora
+	}
     $iwr = Invoke-WebRequest $url
     $html = $iwr.Content | ConvertFrom-Html
     $links = $html.DescendantNodes() | Where-Object { ($_.Name -eq 'a') -and (($_.Attributes | Where-Object { $_.Name -eq 'href' }).Count -gt 0) }
-    Write-Host " $($urlsLivros.Count) livros" -ForegroundColor Green
+    Write-Host " $($links.Count) livros" -ForegroundColor Green
     ForEach ($link In $links) {
         #####
         $livro = $link.InnerText
-        Write-Host "      $livro" -ForegroundColor Cyan -NoNewline
+        Write-Host "      $livro" -ForegroundColor Cyan
+        Write-Host "        Estrutura" -ForegroundColor Cyan -NoNewline
         $href = ($link.Attributes | Where-Object { $_.Name -eq 'href' }).Value
         $urlLivro = "$($url.substring(0, $url.LastIndexOf('/')))/$href"
         $iwrLivro = Invoke-WebRequest $urlLivro
         $result.$livro = @{
-            texto = "$($iwrLivro.Content)"
-            fonte = $urlLivro
-            dataHora = $dataHora
+			estrutura = "$($iwrLivro.Content)"
+            fonteEstrutura = $urlLivro
+			texto = @()
         }
-        Write-Host " $($result.$livro.texto.Length) bytes" -ForegroundColor Green
+		Write-Host " $($result.$livro.estrutura.Length) bytes" -ForegroundColor Green
+
+		#####
+        Write-Host "        Texto" -ForegroundColor Cyan
+		$htmlLivro = $iwrLivro.Content | ConvertFrom-Html
+		$linksLivro = $htmlLivro.DescendantNodes() | Where-Object { ($_.Name -eq 'a') -and (($_.Attributes | Where-Object { $_.Name -eq 'href' }).Count -gt 0) }
+		$urlsTexto = @()
+		ForEach ($linkLivro In $linksLivro) {
+			$hrefTexto = ($linkLivro.Attributes | Where-Object { $_.Name -eq 'href' }).Value
+			if ($hrefTexto -match '#') {
+				$hrefTexto = $hrefTexto.Split('#')[0]
+				$urlTexto = "$($url.substring(0, $url.LastIndexOf('/')))/$hrefTexto"
+				if ($urlsTexto -contains $urlTexto) {
+					continue
+				}
+				# Download & store
+				Write-Host "          $hrefTexto" -ForegroundColor Cyan -NoNewline
+				$iwrTexto = Invoke-WebRequest $urlTexto
+				$result.$livro.texto += @{
+					texto = "$($iwrTexto.Content)"
+					fonteEstrutura = $urlTexto
+				}
+				Write-Host " $($iwrTexto.Content.Length) bytes" -ForegroundColor Green
+				$urlsTexto += $urlTexto
+			}
+		}
     }
 
     Write-Host "    Gravando" -ForegroundColor Cyan -NoNewline
