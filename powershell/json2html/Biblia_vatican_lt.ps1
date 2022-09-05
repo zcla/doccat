@@ -14,10 +14,10 @@ $biblia = Get-Content $fileName | ConvertFrom-Json -AsHashtable
 $idBiblia = $id.replace('Biblia_', '')
 
 $fileName = "$prjPath\html\biblia"
-ForEach ($objLivro In $biblia.'#ordem') {
+ForEach ($objLivro In $biblia.ordem) {
     $sigla = $objLivro.sigla
     Write-Host "  $sigla" -ForegroundColor Cyan -NoNewline
-    $livro = $biblia.$sigla
+    $livro = $biblia.livros.$sigla
     $configLivro = $config.biblia.livro | Where-Object { $_.sigla -eq $sigla }
     $htmlLivro = @"
 <div id="$sigla">
@@ -41,7 +41,7 @@ ForEach ($objLivro In $biblia.'#ordem') {
 "@
         }
         Write-Host " $numCapitulo" -ForegroundColor Cyan -NoNewline
-        $capitulo = $livro.$numCapitulo
+        $capitulo = $livro.capitulos.$numCapitulo
         $htmlCapitulo = @"
 <div>
 "@
@@ -56,12 +56,12 @@ ForEach ($objLivro In $biblia.'#ordem') {
             If ($numCapitulo -eq '-') {
                 $htmlLivro += @"
 
-    <span class="versiculo"><sup>$numVersiculo</sup> $($capitulo.$numVersiculo)</span>
+    <span class="versiculo"><sup>$numVersiculo</sup> $($capitulo.versiculos.$numVersiculo)</span>
 "@
             } Else {
                 $htmlCapitulo += @"
 
-    <span class="versiculo"><sup>$numVersiculo</sup> $($capitulo.$numVersiculo)</span>
+    <span class="versiculo"><sup>$numVersiculo</sup> $($capitulo.versiculos.$numVersiculo)</span>
 "@
             }
         }

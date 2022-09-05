@@ -18,15 +18,18 @@ If (Test-Path $fileName) {
 } Else {
     Write-Host " gerando..." -ForegroundColor Yellow
 
-    $result = [ordered]@{}
-    ForEach ($keyLivro In $dados.Keys) {
-        $sigla = $config.download.'Biblia_vatican_lt'.'mapa-livro'.$keyLivro
+    $result = [ordered]@{
+		livros = [ordered]@{}
+	}
+    ForEach ($keyLivro In $dados.livros.Keys) {
+        $sigla = $config.download.$id.'mapa-livro'.$keyLivro
         Write-Host "    $sigla ($keyLivro)" -ForegroundColor Cyan -NoNewline
-        $result.$sigla = [ordered]@{
-            "#dataHora" = $dados.$keyLivro.dataHora
-            "#fonte" = $dados.$keyLivro.fonte
+        $result.livros.$sigla = [ordered]@{
+			capitulos = [ordered]@{}
+            dataHora = $dados.livros.$keyLivro.dataHora
+            fonte = $dados.livros.$keyLivro.fonte
         }
-        $htmlDom = ConvertFrom-Html -Content $dados.$keyLivro.texto
+        $htmlDom = ConvertFrom-Html -Content $dados.livros.$keyLivro.texto
         $ancoras = $htmlDom.SelectNodes("//a[@name]") | Where-Object { $_.InnerText }
         If ($ancoras.Count -eq 0) {
             $ancoras = $htmlDom.SelectNodes("//p") | Where-Object { $_.InnerHTML -match '\<br\>' }
@@ -46,7 +49,9 @@ If (Test-Path $fileName) {
                     (($fase -eq 'inicio') -and ($child.Name -eq '#text')) {
                         If ($texto) {
                             $fase = 'versiculos'
-                            $result.$sigla.$numCapitulo = [ordered]@{}
+                            $result.livros.$sigla.capitulos.$numCapitulo = [ordered]@{
+								versiculos = [ordered]@{}
+							}
                             Write-Host " $numCapitulo" -ForegroundColor Cyan -NoNewline
                         } Else {
                             Continue
@@ -74,7 +79,9 @@ If (Test-Path $fileName) {
                                 }
                             }
                             Write-Host " $numCapitulo" -ForegroundColor Cyan -NoNewline
-                            $result.$sigla.$numCapitulo = [ordered]@{}
+                            $result.livros.$sigla.capitulos.$numCapitulo = [ordered]@{
+                                versiculos = [ordered]@{}
+                            }
                             $fase = 'titulo'
                         }
                         Continue
@@ -82,10 +89,10 @@ If (Test-Path $fileName) {
 
                     (($fase -eq 'titulo') -and ($child.Name -eq '#text')) {
                         If ($texto) {
-                            If ($result.$sigla.$numCapitulo.'#vulgata') {
-                                $result.$sigla.$numCapitulo.'#vulgata' += "`n`r$texto" # Precaução; nunca chega aqui
+                            If ($result.livros.$sigla.capitulos.$numCapitulo.vulgata) {
+                                $result.livros.$sigla.capitulos.$numCapitulo.vulgata += "`n`r$texto" # Precaução; nunca chega aqui
                             } Else {
-                                $result.$sigla.$numCapitulo.'#vulgata' = $texto
+                                $result.livros.$sigla.capitulos.$numCapitulo.vulgata = $texto
                             }
                         }
                         Continue
@@ -121,7 +128,7 @@ If (Test-Path $fileName) {
                             $sigCap = "$sigla $numCapitulo"
                             # Textos com o primeiro versículo sem número
                             If (@('Br 6', 'Jz 19', 'Nm 1') -contains $sigCap) {
-                                If ($result.$sigla.$numCapitulo.Keys.Count -eq 0) {
+                                If ($result.livros.$sigla.capitulos.$numCapitulo.versiculos.Keys.Count -eq 0) {
                                     $numVersiculo = '-'
                                 }
                             }
@@ -132,7 +139,7 @@ If (Test-Path $fileName) {
                                     $numVersiculo = '40'
                                 }
                                 'At 17 ' {
-                                    If ($result.$sigla.$numCapitulo.Keys.Count -eq 0) {
+                                    If ($result.livros.$sigla.capitulos.$numCapitulo.versiculos.Keys.Count -eq 0) {
                                         $numVersiculo = '1'
                                         $texto = $texto.Substring(1)
                                     }
@@ -142,26 +149,26 @@ If (Test-Path $fileName) {
                             
                             If ($numVersiculo) {
                                 If ($numVersiculo -match '^\(') {
-                                    $result.$sigla.$numCapitulo."$numVersiculo" = ""
+                                    $result.livros.$sigla.capitulos.$numCapitulo.versiculos."$numVersiculo" = ""
                                     $numVersiculo = ''
                                     If ($texto -match '^\(?\d{1,3}[a-z]?\)? ') {
                                         $numVersiculo = $texto.Split(' ')[0]
                                         $texto = $texto.Substring($numVersiculo.Length).Trim()
-                                        $result.$sigla.$numCapitulo."$numVersiculo" = $texto
+                                        $result.livros.$sigla.capitulos.$numCapitulo.versiculos."$numVersiculo" = $texto
                                     }
                                 } Else {
-                                    $result.$sigla.$numCapitulo."$numVersiculo" = $texto
+                                    $result.livros.$sigla.capitulos.$numCapitulo.versiculos."$numVersiculo" = $texto
                                 }    
                                 $ultVersiculo = $numVersiculo
                             } Else {
-                                If ($result.$sigla.$numCapitulo."$ultVersiculo") {
-                                    $result.$sigla.$numCapitulo."$ultVersiculo" += "`r`n"
+                                If ($result.livros.$sigla.capitulos.$numCapitulo.versiculos."$ultVersiculo") {
+                                    $result.livros.$sigla.capitulos.$numCapitulo.versiculos."$ultVersiculo" += "`r`n"
                                 }
-                                $result.$sigla.$numCapitulo."$ultVersiculo" += $texto
+                                $result.livros.$sigla.capitulos.$numCapitulo.versiculos."$ultVersiculo" += $texto
                             }
 
                             If ($versiculoExtra) {
-                                $result.$sigla.$numCapitulo."$versiculoExtra" = ""
+                                $result.livros.$sigla.capitulos.$numCapitulo.versiculos."$versiculoExtra" = ""
                             }
                         }
                         Continue
@@ -187,15 +194,16 @@ If (Test-Path $fileName) {
 
     $temp = $result
     $result = [ordered]@{
-        '#ordem' = @()
+		livros = [ordered]@{}
+        ordem = @()
     }
     ForEach ($livro In $config.biblia.livro) {
         $sigla = "$($livro.sigla)"
-        $result.$sigla = $temp.$sigla
+        $result.livros.$sigla = $temp.livros.$sigla
         $capitulos = @()
-        ForEach ($capitulo In ($result.$sigla.Keys | Where-Object { $_ -notmatch '#' })) {
+        ForEach ($capitulo In ($result.livros.$sigla.capitulos.Keys | Where-Object { $_ -notmatch '#' })) {
             $versiculos = @()
-            ForEach ($versiculo In ($result.$sigla.$capitulo.Keys | Where-Object { $_ -notmatch '#' })) {
+            ForEach ($versiculo In ($result.livros.$sigla.capitulos.$capitulo.versiculos.Keys | Where-Object { $_ -notmatch '#' })) {
                 $versiculos += $versiculo
                 }
             $capitulos += @{
@@ -203,7 +211,7 @@ If (Test-Path $fileName) {
                 versiculos = $versiculos
             }
         }
-        $result.'#ordem' += @{
+        $result.ordem += @{
             sigla = $sigla
             capitulos = $capitulos
         }

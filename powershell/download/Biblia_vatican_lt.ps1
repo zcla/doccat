@@ -16,7 +16,9 @@ If (Test-Path $fileName) {
 } Else {
     Write-Host " fazendo..." -ForegroundColor Yellow
 
-    $result = [ordered]@{}
+    $result = [ordered]@{
+		livros = [ordered]@{}
+	}
     ForEach ($url In $config.download.$id.urls) {
         Write-Host "    $url" -ForegroundColor Cyan -NoNewline
         $dataHora = Get-Date
@@ -29,12 +31,12 @@ If (Test-Path $fileName) {
             Write-Host "      $livro" -ForegroundColor Cyan -NoNewline
             $urlLivro = "$($url.substring(0, $url.LastIndexOf('/')))/$($urlLivro.href)"
             $iwrLivro = Invoke-WebRequest $urlLivro
-            $result.$livro = @{
+            $result.livros.$livro = @{
                 texto = "$($iwrLivro.Content)"
                 fonte = $urlLivro
                 dataHora = $dataHora
             }
-            Write-Host " $($result.$livro.texto.Length) bytes" -ForegroundColor Green
+            Write-Host " $($result.livros.$livro.texto.Length) bytes" -ForegroundColor Green
         }
     }
 
