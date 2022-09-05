@@ -20,6 +20,7 @@ If (Test-Path $fileName) {
     Write-Host "    $url" -ForegroundColor Cyan -NoNewline
     $dataHora = Get-Date
     $result = [ordered]@{
+		livros = [ordered]@{}
 		dataHora = $dataHora
 	}
     $iwr = Invoke-WebRequest $url
@@ -34,12 +35,12 @@ If (Test-Path $fileName) {
         $href = ($link.Attributes | Where-Object { $_.Name -eq 'href' }).Value
         $urlLivro = "$($url.substring(0, $url.LastIndexOf('/')))/$href"
         $iwrLivro = Invoke-WebRequest $urlLivro
-        $result.$livro = @{
+        $result.livros.$livro = @{
 			estrutura = "$($iwrLivro.Content)"
-            fonteEstrutura = $urlLivro
+            fonte = $urlLivro
 			texto = @()
         }
-		Write-Host " $($result.$livro.estrutura.Length) bytes" -ForegroundColor Green
+		Write-Host " $($result.livros.$livro.estrutura.Length) bytes" -ForegroundColor Green
 
 		#####
         Write-Host "        Texto" -ForegroundColor Cyan
@@ -57,9 +58,9 @@ If (Test-Path $fileName) {
 				# Download & store
 				Write-Host "          $hrefTexto" -ForegroundColor Cyan -NoNewline
 				$iwrTexto = Invoke-WebRequest $urlTexto
-				$result.$livro.texto += @{
+				$result.livros.$livro.texto += @{
 					texto = "$($iwrTexto.Content)"
-					fonteEstrutura = $urlTexto
+					fonte = $urlTexto
 				}
 				Write-Host " $($iwrTexto.Content.Length) bytes" -ForegroundColor Green
 				$urlsTexto += $urlTexto
