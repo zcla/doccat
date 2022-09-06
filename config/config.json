@@ -451,7 +451,14 @@
 			}
 		},
 		"Biblia_clerus_pt": {
-			"url": "http://www.clerus.org/bibliaclerusonline/pt/66c.htm"
+			"url": "http://www.clerus.org/bibliaclerusonline/pt/66c.htm",
+			"mapa-livro": {
+				"Atos": "At",
+				"Marco": "Mc",
+				"Oséias": "Os",
+				"Cântico": "Ct",
+				"Miquéias": "Mq"
+			}
 		}
 	}
 }
