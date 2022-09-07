@@ -75,10 +75,12 @@ class DocCat {
                 case 'biblia':
                     Utils.loadHtml(params.pagina + '.html', '#doccat', function() {
                         if (params.livro) {
-                            // TODO Ler esse "vatican_lt" de algum lugar
-                            Utils.loadHtml('biblia/vatican_lt/' + params.livro, '#livro', function() {
+							 // TODO Ler esse "qualBiblia" de algum lugar
+							// const qualBiblia = 'vatican_lt';
+							const qualBiblia = 'clerus_pt';
+                            Utils.loadHtml('biblia/' + qualBiblia + '/' + params.livro, '#livro', function() {
                                 if (params.capitulo) {
-                                    Utils.loadHtml('biblia/vatican_lt/' + params.livro + '/' + params.capitulo, '#capitulo');
+                                    Utils.loadHtml('biblia/' + qualBiblia + '/' + params.livro + '/' + params.capitulo, '#capitulo');
                                 }
                             });
                         }
