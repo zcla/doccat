@@ -14,15 +14,14 @@ $dados = Get-Content -Path "$prjPath\temp\download\$id.json" | ConvertFrom-Json 
 $fileName = "$prjPath\temp\json\$id.json"
 Write-Host "  JSON" -ForegroundColor Cyan -NoNewline
 If (Test-Path $fileName) {
-# TODO Excluir
-# 	Write-Host " ok" -ForegroundColor Green
-# } Else {
+	Write-Host " ok" -ForegroundColor Green
+} Else {
 	Write-Host " gerando..." -ForegroundColor Yellow
 	
-    $result = [ordered]@{
+	$result = [ordered]@{
 		livros = [ordered]@{}
 	}
-    ForEach ($keyLivro In $dados.livros.Keys) {
+	ForEach ($keyLivro In $dados.livros.Keys) {
 		$nome = $keyLivro.Replace('1', 'I ').Replace('2', 'II ').Replace('3', 'III ')
 		$sigla = $config.biblia.livro | Where-Object { $_.nomeCurto -eq $nome }
 		if ($sigla) {
@@ -142,38 +141,35 @@ If (Test-Path $fileName) {
 				}
 			}
 		}
-        Write-Host ""
-        # Referências: https://html-agility-pack.net/documentation   https://devhints.io/xpath
-    }
+		Write-Host ""
+	}
 
-	<#
-    $temp = $result
-    $result = [ordered]@{
+	$temp = $result
+	$result = [ordered]@{
 		livros = [ordered]@{}
-        ordem = @()
-    }
-    ForEach ($livro In $config.biblia.livro) {
-        $sigla = "$($livro.sigla)"
-        $result.livros.$sigla = $temp.livros.$sigla
-        $capitulos = @()
-        ForEach ($capitulo In ($result.livros.$sigla.capitulos.Keys | Where-Object { $_ -notmatch '#' })) {
-            $versiculos = @()
-            ForEach ($versiculo In ($result.livros.$sigla.capitulos.$capitulo.versiculos.Keys | Where-Object { $_ -notmatch '#' })) {
-                $versiculos += $versiculo
-                }
-            $capitulos += @{
-                capitulo = $capitulo
-                versiculos = $versiculos
-            }
-        }
-        $result.ordem += @{
-            sigla = $sigla
-            capitulos = $capitulos
-        }
-    }
-	#>
+		ordem = @()
+	}
+	ForEach ($livro In $config.biblia.livro) {
+		$sigla = "$($livro.sigla)"
+		$result.livros.$sigla = $temp.livros.$sigla
+		$capitulos = @()
+		ForEach ($capitulo In ($result.livros.$sigla.capitulos.Keys | Where-Object { $_ -notmatch '#' })) {
+			$versiculos = @()
+			ForEach ($versiculo In ($result.livros.$sigla.capitulos.$capitulo.versiculos.Keys | Where-Object { $_ -notmatch '#' })) {
+				$versiculos += $versiculo
+			}
+			$capitulos += @{
+				capitulo = $capitulo
+				versiculos = $versiculos
+			}
+		}
+		$result.ordem += @{
+			sigla = $sigla
+			capitulos = $capitulos
+		}
+	}
 
-    Write-Host "    Gravando" -ForegroundColor Cyan -NoNewline
-    $result | ConvertTo-Json -Depth 100 | Out-File (New-Item $fileName -Force)
-    Write-Host " ok" -ForegroundColor Green
+	Write-Host "    Gravando" -ForegroundColor Cyan -NoNewline
+	$result | ConvertTo-Json -Depth 100 | Out-File (New-Item $fileName -Force)
+	Write-Host " ok" -ForegroundColor Green
 }
