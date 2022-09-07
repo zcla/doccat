@@ -12,38 +12,38 @@ Write-Host "Biblia" -ForegroundColor Cyan
 $fileName = "$prjPath\temp\download\$id.json"
 Write-Host "  Download" -ForegroundColor Cyan -NoNewline
 If (Test-Path $fileName) {
-    Write-Host " ok" -ForegroundColor Green
+	Write-Host " ok" -ForegroundColor Green
 } Else {
-    Write-Host " fazendo..." -ForegroundColor Yellow
-    
-    $url = $config.download.$id.url
-    Write-Host "    $url" -ForegroundColor Cyan -NoNewline
-    $dataHora = Get-Date
-    $result = [ordered]@{
+	Write-Host " fazendo..." -ForegroundColor Yellow
+	
+	$url = $config.download.$id.url
+	Write-Host "    $url" -ForegroundColor Cyan -NoNewline
+	$dataHora = Get-Date
+	$result = [ordered]@{
 		livros = [ordered]@{}
 		dataHora = $dataHora
 	}
-    $iwr = Invoke-WebRequest $url
-    $html = $iwr.Content | ConvertFrom-Html
-    $links = $html.DescendantNodes() | Where-Object { ($_.Name -eq 'a') -and (($_.Attributes | Where-Object { $_.Name -eq 'href' }).Count -gt 0) }
-    Write-Host " $($links.Count) livros" -ForegroundColor Green
-    ForEach ($link In $links) {
-        #####
-        $livro = $link.InnerText
-        Write-Host "      $livro" -ForegroundColor Cyan
-        Write-Host "        Estrutura" -ForegroundColor Cyan -NoNewline
-        $href = ($link.Attributes | Where-Object { $_.Name -eq 'href' }).Value
-        $urlLivro = "$($url.substring(0, $url.LastIndexOf('/')))/$href"
-        $iwrLivro = Invoke-WebRequest $urlLivro
-        $result.livros.$livro = @{
+	$iwr = Invoke-WebRequest $url
+	$html = $iwr.Content | ConvertFrom-Html
+	$links = $html.DescendantNodes() | Where-Object { ($_.Name -eq 'a') -and (($_.Attributes | Where-Object { $_.Name -eq 'href' }).Count -gt 0) }
+	Write-Host " $($links.Count) livros" -ForegroundColor Green
+	ForEach ($link In $links) {
+		#####
+		$livro = $link.InnerText
+		Write-Host "      $livro" -ForegroundColor Cyan
+		Write-Host "        Estrutura" -ForegroundColor Cyan -NoNewline
+		$href = ($link.Attributes | Where-Object { $_.Name -eq 'href' }).Value
+		$urlLivro = "$($url.substring(0, $url.LastIndexOf('/')))/$href"
+		$iwrLivro = Invoke-WebRequest $urlLivro
+		$result.livros.$livro = @{
 			estrutura = "$($iwrLivro.Content)"
-            fonte = $urlLivro
+			fonte = $urlLivro
 			texto = @()
-        }
+		}
 		Write-Host " $($result.livros.$livro.estrutura.Length) bytes" -ForegroundColor Green
 
 		#####
-        Write-Host "        Texto" -ForegroundColor Cyan
+		Write-Host "        Texto" -ForegroundColor Cyan
 		$htmlLivro = $iwrLivro.Content | ConvertFrom-Html
 		$linksLivro = $htmlLivro.DescendantNodes() | Where-Object { ($_.Name -eq 'a') -and (($_.Attributes | Where-Object { $_.Name -eq 'href' }).Count -gt 0) }
 		$urlsTexto = @()
@@ -66,9 +66,9 @@ If (Test-Path $fileName) {
 				$urlsTexto += $urlTexto
 			}
 		}
-    }
+	}
 
-    Write-Host "    Gravando" -ForegroundColor Cyan -NoNewline
-    $result | ConvertTo-Json -Depth 100 | Out-File (New-Item $fileName -Force)
-    Write-Host " ok" -ForegroundColor Green
+	Write-Host "    Gravando" -ForegroundColor Cyan -NoNewline
+	$result | ConvertTo-Json -Depth 100 | Out-File (New-Item $fileName -Force)
+	Write-Host " ok" -ForegroundColor Green
 }
