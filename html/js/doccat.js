@@ -75,7 +75,8 @@ class DocCat {
                 case 'biblia':
                     Utils.loadHtml(params.pagina + '.html', '#doccat', function() {
                         if (params.livro) {
-							 // TODO Ler esse "qualBiblia" de algum lugar
+							// TODO Ler esse "qualBiblia" de algum lugar
+							// TODO Permitir escolher a versão
 							// const qualBiblia = 'vatican_lt';
 							const qualBiblia = 'clerus_pt';
                             Utils.loadHtml('biblia/' + qualBiblia + '/' + params.livro, '#livro', function() {
