@@ -106,7 +106,7 @@ If (Test-Path $fileName) {
 					(($fase -eq 'versiculos') -and (@('#text', 'i') -contains $child.Name)) {
 						If ($texto) {
 							$versiculoExtra = ''
-							If ($texto -match '\(\d\)$') {
+							If ($texto -match '\(\d+\)$') {
 								$versiculoExtra = '(' + $texto.Split('(')[-1]
 								$texto = $texto.Substring(0, $texto.Length - $versiculoExtra.Length).Trim()
 							}
@@ -144,31 +144,43 @@ If (Test-Path $fileName) {
 										$texto = $texto.Substring(1)
 									}
 								}
+								'Eclo 1 (20' {
+									$numVersiculo = '20'
+									$texto = "($texto"
+								}
 							}
 							# <<< Gambiarras por características ou defeitos na fonte <<<
 							
 							If ($numVersiculo) {
 								If ($numVersiculo -match '^\(') {
-									$result.livros.$sigla.capitulos.$numCapitulo.versiculos."$numVersiculo" = ""
+									$result.livros.$sigla.capitulos.$numCapitulo.versiculos."$numVersiculo" = @{
+										texto = ""
+									}
 									$numVersiculo = ''
 									If ($texto -match '^\(?\d{1,3}[a-z]?\)? ') {
 										$numVersiculo = $texto.Split(' ')[0]
 										$texto = $texto.Substring($numVersiculo.Length).Trim()
-										$result.livros.$sigla.capitulos.$numCapitulo.versiculos."$numVersiculo" = $texto
+										$result.livros.$sigla.capitulos.$numCapitulo.versiculos."$numVersiculo" = @{
+											texto = $texto
+										}
 									}
 								} Else {
-									$result.livros.$sigla.capitulos.$numCapitulo.versiculos."$numVersiculo" = $texto
+									$result.livros.$sigla.capitulos.$numCapitulo.versiculos."$numVersiculo" = @{
+										texto = $texto
+									}
 								}    
 								$ultVersiculo = $numVersiculo
 							} Else {
-								If ($result.livros.$sigla.capitulos.$numCapitulo.versiculos."$ultVersiculo") {
-									$result.livros.$sigla.capitulos.$numCapitulo.versiculos."$ultVersiculo" += "`r`n"
+								If ($result.livros.$sigla.capitulos.$numCapitulo.versiculos."$ultVersiculo".texto) {
+									$result.livros.$sigla.capitulos.$numCapitulo.versiculos."$ultVersiculo".texto += "`r`n"
 								}
-								$result.livros.$sigla.capitulos.$numCapitulo.versiculos."$ultVersiculo" += $texto
+								$result.livros.$sigla.capitulos.$numCapitulo.versiculos."$ultVersiculo".texto += $texto
 							}
 
 							If ($versiculoExtra) {
-								$result.livros.$sigla.capitulos.$numCapitulo.versiculos."$versiculoExtra" = ""
+								$result.livros.$sigla.capitulos.$numCapitulo.versiculos."$versiculoExtra" = @{
+									texto = ""
+								}
 							}
 						}
 						Continue

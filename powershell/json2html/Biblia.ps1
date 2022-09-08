@@ -56,15 +56,32 @@ ForEach ($objLivro In $biblia.ordem) {
 
 		}
 		ForEach ($numVersiculo In $objCapitulo.versiculos) {
+			if ($capitulo.versiculos.$numVersiculo.titulos) {
+				foreach ($titulo in $capitulo.versiculos.$numVersiculo.titulos) {
+					If ($numCapitulo -eq '-') {
+						$htmlLivro += @"
+
+	<span class="titulo">$titulo</span>
+"@
+					} Else {
+						$htmlCapitulo += @"
+
+	<span class="titulo">$titulo</span>
+"@
+					}
+
+				}
+			}
+			# TODO Tratar títulos
 			If ($numCapitulo -eq '-') {
 				$htmlLivro += @"
 
-	<span class="versiculo"><sup>$numVersiculo</sup> $($capitulo.versiculos.$numVersiculo)</span>
+	<span class="versiculo"><sup>$numVersiculo</sup> $($capitulo.versiculos.$numVersiculo.texto)</span>
 "@
 			} Else {
 				$htmlCapitulo += @"
 
-	<span class="versiculo"><sup>$numVersiculo</sup> $($capitulo.versiculos.$numVersiculo)</span>
+	<span class="versiculo"><sup>$numVersiculo</sup> $($capitulo.versiculos.$numVersiculo.texto)</span>
 "@
 			}
 		}
