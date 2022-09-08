@@ -223,6 +223,8 @@ If (Test-Path $fileName) {
 			$versiculos = @()
 			ForEach ($versiculo In ($result.livros.$sigla.capitulos.$capitulo.versiculos.Keys | Where-Object { $_ -notmatch '#' })) {
 				$versiculos += $versiculo
+				# TODO Remover <br>s no final
+				# TODO Tratamento dos caracteres "alienígenas" (encoding?)
 			}
 			$capitulos += @{
 				capitulo = $capitulo

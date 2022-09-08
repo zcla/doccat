@@ -72,7 +72,6 @@ ForEach ($objLivro In $biblia.ordem) {
 
 				}
 			}
-			# TODO Tratar títulos
 			If ($numCapitulo -eq '-') {
 				$htmlLivro += @"
 
