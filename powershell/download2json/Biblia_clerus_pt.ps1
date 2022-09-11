@@ -49,13 +49,13 @@ If (Test-Path $fileName) {
 							continue
 						}
 						if ($node2.Name -eq 'b') {
-							$texto = $node2.InnerText
+							$txt = $node2.InnerText
 							if (($sigla -eq 'Eclo') -and ($numVersiculo -eq '(li.')) {
 								# Trata o "prólogo do tradutor grego" do Eclesiástico
 								if ($result.livros.$sigla.capitulos.$numCapitulo.versiculos.$numVersiculo.texto -eq '(li.') {
 									$result.livros.$sigla.capitulos.$numCapitulo.versiculos.Remove($numVersiculo)
-									$restoNumVersiculo = $texto.Split(' ')[0]
-									$texto = $texto.Substring($restoNumVersiculo.Length + 1)
+									$restoNumVersiculo = $txt.Split(' ')[0]
+									$txt = $txt.Substring($restoNumVersiculo.Length + 1)
 									$numVersiculo = "$numVersiculo $restoNumVersiculo"
 									$result.livros.$sigla.capitulos.$numCapitulo.versiculos.$numVersiculo = @{
 										texto = @()
@@ -64,30 +64,31 @@ If (Test-Path $fileName) {
 									throw '?!?!'
 								}
 							}
-							if ($texto -match "^\d+$") {
+							if ($txt -match "^\d+$") {
 								# É um número de capítulo
-								$numCapitulo = $texto
+								$numCapitulo = $txt
 								$numVersiculo = ''
 								Write-Host " $numCapitulo" -ForegroundColor Cyan -NoNewline
 								$result.livros.$sigla.capitulos.$numCapitulo = [ordered]@{
+									fonte = $texto.fonte
 									versiculos = [ordered]@{}
 								}
 							} else {
 								# É só um texto em negrito
 								if (($sigla -eq 'Eclo') -and ($numVersiculo.StartsWith('(li. '))) {
-									$result.livros.$sigla.capitulos.$numCapitulo.versiculos.$numVersiculo.texto += "<b>$texto</b>"
+									$result.livros.$sigla.capitulos.$numCapitulo.versiculos.$numVersiculo.texto += "<b>$txt</b>"
 								} else {
-									$texto = $node2.InnerHtml
-									if (("$sigla $numCapitulo $numVersiculo" -eq 'Os 14 1') -and ($texto.StartsWith('1'))) {
+									$txt = $node2.InnerHtml
+									if (("$sigla $numCapitulo $numVersiculo" -eq 'Os 14 1') -and ($txt.StartsWith('1'))) {
 										# A numeração alternativa aparece antes da "oficial"
-										$texto = $texto.Substring(1).Trim()
+										$txt = $txt.Substring(1).Trim()
 										$numVersiculo = '1'
 										$result.livros.$sigla.capitulos.$numCapitulo.versiculos.$numVersiculo = @{
 											texto = @()
 										}
 									}
 		
-									$result.livros.$sigla.capitulos.$numCapitulo.versiculos.$numVersiculo.texto += "<b>$texto</b>"
+									$result.livros.$sigla.capitulos.$numCapitulo.versiculos.$numVersiculo.texto += "<b>$txt</b>"
 								}
 							}
 							continue
@@ -99,7 +100,7 @@ If (Test-Path $fileName) {
 							}
 						}
 						if ($node2.Name -eq 'i') {
-							$texto = $node2.InnerHtml
+							$txt = $node2.InnerHtml
 							# É só um texto em itálico
 							if ("$sigla $numCapitulo $numVersiculo" -eq 'Br 6 ') {
 								# Capítulo com texto antes do primeiro versículo
@@ -117,8 +118,8 @@ If (Test-Path $fileName) {
 							}
 							if ("$sigla $numCapitulo $numVersiculo" -in @('Sl 77 ', 'Sl 85 ', 'Sl 122 ', 'Sl 127 ')) {
 								# O versículo não está destacado
-								if ($texto.Substring(0, 1) -eq '1') {
-									$texto = $texto.Substring(1)
+								if ($txt.Substring(0, 1) -eq '1') {
+									$txt = $txt.Substring(1)
 									$numVersiculo = '1'
 									$result.livros.$sigla.capitulos.$numCapitulo.versiculos.$numVersiculo = @{
 										texto = @()
@@ -127,7 +128,7 @@ If (Test-Path $fileName) {
 									throw '?!?!'
 								}
 							}
-							$result.livros.$sigla.capitulos.$numCapitulo.versiculos.$numVersiculo.texto += "<i>$texto</i>"
+							$result.livros.$sigla.capitulos.$numCapitulo.versiculos.$numVersiculo.texto += "<i>$txt</i>"
 						}
 						if ($node2.Name -eq 'sup') {
 							# É um número de versículo
@@ -149,23 +150,24 @@ If (Test-Path $fileName) {
 						}
 						if ($node2.Name -eq '#text') {
 							# É um trecho do texto
-							$texto = $node2.InnerHtml.Trim()
-							if ($texto) {
+							$txt = $node2.InnerHtml.Trim()
+							if ($txt) {
 								if (-not $numCapitulo) {
 									if ($sigla -eq 'Eclo') {
 										# Trata o "prólogo do tradutor grego" do Eclesiástico
 										$numCapitulo = 'Prólogo'
 										Write-Host " $numCapitulo" -ForegroundColor Cyan -NoNewline
 										$result.livros.$sigla.capitulos.$numCapitulo = [ordered]@{
+											fonte = $texto.fonte
 											versiculos = [ordered]@{}
 										}
 									} else {
 										throw '?!?!'
 									}
 								}
-								if (($sigla -eq 'Eclo') -and ($numCapitulo -eq 'Prólogo') -and ($texto -eq '(li.')) {
+								if (($sigla -eq 'Eclo') -and ($numCapitulo -eq 'Prólogo') -and ($txt -eq '(li.')) {
 									# Trata o "prólogo do tradutor grego" do Eclesiástico
-									$numVersiculo = $texto
+									$numVersiculo = $txt
 									$result.livros.$sigla.capitulos.$numCapitulo.versiculos.$numVersiculo = @{
 										texto = @()
 									}
@@ -173,7 +175,7 @@ If (Test-Path $fileName) {
 								if (-not $numVersiculo) {
 									if ($sigla -eq 'Sl') {
 										# Nos salmos aparece antes do primeiro versículo a numeração da Vulgata
-										$result.livros.$sigla.capitulos.$numCapitulo.numeracaoVulgata = $texto
+										$result.livros.$sigla.capitulos.$numCapitulo.numeracaoVulgata = $txt
 										continue
 									} elseif ("$sigla $numCapitulo $numVersiculo" -eq 'Is 53 ') {
 										# Tem texto antes do versículo que deveria estar depois
@@ -183,8 +185,8 @@ If (Test-Path $fileName) {
 										}
 									} elseif ("$sigla $numCapitulo $numVersiculo" -in ('1Rs 16 ', '1Rs 20 ')) {
 										# O versículo não está destacado
-										if ($texto.Substring(0, 1) -eq '1') {
-											$texto = $texto.Substring(1)
+										if ($txt.Substring(0, 1) -eq '1') {
+											$txt = $txt.Substring(1)
 											$numVersiculo = '1'
 											$result.livros.$sigla.capitulos.$numCapitulo.versiculos.$numVersiculo = @{
 												texto = @()
@@ -199,7 +201,7 @@ If (Test-Path $fileName) {
 								if (-not $sigla) {
 									throw '?!?!'
 								}
-								$result.livros.$sigla.capitulos.$numCapitulo.versiculos.$numVersiculo.texto += $texto
+								$result.livros.$sigla.capitulos.$numCapitulo.versiculos.$numVersiculo.texto += $txt
 							}
 							continue
 						}
@@ -219,15 +221,15 @@ If (Test-Path $fileName) {
 		$sigla = "$($livro.sigla)"
 		$result.livros.$sigla = $temp.livros.$sigla
 		$capitulos = @()
-		ForEach ($capitulo In ($result.livros.$sigla.capitulos.Keys | Where-Object { $_ -notmatch '#' })) {
+		ForEach ($capitulo In ($result.livros.$sigla.capitulos.Keys)) {
 			$versiculos = @()
-			ForEach ($versiculo In ($result.livros.$sigla.capitulos.$capitulo.versiculos.Keys | Where-Object { $_ -notmatch '#' })) {
+			ForEach ($versiculo In ($result.livros.$sigla.capitulos.$capitulo.versiculos.Keys)) {
 				$versiculos += $versiculo
 				# TODO Remover <br>s no final
-				# TODO Tratamento dos caracteres "alienígenas" (encoding?)
 			}
 			$capitulos += @{
 				capitulo = $capitulo
+				fonte = $result.livros.$sigla.capitulos.$capitulo.fonte
 				versiculos = $versiculos
 			}
 		}
