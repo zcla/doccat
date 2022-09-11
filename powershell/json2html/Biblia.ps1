@@ -2,6 +2,8 @@ param(
 	[Parameter(Mandatory)][string]$id
 )
 
+. ..\utils\Encoding.ps1
+
 Set-Location $PSScriptRoot
 $prjPath = (Get-Item $PSScriptRoot).Parent.Parent.FullName
 
@@ -10,10 +12,10 @@ Write-Host "Inicializando" -ForegroundColor Cyan
 
 Write-Host "Biblia" -ForegroundColor Cyan
 
-$config = Get-Content -Path "$prjPath\config\config.json" | ConvertFrom-Json -AsHashtable
+$config = Convert-UnicodeC1ControlCharacters_to_HtmlEntities (Get-Content -Path "$prjPath\config\config.json") | ConvertFrom-Json -AsHashtable
 
 $fileName = "$prjPath\temp\json\$id.json"
-$biblia = Get-Content $fileName | ConvertFrom-Json -AsHashtable
+$biblia = Convert-UnicodeC1ControlCharacters_to_HtmlEntities (Get-Content $fileName) | ConvertFrom-Json -AsHashtable
 $idBiblia = $id.replace('Biblia_', '')
 
 $fileName = "$prjPath\html\biblia"

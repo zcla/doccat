@@ -2,17 +2,6 @@ Set-Location $PSScriptRoot
 $prjPath = (Get-Item $PSScriptRoot).Parent.Parent.FullName
 $id = (Get-Item $PSCommandPath).Name -replace '\.ps1', ''
 
-function ConsertaCaracteres($str) {
-	$result = $str
-	$chars = @(145, 146, 147, 148, 150)
-	foreach ($char in $chars) {
-		if ($result.IndexOf([char]$char) -gt -1) {
-			$result = $result -replace [char]$char, "&#$char;"
-		}
-	}
-	return $result
-}
-
 Write-Host "Inicializando" -ForegroundColor Cyan
 ..\utils\Import-ModulePowerHTML.ps1
 
@@ -25,8 +14,8 @@ $dados = Get-Content -Path "$prjPath\temp\download\$id.json" | ConvertFrom-Json 
 $fileName = "$prjPath\temp\json\$id.json"
 Write-Host "  JSON" -ForegroundColor Cyan -NoNewline
 If (Test-Path $fileName) {
-# 	Write-Host " ok" -ForegroundColor Green
-# } Else {
+	Write-Host " ok" -ForegroundColor Green
+} Else {
 	Write-Host " gerando..." -ForegroundColor Yellow
 	
 	$result = [ordered]@{
@@ -46,7 +35,7 @@ If (Test-Path $fileName) {
 			fonte = $dados.livros.$keyLivro.fonte
 		}
 		foreach ($texto in $dados.livros.$keyLivro.texto) {
-			$htmlDom = ConvertFrom-Html -Content (ConsertaCaracteres $texto.texto)
+			$htmlDom = ConvertFrom-Html -Content $texto.texto
 			$nodes = $htmlDom.SelectSingleNode("//body").ChildNodes
 			$titulos = @()
 			$numCapitulo = ''
