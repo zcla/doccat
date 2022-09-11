@@ -1,11 +1,11 @@
 Clear-Host
 
 Write-Host "Download" -ForegroundColor Blue
-.\download\Biblia_vatican_lt.ps1
+.\web2download\Biblia_vatican_lt.ps1
 Set-Location ..
 
 Write-Host "Download -> JSON" -ForegroundColor Blue
-.\html2json\Biblia_vatican_lt.ps1
+.\download2json\Biblia_vatican_lt.ps1
 Set-Location ..
 
 Write-Host "JSON -> HTML" -ForegroundColor Blue
