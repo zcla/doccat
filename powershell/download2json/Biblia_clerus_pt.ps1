@@ -229,7 +229,6 @@ If (Test-Path $fileName) {
 			}
 			$capitulos += @{
 				capitulo = $capitulo
-				fonte = $result.livros.$sigla.capitulos.$capitulo.fonte
 				versiculos = $versiculos
 			}
 		}
