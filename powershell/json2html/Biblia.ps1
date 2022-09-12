@@ -90,6 +90,16 @@ ForEach ($objLivro In $biblia.ordem) {
 
 </div>
 "@
+		if ($capitulo.fonte) {
+			$textoLink = $capitulo.fonte -replace "^https?:\/\/(www\.)?([^\/]+)\/?.*$", "`$2"
+			$htmlCapitulo += @"
+
+<div class="alert alert-info">
+	<b>Fonte:</b> <a href="$($capitulo.fonte)" target="_blank">$textoLink<img class="align-text-bottom" src="img/linkExterno.png"></a>.
+</div>
+"@
+
+		}
 		$fileName = "$prjPath\html\biblia\$idBiblia\$sigla\$numCapitulo\index.html"
 		If ($numCapitulo -ne '-') {
 			$htmlCapitulo | Out-File (New-Item $fileName -Force)
