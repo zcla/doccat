@@ -21,15 +21,15 @@ If (Test-Path $fileName) {
 	$result = [ordered]@{
 		livros = [ordered]@{}
 	}
-	ForEach ($keyLivro In $dados.livros.Keys) {
+	ForEach ($keyLivro In $dados.Keys) {
 		$sigla = $config.download.$id.'mapa-livro'.$keyLivro
 		Write-Host "    $sigla ($keyLivro)" -ForegroundColor Cyan -NoNewline
 		$result.livros.$sigla = [ordered]@{
 			capitulos = [ordered]@{}
-			dataHora = $dados.livros.$keyLivro.dataHora
-			fonte = $dados.livros.$keyLivro.fonte
+			dataHora = $dados.$keyLivro.dataHora
+			fonte = $dados.$keyLivro.fonte
 		}
-		$htmlDom = ConvertFrom-Html -Content $dados.livros.$keyLivro.texto
+		$htmlDom = ConvertFrom-Html -Content $dados.$keyLivro.texto
 		$ancoras = $htmlDom.SelectNodes("//a[@name]") | Where-Object { $_.InnerText }
 		If ($ancoras.Count -eq 0) {
 			$ancoras = $htmlDom.SelectNodes("//p") | Where-Object { $_.InnerHTML -match '\<br\>' }
@@ -50,6 +50,7 @@ If (Test-Path $fileName) {
 						If ($texto) {
 							$fase = 'versiculos'
 							$result.livros.$sigla.capitulos.$numCapitulo = [ordered]@{
+								fonte = $dados.$keyLivro.fonte
 								versiculos = [ordered]@{}
 							}
 							Write-Host " $numCapitulo" -ForegroundColor Cyan -NoNewline
@@ -80,6 +81,7 @@ If (Test-Path $fileName) {
 							}
 							Write-Host " $numCapitulo" -ForegroundColor Cyan -NoNewline
 							$result.livros.$sigla.capitulos.$numCapitulo = [ordered]@{
+								fonte = $dados.$keyLivro.fonte
 								versiculos = [ordered]@{}
 							}
 							$fase = 'titulo'
@@ -212,9 +214,9 @@ If (Test-Path $fileName) {
 		$sigla = "$($livro.sigla)"
 		$result.livros.$sigla = $temp.livros.$sigla
 		$capitulos = @()
-		ForEach ($capitulo In ($result.livros.$sigla.capitulos.Keys | Where-Object { $_ -notmatch '#' })) {
+		ForEach ($capitulo In ($result.livros.$sigla.capitulos.Keys)) {
 			$versiculos = @()
-			ForEach ($versiculo In ($result.livros.$sigla.capitulos.$capitulo.versiculos.Keys | Where-Object { $_ -notmatch '#' })) {
+			ForEach ($versiculo In ($result.livros.$sigla.capitulos.$capitulo.versiculos.Keys)) {
 				$versiculos += $versiculo
 				}
 			$capitulos += @{
