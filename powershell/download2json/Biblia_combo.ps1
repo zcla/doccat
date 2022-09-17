@@ -1,7 +1,6 @@
-$versoes = @('Biblia_clerus_pt', 'Biblia_vatican_lt')
-# param(
-# 	[Parameter(Mandatory)][string[]]$versoes
-# )
+param(
+	[Parameter(Mandatory)][string[]]$versoes
+)
 
 . ..\utils\Encoding.ps1
 
@@ -28,6 +27,7 @@ foreach ($versao in $versoes) {
 Write-Host "Unificando" -ForegroundColor Cyan
 $result = [ordered]@{
 	livros = [ordered]@{}
+	ordem = @()
 }
 foreach ($configLivro In $config.biblia.livro) {
 	$sigla = $configLivro.sigla
@@ -66,6 +66,38 @@ foreach ($configLivro In $config.biblia.livro) {
 	}
 	Write-Host ""
 }
+# TODO Detectar livros e capítulos que não deveriam existir
+
+Write-Host "Ordenando" -ForegroundColor Cyan -NoNewline
+$temp = $result
+$result = [ordered]@{
+	livros = [ordered]@{}
+	ordem = @()
+}
+foreach ($livro in $config.biblia.livro) {
+	$sigla = "$($livro.sigla)"
+	$result.livros.$sigla = $temp.livros.$sigla
+	$capitulos = @()
+	foreach ($capitulo in $result.livros.$sigla.capitulos.Keys) {
+		$versiculos = @()
+		foreach ($versao in $result.livros.$sigla.capitulos.$capitulo.versoes.Keys) {
+			foreach ($versiculo in ($result.livros.$sigla.capitulos.$capitulo.versoes.$versao.versiculos.Keys)) {
+				if ($versiculos -notcontains $versiculo) {
+					$versiculos += $versiculo
+				}
+			}
+		}
+		$capitulos += @{
+			capitulo = $capitulo
+			versiculos = $versiculos
+		}
+	}
+	$result.ordem += @{
+		sigla = $sigla
+		capitulos = $capitulos
+	}
+}
+Write-Host " ok" -ForegroundColor Green
 
 $fileName = "$prjPath\temp\json\Biblia_combo.json"
 Write-Host "Gravando" -ForegroundColor Cyan -NoNewline
