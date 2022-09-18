@@ -227,6 +227,10 @@ If (Test-Path $fileName) {
 				$versiculos += $versiculo
 				# TODO Remover <br>s no final
 			}
+			if (($capitulo -eq 1) -and ($result.livros.$sigla.capitulos.Keys.Count -eq 1)) {
+				# Trata livros com um só capítulo
+				$capitulo = '-'
+			}
 			$capitulos += @{
 				capitulo = $capitulo
 				versiculos = $versiculos
