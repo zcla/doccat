@@ -217,6 +217,7 @@ If (Test-Path $fileName) {
 		livros = [ordered]@{}
 		ordem = @()
 	}
+	$livrosComUmCapitulo = @()
 	ForEach ($livro In $config.biblia.livro) {
 		$sigla = "$($livro.sigla)"
 		$result.livros.$sigla = $temp.livros.$sigla
@@ -229,6 +230,7 @@ If (Test-Path $fileName) {
 			}
 			if (($capitulo -eq 1) -and ($result.livros.$sigla.capitulos.Keys.Count -eq 1)) {
 				# Trata livros com um só capítulo
+				$livrosComUmCapitulo += $sigla
 				$capitulo = '-'
 			}
 			$capitulos += @{
@@ -241,6 +243,11 @@ If (Test-Path $fileName) {
 			capitulos = $capitulos
 		}
 	}
+	ForEach ($sigla In $livrosComUmCapitulo) {
+		$result.livros.$sigla.capitulos.'-' = $result.livros.$sigla.capitulos.'1'
+		$result.livros.$sigla.capitulos.Remove('1')
+	}
+
 
 	Write-Host "    Gravando" -ForegroundColor Cyan -NoNewline
 	$result | ConvertTo-Json -Depth 100 | Out-File (New-Item $fileName -Force)
