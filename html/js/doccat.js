@@ -78,7 +78,8 @@ class DocCat {
 							// TODO Ler esse "qualBiblia" de algum lugar
 							// TODO Permitir escolher a versão
 							// const qualBiblia = 'vatican_lt';
-							const qualBiblia = 'clerus_pt';
+							// const qualBiblia = 'clerus_pt';
+                            const qualBiblia = 'combo';
                             Utils.loadHtml('biblia/' + qualBiblia + '/' + params.livro, '#livro', function() {
                                 if (params.capitulo) {
                                     Utils.loadHtml('biblia/' + qualBiblia + '/' + params.livro + '/' + params.capitulo, '#capitulo');

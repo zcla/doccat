@@ -1,7 +1,11 @@
 Clear-Host
 
-Write-Host "Biblia_vatican_lt" -ForegroundColor Magenta
-.\Biblia.ps1 'Biblia_vatican_lt'
+$biblias = @('Biblia_clerus_pt', 'Biblia_vatican_lt')
 
-Write-Host "Biblia_clerus_pt" -ForegroundColor Magenta
-.\Biblia.ps1 'Biblia_clerus_pt'
+foreach ($biblia in $biblias) {
+    Write-Host $biblia -ForegroundColor Magenta
+    .\Biblia.ps1 $biblia
+}
+
+Write-Host "Biblia_combo" -ForegroundColor Magenta
+.\Biblia_combo.ps1 $biblias
