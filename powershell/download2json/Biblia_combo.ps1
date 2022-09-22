@@ -66,7 +66,6 @@ foreach ($configLivro In $config.biblia.livro) {
 	}
 	Write-Host ""
 }
-# TODO Detectar livros e capítulos que não deveriam existir
 
 Write-Host "Ordenando" -ForegroundColor Cyan -NoNewline
 $temp = $result
