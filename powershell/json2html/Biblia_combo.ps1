@@ -48,56 +48,60 @@ foreach ($ordemLivro In $biblia.ordem) {
 <div class="tab-content">
 "@
 		$active = " active"
-		foreach ($keyVersao in $capitulo.versoes.Keys) {
+		foreach ($keyVersao in ($config.download.Keys | Sort-Object -Descending)) { # TODO Gambiarra; tem que mudar o config.json pra ser uma lista, não um hashmap
 			$versao = $capitulo.versoes.$keyVersao
-			$configVersao = $config.download.$keyVersao
-			$htmlCapituloTabs += @"
+			if ($versao) {
+				$configVersao = $config.download.$keyVersao
+				$htmlCapituloTabs += @"
 
     <li class="nav-item active">
         <a href="#biblia_capitulo_$($configVersao.sigla)" class="nav-link$active" data-bs-toggle="tab">$($configVersao.nome)</a>
     </li>
 "@
-			$htmlCapituloContent += @"
+				$htmlCapituloContent += @"
 
 	<div id="biblia_capitulo_$($configVersao.sigla)" class="tab-pane show$active">
 "@
-			if ($numCapitulo -ne '-') {
-				$htmlCapituloContent += @"
+				if ($numCapitulo -ne '-') {
+					$htmlCapituloContent += @"
 
 		<span class="capitulo">$numCapitulo</span>
 "@
-			}
-			foreach ($numVersiculo in $ordemCapitulo.versiculos) {
-				$versiculo = $versao.versiculos.$numVersiculo
-				if ($versiculo.titulos) {
-					foreach ($titulo in $versiculo.titulos) {
-						$htmlCapituloContent += @"
+				}
+				foreach ($numVersiculo in $ordemCapitulo.versiculos) {
+					$versiculo = $versao.versiculos.$numVersiculo
+					if ($versiculo.titulos) {
+						foreach ($titulo in $versiculo.titulos) {
+							$htmlCapituloContent += @"
 
 		<span class="titulo">$titulo</span>
 "@
+						}
 					}
-				}
-				$htmlCapituloContent += @"
+					$htmlCapituloContent += @"
 
 		<span class="versiculo"><sup>$numVersiculo</sup> $($versiculo.texto)</span>
 "@
-			}
-			if ($versao.fonte) {
-				$textoLink = $versao.fonte -replace "^https?:\/\/(www\.)?([^\/]+)\/?.*$", "`$2"
-				$htmlCapituloContent += @"
+				}
+				if ($versao.fonte) {
+					$textoLink = $versao.fonte -replace "^https?:\/\/(www\.)?([^\/]+)\/?.*$", "`$2"
+					$htmlCapituloContent += @"
 
 		<div class="alert alert-info">
 			<b>Fonte:</b> <a href="$($versao.fonte)" target="_blank">$textoLink<img class="align-text-bottom" src="img/linkExterno.png"></a>.
 		</div>
 "@
 
-			}
-			$htmlCapituloContent += @"
+				}
+				$htmlCapituloContent += @"
 
 	</div>
 "@
 
-			$active = ""
+				$active = ""
+			} else {
+				Write-Host "*" -ForegroundColor Red -NoNewline
+			}
 		}
 		$htmlCapituloTabs += @"
 
