@@ -165,12 +165,22 @@ If (Test-Path $fileName) {
 										throw '?!?!'
 									}
 								}
-								if (($sigla -eq 'Eclo') -and ($numCapitulo -eq 'Prólogo') -and ($txt -eq '(li.')) {
+								if (("$sigla $numCapitulo" -eq 'Eclo Prólogo') -and ($txt -eq '(li.')) {
 									# Trata o "prólogo do tradutor grego" do Eclesiástico
 									$numVersiculo = $txt
 									$result.livros.$sigla.capitulos.$numCapitulo.versiculos.$numVersiculo = @{
 										texto = @()
 									}
+								}
+								if (("$sigla $numCapitulo" -eq 'Ex 25') -and ($txt -eq '26')) {
+									# O capítulo não está destacado
+									$numCapitulo = '26'
+									Write-Host " $numCapitulo" -ForegroundColor Cyan -NoNewline
+									$result.livros.$sigla.capitulos.$numCapitulo = [ordered]@{
+										fonte = $texto.fonte
+										versiculos = [ordered]@{}
+									}
+									continue
 								}
 								if (-not $numVersiculo) {
 									if ($sigla -eq 'Sl') {
