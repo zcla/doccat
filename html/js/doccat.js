@@ -160,9 +160,7 @@ class DocCat {
         });
     }
 
-    static toolbarBold() {
-        const prefixo = '**';
-        const sufixo = '**';
+    static toolbarInsertPrefixoSufixo(prefixo, sufixo) {
         let start = $('#anotacoes textarea').prop('selectionStart');
         let end = $('#anotacoes textarea').prop('selectionEnd');
         let val = $('#anotacoes textarea').val();
@@ -182,6 +180,14 @@ class DocCat {
         $('#anotacoes textarea').prop('selectionEnd', end);
         $('#anotacoes textarea').trigger('input');
         $('#anotacoes textarea').focus();
+    }
+
+    static toolbarBold() {
+        DocCat.toolbarInsertPrefixoSufixo('**', '**');
+    }
+
+    static toolbarItalic() {
+        DocCat.toolbarInsertPrefixoSufixo('*', '*');
     }
 }
 
