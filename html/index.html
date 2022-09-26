@@ -67,7 +67,15 @@
 			<div id="doccat">
 			</div>
 		</div>
-		<!-- TODO Criar uma barra de tarefas "copiável" para o editor de texto, com "templates" para referências, com bold, itálico, etc., com links e instruções pra markdown e html -->
+		<div id="template_anotacoesPreview" class="col-?">
+			<div id="template_anotacoes">
+				<label class="form-label" title="Você pode usar Markdown e HTML aqui">Anotações</label>
+				<!-- TODO Barra de tarefas: bold, itálico, links e instruções pra markdown e html -->
+				<textarea class="form-control" rows="20" oninput="DocCat.anotacoesOnInput();"></textarea>
+			</div>
+			<div id="template_preview" class="mt-4">
+			</div>
+		</div>
 		<footer class="bg-dark">
 			<p class="text-center text-white">Este código é livre e pode ser baixado do <a href="https://github.com/zcla/doccat" target="_blank">GitHub<img class="align-text-bottom" src="img/linkExterno.png"></a>.</p>
 		</footer>

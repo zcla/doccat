@@ -67,6 +67,10 @@ class Utils {
 }
 
 class DocCat {
+    static cloneAnotacoesPreview() {
+        return $('#template_anotacoesPreview')[0].outerHTML;
+    }
+
     static inicializa() {
         // Trata parâmetros na URL
         const params = Utils.getUrlParams();
@@ -284,6 +288,11 @@ class Catecismo {
                     if (params.cic) {
                         $('#grupo a[href^="?pagina=catecismo"][href$="&cic=' + params.cic + '"]').parent().parent().addClass('selecionado');
                         Utils.loadHtml('catecismo/' + params.grupo + '/cic_' + params.cic + '.html', '#texto', function() {
+                            const anotacoesPreview = DocCat.cloneAnotacoesPreview();
+                            $("#catecismo .row").append(anotacoesPreview
+                                .replaceAll('template_', '')
+                                .replaceAll('col-?', 'col-4')
+                                .replace('DocCat.anotacoesOnInput', 'Catecismo.anotacoesOnInput'));
                             const navegador = $('<div class="navegador">');
                             const anterior = Catecismo.cicAnterior(params.cic);
                             if (anterior != null) {

@@ -27,3 +27,7 @@ thead th {
 #doccat {
     padding-top: var(--bs-gutter-x,.75rem);
 }
+
+#template_anotacoesPreview {
+    display: none;
+}
