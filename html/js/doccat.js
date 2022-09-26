@@ -399,6 +399,11 @@ class Documento {
                         if (params.paragrafo) {
                             $('#estrutura a[href^="?pagina=documento&nome=' + params.nome + '"][href$="&paragrafo=' + params.paragrafo + '"]').parent().parent().addClass('selecionado');
                             Utils.loadHtml('documento/' + params.nome + '/' + params.paragrafo + '.html', '#texto', function() {
+                                const anotacoesPreview = DocCat.cloneAnotacoesPreview();
+                                $("#documento .row").append(anotacoesPreview
+                                    .replaceAll('template_', '')
+                                    .replaceAll('col-?', 'col-4')
+                                    .replace('DocCat.anotacoesOnInput', 'Documento.anotacoesOnInput'));
                                 const navegador = $('<div id="textoNavegador" class="navegador">');
                                 const anterior = Documento.paragrafoAnterior(params.paragrafo);
                                 if (anterior != null) {
