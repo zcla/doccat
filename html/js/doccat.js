@@ -159,6 +159,30 @@ class DocCat {
             $(this).replaceWith(replacement);
         });
     }
+
+    static toolbarBold() {
+        const prefixo = '**';
+        const sufixo = '**';
+        let start = $('#anotacoes textarea').prop('selectionStart');
+        let end = $('#anotacoes textarea').prop('selectionEnd');
+        let val = $('#anotacoes textarea').val();
+        if ((val.substring(start - prefixo.length, start) == prefixo) && (val.substring(end, end + sufixo.length) == sufixo)) {
+            // remover
+            val = val.substr(0, start - prefixo.length) + val.substring(start, end) + val.substring(end + sufixo.length);
+            start = start - prefixo.length;
+            end = end - prefixo.length;
+        } else {
+            // adicionar
+            val = val.substring(0, start) + prefixo + val.substring(start, end) + sufixo + val.substring(end);
+            start = start + prefixo.length;
+            end = end + prefixo.length;
+        }
+        $('#anotacoes textarea').val(val);
+        $('#anotacoes textarea').prop('selectionStart', start);
+        $('#anotacoes textarea').prop('selectionEnd', end);
+        $('#anotacoes textarea').trigger('input');
+        $('#anotacoes textarea').focus();
+    }
 }
 
 class Storage {

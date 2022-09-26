@@ -70,7 +70,12 @@
 		<div id="template_anotacoesPreview" class="col-?">
 			<div id="template_anotacoes">
 				<label class="form-label" title="Você pode usar Markdown e HTML aqui">Anotações</label>
-				<!-- TODO Barra de tarefas: bold, itálico, links e instruções pra markdown e html -->
+				<div class="btn-toolbar" role="toolbar">
+					<div class="btn-group btn-group-sm" role="group">
+						<button type="button" class="btn btn-outline-dark" onclick="DocCat.toolbarBold()"><b>B</b></button>
+					</div>
+					<!-- TODO Toolbar: bold, itálico, links e instruções pra markdown e html -->
+				</div>
 				<textarea class="form-control" rows="20" oninput="DocCat.anotacoesOnInput();"></textarea>
 			</div>
 			<div id="template_preview" class="mt-4">
