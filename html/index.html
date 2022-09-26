@@ -69,12 +69,19 @@
 		</div>
 		<div id="template_anotacoesPreview" class="col-?">
 			<div id="template_anotacoes">
-				<label class="form-label" title="Você pode usar Markdown e HTML aqui">Anotações</label>
+				<label class="form-label" title="Você pode usar Markdown e HTML aqui">
+					Anotações
+					<!-- TODO Alinhar à direita -->
+					<!-- TODO Melhorar o visual -->
+					<a class="badge badge-info" href="https://www.markdownguide.org/basic-syntax/" target="_blank" title="Você pode usar Markdown">MD</a>
+					<a class="badge badge-info" href="https://www.w3schools.com/html/" target="_blank" title="Você pode usar HTML">HTML</a>
+				</label>
 				<div class="btn-toolbar" role="toolbar">
 					<div class="btn-group btn-group-sm" role="group">
-						<button type="button" class="btn btn-outline-dark" onclick="DocCat.toolbarBold()"><b>B</b></button>
-						<button type="button" class="btn btn-outline-dark" onclick="DocCat.toolbarItalic()"><i>I</i></button>
-						<!-- TODO Toolbar: links e instruções pra markdown e html -->
+						<!-- TODO Ícones com a mesma largura (usar imagens?) -->
+						<button type="button" class="btn btn-outline-dark" onclick="DocCat.toolbarBold()" title="Negrito"><b>N</b></button>
+						<button type="button" class="btn btn-outline-dark" onclick="DocCat.toolbarItalic()" title="Itálico"><i>I</i></button>
+						<!-- TODO Links: Bíblia, Catecismo, Documentos -->
 					</div>
 				</div>
 				<textarea class="form-control" rows="20" oninput="DocCat.anotacoesOnInput();"></textarea>
