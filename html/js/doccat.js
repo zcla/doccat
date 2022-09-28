@@ -114,7 +114,7 @@ class DocCat {
         }
         Storage.updateMenu();
     }
-    
+
     static refReplace(selector) {
         $('ref-biblia').each(function() {
             // TODO Fazer uma pesquisa no Google ou mandar pra algum site enquanto não tenho o texto.
@@ -157,6 +157,17 @@ class DocCat {
                     .append('<img class="align-text-bottom" src="img/linkExterno.png">');
             }
             $(this).replaceWith(replacement);
+        });
+    }
+
+    static anotacoesRegistraEventos() {
+        $('#anotacoes textarea').keypress(function(e) {
+            if (e.ctrlKey && e.keyCode == 2) {
+                DocCat.toolbarBold();
+            }
+            if (e.ctrlKey && e.keyCode == 9) {
+                DocCat.toolbarItalic();
+            }
         });
     }
 
@@ -252,12 +263,14 @@ class Catecismo {
     static #cic2grupo = null;
     static #cicEmOrdem = null;
 
-    static anotacoesOnInput() {
-        const key = 'catecismo.' + Utils.getUrlParam('cic');
-        const val = $('#anotacoes textarea').val();
-        Storage.setItem(key, val);
-        $('#preview').html(marked.parse(val));
-        DocCat.refReplace("#preview");
+    static anotacoesRegistraEventos() {
+        $('#anotacoes textarea').on('input', function() {
+            const key = 'catecismo.' + Utils.getUrlParam('cic');
+            const val = $('#anotacoes textarea').val();
+            Storage.setItem(key, val);
+            $('#preview').html(marked.parse(val));
+            DocCat.refReplace("#preview");
+        });
     }
 
     static cic2grupo(cic) {
@@ -321,8 +334,7 @@ class Catecismo {
                             const anotacoesPreview = DocCat.cloneAnotacoesPreview();
                             $("#catecismo .row").append(anotacoesPreview
                                 .replaceAll('template_', '')
-                                .replaceAll('col-?', 'col-4')
-                                .replace('DocCat.anotacoesOnInput', 'Catecismo.anotacoesOnInput'));
+                                .replaceAll('col-?', 'col-4'));
                             const navegador = $('<div class="navegador">');
                             const anterior = Catecismo.cicAnterior(params.cic);
                             if (anterior != null) {
@@ -334,8 +346,10 @@ class Catecismo {
                             }
                             $('#texto').append(navegador);
                             DocCat.refReplace("#grupo");
+                            DocCat.anotacoesRegistraEventos();
+                            Catecismo.anotacoesRegistraEventos();
                             $('#anotacoes textarea').val(Storage.getItem('catecismo.' + params.cic));
-                            Catecismo.anotacoesOnInput();
+                            $('#anotacoes textarea').trigger('input');
                         });
                     }
                 });
@@ -397,13 +411,15 @@ class Documento {
     static json = null;
     static #paragrafoEmOrdem = null;
 
-    static anotacoesOnInput() {
-        const urlParams = Utils.getUrlParams();
-        const key = 'documento.' + urlParams.nome + '.' + urlParams.paragrafo;
-        const val = $('#anotacoes textarea').val();
-        Storage.setItem(key, val);
-        $('#preview').html(marked.parse(val));
-        DocCat.refReplace("#preview");
+    static anotacoesRegistraEventos() {
+        $('#anotacoes textarea').on('input', function() {
+            const urlParams = Utils.getUrlParams();
+            const key = 'documento.' + urlParams.nome + '.' + urlParams.paragrafo;
+            const val = $('#anotacoes textarea').val();
+            Storage.setItem(key, val);
+            $('#preview').html(marked.parse(val));
+            DocCat.refReplace("#preview");
+        });
     }
 
     static montaPagina(params) {
@@ -432,8 +448,7 @@ class Documento {
                                 const anotacoesPreview = DocCat.cloneAnotacoesPreview();
                                 $("#documento .row").append(anotacoesPreview
                                     .replaceAll('template_', '')
-                                    .replaceAll('col-?', 'col-4')
-                                    .replace('DocCat.anotacoesOnInput', 'Documento.anotacoesOnInput'));
+                                    .replaceAll('col-?', 'col-4'));
                                 const navegador = $('<div id="textoNavegador" class="navegador">');
                                 const anterior = Documento.paragrafoAnterior(params.paragrafo);
                                 if (anterior != null) {
@@ -445,8 +460,10 @@ class Documento {
                                 }
                                 $('#texto').append(navegador);
                                 DocCat.refReplace("#textoNavegador");
+                                DocCat.anotacoesRegistraEventos();
+                                Documento.anotacoesRegistraEventos();
                                 $('#anotacoes textarea').val(Storage.getItem('documento.' + params.nome + '.' + params.paragrafo));
-                                Documento.anotacoesOnInput();
+                                $('#anotacoes textarea').trigger('input');
                             });
                         }
                     });
