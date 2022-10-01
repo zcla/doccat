@@ -36,7 +36,7 @@ If (Test-Path $fileName) {
 		}
 		foreach ($texto in $dados.livros.$keyLivro.texto) {
 			$textoOk = $texto.texto
-			if ($keyLivro -eq 'Isaías') {
+			if ($sigla -eq 'Is') {
 				$textoOk = $textoOk.Replace('<i>(<i>', '<i>(')
 			}
 			$htmlDom = ConvertFrom-Html -Content $textoOk
