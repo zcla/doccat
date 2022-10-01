@@ -35,7 +35,11 @@ If (Test-Path $fileName) {
 			fonte = $dados.livros.$keyLivro.fonte
 		}
 		foreach ($texto in $dados.livros.$keyLivro.texto) {
-			$htmlDom = ConvertFrom-Html -Content $texto.texto
+			$textoOk = $texto.texto
+			if ($keyLivro -eq 'Isaías') {
+				$textoOk = $textoOk.Replace('<i>(<i>', '<i>(')
+			}
+			$htmlDom = ConvertFrom-Html -Content $textoOk
 			$nodes = $htmlDom.SelectSingleNode("//body").ChildNodes
 			$titulos = @()
 			$numCapitulo = ''
