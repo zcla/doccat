@@ -39,6 +39,9 @@ If (Test-Path $fileName) {
 			if ($sigla -eq 'Is') {
 				$textoOk = $textoOk.Replace('<i>(<i>', '<i>(')
 			}
+			if ($sigla -eq 'Zc') {
+				$textoOk = $textoOk.Replace('<a href=bn2.htm#y>Desolação: contra os poderosos</a></h2> <sup>', '<a href=bn2.htm#y>Desolação: contra os poderosos</a></h2><a name=eu><b>11</b> <sup>')
+			}
 			$htmlDom = ConvertFrom-Html -Content $textoOk
 			$nodes = $htmlDom.SelectSingleNode("//body").ChildNodes
 			$titulos = @()
