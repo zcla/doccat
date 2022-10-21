@@ -332,7 +332,7 @@ class Catecismo {
                         $('#grupo a[href^="?pagina=catecismo"][href$="&cic=' + params.cic + '"]').parent().parent().addClass('selecionado');
                         Utils.loadHtml('catecismo/' + params.grupo + '/cic_' + params.cic + '.html', '#texto', function() {
                             const anotacoesPreview = DocCat.cloneAnotacoesPreview();
-                            $("#catecismo .row").append(anotacoesPreview
+                            $("#catecismo > .row").append(anotacoesPreview
                                 .replaceAll('template_', '')
                                 .replaceAll('col-?', 'col-4'));
                             const navegador = $('<div class="navegador">');
