@@ -95,7 +95,7 @@ ForEach ($objLivro In $biblia.ordem) {
 			$htmlCapitulo += @"
 
 <div class="alert alert-info">
-	<b>Fonte:</b> <a href="$($capitulo.fonte)" target="_blank">$textoLink<img class="align-text-bottom" src="img/linkExterno.png"></a>.
+	<b>Fonte:</b> <a href="$($capitulo.fonte)" target="_blank">$textoLink<img class="align-text-bottom" src="img/linkExterno.svg"></a>.
 </div>
 "@
 

@@ -154,7 +154,7 @@ class DocCat {
                 // Se o link for para o documento, abre em uma outra aba
                 replacement = $('<a href="?pagina=documento&nome=' + doc + '" target="_blank">')
                     .append(this.innerHTML)
-                    .append('<img class="align-text-bottom" src="img/linkExterno.png">');
+                    .append('<img class="align-text-bottom" src="img/linkExterno.svg">');
             }
             $(this).replaceWith(replacement);
         });
