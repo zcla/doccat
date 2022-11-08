@@ -1,16 +1,14 @@
 param (
-    [Parameter(Mandatory=$true)][Object]$config,
-	[Parameter(Mandatory=$true)][string]$sigla
+    [Parameter(Mandatory=$true)][Object]$config
 )
 
-$fileName = "..\..\download\$sigla.json"
+$fileName = "..\..\download\$($config.sigla).json"
 if (Test-Path $fileName) {
 	Write-Host -ForegroundColor Green " ok"
 } else {
 	Write-Host -ForegroundColor Yellow " fazendo..."
 
-	$download = $config.download | Where-Object { $_.sigla -eq $sigla }
-	$url = $download.url
+	$url = $config.url
 	Write-Host -ForegroundColor Cyan "    $url" -NoNewline
 	$dataHora = Get-Date
 	$result = [ordered]@{

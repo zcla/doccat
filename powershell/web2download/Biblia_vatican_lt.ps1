@@ -1,9 +1,8 @@
 param (
-    [Parameter(Mandatory=$true)][Object]$config,
-	[Parameter(Mandatory=$true)][string]$sigla
+    [Parameter(Mandatory=$true)][Object]$config
 )
 
-$fileName = "..\..\download\$sigla.json"
+$fileName = "..\..\download\$($config.sigla).json"
 if (Test-Path $fileName) {
 	Write-Host -ForegroundColor Green " ok"
 } else {
@@ -14,8 +13,7 @@ if (Test-Path $fileName) {
 		livros = [ordered]@{}
 		dataHora = $dataHora
 	}
-	$download = $config.download | Where-Object { $_.sigla -eq $sigla }
-	foreach ($url in $download.urls) {
+	foreach ($url in $config.urls) {
 		Write-Host -ForegroundColor Cyan "    $url" -NoNewline
 		$dataHora = Get-Date
 		$iwr = Invoke-WebRequest $url
