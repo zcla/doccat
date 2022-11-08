@@ -1,7 +1,10 @@
-Clear-Host
+param (
+    [Parameter(Mandatory=$true)][Object]$config
+)
 
-Write-Host "Biblia_vatican_lt" -ForegroundColor Magenta
-.\Biblia_vatican_lt.ps1
+Set-Location $PSScriptRoot
 
-Write-Host "Biblia_clerus_pt" -ForegroundColor Magenta
-.\Biblia_clerus_pt.ps1
+foreach ($download in $config.download) {
+    Write-Host -ForegroundColor Cyan "  $($download.sigla)" -NoNewline
+    & ".\$($download.sigla).ps1" $config $($download.sigla)
+}

@@ -1,16 +1,23 @@
 Clear-Host
 
-Write-Host "Download" -ForegroundColor Blue
-.\web2download\Biblia_vatican_lt.ps1
-Set-Location ..
+Set-Location $PSScriptRoot
+
+Write-Host -ForegroundColor Cyan "Inicialização"
+.\utils\Import-ModulePowerHTML.ps1
+
+Write-Host -ForegroundColor Cyan "Configuração"
+$config = Get-Content -Path "..\config\config.json" | ConvertFrom-Json
+
+Write-Host -ForegroundColor Cyan "Download"
+.\web2download\_Tudo.ps1 $config
+
+throw "Revisão feita até aqui"
 
 Write-Host "Download -> JSON" -ForegroundColor Blue
-.\download2json\Biblia_vatican_lt.ps1
-Set-Location ..
+.\download2json\_Tudo.ps1
 
 Write-Host "JSON -> HTML" -ForegroundColor Blue
 .\json2html\Biblia_vatican_lt.ps1
-Set-Location ..
 
 Write-Host "Catecismo" -ForegroundColor Blue
 .\Build-JsonCatecismo

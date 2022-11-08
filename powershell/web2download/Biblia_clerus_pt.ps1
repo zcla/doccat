@@ -1,23 +1,17 @@
-Set-Location $PSScriptRoot
-$prjPath = (Get-Item $PSScriptRoot).Parent.Parent.FullName
-$id = (Get-Item $PSCommandPath).Name -replace '\.ps1', ''
+param (
+    [Parameter(Mandatory=$true)][Object]$config,
+	[Parameter(Mandatory=$true)][string]$sigla
+)
 
-Write-Host "Inicializando" -ForegroundColor Cyan
-..\utils\Import-ModulePowerHTML.ps1
+$fileName = "..\..\download\$sigla.json"
+if (Test-Path $fileName) {
+	Write-Host -ForegroundColor Green " ok"
+} else {
+	Write-Host -ForegroundColor Yellow " fazendo..."
 
-$config = Get-Content -Path "$prjPath\config\config.json" | ConvertFrom-Json
-
-Write-Host "Biblia" -ForegroundColor Cyan
-
-$fileName = "$prjPath\temp\download\$id.json"
-Write-Host "  Download" -ForegroundColor Cyan -NoNewline
-If (Test-Path $fileName) {
-	Write-Host " ok" -ForegroundColor Green
-} Else {
-	Write-Host " fazendo..." -ForegroundColor Yellow
-	
-	$url = $config.download.$id.url
-	Write-Host "    $url" -ForegroundColor Cyan -NoNewline
+	$download = $config.download | Where-Object { $_.sigla -eq $sigla }
+	$url = $download.url
+	Write-Host -ForegroundColor Cyan "    $url" -NoNewline
 	$dataHora = Get-Date
 	$result = [ordered]@{
 		livros = [ordered]@{}
@@ -26,12 +20,12 @@ If (Test-Path $fileName) {
 	$iwr = Invoke-WebRequest $url
 	$html = $iwr.Content | ConvertFrom-Html
 	$links = $html.DescendantNodes() | Where-Object { ($_.Name -eq 'a') -and (($_.Attributes | Where-Object { $_.Name -eq 'href' }).Count -gt 0) }
-	Write-Host " $($links.Count) livros" -ForegroundColor Green
-	ForEach ($link In $links) {
-		#####
+	Write-Host -ForegroundColor Green " $($links.Count) livros"
+	foreach ($link in $links) {
 		$livro = $link.InnerText
-		Write-Host "      $livro" -ForegroundColor Cyan
-		Write-Host "        Estrutura" -ForegroundColor Cyan -NoNewline
+		Write-Host -ForegroundColor Cyan "      $livro"
+
+		Write-Host -ForegroundColor Cyan "        Estrutura" -NoNewline
 		$href = ($link.Attributes | Where-Object { $_.Name -eq 'href' }).Value
 		$urlLivro = "$($url.substring(0, $url.LastIndexOf('/')))/$href"
 		$iwrLivro = Invoke-WebRequest $urlLivro
@@ -40,14 +34,13 @@ If (Test-Path $fileName) {
 			fonte = $urlLivro
 			texto = @()
 		}
-		Write-Host " $($result.livros.$livro.estrutura.Length) bytes" -ForegroundColor Green
+		Write-Host -ForegroundColor Green " $($result.livros.$livro.estrutura.Length) bytes"
 
-		#####
-		Write-Host "        Texto" -ForegroundColor Cyan
+		Write-Host -ForegroundColor Cyan "        Texto"
 		$htmlLivro = $iwrLivro.Content | ConvertFrom-Html
 		$linksLivro = $htmlLivro.DescendantNodes() | Where-Object { ($_.Name -eq 'a') -and (($_.Attributes | Where-Object { $_.Name -eq 'href' }).Count -gt 0) }
 		$urlsTexto = @()
-		ForEach ($linkLivro In $linksLivro) {
+		foreach ($linkLivro in $linksLivro) {
 			$hrefTexto = ($linkLivro.Attributes | Where-Object { $_.Name -eq 'href' }).Value
 			if ($hrefTexto -match '#') {
 				$hrefTexto = $hrefTexto.Split('#')[0]
@@ -55,20 +48,20 @@ If (Test-Path $fileName) {
 				if ($urlsTexto -contains $urlTexto) {
 					continue
 				}
-				# Download & store
-				Write-Host "          $hrefTexto" -ForegroundColor Cyan -NoNewline
+
+				Write-Host -ForegroundColor Cyan "          $hrefTexto" -NoNewline
 				$iwrTexto = Invoke-WebRequest $urlTexto
 				$result.livros.$livro.texto += @{
 					texto = "$($iwrTexto.Content)"
 					fonte = $urlTexto
 				}
-				Write-Host " $($iwrTexto.Content.Length) bytes" -ForegroundColor Green
+				Write-Host -ForegroundColor Green " $($iwrTexto.Content.Length) bytes"
 				$urlsTexto += $urlTexto
 			}
 		}
 	}
 
-	Write-Host "    Gravando" -ForegroundColor Cyan -NoNewline
+	Write-Host -ForegroundColor Cyan "    Gravando" -NoNewline
 	$result | ConvertTo-Json -Depth 100 | Out-File (New-Item $fileName -Force)
-	Write-Host " ok" -ForegroundColor Green
+	Write-Host -ForegroundColor Green " ok"
 }
