@@ -37,14 +37,17 @@ If (Test-Path $fileName) {
 		foreach ($texto in $dados.livros.$keyLivro.texto) {
 			$textoOk = $texto.texto
 			# Erros nos arquivos originais
+			if ($sigla -eq 'Ap') {
+				$textoOk = $textoOk.Replace('</i><b>6 e jurou', '</i><sup><font size=-1>6</font></SUP><a Name=guv> e jurou')
+			}
 			if ($sigla -eq 'Is') {
 				$textoOk = $textoOk.Replace('<i>(<i>', '<i>(')
 			}
-			if ($sigla -eq 'Zc') {
-				$textoOk = $textoOk.Replace('<a href=bn2.htm#y>Desolação: contra os poderosos</a></h2> <sup>', '<a href=bn2.htm#y>Desolação: contra os poderosos</a></h2><a name=eu><b>11</b> <sup>')
-			}
 			if ($sigla -eq 'Mt') {
 				$textoOk = $textoOk.Replace('Os trabalhadores na vinha</a></h2> 20<sup>', 'Os trabalhadores na vinha</a></h2> <b>20</b><sup>')
+			}
+			if ($sigla -eq 'Zc') {
+				$textoOk = $textoOk.Replace('<a href=bn2.htm#y>Desolação: contra os poderosos</a></h2> <sup>', '<a href=bn2.htm#y>Desolação: contra os poderosos</a></h2><a name=eu><b>11</b> <sup>')
 			}
 			$htmlDom = ConvertFrom-Html -Content $textoOk
 			$nodes = $htmlDom.SelectSingleNode("//body").ChildNodes

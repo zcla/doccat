@@ -1,5 +1,7 @@
 Clear-Host
 
+Set-Location (Get-Item $MyInvocation.MyCommand.Path).Directory.FullName
+
 $biblias = @('Biblia_clerus_pt', 'Biblia_vatican_lt')
 
 foreach ($biblia in $biblias) {
