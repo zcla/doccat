@@ -105,6 +105,7 @@ class DocCat {
                     Documento.montaPagina(params);
                     break;
                 case 'biblias':
+                case 'reis':
                 case 'tribos':
                     Utils.loadHtml(params.pagina + '.html', '#doccat');
                     break;
