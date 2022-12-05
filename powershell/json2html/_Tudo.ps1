@@ -1,6 +1,4 @@
-Clear-Host
-
-Set-Location (Get-Item $MyInvocation.MyCommand.Path).Directory.FullName
+Set-Location $PSScriptRoot
 
 $biblias = @('Biblia_clerus_pt', 'Biblia_vatican_lt')
 
