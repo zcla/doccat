@@ -48,7 +48,7 @@ foreach ($ordemLivro In $biblia.ordem) {
 <div class="tab-content">
 "@
 		$active = " active"
-		foreach ($keyVersao in ($config.download.sigla | Sort-Object -Descending)) { # TODO Gambiarra; tem que mudar o config.json pra ser uma lista, não um hashmap
+		foreach ($keyVersao in ($config.download.sigla | Sort-Object -Descending)) {
 			$versao = $capitulo.versoes.$keyVersao
 			if ($versao) {
 				$configVersao = $config.download | Where-Object { $_.sigla -eq $keyVersao }
