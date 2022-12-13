@@ -100,7 +100,11 @@ foreach ($ordemLivro In $biblia.ordem) {
 
 				$active = ""
 			} else {
-				Write-Host "*" -ForegroundColor Red -NoNewline
+				if ("$sigla $numCapitulo" -eq "Eclo Prólogo") {
+					Write-Host "*" -ForegroundColor Yellow -NoNewline
+				} else {
+					Write-Host "*" -ForegroundColor Red -NoNewline
+				}
 			}
 		}
 		$htmlCapituloTabs += @"
