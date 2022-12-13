@@ -1,5 +1,12 @@
 "use strict";
 
+$(document).ready(function () {
+    new Frontend();
+
+    // TODO Eliminar
+    DocCat.inicializa();
+});
+
 class Utils {
     static downloadString(str, fileName) {
         const downloader = document.createElement('a');
@@ -76,22 +83,6 @@ class DocCat {
         const params = Utils.getUrlParams();
         if (params.pagina) {
             switch (params.pagina) {
-                case 'biblia':
-                    Utils.loadHtml(params.pagina + '.html', '#doccat', function() {
-                        if (params.livro) {
-							// TODO Ler esse "qualBiblia" de algum lugar
-							// TODO Permitir escolher a versão
-							// const qualBiblia = 'vatican_lt';
-							// const qualBiblia = 'clerus_pt';
-                            const qualBiblia = 'combo';
-                            Utils.loadHtml('biblia/' + qualBiblia + '/' + params.livro, '#livro', function() {
-                                if (params.capitulo) {
-                                    Utils.loadHtml('biblia/' + qualBiblia + '/' + params.livro + '/' + params.capitulo, '#capitulo');
-                                }
-                            });
-                        }
-                    });
-                    break;
                 case 'catecismo':
                     $.getJSON("json/catecismo.json", function(data) {
                         Catecismo.json = data;
@@ -109,11 +100,8 @@ class DocCat {
                 case 'tribos':
                     Utils.loadHtml(params.pagina + '.html', '#doccat');
                     break;
-                default:
-                    throw "Página desconhecida";
             }
         }
-        Storage.updateMenu();
     }
 
     static refReplace(selector) {
@@ -254,6 +242,7 @@ class Storage {
         Storage.updateMenu();
     }
     
+    // @deprecated
     static updateMenu() {
         $($('#storageMenu a')[0]).text('Anotações (' + localStorage.length + ')');
     }
@@ -544,7 +533,3 @@ class Documento {
         }
     }
 }
-
-$(document).ready(function () {
-    DocCat.inicializa();
-});
