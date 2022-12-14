@@ -22,6 +22,10 @@
     text-decoration: underline;
 }
 
+.btn-toolbar button {
+    background-color: #eee;
+}
+
 footer a {
     color: #fff;
     text-decoration: none;
@@ -37,7 +41,6 @@ thead th {
     text-align: center;
 }
 
-/* TODO Retirar quando acabar */
 #template_anotacoesPreview {
     display: none;
 }
