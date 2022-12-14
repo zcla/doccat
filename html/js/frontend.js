@@ -175,7 +175,8 @@ class Frontend {
                     new Biblia(this, '#doccat', params);
                     break;
                 default:
-                    // TODO Colocar mensagem na tela
+                    // TODO Tratar quando matar o doccat.js
+                    // Colocar mensagem na tela
                     // throw "Página desconhecida";
             }
         }
