@@ -32,6 +32,12 @@ footer a:hover {
     text-decoration: underline;
 }
 
+
 thead th {
     text-align: center;
+}
+
+/* TODO Retirar quando acabar */
+#template_anotacoesPreview {
+    display: none;
 }
