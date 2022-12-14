@@ -1,3 +1,14 @@
+#doccat a {
+    color: #009;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#doccat a:hover {
+    color: #006;
+    text-decoration: underline;
+}
+
 #anotacoes_editor {
     background-color: #ddd;
 }
@@ -20,19 +31,12 @@
     background-color: #ddd;
 }
 
-#doccat a {
-    color: #009;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-#doccat a:hover {
-    color: #006;
-    text-decoration: underline;
-}
-
-.btn-toolbar button {
+#anotacoes .btn-toolbar {
     background-color: #eee;
+}
+
+#anotacoes .btn-toolbar button {
+    width: 2.5em;
 }
 
 footer a {
