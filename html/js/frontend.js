@@ -32,6 +32,27 @@ class UrlUtils {
 }
 
 class Anotacoes {
+    static setupGenericEvents() {
+        // Negrito com click no botão
+        $('#anotacoes_btn_negrito').click(function() {
+            Anotacoes.toolbarNegrito();
+        });
+        // Itálico com click no botão
+        $('#anotacoes_btn_italico').click(function() {
+            Anotacoes.toolbarItalico();
+        });
+        $('#anotacoes textarea').keypress(function(e) {
+            // Negrito com Ctrl+B
+            if (e.ctrlKey && e.keyCode == 2) {
+                Anotacoes.toolbarNegrito();
+            }
+            // Itálico com Ctrl+I
+            if (e.ctrlKey && e.keyCode == 9) {
+                Anotacoes.toolbarItalico();
+            }
+        });
+    }
+
     static toolbarInsertPrefixoSufixo(prefixo, sufixo) {
         let start = $('#anotacoes textarea').prop('selectionStart');
         let end = $('#anotacoes textarea').prop('selectionEnd');
@@ -131,20 +152,7 @@ class Frontend {
 
             $('#anotacoes textarea').on('input', this.#onInputAnotacoesTextarea.bind(this, idAnotacao));
 
-            $('#anotacoes_btn_negrito').click(function() {
-                Anotacoes.toolbarNegrito();
-            });
-            $('#anotacoes_btn_italico').click(function() {
-                Anotacoes.toolbarItalico();
-            });
-            $('#anotacoes textarea').keypress(function(e) {
-                if (e.ctrlKey && e.keyCode == 2) { // Ctrl+B
-                    Anotacoes.toolbarNegrito();
-                }
-                if (e.ctrlKey && e.keyCode == 9) { // Ctrl+I
-                    Anotacoes.toolbarItalico();
-                }
-            });
+            Anotacoes.setupGenericEvents();
         });
     }
 
