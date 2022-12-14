@@ -83,18 +83,22 @@ class Frontend {
                     
                     case 'error':
                         $(selector).empty();
-                        $(selector)
-                            .append($('<div class="alert alert-danger">')
-                                .append($('<b>')
-                                    .append(xhr.status)
-                                    .append(' ')
-                                    .append(xhr.statusText))
-                                .append(response));
+                        $(selector).append(`
+                            <div class="alert alert-danger">
+                                <b>${xhr.status} ${xhr.statusText}</b>
+                                ${response}
+                            </div>
+                        `);
                         break;
     
                     default:
-                        // TODO Acusar em algum lugar, pra não passar despercebido
-                        // throw 'Não sei tratar "' + status + '"'; // TODO Tratar "notmodified", "nocontent", "timeout", "abort", or "parsererror"
+                        $('#mensagens').append(`
+                            <div class="alert alert-danger">
+                                <b>Status desconhecido!</b>
+                                <pre>${status}</pre>
+                            </div>
+                        `);
+                        throw `Não sei tratar "${status}"`;
             }
         });
     }

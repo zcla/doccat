@@ -32,11 +32,6 @@ footer a:hover {
     text-decoration: underline;
 }
 
-
 thead th {
     text-align: center;
-}
-
-#doccat {
-    padding-top: var(--bs-gutter-x,.75rem);
 }
