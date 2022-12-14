@@ -11,7 +11,7 @@ class UrlUtils {
         }
         return url;
     }
-    
+
     static getUrlParams() {
         const result = {};
         const paramArray = location.search.replace('?', '').split('&');
@@ -31,6 +31,38 @@ class UrlUtils {
     }
 }
 
+class Anotacoes {
+    static toolbarInsertPrefixoSufixo(prefixo, sufixo) {
+        let start = $('#anotacoes textarea').prop('selectionStart');
+        let end = $('#anotacoes textarea').prop('selectionEnd');
+        let val = $('#anotacoes textarea').val();
+        if ((val.substring(start - prefixo.length, start) == prefixo) && (val.substring(end, end + sufixo.length) == sufixo)) {
+            // remover
+            val = val.substr(0, start - prefixo.length) + val.substring(start, end) + val.substring(end + sufixo.length);
+            start = start - prefixo.length;
+            end = end - prefixo.length;
+        } else {
+            // adicionar
+            val = val.substring(0, start) + prefixo + val.substring(start, end) + sufixo + val.substring(end);
+            start = start + prefixo.length;
+            end = end + prefixo.length;
+        }
+        $('#anotacoes textarea').val(val);
+        $('#anotacoes textarea').prop('selectionStart', start);
+        $('#anotacoes textarea').prop('selectionEnd', end);
+        $('#anotacoes textarea').trigger('input');
+        $('#anotacoes textarea').focus();
+    }
+
+    static toolbarNegrito() {
+        Anotacoes.toolbarInsertPrefixoSufixo('**', '**');
+    }
+
+    static toolbarItalico() {
+        Anotacoes.toolbarInsertPrefixoSufixo('*', '*');
+    }
+}
+
 class Frontend {
     #backend;
 
@@ -38,37 +70,32 @@ class Frontend {
         $(`<link href="css/${arquivo}" rel="stylesheet">`).appendTo("head");
     }
 
-    // TODO Terminar
     static loadHtml(arquivo, selector, callback) {
         $(selector).empty();
         $(selector).append('<div class="spinner-border" role="status">');
         $(selector).load(arquivo, function(response, status, xhr) {
             switch (status) {
                 case 'success':
-        //             if (selector == '#referencia') {
-        //                 $(selector).prepend($('<label class="form-label">').append('Referência'));
-        //             }
-    
-                    // DocCat.refReplace(selector);
                     if (callback) {
                         callback();
                     }
                     break;
                     
-        //         case 'error':
-        //             // TODO Fazer um script PowerShell pra identificar o que deveria existir, para distinguiar o que ainda não foi feito do que realmente não existe (se xhr.status for 404)
-        //             $(selector).empty();
-        //             $(selector)
-        //                 .append($('<div class="alert alert-danger">')
-        //                     .append($('<b>')
-        //                         .append(xhr.status)
-        //                         .append(' ')
-        //                         .append(xhr.statusText))
-        //                     .append(response));
-        //             break;
+                    case 'error':
+                        // TODO Tratar erro
+                        // $(selector).empty();
+                        // $(selector)
+                        //     .append($('<div class="alert alert-danger">')
+                        //         .append($('<b>')
+                        //             .append(xhr.status)
+                        //             .append(' ')
+                        //             .append(xhr.statusText))
+                        //         .append(response));
+                        // break;
     
-        //         default:
-        //             throw 'Não sei tratar "' + status + '"'; // TODO Tratar "notmodified", "nocontent", "timeout", "abort", or "parsererror"
+                    default:
+                        // TODO Acusar em algum lugar, pra não passar despercebido
+                        // throw 'Não sei tratar "' + status + '"'; // TODO Tratar "notmodified", "nocontent", "timeout", "abort", or "parsererror"
             }
         });
     }
@@ -76,7 +103,7 @@ class Frontend {
     constructor() {
         this.createBackend();
         
-        this.updateMenu();
+        this.updateMenuAnotacoes();
 
         this.updatePage();
     }
@@ -85,25 +112,68 @@ class Frontend {
         this.#backend = new Backend();
     }
 
+    loadAnotacoes(idAnotacao) {
+        Frontend.loadHtml('anotacoes.html', '#anotacoes_placeholder', this.#onLoadAnotacoes.bind(this, idAnotacao));
+    }
+
+    #onLoadAnotacoes(idAnotacao) {
+        // Carrega a anotação
+        this.#backend.getItem(idAnotacao).then((response) => {
+            $('#anotacoes textarea').val(response);
+            this.#onInputAnotacoesTextarea(idAnotacao);
+            this.updateMenuAnotacoes();
+
+            $('#anotacoes textarea').on('input', this.#onInputAnotacoesTextarea.bind(this, idAnotacao));
+
+            $('#anotacoes_btn_negrito').click(function() {
+                Anotacoes.toolbarNegrito();
+            });
+            $('#anotacoes_btn_italico').click(function() {
+                Anotacoes.toolbarItalico();
+            });
+            $('#anotacoes textarea').keypress(function(e) {
+                if (e.ctrlKey && e.keyCode == 2) { // Ctrl+B
+                    Anotacoes.toolbarNegrito();
+                }
+                if (e.ctrlKey && e.keyCode == 9) { // Ctrl+I
+                    Anotacoes.toolbarItalico();
+                }
+            });
+        });
+    }
+
+    #onInputAnotacoesTextarea(idAnotacao) {
+        const val = $('#anotacoes textarea').val();
+        this.#backend.setItem(idAnotacao, val);
+        this.updateMenuAnotacoes();
+        this.updatePreviewAnotacoes();
+    }
+
     // Atualiza o menu com o número de anotações
-    async updateMenu() {
+    updateMenuAnotacoes() {
         this.#backend.getItemCount().then((response) => {
             $($('#storageMenu a')[0]).text(`Anotações (${response})`);
         });
     }
 
-    async updatePage() {
+    updatePreviewAnotacoes() {
+        const val = $('#anotacoes textarea').val();
+        $('#anotacoes_preview').html(marked.parse(val));
+        // TODO Referências
+    }
+
+    updatePage() {
         let params = UrlUtils.getUrlParams();
         const pagina = params.pagina;
         if (pagina) {
             delete params.pagina
             switch (pagina) {
                 case 'biblia':
-                    new Biblia('#doccat', params);
+                    new Biblia(this, '#doccat', params);
                     break;
                 default:
                     // TODO Colocar mensagem na tela
-                    throw "Página desconhecida";
+                    // throw "Página desconhecida";
             }
         }
     }

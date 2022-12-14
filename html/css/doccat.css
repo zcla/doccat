@@ -1,3 +1,16 @@
+#anotacoes_editor {
+    background-color: #ddd;
+}
+
+#anotacoes_editor label {
+    font-style: italic;
+    font-weight: bold;
+}
+
+#anotacoes_preview {
+    background-color: #ddd;
+}
+
 #doccat a {
     color: #009;
     cursor: pointer;
@@ -26,8 +39,4 @@ thead th {
 
 #doccat {
     padding-top: var(--bs-gutter-x,.75rem);
-}
-
-#template_anotacoesPreview {
-    display: none;
 }

@@ -1,6 +1,8 @@
 "use strict";
 
 class Biblia {
+    #frontend;
+
     static capitulo(capitulo) {
         const params = UrlUtils.getUrlParams();
         params.capitulo = capitulo;
@@ -16,29 +18,33 @@ class Biblia {
         UrlUtils.gotoUrl(UrlUtils.getUrl(params));
     }
 
-    constructor(selector, params) {
+    constructor(frontend, selector, params) {
+        this.#frontend = frontend;
         Frontend.loadCss('biblia.css');
-        Frontend.loadHtml('biblia.html', selector, function() {
-            $('#versao').change(function(eventObject) {
-                const params = UrlUtils.getUrlParams();
-                params.versao = $('#versao').val();
-                UrlUtils.gotoUrl(UrlUtils.getUrl(params));
-            });
-            if (params.versao) {
-                console.log("!");
-                $('#versao').val(params.versao);
-            }
-            if (params.livro) {
-                let versao = 'combo';
-                if (params.versao) {
-                    versao = params.versao;
-                }
-                Frontend.loadHtml('biblia/' + versao + '/' + params.livro, '#livro', function() {
-                    if (params.capitulo) {
-                        Frontend.loadHtml('biblia/' + versao + '/' + params.livro + '/' + params.capitulo, '#capitulo');
-                    }
-                });
-            }
+        Frontend.loadHtml('biblia.html', selector, this.#onLoadBiblia.bind(this, params));
+    }
+
+    #onLoadBiblia(params) {
+        $('#versao').change(function(eventObject) {
+            const params = UrlUtils.getUrlParams();
+            params.versao = $('#versao').val();
+            UrlUtils.gotoUrl(UrlUtils.getUrl(params));
         });
+        if (params.versao) {
+            console.log("!");
+            $('#versao').val(params.versao);
+        } else {
+            params.versao = 'combo';
+        }
+        if (params.livro) {
+            Frontend.loadHtml(`biblia/${params.versao}/${params.livro}`, '#livro', this.#onLoadLivro.bind(this, params));
+        }
+    }
+
+    #onLoadLivro(params) {
+        if (params.capitulo) {
+            Frontend.loadHtml(`biblia/${params.versao}/${params.livro}/${params.capitulo}`, '#capitulo');
+            this.#frontend.loadAnotacoes(`/biblia/${params.versao}/${params.livro}/${params.capitulo}`);
+        }
     }
 }
