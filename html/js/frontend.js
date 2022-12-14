@@ -93,7 +93,8 @@ class Anotacoes {
     }
 
     #onLoadAnotacoes() {
-        // Carrega a anotação
+        $('#anotacoes_id').empty();
+        $('#anotacoes_id').append(this.#id);
         this.#backend.getItem(this.#id).then((response) => {
             $('#anotacoes textarea').val(response);
             this.#onInputAnotacoesTextarea(this.#id);

@@ -5,6 +5,15 @@
 #anotacoes_editor label {
     font-style: italic;
     font-weight: bold;
+    width: 100%;
+}
+
+#anotacoes_id {
+    color: #ccc;
+    float: right;
+    font-size: .5rem;
+    font-weight: normal;
+    margin-right: .5em;
 }
 
 #anotacoes_preview {
