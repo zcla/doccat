@@ -1,9 +1,6 @@
 "use strict";
 
 $(document).ready(function () {
-    new Frontend();
-
-    // TODO Eliminar
     DocCat.inicializa();
 });
 
@@ -99,6 +96,9 @@ class DocCat {
                 case 'reis':
                 case 'tribos':
                     Utils.loadHtml(params.pagina + '.html', '#doccat');
+                    break;
+                default:
+                    new Frontend();
                     break;
             }
         }

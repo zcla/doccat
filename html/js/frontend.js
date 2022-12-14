@@ -92,15 +92,18 @@ class Frontend {
                         break;
     
                     default:
-                        $('#mensagens').append(`
-                            <div class="alert alert-danger">
-                                <b>Status desconhecido!</b>
-                                <pre>${status}</pre>
-                            </div>
-                        `);
-                        throw `Não sei tratar "${status}"`;
+                        Frontend.adicionaMensagem('danger', 'Status desconhecido!', `${status}`);
             }
         });
+    }
+
+    static adicionaMensagem(tipo, titulo, mensagem) {
+        $('#mensagens').append(`
+            <div class="alert alert-${tipo}">
+                <b>${titulo}</b>
+                <p>${mensagem}</p>
+            </div>
+        `);
     }
 
     constructor() {
@@ -175,9 +178,8 @@ class Frontend {
                     new Biblia(this, '#doccat', params);
                     break;
                 default:
-                    // TODO Tratar quando matar o doccat.js
-                    // Colocar mensagem na tela
-                    // throw "Página desconhecida";
+                    Frontend.adicionaMensagem('danger', 'Erro!', `Página desconhecida: <i>${pagina}</i>.`);
+                    throw "Página desconhecida";
             }
         }
     }
