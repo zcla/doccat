@@ -32,6 +32,9 @@ class UrlUtils {
 }
 
 class Anotacoes {
+    #id;
+    #backend;
+
     static setupGenericEvents() {
         // Negrito com click no botão
         $('#anotacoes_btn_negrito').click(function() {
@@ -82,6 +85,44 @@ class Anotacoes {
     static toolbarItalico() {
         Anotacoes.toolbarInsertPrefixoSufixo('*', '*');
     }
+
+    constructor(id, backend) {
+        this.#id = id;
+        this.#backend = backend;
+        Frontend.loadHtml('anotacoes.html', '#anotacoes_placeholder', this.#onLoadAnotacoes.bind(this));
+    }
+
+    #onLoadAnotacoes() {
+        // Carrega a anotação
+        this.#backend.getItem(this.#id).then((response) => {
+            $('#anotacoes textarea').val(response);
+            this.#onInputAnotacoesTextarea(this.#id);
+            this.updateContador();
+
+            $('#anotacoes textarea').on('input', this.#onInputAnotacoesTextarea.bind(this));
+
+            Anotacoes.setupGenericEvents();
+        });
+    }
+
+    #onInputAnotacoesTextarea() {
+        const val = $('#anotacoes textarea').val();
+        this.#backend.setItem(this.#id, val);
+        this.updateContador();
+        this.updatePreview();
+    }
+
+    updateContador() {
+        this.#backend.getItemCount().then((response) => {
+            $($('#storageMenu a')[0]).text(`Anotações (${response})`);
+        });
+    }
+
+    updatePreview() {
+        const val = $('#anotacoes textarea').val();
+        $('#anotacoes_preview').html(marked.parse(val));
+        // TODO Referências
+    }
 }
 
 class Frontend {
@@ -129,9 +170,6 @@ class Frontend {
 
     constructor() {
         this.createBackend();
-        
-        this.updateMenuAnotacoes();
-
         this.updatePage();
     }
 
@@ -139,41 +177,8 @@ class Frontend {
         this.#backend = new Backend();
     }
 
-    loadAnotacoes(idAnotacao) {
-        Frontend.loadHtml('anotacoes.html', '#anotacoes_placeholder', this.#onLoadAnotacoes.bind(this, idAnotacao));
-    }
-
-    #onLoadAnotacoes(idAnotacao) {
-        // Carrega a anotação
-        this.#backend.getItem(idAnotacao).then((response) => {
-            $('#anotacoes textarea').val(response);
-            this.#onInputAnotacoesTextarea(idAnotacao);
-            this.updateMenuAnotacoes();
-
-            $('#anotacoes textarea').on('input', this.#onInputAnotacoesTextarea.bind(this, idAnotacao));
-
-            Anotacoes.setupGenericEvents();
-        });
-    }
-
-    #onInputAnotacoesTextarea(idAnotacao) {
-        const val = $('#anotacoes textarea').val();
-        this.#backend.setItem(idAnotacao, val);
-        this.updateMenuAnotacoes();
-        this.updatePreviewAnotacoes();
-    }
-
-    // Atualiza o menu com o número de anotações
-    updateMenuAnotacoes() {
-        this.#backend.getItemCount().then((response) => {
-            $($('#storageMenu a')[0]).text(`Anotações (${response})`);
-        });
-    }
-
-    updatePreviewAnotacoes() {
-        const val = $('#anotacoes textarea').val();
-        $('#anotacoes_preview').html(marked.parse(val));
-        // TODO Referências
+    setupAnotacoes(id) {
+        new Anotacoes(id, this.#backend);
     }
 
     updatePage() {
@@ -186,7 +191,7 @@ class Frontend {
                     new Biblia(this, '#doccat', params);
                     break;
                 case 'livro':
-                    
+
                     break;
                 default:
                     Frontend.adicionaMensagem('danger', 'Erro!', `Página desconhecida: <i>${pagina}</i>.`);
