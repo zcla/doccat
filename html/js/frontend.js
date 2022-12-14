@@ -82,16 +82,15 @@ class Frontend {
                     break;
                     
                     case 'error':
-                        // TODO Tratar erro
-                        // $(selector).empty();
-                        // $(selector)
-                        //     .append($('<div class="alert alert-danger">')
-                        //         .append($('<b>')
-                        //             .append(xhr.status)
-                        //             .append(' ')
-                        //             .append(xhr.statusText))
-                        //         .append(response));
-                        // break;
+                        $(selector).empty();
+                        $(selector)
+                            .append($('<div class="alert alert-danger">')
+                                .append($('<b>')
+                                    .append(xhr.status)
+                                    .append(' ')
+                                    .append(xhr.statusText))
+                                .append(response));
+                        break;
     
                     default:
                         // TODO Acusar em algum lugar, pra não passar despercebido
