@@ -185,6 +185,9 @@ class Frontend {
                 case 'biblia':
                     new Biblia(this, '#doccat', params);
                     break;
+                case 'livro':
+                    
+                    break;
                 default:
                     Frontend.adicionaMensagem('danger', 'Erro!', `Página desconhecida: <i>${pagina}</i>.`);
                     throw "Página desconhecida";
