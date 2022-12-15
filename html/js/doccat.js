@@ -209,6 +209,7 @@ class Storage {
         $('#storageUploadSpinner').removeClass('d-none');
         const file = $('#storageUpload input')[0].files[0];
         const reader = new FileReader();
+        let excluir = Object.keys(localStorage);
         reader.onload = function(event) {
             const result = JSON.parse(event.target.result);
             for (var key in result){
@@ -217,6 +218,14 @@ class Storage {
                 }
                 console.log(result[key]);
                 Storage.setItem(key, result[key]);
+                const indexOf = excluir.indexOf(key);
+                if (indexOf >= 0) {
+                    excluir.splice(indexOf, 1);
+                }
+            }
+            debugger;
+            for (const key of excluir) {
+                Storage.setItem(key, null);
             }
             $('#storageUploadSpinner').addClass('d-none');
             $('#storageUpload input').val(null);
