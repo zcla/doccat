@@ -1,0 +1,32 @@
+#livroNome {
+    font-weight: 500;
+    font-size: 2.5rem;
+}
+
+#livroAutor {
+    color: #666;
+    margin-right: 0.5em;
+}
+
+#livroEditora {
+    color: #999;
+    margin-right: 0.5em;
+}
+
+#livroAno {
+    color: #ccc;
+}
+
+#estrutura .pagina {
+    text-align: right;
+}
+
+/* Indentação */
+
+.indent1 {
+    padding-left: 20px !important;
+}
+
+.indent2 {
+    padding-left: 40px !important;
+}
