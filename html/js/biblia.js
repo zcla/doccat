@@ -21,7 +21,7 @@ class Biblia {
     constructor(frontend, selector, params) {
         this.#frontend = frontend;
         Frontend.loadCss('biblia.css');
-        Frontend.loadHtml('biblia.html', selector, this.#onLoadBiblia.bind(this, params));
+        Frontend.loadHtml('biblia', selector, this.#onLoadBiblia.bind(this, params));
     }
 
     #onLoadBiblia(params) {
