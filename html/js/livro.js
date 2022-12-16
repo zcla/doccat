@@ -54,6 +54,8 @@ class Livro {
         if (this.#params.estrutura) {
             $(`#livro_${this.#params.id}_${this.#params.estrutura}`).addClass('selecionado');
             this.#frontend.setupAnotacoes(`/livro/${this.#params.id}/${this.#params.estrutura}`);
+        } else {
+            this.#frontend.setupAnotacoes(`/livro/${this.#params.id}`);
         }
     }
 }
