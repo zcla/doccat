@@ -1,0 +1,1 @@
+Esta pasta serve apenas para mim; é útil apenas para tratar o modo como eu já armazeno meus livros num wiki pessoal.

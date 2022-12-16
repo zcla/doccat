@@ -1,0 +1,314 @@
+{
+  "titulo": "A Auto-estima do Cristão",
+  "autor": "Michel Esparza",
+  "editora": "Quadrante",
+  "ano": "2008",
+  "estrutura": [
+    {
+      "id": "1",
+      "indent": 0,
+      "texto": "Introdução",
+      "pagina": 5
+    },
+    {
+      "id": "2",
+      "indent": 0,
+      "texto": "Primeira parte - Os problemas do eu",
+      "pagina": 11
+    },
+    {
+      "id": "2_1",
+      "indent": 1,
+      "texto": "O ser humano em busca da sua dignidade",
+      "pagina": 13
+    },
+    {
+      "id": "2_1_1",
+      "indent": 2,
+      "texto": "A fonte de todos os problemas",
+      "pagina": 13
+    },
+    {
+      "id": "2_1_2",
+      "indent": 2,
+      "texto": "O maior de todos os problemas",
+      "pagina": 15
+    },
+    {
+      "id": "2_1_3",
+      "indent": 2,
+      "texto": "A origem da soberba",
+      "pagina": 17
+    },
+    {
+      "id": "2_1_4",
+      "indent": 2,
+      "texto": "Três estágios da vida",
+      "pagina": 20
+    },
+    {
+      "id": "2_1_5",
+      "indent": 2,
+      "texto": "O orgulho é uma mentira vital",
+      "pagina": 23
+    },
+    {
+      "id": "2_1_6",
+      "indent": 2,
+      "texto": "O orgulho é competitivo e causa cegueira",
+      "pagina": 26
+    },
+    {
+      "id": "2_1_7",
+      "indent": 2,
+      "texto": "Orgulho até na vida cristã: o perfeccionismo",
+      "pagina": 30
+    },
+    {
+      "id": "2_1_8",
+      "indent": 2,
+      "texto": "A vaidade",
+      "pagina": 35
+    },
+    {
+      "id": "2_2",
+      "indent": 1,
+      "texto": "Personalidade e afetividade: independência e dependência",
+      "pagina": 40
+    },
+    {
+      "id": "2_2_1",
+      "indent": 2,
+      "texto": "As energias do coração",
+      "pagina": 41
+    },
+    {
+      "id": "2_2_2",
+      "indent": 2,
+      "texto": "Afeto e desprendimento",
+      "pagina": 44
+    },
+    {
+      "id": "2_2_3",
+      "indent": 2,
+      "texto": "Sensíveis e fortes",
+      "pagina": 47
+    },
+    {
+      "id": "2_2_4",
+      "indent": 2,
+      "texto": "Conjugar dependência e independência",
+      "pagina": 49
+    },
+    {
+      "id": "2_2_5",
+      "indent": 2,
+      "texto": "Liberdade interior e humildade",
+      "pagina": 52
+    },
+    {
+      "id": "2_3",
+      "indent": 1,
+      "texto": "Auto-estima humilde ou auto-estima orgulhosa?",
+      "pagina": 55
+    },
+    {
+      "id": "2_3_1",
+      "indent": 2,
+      "texto": "Diversos enfoques da auto-estima",
+      "pagina": 55
+    },
+    {
+      "id": "2_3_2",
+      "indent": 2,
+      "texto": "Duas atitudes diante de nós mesmos",
+      "pagina": 58
+    },
+    {
+      "id": "2_3_3",
+      "indent": 2,
+      "texto": "Egoísmo e egocentrismo",
+      "pagina": 62
+    },
+    {
+      "id": "2_3_4",
+      "indent": 2,
+      "texto": "Onde começa a neurose?",
+      "pagina": 64
+    },
+    {
+      "id": "3",
+      "indent": 0,
+      "texto": "Segunda parte - Pautas para uma possível solução",
+      "pagina": 69
+    },
+    {
+      "id": "3_1",
+      "indent": 1,
+      "texto": "Humildade e verdade",
+      "pagina": 71
+    },
+    {
+      "id": "3_1_1",
+      "indent": 2,
+      "texto": "Humildade e auto-estima",
+      "pagina": 71
+    },
+    {
+      "id": "3_1_2",
+      "indent": 2,
+      "texto": "A humildade evita tanto a arrogância como a auto-rejeição",
+      "pagina": 74
+    },
+    {
+      "id": "3_1_3",
+      "indent": 2,
+      "texto": "O esquecimento próprio e a falsa humildade",
+      "pagina": 76
+    },
+    {
+      "id": "3_1_4",
+      "indent": 2,
+      "texto": "A verdadeira humildade e liberdade do cristão",
+      "pagina": 78
+    },
+    {
+      "id": "3_1_5",
+      "indent": 2,
+      "texto": "Liberdade e entrega por amor",
+      "pagina": 82
+    },
+    {
+      "id": "3_2",
+      "indent": 1,
+      "texto": "A purificação do coração",
+      "pagina": 85
+    },
+    {
+      "id": "3_2_1",
+      "indent": 2,
+      "texto": "Mudar os alicerces da personalidade",
+      "pagina": 85
+    },
+    {
+      "id": "3_2_2",
+      "indent": 2,
+      "texto": "Pecados e virtudes",
+      "pagina": 87
+    },
+    {
+      "id": "3_2_3",
+      "indent": 2,
+      "texto": "A graça que dignifica e sara",
+      "pagina": 89
+    },
+    {
+      "id": "3_3",
+      "indent": 1,
+      "texto": "Só o amor de Deus oferece soluções estáveis",
+      "pagina": 92
+    },
+    {
+      "id": "3_3_1",
+      "indent": 2,
+      "texto": "\"Respeitos humanos\" e \"respeitos divinos\"",
+      "pagina": 92
+    },
+    {
+      "id": "3_3_2",
+      "indent": 2,
+      "texto": "Uma vida inteira à procura do que já se tem",
+      "pagina": 94
+    },
+    {
+      "id": "3_3_3",
+      "indent": 2,
+      "texto": "Não é fácil situar-se na perspectiva do amor de Deus",
+      "pagina": 101
+    },
+    {
+      "id": "3_3_4",
+      "indent": 2,
+      "texto": "O filho mais velho da parábola",
+      "pagina": 103
+    },
+    {
+      "id": "3_4",
+      "indent": 1,
+      "texto": "Diversas manifestações do amor de Deus",
+      "pagina": 107
+    },
+    {
+      "id": "3_4_1",
+      "indent": 2,
+      "texto": "Filiação divina",
+      "pagina": 107
+    },
+    {
+      "id": "3_4_2",
+      "indent": 2,
+      "texto": "Amizade recíproca com Cristo",
+      "pagina": 110
+    },
+    {
+      "id": "3_4_3",
+      "indent": 2,
+      "texto": "Valemos todo o sangue de Cristo",
+      "pagina": 118
+    },
+    {
+      "id": "3_5",
+      "indent": 1,
+      "texto": "O amor misericordioso",
+      "pagina": 124
+    },
+    {
+      "id": "3_5_1",
+      "indent": 2,
+      "texto": "O que significa ser misericordioso?",
+      "pagina": 126
+    },
+    {
+      "id": "3_5_2",
+      "indent": 2,
+      "texto": "Cristo revela a misericórdia divina",
+      "pagina": 129
+    },
+    {
+      "id": "3_5_3",
+      "indent": 2,
+      "texto": "Pode-se estar orgulhoso da própria fraqueza?",
+      "pagina": 131
+    },
+    {
+      "id": "3_5_4",
+      "indent": 2,
+      "texto": "Duas condições: amor recíproco e boa vontade",
+      "pagina": 135
+    },
+    {
+      "id": "3_5_5",
+      "indent": 2,
+      "texto": "Vida de infância espiritual",
+      "pagina": 142
+    },
+    {
+      "id": "3_5_6",
+      "indent": 2,
+      "texto": "Admiráveis perspectivas de futuro",
+      "pagina": 147
+    },
+    {
+      "id": "4",
+      "indent": 0,
+      "texto": "Epílogo: \"ama-me tal como és\"",
+      "pagina": 153
+    },
+    {
+      "id": "5",
+      "indent": 0,
+      "texto": "Índice",
+      "pagina": 157
+    }
+  ]
+}

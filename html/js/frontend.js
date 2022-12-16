@@ -160,6 +160,14 @@ class Frontend {
         });
     }
 
+    static loadJson(url, callback) {
+        $.getJSON(url, function(data) {
+            if (callback) {
+                callback(data);
+            }
+        });
+    }
+
     static adicionaMensagem(tipo, titulo, mensagem) {
         $('#mensagens').append(`
             <div class="alert alert-${tipo}">
