@@ -42,7 +42,7 @@ class Biblia {
             })
         }
         if (this.#params.livro) {
-            // TODO fazer o highlight do livro na tela
+            $(`#estrutura a[href^="?pagina=biblia&livro=${this.#params.livro}"]`).parent().addClass('selecionado');
             Frontend.loadHtml(`biblia/${this.#versao}/${this.#params.livro}`, '#livro', this.#onLoadLivro.bind(this));
         }
     }

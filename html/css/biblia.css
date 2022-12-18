@@ -47,3 +47,7 @@
     font-size: 20px;
     font-weight: bold;
 }
+
+#biblia .selecionado {
+    background-color: #ccf;
+}
