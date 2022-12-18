@@ -42,7 +42,7 @@ ForEach ($objLivro In $biblia.ordem) {
 		If ($numCapitulo -ne '-') {
 			$htmlLivro += @"
 
-		<a href="javascript:Biblia.capitulo('$numCapitulo');">$numCapitulo</a>
+		<a href="?pagina=biblia&livro=$sigla&capitulo=$numCapitulo&versao=$idBiblia">$numCapitulo</a>
 "@
 		}
 		Write-Host " $numCapitulo" -ForegroundColor Cyan -NoNewline
