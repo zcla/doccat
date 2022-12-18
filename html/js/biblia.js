@@ -2,6 +2,8 @@
 
 class Biblia {
     #frontend;
+    #params;
+    #versao = 'combo';
 
     static capitulo(capitulo) {
         const params = UrlUtils.getUrlParams();
@@ -20,31 +22,36 @@ class Biblia {
 
     constructor(frontend, selector, params) {
         this.#frontend = frontend;
+        this.#params = params;
         Frontend.loadCss('biblia.css');
-        Frontend.loadHtml('biblia', selector, this.#onLoadBiblia.bind(this, params));
+        Frontend.loadHtml('biblia', selector, this.#onLoadBiblia.bind(this));
     }
 
-    #onLoadBiblia(params) {
+    #onLoadBiblia() {
         $('#versao').change(function(eventObject) {
             const params = UrlUtils.getUrlParams();
             params.versao = $('#versao').val();
             UrlUtils.gotoUrl(UrlUtils.getUrl(params));
         });
-        if (params.versao) {
-            console.log("!");
-            $('#versao').val(params.versao);
-        } else {
-            params.versao = 'combo';
+        if (this.#params.versao) {
+            this.#versao = this.#params.versao
+            $('#versao').val(this.#versao);
+            const versao = this.#versao;
+            $('#estrutura a[href^="?pagina=biblia&livro="]').each(function(index, element) {
+                $(element).attr('href', $(element).attr('href') + `&versao=${versao}`);
+            })
         }
-        if (params.livro) {
-            Frontend.loadHtml(`biblia/${params.versao}/${params.livro}`, '#livro', this.#onLoadLivro.bind(this, params));
+        if (this.#params.livro) {
+            // TODO fazer o highlight do livro na tela
+            Frontend.loadHtml(`biblia/${this.#versao}/${this.#params.livro}`, '#livro', this.#onLoadLivro.bind(this));
         }
     }
 
-    #onLoadLivro(params) {
-        if (params.capitulo) {
-            Frontend.loadHtml(`biblia/${params.versao}/${params.livro}/${params.capitulo}`, '#capitulo');
-            this.#frontend.setupAnotacoes(`/biblia/${params.versao}/${params.livro}/${params.capitulo}`);
+    #onLoadLivro() {
+        // TODO Mudar os links pra incluir o parâmetro "versao", caso exista
+        if (this.#params.capitulo) {
+            Frontend.loadHtml(`biblia/${this.#versao}/${this.#params.livro}/${this.#params.capitulo}`, '#capitulo');
+            this.#frontend.setupAnotacoes(`/biblia/${this.#versao}/${this.#params.livro}/${this.#params.capitulo}`);
         }
     }
 }
