@@ -48,7 +48,6 @@ class Biblia {
     }
 
     #onLoadLivro() {
-        // TODO Mudar os links pra incluir o parâmetro "versao", caso exista
         if (this.#params.capitulo) {
             Frontend.loadHtml(`biblia/${this.#versao}/${this.#params.livro}/${this.#params.capitulo}`, '#capitulo');
             this.#frontend.setupAnotacoes(`/biblia/${this.#versao}/${this.#params.livro}/${this.#params.capitulo}`);
