@@ -50,7 +50,7 @@ class Biblia {
     #onLoadLivro() {
         if (this.#params.capitulo) {
             Frontend.loadHtml(`biblia/${this.#versao}/${this.#params.livro}/${this.#params.capitulo}`, '#capitulo');
-            this.#frontend.setupAnotacoes(`/biblia/${this.#versao}/${this.#params.livro}/${this.#params.capitulo}`);
+            this.#frontend.setupAnotacoes(`/biblia/${this.#params.livro}/${this.#params.capitulo}`);
         }
     }
 }
