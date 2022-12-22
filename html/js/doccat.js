@@ -86,12 +86,6 @@ class DocCat {
                     });
                     Catecismo.montaPagina(params);
                     break;
-                case 'documento':
-                    $.getJSON("json/documento.json", function(data) {
-                        Documento.json = data;
-                    });
-                    Documento.montaPagina(params);
-                    break;
                 case 'biblias':
                 case 'reis':
                 case 'tribos':
@@ -123,25 +117,25 @@ class DocCat {
         });
 
         $('ref-doc').each(function() {
-            const doc = $(this).attr('nome');
+            const doc = $(this).attr('id');
             const paragrafo = $(this).attr('paragrafo');
             let replacement = $(this);
             if (paragrafo) {
                 // Se o link for para um parágrafo...
                 if (selector == '#estrutura' || selector == '#textoNavegador') {
                     // ...vai para a página do item
-                    let hrefReplacement = '?pagina=documento&nome=' + doc;
+                    let hrefReplacement = '?pagina=documento&id=' + doc;
                     hrefReplacement += '&paragrafo=' + paragrafo;
                     replacement = $('<a href="' + hrefReplacement + '">').append(this.innerHTML);
                 } else {
                     // ...coloca o conteúdo na área de referência
-                    let hrefReplacement = '?pagina=documento&nome=' + doc;
+                    let hrefReplacement = '?pagina=documento&id=' + doc;
                     hrefReplacement += '&paragrafo=' + paragrafo;
                     replacement = $('<a onclick="javascript:Documento.referencia(\'' + doc + '\', \'' + paragrafo + '\');">').append(this.innerHTML);
                 }
             } else {
                 // Se o link for para o documento, abre em uma outra aba
-                replacement = $('<a href="?pagina=documento&nome=' + doc + '" target="_blank">')
+                replacement = $('<a href="?pagina=documento&id=' + doc + '" target="_blank">')
                     .append(this.innerHTML)
                     .append('<img class="align-text-bottom" src="img/linkExterno.svg">');
             }
@@ -402,143 +396,6 @@ class Catecismo {
 
             default:
                 throw "Referência inválida."
-        }
-    }
-}
-
-class Documento {
-    static json = null;
-    static #paragrafoEmOrdem = null;
-
-    static anotacoesRegistraEventos() {
-        $('#anotacoes textarea').on('input', function() {
-            const urlParams = Utils.getUrlParams();
-            const key = 'documento.' + urlParams.nome + '.' + urlParams.paragrafo;
-            const val = $('#anotacoes textarea').val();
-            Storage.setItem(key, val);
-            $('#preview').html(marked.parse(val));
-            DocCat.refReplace("#preview");
-        });
-    }
-
-    static montaPagina(params) {
-        Utils.loadHtml('documento.html', '#doccat', function() {
-            let estruturaClasses = [ 'col-12' ];
-            let textoReferenciaClasses = [ 'd-none' ];
-            let anotacoesPreviewClasses = [ 'd-none' ];
-            if (params.nome) {
-                const a = $('#documentoLista a[href*="?pagina=' + params.pagina + '&nome=' + params.nome + '"]');
-                if (a.length) {
-                    const tds = a.parent().parent()[0].children;
-                    $('#documentoNome').append(tds[1].children[0].innerText);
-                    if (tds[1].children.length > 1) {
-                        $('#documentoTipo').append(tds[1].children[1].innerText);
-                    }
-                    if (tds[2].innerText != '-') {
-                        $('#documentoAutor').append(tds[2].innerText);
-                    }
-                    if (tds[0].innerText != '-') {
-                        $('#documentoData').append(tds[0].innerText);
-                    }
-                    Utils.loadHtml('documento/' + params.nome, '#estrutura', function() { // TODO Está carregando duas vezes o documento, sei lá por quê.
-                        if (params.paragrafo) {
-                            $('#estrutura a[href^="?pagina=documento&nome=' + params.nome + '"][href$="&paragrafo=' + params.paragrafo + '"]').parent().parent().addClass('selecionado');
-                            Utils.loadHtml('documento/' + params.nome + '/' + params.paragrafo + '.html', '#texto', function() {
-                                const anotacoesPreview = DocCat.cloneAnotacoesPreview();
-                                $("#documento .row").append(anotacoesPreview
-                                    .replaceAll('template_', '')
-                                    .replaceAll('col-?', 'col-4'));
-                                const navegador = $('<div id="textoNavegador" class="navegador">');
-                                const anterior = Documento.paragrafoAnterior(params.paragrafo);
-                                if (anterior != null) {
-                                    navegador.append($('<ref-doc nome="' + params.nome + '" paragrafo="' + anterior + '">&#129092;</ref-paragrafo>'));
-                                }
-                                const posterior = Documento.paragrafoPosterior(params.paragrafo);
-                                if (posterior != null) {
-                                    navegador.append($('<ref-doc nome="' + params.nome + '" paragrafo="' + posterior + '">&#129094;</ref-paragrafo>'));
-                                }
-                                $('#texto').append(navegador);
-                                DocCat.refReplace("#textoNavegador");
-                                DocCat.anotacoesRegistraEventos();
-                                Documento.anotacoesRegistraEventos();
-                                $('#anotacoes textarea').val(Storage.getItem('documento.' + params.nome + '.' + params.paragrafo));
-                                $('#anotacoes textarea').trigger('input');
-                            });
-                        }
-                    });
-                    if (params.paragrafo) {
-                        estruturaClasses = [ 'col-3', 'tresColunas' ];
-                        textoReferenciaClasses = [ 'col-5' ];
-                        anotacoesPreviewClasses = [ 'col-4' ];
-                        $('#estrutura a[href="?pagina=documento&nome=' + params.nome + '"]').parent().parent().addClass('selecionado');
-                    }
-                } else {
-                    if (Documento.json[params.nome]) {
-                        Utils.loadHtml('documento/' + params.nome, '#estrutura');
-                    } else {
-                        $('#documento').append($('<div class="alert alert-danger">').append('Documento "' + params.nome + '" não encontrado.'));
-                    }
-                }
-                $('#documentoLista').empty();
-            }
-            $('#estrutura').removeClass();
-            estruturaClasses.forEach(function(className) { $('#estrutura').addClass(className) });
-            $('#textoReferencia').removeClass();
-            textoReferenciaClasses.forEach(function(className) { $('#textoReferencia').addClass(className) });
-            $('#anotacoesPreview').removeClass();
-            anotacoesPreviewClasses.forEach(function(className) { $('#anotacoesPreview').addClass(className) });
-        });
-    }
-
-    static paragrafoAnterior(paragrafo) {
-        const pos = this.paragrafoPosicao(paragrafo);
-        if (pos > 0) {
-            return this.#paragrafoEmOrdem[pos - 1];
-        }
-        return null;
-    }
-
-    static paragrafoPosicao(paragrafo) {
-        // TODO Precisa mesmo disso aqui?
-        if (!this.#paragrafoEmOrdem) {
-            this.#paragrafoEmOrdem = [];
-            for (const paragrafo of Documento.json[Utils.getUrlParam('nome')].paragrafo) {
-                this.#paragrafoEmOrdem.push(paragrafo);
-            }
-        }
-        return this.#paragrafoEmOrdem.indexOf(paragrafo);
-    }
-
-    static paragrafoPosterior(paragrafo) {
-        const pos = this.paragrafoPosicao(paragrafo);
-        if (pos < this.#paragrafoEmOrdem.length) {
-            return this.#paragrafoEmOrdem[pos + 1];
-        }
-        return null;
-    }
-
-    // Mostra o texto como referência
-    static referencia(documento, numero) {
-        if (this.json[documento]) {
-            const spl = numero.split('-');
-            switch (spl.length) {
-                case 1: {
-                    Utils.loadHtml('documento/' + documento + '/' + numero + '.html', '#referencia');
-                    break;
-                }
-
-                case 2:
-                    throw "Tratar referência de múltiplos números"// TODO
-                    break;
-
-                default:
-                    throw "Referência inválida."
-            }
-        } else {
-            $('#referencia').empty();
-            $('#referencia')
-                .append($('<div class="alert alert-danger">')
-                    .append("Documento não encontrado"));
         }
     }
 }

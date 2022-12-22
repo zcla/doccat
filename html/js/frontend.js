@@ -122,12 +122,21 @@ class Anotacoes {
     updatePreview() {
         const val = $('#anotacoes textarea').val();
         $('#anotacoes_preview').html(marked.parse(val));
-        // TODO Referências
+        Frontend.replaceReferences();
     }
 }
 
 class Frontend {
     #backend;
+
+    static adicionaMensagem(tipo, titulo, mensagem) {
+        $('#mensagens').append(`
+            <div class="alert alert-${tipo}">
+                <b>${titulo}</b>
+                <div>${mensagem}</div>
+            </div>
+        `);
+    }
 
     static loadCss(arquivo) {
         $(`<link href="css/${arquivo}" rel="stylesheet">`).appendTo("head");
@@ -140,6 +149,7 @@ class Frontend {
             switch (status) {
                 case 'success':
                     if (callback) {
+                        Frontend.replaceReferences();
                         callback();
                     }
                     break;
@@ -168,13 +178,15 @@ class Frontend {
         });
     }
 
-    static adicionaMensagem(tipo, titulo, mensagem) {
-        $('#mensagens').append(`
-            <div class="alert alert-${tipo}">
-                <b>${titulo}</b>
-                <p>${mensagem}</p>
-            </div>
-        `);
+    static makeLinksOpenOnAnotherTab(selector) {
+        $(selector).each(function() {
+            $(this).attr('target', '_blank');
+            $(this).append('<img class="align-text-bottom" src="img/linkExterno.svg">');
+        });
+    }
+
+    static replaceReferences() {
+        Documento.replaceReferences();
     }
 
     constructor() {
@@ -198,6 +210,9 @@ class Frontend {
             switch (pagina) {
                 case 'biblia':
                     new Biblia(this, '#doccat', params);
+                    break;
+                case 'documento':
+                    new Documento(this, '#doccat', params);
                     break;
                 case 'livro':
                     new Livro(this, '#doccat', params);

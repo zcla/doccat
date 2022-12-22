@@ -1,103 +1,67 @@
-#documento #anotacoes {
-    background-color: #ddd;
-}
-
-#documento #anotacoes label {
-    font-style: italic;
-    font-weight: bold;
-}
-
-#documento #documentoNome {
+#documentoNome {
     font-weight: 500;
     font-size: 2.5rem;
 }
 
-#documento #documentoAutor {
+#documentoAutor {
     color: #666;
 }
 
-#documento #documentoData {
+#documentoData {
     color: #ccc;
 }
 
-#documento #documentoTipo {
+#documentoTipo {
     color: #999;
 }
 
-#documento #estrutura.tresColunas {
+#estrutura.tresColunas {
     font-size: 12px;
 }
 
-#documento .citacao {
-    font-size: 14px;
-    padding-left: 20px;
+td.data {
+    text-align: center;
 }
 
-#documento .navegador {
+.navegador {
     margin-bottom: 1em;
     text-align: center;
 }
 
-#documento .navegador a {
+.navegador a {
     background-color: #36c;
     border-radius: 0.5em;
-    color: #fff;
+    color: #fff !important;
     font-size: 0.8em;
     margin: 1em;
     padding: 0.2em 0.5em;
 }
 
-#documento .notas {
+.notas {
     border-top: 1px solid #999;
 }
 
-#documento .numero {
+.numero {
     font-weight: bold;
 }
 
-#documento .paragrafos {
+.paragrafos {
     text-align: center;
 }
 
-#documento .paragrafos a {
+.paragrafos a {
     background-color: #36c;
     border-radius: 0.5em;
-    color: #fff;
+    color: #fff !important;
     font-size: 0.8em;
     padding: 0.2em 0.5em;
 }
 
-#documento #preview {
-    background-color: #ddd;
-}
-
-#documento #preview tr,
-#documento #preview th,
-#documento #preview td {
-    border: 1px solid #666;
-}
-
-#documento #referencia {
-    background-color: #ddd;
-}
-
-#documento #referencia label {
-    font-style: italic;
-    font-weight: bold;
-}
-
-#documento .selecionado {
+.selecionado {
     background-color: #ccf;
 }
 
-#documento .texto {
-    font-size: 16px;
-}
-
-#documento .titulo1 {
-    font-size: 20px;
-    font-weight: bold;
-}
+/* Tipos de documento */
 
 .tipodocumento-cartaapostolica {
     background-color: #a09600;
@@ -126,3 +90,28 @@
 .tipodocumento-exortacaoapostolica {
     background-color: #407927;
 }
+
+/* Títulos */
+
+.titulo1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*
+
+.citacao {
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+#referencia {
+    background-color: #ddd;
+}
+
+#referencia label {
+    font-style: italic;
+    font-weight: bold;
+}
+
+*/
