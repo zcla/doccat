@@ -225,6 +225,9 @@ class Frontend {
                 case 'documento':
                     new Documento(this, '#doccat', params);
                     break;
+                case 'estudo':
+                    new Estudo('#doccat', params);
+                    break;
                 case 'livro':
                     new Livro(this, '#doccat', params);
                     break;
