@@ -1,0 +1,104 @@
+{
+  "titulo": "A Constância",
+  "autor": "Rafael Llano Cifuentes",
+  "editora": "Quadrante",
+  "ano": "2019",
+  "estrutura": [
+    {
+      "id": "1",
+      "indent": 0,
+      "texto": "Sumário",
+      "pagina": 3
+    },
+    {
+      "id": "2",
+      "indent": 0,
+      "texto": "Uma condição indispensável",
+      "pagina": 5
+    },
+    {
+      "id": "2_1",
+      "indent": 1,
+      "texto": "Não há constância sem ideal",
+      "pagina": 5
+    },
+    {
+      "id": "2_2",
+      "indent": 1,
+      "texto": "O ideal não se realiza sem constância",
+      "pagina": 8
+    },
+    {
+      "id": "2_3",
+      "indent": 1,
+      "texto": "A constância e o desenvolvimento da vida cristã",
+      "pagina": 11
+    },
+    {
+      "id": "3",
+      "indent": 0,
+      "texto": "Os caminhos da constância",
+      "pagina": 19
+    },
+    {
+      "id": "3_1",
+      "indent": 1,
+      "texto": "Domínio do temperamento",
+      "pagina": 20
+    },
+    {
+      "id": "3_2",
+      "indent": 1,
+      "texto": "Vencer inclinações, costumes e hábitos",
+      "pagina": 25
+    },
+    {
+      "id": "3_3",
+      "indent": 1,
+      "texto": "A luta contra a vaidade",
+      "pagina": 27
+    },
+    {
+      "id": "3_4",
+      "indent": 1,
+      "texto": "A nossa verdadeira imagem",
+      "pagina": 29
+    },
+    {
+      "id": "3_5",
+      "indent": 1,
+      "texto": "A superação do sensível",
+      "pagina": 35
+    },
+    {
+      "id": "3_6",
+      "indent": 1,
+      "texto": "A diligência e a laboriosidade",
+      "pagina": 39
+    },
+    {
+      "id": "3_7",
+      "indent": 1,
+      "texto": "Ultrapassar os obstáculos com espírito esportivo",
+      "pagina": 43
+    },
+    {
+      "id": "4",
+      "indent": 0,
+      "texto": "Duas palavras finais",
+      "pagina": 51
+    },
+    {
+      "id": "4_1",
+      "indent": 1,
+      "texto": "Confiar",
+      "pagina": 51
+    },
+    {
+      "id": "4_2",
+      "indent": 1,
+      "texto": "Amar",
+      "pagina": 55
+    }
+  ]
+}
