@@ -115,32 +115,6 @@ class DocCat {
             }
             $(this).replaceWith(replacement);
         });
-
-        $('ref-doc').each(function() {
-            const doc = $(this).attr('id');
-            const paragrafo = $(this).attr('paragrafo');
-            let replacement = $(this);
-            if (paragrafo) {
-                // Se o link for para um parágrafo...
-                if (selector == '#estrutura' || selector == '#textoNavegador') {
-                    // ...vai para a página do item
-                    let hrefReplacement = '?pagina=documento&id=' + doc;
-                    hrefReplacement += '&paragrafo=' + paragrafo;
-                    replacement = $('<a href="' + hrefReplacement + '">').append(this.innerHTML);
-                } else {
-                    // ...coloca o conteúdo na área de referência
-                    let hrefReplacement = '?pagina=documento&id=' + doc;
-                    hrefReplacement += '&paragrafo=' + paragrafo;
-                    replacement = $('<a onclick="javascript:Documento.referencia(\'' + doc + '\', \'' + paragrafo + '\');">').append(this.innerHTML);
-                }
-            } else {
-                // Se o link for para o documento, abre em uma outra aba
-                replacement = $('<a href="?pagina=documento&id=' + doc + '" target="_blank">')
-                    .append(this.innerHTML)
-                    .append('<img class="align-text-bottom" src="img/linkExterno.svg">');
-            }
-            $(this).replaceWith(replacement);
-        });
     }
 
     static anotacoesRegistraEventos() {
