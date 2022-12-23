@@ -179,6 +179,7 @@ class Frontend {
         });
     }
 
+    // TODO Muito provavelmente qualquer chamadaIsso deveria ser backend
     static loadJson(url, callback) {
         $.getJSON(url, function(data) {
             if (callback) {

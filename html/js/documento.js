@@ -121,7 +121,8 @@ class Documento {
             }
         }
 
-        Frontend.makeLinksOpenOnAnotherTab('#texto a[href*="?pagina=documento&id=');
+        this.#trataLinks_abrirEmNovaAba('texto');
+        this.#trataLinks_mostrarNaAreaDeReferencia('texto');
         this.#frontend.setupAnotacoes(`/documento/${this.#params.id}/${this.#params.paragrafo}`, this.#setupAnotacoesCallback.bind(this));
         $('#anotacoes_placeholder').addClass('col-4');
         $('#anotacoes_placeholder').removeClass('d-none');
@@ -141,8 +142,19 @@ class Documento {
     }
 
     #setupAnotacoesCallback() {
+        this.#trataLinks_abrirEmNovaAba('anotacoes_preview');
+        this.#trataLinks_mostrarNaAreaDeReferencia('anotacoes_preview');
+    }
+
+    #trataLinks_abrirEmNovaAba(elementId) {
+        // Links para a "raiz" de documentos; não para os parágrafos
+        Frontend.makeLinksOpenOnAnotherTab(`#${elementId} a[href*="?pagina=documento&id="]:not([href*="&paragrafo="])`);
+    }
+
+    #trataLinks_mostrarNaAreaDeReferencia(elementId) {
         const documento = this;
-        $('#anotacoes_preview a[href^="?pagina=documento&"]').each(function(index, element) {
+        // Links para os parágrafos; não para a "raiz" de documentos
+        $(`#${elementId} a[href^="?pagina=documento&"][href*="&paragrafo="]`).each(function(index, element) {
             const href = $(element).attr('href');
             const params = UrlUtils.getUrlParams(href);
             $(element).click(function() {
@@ -157,7 +169,7 @@ class Documento {
             const spl = numero.split('-');
             switch (spl.length) {
                 case 1:
-                    Utils.loadHtml('documento/' + documento + '/' + numero + '.html', '#referencia');
+                    Frontend.loadHtml('documento/' + documento + '/' + numero + '.html', '#referencia');
                     break;
                 default:
                     Frontend.adicionaMensagem('danger', 'Erro!', 'Referência inválida!');
