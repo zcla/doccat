@@ -1,28 +1,44 @@
 Set-Location $PSScriptRoot
 
 $result = [ordered]@{
-    id = "AConstancia"
-    titulo = "A Constância"
-    autor = "Rafael Llano Cifuentes"
-    editora = "Quadrante"
-    ano = "2019"
+    id = "AsTresViasEAsTresConversoes"
+    titulo = "As Três Vias e as Três Conversões"
+    autor = "Réginald Garrigou Lagrange"
+    editora = "Permanência"
+    ano = "2011"
     textoEstrutura = @"
-Sumário	3
-Uma condição indispensável	5
- 	Não há constância sem ideal	5
- 	O ideal não se realiza sem constância	8
- 	A constância e o desenvolvimento da vida cristã	11
-Os caminhos da constância	19
- 	Domínio do temperamento	20
- 	Vencer inclinações, costumes e hábitos	25
- 	A luta contra a vaidade	27
- 	A nossa verdadeira imagem	29
- 	A superação do sensível	35
- 	A diligência e a laboriosidade	39
- 	Ultrapassar os obstáculos com espírito esportivo	43
-Duas palavras finais	51
- 	Confiar	51
- 	Amar	55
+Sumário	7
+Prefácio	9
+Prólogo	11
+Capítulo I - A vida da graça e o valor da primeira conversão	15
+ 	Necessidade da vida interior	15
+ 	Qual é o princípio ou a fonte da vida interior?	18
+ 	A realidade da graça e de nossa filiação divina adotiva	21
+ 	A vida eterna começada	24
+ 	O valor da verdadeira conversão	28
+ 	As três idades da vida espiritual	36
+Capítulo II - A segunda conversão: entrada na via iluminativa	41
+ 	A segunda conversão dos apóstolos	43
+ 	Como deve ser nossa segunda conversão - as imperfeições que a tornam necessária	46
+ 	Os principais motivos que devem inspirar a segunda conversão e quais são seus frutos	50
+Capítulo III - A terceira conversão: ou transformação da alma, entrada na via unitiva dos perfeitos	57
+ 	A descida do Espírito Santo sobre os apóstolos	58
+ 	Quais foram os efeitos da descida do Espírito Santo?	60
+ 	A purificação do espírito, necessária à perfeição cristã	65
+ 	A necessidade da purificação do espírito	66
+ 	Como Deus purifica a alma no momento desta terceira conversão ou transformação?	68
+ 	Oração ao Espírito Santo	73
+ 	Consagração e oração ao Espírito Santo	73
+Nota do editor explicando que o capítulo IV foi omitido desta edição a conselho do autor	74
+Capítulo V - Características de cada uma das fases da vida espiritual	75
+ 	A fase dos principiantes	76
+ 	A fase dos avançados	81
+ 	A fase dos perfeitos	86
+Capítulo VI - A paz no reino de Deus, prelúdio da vida no céu	89
+ 	O despertar divino	89
+ 	A viva chama	91
+ 	Pax in veritate	95
+Nota final - O chamado à contemplação infusa dos mistérios da fé	97
 "@
         estrutura = @()
 }
