@@ -32,6 +32,11 @@ td.data {
     text-align: center;
 }
 
+.citacao {
+    font-size: 14px;
+    padding-left: 20px;
+}
+
 .navegador {
     margin-bottom: 1em;
     text-align: center;
@@ -70,6 +75,13 @@ td.data {
     background-color: #ccf;
 }
 
+/* Títulos */
+
+.titulo1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
 /* Tipos de documento */
 
 .tipodocumento-cartaapostolica {
@@ -99,19 +111,3 @@ td.data {
 .tipodocumento-exortacaoapostolica {
     background-color: #407927;
 }
-
-/* Títulos */
-
-.titulo1 {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-/*
-
-.citacao {
-    font-size: 14px;
-    padding-left: 20px;
-}
-
-*/
