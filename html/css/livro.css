@@ -5,16 +5,17 @@
 
 #livroAutor {
     color: #666;
-    margin-right: 0.5em;
+    margin-left: 0.5em;
 }
 
 #livroEditora {
     color: #999;
-    margin-right: 0.5em;
+    margin-left: 0.5em;
 }
 
 #livroAno {
     color: #ccc;
+    margin-left: 0.5em;
 }
 
 #estrutura .pagina {

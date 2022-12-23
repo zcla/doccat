@@ -5,14 +5,17 @@
 
 #documentoAutor {
     color: #666;
+    margin-left: 0.5em;
 }
 
 #documentoData {
     color: #ccc;
+    margin-left: 0.5em;
 }
 
 #documentoTipo {
     color: #999;
+    margin-left: 0.5em;
 }
 
 #estrutura.tresColunas {
