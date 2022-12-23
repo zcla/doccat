@@ -159,11 +159,8 @@ class Documento {
                 case 1:
                     Utils.loadHtml('documento/' + documento + '/' + numero + '.html', '#referencia');
                     break;
-                case 2:
-                    throw "Tratar referência de múltiplos números"// TODO
-                    break;
                 default:
-                    throw "Referência inválida."
+                    Frontend.adicionaMensagem('danger', 'Erro!', 'Referência inválida!');
             }
         } else {
             $('#referencia').empty();
