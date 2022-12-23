@@ -39,7 +39,7 @@ class Biblia {
             const versao = this.#versao;
             $('#estrutura a[href^="?pagina=biblia&livro="]').each(function(index, element) {
                 $(element).attr('href', $(element).attr('href') + `&versao=${versao}`);
-            })
+            });
         }
         if (this.#params.livro) {
             $(`#estrutura a[href^="?pagina=biblia&livro=${this.#params.livro}"]`).parent().addClass('selecionado');

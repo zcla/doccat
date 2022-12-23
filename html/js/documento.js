@@ -89,49 +89,59 @@ class Documento {
     }
 
     #onLoadDocumentoParagrafo() {
+        class Paragrafo {
+            #documento;
+
+            constructor(documento) {
+                this.#documento = documento;
+            }
+
+            #documentosParagrafo(documento) {
+                return this.#documento.#documentos[this.#documento.#params.id].paragrafo;
+            }
+
+            #paragrafoIndexOf() {
+                return this.#documentosParagrafo().indexOf(this.#documento.#params.paragrafo);
+            }
+
+            anterior() {
+                const pos = this.#paragrafoIndexOf();
+                if (pos > 0) {
+                    return this.#documentosParagrafo()[pos - 1];
+                }
+                return null;
+            }
+
+            posterior() {
+                const pos = this.#paragrafoIndexOf();
+                if (pos < this.#documentosParagrafo().length) {
+                    return this.#documentosParagrafo()[pos + 1];
+                }
+                return null;
+            }
+        }
+
         Frontend.makeLinksOpenOnAnotherTab('#texto a[href*="?pagina=documento&id=');
-        this.#frontend.setupAnotacoes(`/documento/${this.#params.id}/${this.#params.paragrafo}`); // TODO Criar um callback pra poder alterar os links dentro de #anotacoes_preview pra mostrar o texto em #referencia
+        this.#frontend.setupAnotacoes(`/documento/${this.#params.id}/${this.#params.paragrafo}`);
         $('#anotacoes_placeholder').addClass('col-4');
         $('#anotacoes_placeholder').removeClass('d-none');
 
         // Adiciona os navegadores
         const navegador = $('<div id="textoNavegador" class="navegador">');
-        const anterior = this.#paragrafoAnterior();
+        const par = new Paragrafo(this);
+        const anterior = par.anterior();
         if (anterior) {
             navegador.append($('<ref-doc id="' + this.#params.id + '" paragrafo="' + anterior + '">&#129092;</ref-paragrafo>'));
         }
-        const posterior = this.#paragrafoPosterior();
+        const posterior = par.posterior();
         if (posterior) {
             navegador.append($('<ref-doc id="' + this.#params.id + '" paragrafo="' + posterior + '">&#129094;</ref-paragrafo>'));
         }
         $('#texto').append(navegador);
     }
-
-    #documentosParagrafo() {
-        return this.#documentos[this.#params.id].paragrafo;
-    }
-
-    #paragrafoIndexOf() {
-        return this.#documentosParagrafo().indexOf(this.#params.paragrafo);
-    }
-
-    #paragrafoAnterior() {
-        const pos = this.#paragrafoIndexOf();
-        if (pos > 0) {
-            return this.#documentosParagrafo()[pos - 1];
-        }
-        return null;
-    }
-
-    #paragrafoPosterior() {
-        const pos = this.#paragrafoIndexOf();
-        if (pos < this.#documentosParagrafo().length) {
-            return this.#documentosParagrafo()[pos + 1];
-        }
-        return null;
-    }
 }
 
+// TODO Eliminar
 class DocumentoOld {
     // Mostra o texto como referência
     static referencia(documento, numero) {
