@@ -122,7 +122,7 @@ class Documento {
         }
 
         Frontend.makeLinksOpenOnAnotherTab('#texto a[href*="?pagina=documento&id=');
-        this.#frontend.setupAnotacoes(`/documento/${this.#params.id}/${this.#params.paragrafo}`);
+        this.#frontend.setupAnotacoes(`/documento/${this.#params.id}/${this.#params.paragrafo}`, this.#setupAnotacoesCallback.bind(this));
         $('#anotacoes_placeholder').addClass('col-4');
         $('#anotacoes_placeholder').removeClass('d-none');
 
@@ -139,25 +139,29 @@ class Documento {
         }
         $('#texto').append(navegador);
     }
-}
 
-// TODO Eliminar
-class DocumentoOld {
-    // Mostra o texto como referência
-    static referencia(documento, numero) {
-        debugger;
-        if (this.json[documento]) {
+    #setupAnotacoesCallback() {
+        const documento = this;
+        $('#anotacoes_preview a[href^="?pagina=documento&"]').each(function(index, element) {
+            const href = $(element).attr('href');
+            const params = UrlUtils.getUrlParams(href);
+            $(element).click(function() {
+                documento.mostraReferencia(params.id, params.paragrafo);
+            });
+            $(element).removeAttr('href');
+        });
+    }
+
+    mostraReferencia(documento, numero) {
+        if (this.#documentos[documento]) {
             const spl = numero.split('-');
             switch (spl.length) {
-                case 1: {
+                case 1:
                     Utils.loadHtml('documento/' + documento + '/' + numero + '.html', '#referencia');
                     break;
-                }
-
                 case 2:
                     throw "Tratar referência de múltiplos números"// TODO
                     break;
-
                 default:
                     throw "Referência inválida."
             }

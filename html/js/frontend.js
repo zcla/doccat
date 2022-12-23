@@ -12,9 +12,12 @@ class UrlUtils {
         return url;
     }
 
-    static getUrlParams() {
+    static getUrlParams(locationSearch) {
+        if (!locationSearch) {
+            locationSearch = location.search;
+        }
         const result = {};
-        const paramArray = location.search.replace('?', '').split('&');
+        const paramArray = locationSearch.replace('?', '').split('&');
         for (const param of paramArray) {
             if (param) {
                 let [key, value] = param.split('=');
@@ -34,6 +37,7 @@ class UrlUtils {
 class Anotacoes {
     #id;
     #backend;
+    #callback;
 
     static setupGenericEvents() {
         // Negrito com click no botão
@@ -86,9 +90,10 @@ class Anotacoes {
         Anotacoes.toolbarInsertPrefixoSufixo('*', '*');
     }
 
-    constructor(id, backend) {
+    constructor(id, backend, callback) {
         this.#id = id;
         this.#backend = backend;
+        this.#callback = callback;
         Frontend.loadHtml('anotacoes.html', '#anotacoes_placeholder', this.#onLoadAnotacoes.bind(this));
     }
 
@@ -123,6 +128,9 @@ class Anotacoes {
         const val = $('#anotacoes textarea').val();
         $('#anotacoes_preview').html(marked.parse(val));
         Frontend.replaceReferences();
+        if (this.#callback) {
+            this.#callback();
+        }
     }
 }
 
@@ -186,6 +194,7 @@ class Frontend {
     }
 
     static replaceReferences() {
+        // TODO Biblia => http://127.0.0.1:5501/html/?pagina=documento&id=DesiderioDesideravi&paragrafo=1
         Documento.replaceReferences();
     }
 
@@ -198,8 +207,8 @@ class Frontend {
         this.#backend = new Backend();
     }
 
-    setupAnotacoes(id) {
-        new Anotacoes(id, this.#backend);
+    setupAnotacoes(id, callback) {
+        new Anotacoes(id, this.#backend, callback);
     }
 
     updatePage() {
