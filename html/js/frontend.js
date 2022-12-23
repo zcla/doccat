@@ -139,9 +139,10 @@ class Frontend {
 
     static adicionaMensagem(tipo, titulo, mensagem) {
         $('#mensagens').append(`
-            <div class="alert alert-${tipo}">
+            <div class="alert alert-${tipo} alert-dismissible">
                 <b>${titulo}</b>
                 <div>${mensagem}</div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         `);
     }
