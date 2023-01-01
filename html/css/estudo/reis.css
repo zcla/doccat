@@ -3,7 +3,19 @@
 }
 
 #reisDeIsraelJuda .pericope {
-    background-color: #06c;
+    background-color: #0066b3;
+}
+
+#reisDeIsraelJuda .pericopeSmRs {
+    background-color: #00508f;
+    float: right;
+    margin-left: .5em;
+}
+
+#reisDeIsraelJuda .pericopeCr {
+    background-color: #5e8ac7;
+    float: right;
+    margin-left: .5em;
 }
 
 #reisDeIsraelJuda .reiReto {
