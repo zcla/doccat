@@ -197,6 +197,7 @@ class Frontend {
 
     static replaceReferences() {
         // TODO Biblia => http://127.0.0.1:5501/html/?pagina=documento&id=DesiderioDesideravi&paragrafo=1
+        Catecismo.replaceReferences();
         Documento.replaceReferences();
     }
 
@@ -221,6 +222,9 @@ class Frontend {
             switch (pagina) {
                 case 'biblia':
                     new Biblia(this, '#doccat', params);
+                    break;
+                case 'catecismo':
+                    new Catecismo(this, '#doccat', params);
                     break;
                 case 'documento':
                     new Documento(this, '#doccat', params);

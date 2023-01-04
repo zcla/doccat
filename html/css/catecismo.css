@@ -1,142 +1,142 @@
-#catecismo #estrutura p {
+#estrutura p {
     margin-bottom: 0%;
 }
 
-#catecismo #estrutura.tresColunas {
+#estrutura.tresColunas {
     font-size: 12px;
 }
 
-#catecismo #estrutura.tresColunas td:nth-child(1) {
+#estrutura.tresColunas td:nth-child(1) {
     white-space: nowrap;
     overflow: hidden;
     max-width: 0;
     text-overflow: ellipsis;
 }
 
-#catecismo #estrutura.tresColunas td:nth-child(2) {
+#estrutura.tresColunas td:nth-child(2) {
     width: 0;
 }
 
-#catecismo #estrutura.tresColunas td:nth-child(3) {
+#estrutura.tresColunas td:nth-child(3) {
     width: 0;
 }
 
-#catecismo #anotacoes {
+#anotacoes {
     background-color: #ddd;
 }
 
-#catecismo #anotacoes label {
+#anotacoes label {
     font-style: italic;
     font-weight: bold;
 }
 
-#catecismo #preview {
+#preview {
     background-color: #ddd;
 }
 
-#catecismo #preview tr,
-#catecismo #preview th,
-#catecismo #preview td {
+#preview tr,
+#preview th,
+#preview td {
     border: 1px solid #666;
 }
 
-#catecismo #referencia {
+#referencia {
     background-color: #ddd;
 }
 
-#catecismo #referencia label {
+#referencia label {
     font-style: italic;
     font-weight: bold;
 }
 
-#catecismo .citacao {
+.citacao {
     font-size: 14px;
     padding-left: 20px;
 }
 
-#catecismo .notas {
+.notas {
     border-top: 1px solid #999;
 }
 
-#catecismo .numero {
+.numero {
     font-weight: bold;
 }
 
-#catecismo .outroGrupo {
+.outroGrupo {
     color: #999;
     font-style: italic;
 }
 
-#catecismo .paragrafo {
+.paragrafo {
     text-align: right;
 }
 
-#catecismo .paragrafos {
+.paragrafos {
     text-align: center;
 }
 
-#catecismo .paragrafos a {
+.paragrafos a {
     background-color: #36c;
     border-radius: 0.5em;
-    color: #fff;
+    color: #fff !important;
     font-size: 0.8em;
     padding: 0.2em 0.5em;
 }
 
-#catecismo .selecionado {
+.selecionado {
     background-color: #ccf;
 }
 
-#catecismo .texto {
+.texto {
     font-size: 16px;
 }
 
-#catecismo .titulo1,
-#catecismo .titulo2,
-#catecismo .titulo3,
-#catecismo .titulo4,
-#catecismo .titulo5,
-#catecismo .titulo6 {
+.titulo1,
+.titulo2,
+.titulo3,
+.titulo4,
+.titulo5,
+.titulo6 {
     font-size: 20px;
     font-weight: bold;
 }
 
 /* Indentação */
 
-#catecismo .indent1 {
+.indent1 {
     padding-left: 20px !important;
 }
 
-#catecismo .indent2 {
+.indent2 {
     padding-left: 40px !important;
 }
 
-#catecismo .indent3 {
+.indent3 {
     padding-left: 60px !important;
 }
 
-#catecismo .indent4 {
+.indent4 {
     padding-left: 80px !important;
 }
 
-#catecismo .indent5 {
+.indent5 {
     padding-left: 100px !important;
 }
 
-#catecismo .navegador {
+.navegador {
     margin-bottom: 1em;
     text-align: center;
 }
 
-#catecismo .navegador a {
+.navegador a {
     background-color: #36c;
     border-radius: 0.5em;
-    color: #fff;
+    color: #fff !important;
     font-size: 0.8em;
     margin: 1em;
     padding: 0.2em 0.5em;
 }
 
-#catecismo .referencia {
+.referencia {
     font-style: italic;
 }
