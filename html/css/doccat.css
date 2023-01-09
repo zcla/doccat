@@ -44,6 +44,10 @@
     width: 2.5em;
 }
 
+footer p {
+    margin: 0;
+}
+
 footer a {
     color: #fff;
     text-decoration: none;
