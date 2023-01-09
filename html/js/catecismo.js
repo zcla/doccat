@@ -9,6 +9,12 @@ class Catecismo {
     static #cic2grupo = null;
     static #cicEmOrdem = null;
 
+    static {
+        Frontend.loadJson(`json/catecismo.json`, (data) => {
+            Catecismo.#catecismo = data;
+        });
+    }
+
     static cic2grupo(cic) {
         if (!this.#cic2grupo) {
             this.#cic2grupo = {};
@@ -71,11 +77,6 @@ class Catecismo {
         this.#selector = selector;
         this.#params = params;
         Frontend.loadCss('catecismo.css');
-        Frontend.loadJson(`json/catecismo.json`, this.#onLoadCatecismoJson.bind(this));
-    }
-
-    #onLoadCatecismoJson(data) {
-        Catecismo.#catecismo = data;
         Frontend.loadHtml('catecismo/index.html', this.#selector, this.#onLoadCatecismoLista.bind(this));
     }
 
