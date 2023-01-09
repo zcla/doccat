@@ -76,11 +76,5 @@ class Storage {
         } else {
             localStorage.removeItem(key);
         }
-        Storage.updateMenu();
-    }
-    
-    // @deprecated
-    static updateMenu() {
-        $($('#storageMenu a')[0]).text('Anotações (' + localStorage.length + ')');
     }
 }
