@@ -151,7 +151,7 @@ class Catecismo {
         }
 
         // TODO this.#trataLinks_abrirEmNovaAba('texto');
-        // TODO this.#trataLinks_mostrarNaAreaDeReferencia('texto');
+        this.#trataLinks_mostrarNaAreaDeReferencia('texto');
         this.#frontend.setupAnotacoes(`/catecismo/${this.#params.cic}`, this.#setupAnotacoesCallback.bind(this));
         $('#anotacoes_placeholder').addClass('col-4');
         $('#anotacoes_placeholder').removeClass('d-none');
@@ -172,6 +172,23 @@ class Catecismo {
 
     #setupAnotacoesCallback() {
         // TODO this.#trataLinks_abrirEmNovaAba('anotacoes_preview');
-        // TODO this.#trataLinks_mostrarNaAreaDeReferencia('anotacoes_preview');
+        this.#trataLinks_mostrarNaAreaDeReferencia('anotacoes_preview');
+    }
+
+    #trataLinks_mostrarNaAreaDeReferencia(elementId) {
+        const catecismo = this;
+        // Links para os parágrafos; não para a "raiz" de documentos
+        $(`#${elementId} a[href^="?pagina=catecismo&"][href*="&cic="]`).each(function(index, element) {
+            const href = $(element).attr('href');
+            const params = UrlUtils.getUrlParams(href);
+            $(element).click(function() {
+                catecismo.mostraReferencia(params);
+            });
+            $(element).removeAttr('href');
+        });
+    }
+
+    mostraReferencia(params) {
+        Frontend.loadHtml('catecismo/' + params.grupo + '/cic_' + params.cic + '.html', '#referencia');
     }
 }
