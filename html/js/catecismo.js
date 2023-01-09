@@ -182,13 +182,22 @@ class Catecismo {
             const href = $(element).attr('href');
             const params = UrlUtils.getUrlParams(href);
             $(element).click(function() {
-                catecismo.mostraReferencia(params);
+                catecismo.mostraReferencia(params, href);
             });
             $(element).removeAttr('href');
         });
     }
 
-    mostraReferencia(params) {
-        Frontend.loadHtml('catecismo/' + params.grupo + '/cic_' + params.cic + '.html', '#referencia');
+    mostraReferencia(params, href) {
+        Frontend.loadHtml('catecismo/' + params.grupo + '/cic_' + params.cic + '.html', '#referencia', () => {
+            $('#referencia').prepend(`
+                <label class="form-label">
+                    Referência
+                    <a href="${href}" target="_blank">
+                        <img class="align-text-bottom" src="img/linkExterno.svg">
+                    </a>
+                </label>
+            `);
+        });
     }
 }
