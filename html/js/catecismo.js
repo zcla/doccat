@@ -10,6 +10,7 @@ class Catecismo {
     static #cicEmOrdem = null;
 
     static {
+        // TODO Workaround; isso só deve ocorrer quando necessário. O problema ocorria quando havia referências sem instanciar Catecismo.
         Frontend.loadJson(`json/catecismo.json`, (data) => {
             Catecismo.#catecismo = data;
         });
