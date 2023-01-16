@@ -9,9 +9,6 @@ $prjPath = (Get-Item $PSScriptRoot).Parent.FullName
 Write-Host "Biblia" -ForegroundColor Cyan
 $config = Convert-UnicodeC1ControlCharacters_to_HtmlEntities (Get-Content -Path "$prjPath\config\config.json") | ConvertFrom-Json -AsHashtable
 
-Write-Host "  Biblia_vatican_lt" -ForegroundColor Cyan
-$fileName = "$prjPath\temp\json\Biblia_vatican_lt.json"
-$biblia = Convert-UnicodeC1ControlCharacters_to_HtmlEntities (Get-Content $fileName) | ConvertFrom-Json -AsHashtable
 Write-Host "  Biblia_combo" -ForegroundColor Cyan
 $fileName = "$prjPath\temp\json\Biblia_combo.json"
 $bibliaCombo = Convert-UnicodeC1ControlCharacters_to_HtmlEntities (Get-Content $fileName) | ConvertFrom-Json -AsHashtable
