@@ -1,15 +1,7 @@
-#biblias {
-    font-size: .8em;
-}
-
-#biblias .diferenca {
+#biblias .nok {
     background-color: #fcc;
 }
 
-#biblias .vulgata {
-    background-color: #ccf;
-}
-
-#biblias .neovulgata {
+#biblias .ok {
     background-color: #cfc;
 }

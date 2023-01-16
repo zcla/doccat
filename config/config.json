@@ -372,6 +372,7 @@
 		{
 			"sigla": "Biblia_vatican_lt",
 			"nome": "Nova Vulgata",
+			"url": "https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_index_lt.html",
 			"urls": [
 				"https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_vetus-testamentum_lt.html",
 				"https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_novum-testamentum_lt.html"
@@ -456,6 +457,9 @@
 			"sigla": "Biblia_clerus_pt",
 			"nome": "Biblia Clerus",
 			"url": "http://www.clerus.org/bibliaclerusonline/pt/66c.htm",
+			"urls": [
+				"http://www.clerus.org/bibliaclerusonline/pt/66c.htm"
+			],
 			"mapa-livro": {
 				"Atos": "At",
 				"Marco": "Mc",
