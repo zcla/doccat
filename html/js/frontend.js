@@ -67,12 +67,10 @@ class Anotacoes {
         if ((val.substring(start, start + prefixo.length) == prefixo) && (val.substring(end - sufixo.length, end) == sufixo)) {
             // remover
             val = val.substr(0, start) + val.substring(start + prefixo.length, end - sufixo.length) + val.substring(end);
-            start = start;
             end = end - prefixo.length - sufixo.length;
         } else {
             // adicionar
             val = val.substring(0, start) + prefixo + val.substring(start, end) + sufixo + val.substring(end);
-            start = start;
             end = end + prefixo.length + sufixo.length;
         }
         $('#anotacoes textarea').val(val);
