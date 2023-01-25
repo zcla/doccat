@@ -71,7 +71,12 @@ class Anotacoes {
         } else {
             // adicionar
             val = val.substring(0, start) + prefixo + val.substring(start, end) + sufixo + val.substring(end);
-            end = end + prefixo.length + sufixo.length;
+            if (start == end) {
+                start = start + prefixo.length;
+                end = start;
+            } else {
+                end = end + prefixo.length + sufixo.length;
+            }
         }
         $('#anotacoes textarea').val(val);
         $('#anotacoes textarea').prop('selectionStart', start);
