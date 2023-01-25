@@ -64,16 +64,16 @@ class Anotacoes {
         let start = $('#anotacoes textarea').prop('selectionStart');
         let end = $('#anotacoes textarea').prop('selectionEnd');
         let val = $('#anotacoes textarea').val();
-        if ((val.substring(start - prefixo.length, start) == prefixo) && (val.substring(end, end + sufixo.length) == sufixo)) {
+        if ((val.substring(start, start + prefixo.length) == prefixo) && (val.substring(end - sufixo.length, end) == sufixo)) {
             // remover
-            val = val.substr(0, start - prefixo.length) + val.substring(start, end) + val.substring(end + sufixo.length);
-            start = start - prefixo.length;
-            end = end - prefixo.length;
+            val = val.substr(0, start) + val.substring(start + prefixo.length, end - sufixo.length) + val.substring(end);
+            start = start;
+            end = end - prefixo.length - sufixo.length;
         } else {
             // adicionar
             val = val.substring(0, start) + prefixo + val.substring(start, end) + sufixo + val.substring(end);
-            start = start + prefixo.length;
-            end = end + prefixo.length;
+            start = start;
+            end = end + prefixo.length + sufixo.length;
         }
         $('#anotacoes textarea').val(val);
         $('#anotacoes textarea').prop('selectionStart', start);
