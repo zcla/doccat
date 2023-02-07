@@ -1,0 +1,398 @@
+{
+  "titulo": "Tratado da Oração e da Meditação",
+  "autor": "São Pedro de Alcântara",
+  "editora": "Editora Vozes",
+  "ano": "2013",
+  "estrutura": [
+    {
+      "id": "1",
+      "indent": 0,
+      "texto": "Sumário",
+      "pagina": 5
+    },
+    {
+      "id": "2",
+      "indent": 0,
+      "texto": "À guisa de prefácio",
+      "pagina": 9
+    },
+    {
+      "id": "3",
+      "indent": 0,
+      "texto": "Notícia biográfica sobre São Pedro de Alcântara",
+      "pagina": 13
+    },
+    {
+      "id": "4",
+      "indent": 0,
+      "texto": "Primeira parte - Tratado da Oração e da Meditação",
+      "pagina": 29
+    },
+    {
+      "id": "4_1",
+      "indent": 1,
+      "texto": "Capítulo I - Do fruto que se tira da oração e da meditação",
+      "pagina": 31
+    },
+    {
+      "id": "4_2",
+      "indent": 1,
+      "texto": "Capítulo II - Da matéria da meditação",
+      "pagina": 34
+    },
+    {
+      "id": "4_2_1",
+      "indent": 2,
+      "texto": "Segunda-feira",
+      "pagina": 35
+    },
+    {
+      "id": "4_2_2",
+      "indent": 2,
+      "texto": "Terça-feira",
+      "pagina": 38
+    },
+    {
+      "id": "4_2_3",
+      "indent": 2,
+      "texto": "Quarta-feira",
+      "pagina": 42
+    },
+    {
+      "id": "4_2_4",
+      "indent": 2,
+      "texto": "Quinta-feira",
+      "pagina": 46
+    },
+    {
+      "id": "4_2_5",
+      "indent": 2,
+      "texto": "Sexta-feira",
+      "pagina": 48
+    },
+    {
+      "id": "4_2_6",
+      "indent": 2,
+      "texto": "Sábado",
+      "pagina": 51
+    },
+    {
+      "id": "4_2_7",
+      "indent": 2,
+      "texto": "Domingo",
+      "pagina": 55
+    },
+    {
+      "id": "4_3",
+      "indent": 1,
+      "texto": "Capítulo III - Do tempo e fruto destas meditações sobreditas",
+      "pagina": 58
+    },
+    {
+      "id": "4_4",
+      "indent": 1,
+      "texto": "Capítulo IV - Das outras sete meditações da Sagrada Paixão e da maneira que havemos de ter em meditá-la",
+      "pagina": 59
+    },
+    {
+      "id": "4_4_1",
+      "indent": 2,
+      "texto": "Segunda-feira",
+      "pagina": 61
+    },
+    {
+      "id": "4_4_1_1",
+      "indent": 3,
+      "texto": "Da instituição do Santíssimo Sacramento",
+      "pagina": 63
+    },
+    {
+      "id": "4_4_2",
+      "indent": 2,
+      "texto": "Terça-feira",
+      "pagina": 64
+    },
+    {
+      "id": "4_4_3",
+      "indent": 2,
+      "texto": "Quarta-feira",
+      "pagina": 67
+    },
+    {
+      "id": "4_4_4",
+      "indent": 2,
+      "texto": "Quinta-feira",
+      "pagina": 71
+    },
+    {
+      "id": "4_4_5",
+      "indent": 2,
+      "texto": "Sexta-feira",
+      "pagina": 74
+    },
+    {
+      "id": "4_4_6",
+      "indent": 2,
+      "texto": "Sábado",
+      "pagina": 79
+    },
+    {
+      "id": "4_4_7",
+      "indent": 2,
+      "texto": "Domingo",
+      "pagina": 81
+    },
+    {
+      "id": "4_5",
+      "indent": 1,
+      "texto": "Capítulo V - De seis coisas que podem intervir no exercício da oração",
+      "pagina": 85
+    },
+    {
+      "id": "4_6",
+      "indent": 1,
+      "texto": "Capítulo VI - Da preparação que se requer para antes da oração",
+      "pagina": 87
+    },
+    {
+      "id": "4_7",
+      "indent": 1,
+      "texto": "Capítulo VII - Da leitura",
+      "pagina": 89
+    },
+    {
+      "id": "4_8",
+      "indent": 1,
+      "texto": "Capítulo VIII - Da meditação",
+      "pagina": 90
+    },
+    {
+      "id": "4_9",
+      "indent": 1,
+      "texto": "Capítulo IX - Da ação de graças",
+      "pagina": 91
+    },
+    {
+      "id": "4_10",
+      "indent": 1,
+      "texto": "Capítulo X - Do oferecimento",
+      "pagina": 93
+    },
+    {
+      "id": "4_11",
+      "indent": 1,
+      "texto": "Capítulo XI - Da petição",
+      "pagina": 95
+    },
+    {
+      "id": "4_11_1",
+      "indent": 2,
+      "texto": "Petição especial do amor de Deus",
+      "pagina": 97
+    },
+    {
+      "id": "4_12",
+      "indent": 1,
+      "texto": "Capítulo XII - De alguns avisos que se devem ter neste santo exercício",
+      "pagina": 101
+    },
+    {
+      "id": "4_12_1",
+      "indent": 2,
+      "texto": "Primeiro aviso",
+      "pagina": 101
+    },
+    {
+      "id": "4_12_2",
+      "indent": 2,
+      "texto": "Segundo aviso",
+      "pagina": 102
+    },
+    {
+      "id": "4_12_3",
+      "indent": 2,
+      "texto": "Terceiro aviso",
+      "pagina": 102
+    },
+    {
+      "id": "4_12_4",
+      "indent": 2,
+      "texto": "Quarto aviso",
+      "pagina": 103
+    },
+    {
+      "id": "4_12_5",
+      "indent": 2,
+      "texto": "Quinto aviso",
+      "pagina": 104
+    },
+    {
+      "id": "4_12_6",
+      "indent": 2,
+      "texto": "Sexto aviso",
+      "pagina": 105
+    },
+    {
+      "id": "4_12_7",
+      "indent": 2,
+      "texto": "Sétimo aviso",
+      "pagina": 106
+    },
+    {
+      "id": "4_12_8",
+      "indent": 2,
+      "texto": "Oitavo aviso",
+      "pagina": 107
+    },
+    {
+      "id": "5",
+      "indent": 0,
+      "texto": "Segunda parte - Tratado que fala da devoção",
+      "pagina": 111
+    },
+    {
+      "id": "5_1",
+      "indent": 1,
+      "texto": "Capítulo I - Que coisa seja a devoção",
+      "pagina": 113
+    },
+    {
+      "id": "5_2",
+      "indent": 1,
+      "texto": "Capítulo II - De nove coisas que ajudam a alcançar a devoção",
+      "pagina": 116
+    },
+    {
+      "id": "5_3",
+      "indent": 1,
+      "texto": "Capítulo III - De dez coisas que impedem a devoção",
+      "pagina": 118
+    },
+    {
+      "id": "5_4",
+      "indent": 1,
+      "texto": "Capítulo IV - Das tentações mais comuns que costumam fatigar os que se dão à oração e seus remédios",
+      "pagina": 120
+    },
+    {
+      "id": "5_4_1",
+      "indent": 2,
+      "texto": "Primeiro aviso",
+      "pagina": 120
+    },
+    {
+      "id": "5_4_2",
+      "indent": 2,
+      "texto": "Segundo aviso",
+      "pagina": 122
+    },
+    {
+      "id": "5_4_3",
+      "indent": 2,
+      "texto": "Terceiro aviso",
+      "pagina": 122
+    },
+    {
+      "id": "5_4_4",
+      "indent": 2,
+      "texto": "Quarto aviso",
+      "pagina": 123
+    },
+    {
+      "id": "5_4_5",
+      "indent": 2,
+      "texto": "Quinto aviso",
+      "pagina": 123
+    },
+    {
+      "id": "5_4_6",
+      "indent": 2,
+      "texto": "Sexto aviso",
+      "pagina": 124
+    },
+    {
+      "id": "5_4_7",
+      "indent": 2,
+      "texto": "Sétimo aviso",
+      "pagina": 124
+    },
+    {
+      "id": "5_4_8",
+      "indent": 2,
+      "texto": "Oitavo aviso",
+      "pagina": 125
+    },
+    {
+      "id": "5_4_9",
+      "indent": 2,
+      "texto": "Nono aviso",
+      "pagina": 125
+    },
+    {
+      "id": "5_5",
+      "indent": 1,
+      "texto": "Capítulo V - De alguns avisos necessários para os que se dão à oração",
+      "pagina": 127
+    },
+    {
+      "id": "5_5_1",
+      "indent": 2,
+      "texto": "Primeiro aviso",
+      "pagina": 127
+    },
+    {
+      "id": "5_5_2",
+      "indent": 2,
+      "texto": "Segundo aviso",
+      "pagina": 129
+    },
+    {
+      "id": "5_5_3",
+      "indent": 2,
+      "texto": "Terceiro aviso",
+      "pagina": 130
+    },
+    {
+      "id": "5_5_4",
+      "indent": 2,
+      "texto": "Quarto aviso",
+      "pagina": 130
+    },
+    {
+      "id": "5_5_5",
+      "indent": 2,
+      "texto": "Quinto aviso",
+      "pagina": 130
+    },
+    {
+      "id": "5_5_6",
+      "indent": 2,
+      "texto": "Sexto aviso",
+      "pagina": 131
+    },
+    {
+      "id": "5_5_7",
+      "indent": 2,
+      "texto": "Sétimo aviso",
+      "pagina": 132
+    },
+    {
+      "id": "5_5_8",
+      "indent": 2,
+      "texto": "Oitavo aviso",
+      "pagina": 132
+    },
+    {
+      "id": "6",
+      "indent": 0,
+      "texto": "Breve introdução - Para os que começam a servir a Nosso Senhor",
+      "pagina": 135
+    },
+    {
+      "id": "7",
+      "indent": 0,
+      "texto": "De três coisas que deve fazer quem quiser aproveitar muito em pouco tempo",
+      "pagina": 140
+    }
+  ]
+}
