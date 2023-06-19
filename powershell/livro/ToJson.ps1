@@ -1,77 +1,75 @@
 Set-Location $PSScriptRoot
 
 $result = [ordered]@{
-    id = "TratadoDaOracaoEDaMeditacao"
-    titulo = "Tratado da Oração e da Meditação"
-    autor = "São Pedro de Alcântara"
-    editora = "Editora Vozes"
-    ano = "2013"
+    id = "VidaYEscritosDeSanPedroDeAlcantara"
+    titulo = "Vida y Escritos de San Pedro de Alcantara"
+    autor = "Rafael Sanz Valdivieso"
+    editora = "BAC"
+    ano = "1996"
     textoEstrutura = @"
-Sumário	5
-À guisa de prefácio	9
-Notícia biográfica sobre São Pedro de Alcântara	13
-Primeira parte - Tratado da Oração e da Meditação	29
- 	Capítulo I - Do fruto que se tira da oração e da meditação	31
- 	Capítulo II - Da matéria da meditação	34
- 	 	Segunda-feira	35
- 	 	Terça-feira	38
- 	 	Quarta-feira	42
- 	 	Quinta-feira	46
- 	 	Sexta-feira	48
- 	 	Sábado	51
- 	 	Domingo	55
- 	Capítulo III - Do tempo e fruto destas meditações sobreditas	58
- 	Capítulo IV - Das outras sete meditações da Sagrada Paixão e da maneira que havemos de ter em meditá-la	59
- 	 	Segunda-feira	61
- 	 	 	Da instituição do Santíssimo Sacramento	63
- 	 	Terça-feira	64
- 	 	Quarta-feira	67
- 	 	Quinta-feira	71
- 	 	Sexta-feira	74
- 	 	Sábado	79
- 	 	Domingo	81
- 	Capítulo V - De seis coisas que podem intervir no exercício da oração	85
- 	Capítulo VI - Da preparação que se requer para antes da oração	87
- 	Capítulo VII - Da leitura	89
- 	Capítulo VIII - Da meditação	90
- 	Capítulo IX - Da ação de graças	91
- 	Capítulo X - Do oferecimento	93
- 	Capítulo XI - Da petição	95
- 	 	Petição especial do amor de Deus	97
- 	Capítulo XII - De alguns avisos que se devem ter neste santo exercício	101
- 	 	Primeiro aviso	101
- 	 	Segundo aviso	102
- 	 	Terceiro aviso	102
- 	 	Quarto aviso	103
- 	 	Quinto aviso	104
- 	 	Sexto aviso	105
- 	 	Sétimo aviso	106
- 	 	Oitavo aviso	107
-Segunda parte - Tratado que fala da devoção	111
- 	Capítulo I - Que coisa seja a devoção	113
- 	Capítulo II - De nove coisas que ajudam a alcançar a devoção	116
- 	Capítulo III - De dez coisas que impedem a devoção	118
- 	Capítulo IV - Das tentações mais comuns que costumam fatigar os que se dão à oração e seus remédios	120
- 	 	Primeiro aviso	120
- 	 	Segundo aviso	122
- 	 	Terceiro aviso	122
- 	 	Quarto aviso	123
- 	 	Quinto aviso	123
- 	 	Sexto aviso	124
- 	 	Sétimo aviso	124
- 	 	Oitavo aviso	125
- 	 	Nono aviso	125
- 	Capítulo V - De alguns avisos necessários para os que se dão à oração	127
- 	 	Primeiro aviso	127
- 	 	Segundo aviso	129
- 	 	Terceiro aviso	130
- 	 	Quarto aviso	130
- 	 	Quinto aviso	130
- 	 	Sexto aviso	131
- 	 	Sétimo aviso	132
- 	 	Oitavo aviso	132
-Breve introdução - Para os que começam a servir a Nosso Senhor	135
-De três coisas que deve fazer quem quiser aproveitar muito em pouco tempo	140
+Indice General	IX
+ 	Presentación de la serie	XIII
+ 	La mística del recogimiento	XVII
+ 	 	1. La espiritualidad de San Francisco	XVII
+ 	 	2. La vivencia espiritual franciscana	XVIII
+ 	 	3. La Observancia en España	XIX
+ 	 	4. Espiritualidad de la Observancia	XX
+ 	 	5. Seis grados de pobreza	XXII
+ 	 	6. La mística del recogimiento	XXV
+ 	 	7. Orígenes de la mística del recogimiento	XXVII
+ 	 	8. El recogimiento como novedad	XXIX
+ 	 	9. Historia y geografía	XXXI
+ 	 	10. Fuentes de la mística del recogimiento	XXXIV
+ 	 	11. Los cuatro primeros ensayos	XXXVI
+ 	 	12. Las codificaciones	XXXVIII
+ 	 	13. El nombre	XXXIX
+ 	 	14. Líneas internas de fuerza	XLI
+ 	 	15. Las fórmulas	XLIII
+ 	 	16. Recogidos y alumbrados de 1525	XLV
+ 	 	17. Recogimiento, erasmismo, luteranismo	XLVIII
+ 	 	18. Mística recogida y espiritualidad tradicional	LI
+ 	 	19. Mística recogida y teresiana	LII
+ 	 	Bibliografia fundamental	LIV
+ 	Introducción general	LV
+ 	Bibliografía general	LIX
+ 	Siglas	LXVII
+ 	Cronología de San Pedro de Alcántara y de otros acontecimientos franciscanos	LXIX
+Parte primera - Vida de San Pedro de Alcantara	3
+ 	Capítulo 1. Familia y nacimiento	5
+ 	Capítulo 2. Educación y estudios	15
+ 	Capítulo 3. Toma de hábito y juventud religiosa	21
+ 	Capítulo 4. Oficios de San Pedro de Alcántara	31
+ 	Capítulo 5. Ministro provincial	37
+ 	Capítulo 6. Por tierras de Portugal	45
+ 	Capítulo 7. Apostolado en Extremadura	55
+ 	Capítulo 8. Por los desiertos de Santa Cruz y el Palancar	65
+ 	Capítulo 9. Sementera religiosa desde el Palancar	75
+ 	Capítulo 10. Comisario general de los Conventuales de vida reformada	91
+ 	Capítulo 11. Santidad de Fray Pedro de Alcántara	107
+ 	Capítulo 12. Muerte de Fray Pedro de Alcántara en Arenas	121
+ 	Capítulo 13. Glorificación y patronatos de San Pedro	141
+ 	Apéndice documental	151
+ 	 	Apéndice I: Cartas dirigidas a San Pedro de Alcántara	153
+ 	 	Apéndice II: Otros documentos	167
+Parte segunda - Escritos de San Pedro de Alcantara	189
+ 	Producción literaria de San Pedro de Alcántara	191
+ 	 	Tratado de la Oración y Meditación	191
+ 	 	"Constituiciones de las Provincias franciscanas de San Gabriel y San José"	193
+ 	 	Comentario al salmo "Miserere mei, Domine"	194
+ 	 	Epistolario	195
+ 	 	Traducción de los "Soliloquios", de San Buenaventura	196
+ 	Tratado de la Oración y Meditación	199
+ 	Introducción	201
+ 	Apéndice	241
+ 	Texto del Tratado de la Oración y Meditación	249
+ 	Cartas de San Pedro de Alcántara	361
+ 	Ordenaciones de las Provincias de San Gabriel y de San José	389
+ 	Super Psalmum Miserere	409
+ 	Obras atribuidas: Breve introducción ara los que comienzan a servir a Nuestro Señor	421
+ 	Soliloquios de San Buenaventura	433
+ 	Indices	523
+ 	 	Indice bíblico	525
+ 	 	Indice de conceptos, lugares y personas	531
 "@
         estrutura = @()
 }
@@ -118,11 +116,17 @@ foreach ($texto in $spl) {
         $id = "$($id)_$($ids[$i])"
     }
 
+    $intPagina = $pagina
+    try {
+        $intPagina = [int]$pagina
+    } catch {
+        # deixa string
+    }
     $result.estrutura += [ordered]@{
         id = "$id"
         indent = $indent
         texto = $texto
-        pagina = [int]$pagina
+        pagina = $intPagina
     }
 }
 $result.Remove('textoEstrutura')
