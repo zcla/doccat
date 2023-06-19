@@ -1,0 +1,386 @@
+{
+  "titulo": "Vida y Escritos de San Pedro de Alcantara",
+  "autor": "Rafael Sanz Valdivieso",
+  "editora": "BAC",
+  "ano": "1996",
+  "estrutura": [
+    {
+      "id": "1",
+      "indent": 0,
+      "texto": "Indice General",
+      "pagina": "IX"
+    },
+    {
+      "id": "1_1",
+      "indent": 1,
+      "texto": "Presentación de la serie",
+      "pagina": "XIII"
+    },
+    {
+      "id": "1_2",
+      "indent": 1,
+      "texto": "La mística del recogimiento",
+      "pagina": "XVII"
+    },
+    {
+      "id": "1_2_1",
+      "indent": 2,
+      "texto": "1. La espiritualidad de San Francisco",
+      "pagina": "XVII"
+    },
+    {
+      "id": "1_2_2",
+      "indent": 2,
+      "texto": "2. La vivencia espiritual franciscana",
+      "pagina": "XVIII"
+    },
+    {
+      "id": "1_2_3",
+      "indent": 2,
+      "texto": "3. La Observancia en España",
+      "pagina": "XIX"
+    },
+    {
+      "id": "1_2_4",
+      "indent": 2,
+      "texto": "4. Espiritualidad de la Observancia",
+      "pagina": "XX"
+    },
+    {
+      "id": "1_2_5",
+      "indent": 2,
+      "texto": "5. Seis grados de pobreza",
+      "pagina": "XXII"
+    },
+    {
+      "id": "1_2_6",
+      "indent": 2,
+      "texto": "6. La mística del recogimiento",
+      "pagina": "XXV"
+    },
+    {
+      "id": "1_2_7",
+      "indent": 2,
+      "texto": "7. Orígenes de la mística del recogimiento",
+      "pagina": "XXVII"
+    },
+    {
+      "id": "1_2_8",
+      "indent": 2,
+      "texto": "8. El recogimiento como novedad",
+      "pagina": "XXIX"
+    },
+    {
+      "id": "1_2_9",
+      "indent": 2,
+      "texto": "9. Historia y geografía",
+      "pagina": "XXXI"
+    },
+    {
+      "id": "1_2_10",
+      "indent": 2,
+      "texto": "10. Fuentes de la mística del recogimiento",
+      "pagina": "XXXIV"
+    },
+    {
+      "id": "1_2_11",
+      "indent": 2,
+      "texto": "11. Los cuatro primeros ensayos",
+      "pagina": "XXXVI"
+    },
+    {
+      "id": "1_2_12",
+      "indent": 2,
+      "texto": "12. Las codificaciones",
+      "pagina": "XXXVIII"
+    },
+    {
+      "id": "1_2_13",
+      "indent": 2,
+      "texto": "13. El nombre",
+      "pagina": "XXXIX"
+    },
+    {
+      "id": "1_2_14",
+      "indent": 2,
+      "texto": "14. Líneas internas de fuerza",
+      "pagina": "XLI"
+    },
+    {
+      "id": "1_2_15",
+      "indent": 2,
+      "texto": "15. Las fórmulas",
+      "pagina": "XLIII"
+    },
+    {
+      "id": "1_2_16",
+      "indent": 2,
+      "texto": "16. Recogidos y alumbrados de 1525",
+      "pagina": "XLV"
+    },
+    {
+      "id": "1_2_17",
+      "indent": 2,
+      "texto": "17. Recogimiento, erasmismo, luteranismo",
+      "pagina": "XLVIII"
+    },
+    {
+      "id": "1_2_18",
+      "indent": 2,
+      "texto": "18. Mística recogida y espiritualidad tradicional",
+      "pagina": "LI"
+    },
+    {
+      "id": "1_2_19",
+      "indent": 2,
+      "texto": "19. Mística recogida y teresiana",
+      "pagina": "LII"
+    },
+    {
+      "id": "1_2_20",
+      "indent": 2,
+      "texto": "Bibliografia fundamental",
+      "pagina": "LIV"
+    },
+    {
+      "id": "1_3",
+      "indent": 1,
+      "texto": "Introducción general",
+      "pagina": "LV"
+    },
+    {
+      "id": "1_4",
+      "indent": 1,
+      "texto": "Bibliografía general",
+      "pagina": "LIX"
+    },
+    {
+      "id": "1_5",
+      "indent": 1,
+      "texto": "Siglas",
+      "pagina": "LXVII"
+    },
+    {
+      "id": "1_6",
+      "indent": 1,
+      "texto": "Cronología de San Pedro de Alcántara y de otros acontecimientos franciscanos",
+      "pagina": "LXIX"
+    },
+    {
+      "id": "2",
+      "indent": 0,
+      "texto": "Parte primera - Vida de San Pedro de Alcantara",
+      "pagina": 3
+    },
+    {
+      "id": "2_1",
+      "indent": 1,
+      "texto": "Capítulo 1. Familia y nacimiento",
+      "pagina": 5
+    },
+    {
+      "id": "2_2",
+      "indent": 1,
+      "texto": "Capítulo 2. Educación y estudios",
+      "pagina": 15
+    },
+    {
+      "id": "2_3",
+      "indent": 1,
+      "texto": "Capítulo 3. Toma de hábito y juventud religiosa",
+      "pagina": 21
+    },
+    {
+      "id": "2_4",
+      "indent": 1,
+      "texto": "Capítulo 4. Oficios de San Pedro de Alcántara",
+      "pagina": 31
+    },
+    {
+      "id": "2_5",
+      "indent": 1,
+      "texto": "Capítulo 5. Ministro provincial",
+      "pagina": 37
+    },
+    {
+      "id": "2_6",
+      "indent": 1,
+      "texto": "Capítulo 6. Por tierras de Portugal",
+      "pagina": 45
+    },
+    {
+      "id": "2_7",
+      "indent": 1,
+      "texto": "Capítulo 7. Apostolado en Extremadura",
+      "pagina": 55
+    },
+    {
+      "id": "2_8",
+      "indent": 1,
+      "texto": "Capítulo 8. Por los desiertos de Santa Cruz y el Palancar",
+      "pagina": 65
+    },
+    {
+      "id": "2_9",
+      "indent": 1,
+      "texto": "Capítulo 9. Sementera religiosa desde el Palancar",
+      "pagina": 75
+    },
+    {
+      "id": "2_10",
+      "indent": 1,
+      "texto": "Capítulo 10. Comisario general de los Conventuales de vida reformada",
+      "pagina": 91
+    },
+    {
+      "id": "2_11",
+      "indent": 1,
+      "texto": "Capítulo 11. Santidad de Fray Pedro de Alcántara",
+      "pagina": 107
+    },
+    {
+      "id": "2_12",
+      "indent": 1,
+      "texto": "Capítulo 12. Muerte de Fray Pedro de Alcántara en Arenas",
+      "pagina": 121
+    },
+    {
+      "id": "2_13",
+      "indent": 1,
+      "texto": "Capítulo 13. Glorificación y patronatos de San Pedro",
+      "pagina": 141
+    },
+    {
+      "id": "2_14",
+      "indent": 1,
+      "texto": "Apéndice documental",
+      "pagina": 151
+    },
+    {
+      "id": "2_14_1",
+      "indent": 2,
+      "texto": "Apéndice I: Cartas dirigidas a San Pedro de Alcántara",
+      "pagina": 153
+    },
+    {
+      "id": "2_14_2",
+      "indent": 2,
+      "texto": "Apéndice II: Otros documentos",
+      "pagina": 167
+    },
+    {
+      "id": "3",
+      "indent": 0,
+      "texto": "Parte segunda - Escritos de San Pedro de Alcantara",
+      "pagina": 189
+    },
+    {
+      "id": "3_1",
+      "indent": 1,
+      "texto": "Producción literaria de San Pedro de Alcántara",
+      "pagina": 191
+    },
+    {
+      "id": "3_1_1",
+      "indent": 2,
+      "texto": "Tratado de la Oración y Meditación",
+      "pagina": 191
+    },
+    {
+      "id": "3_1_2",
+      "indent": 2,
+      "texto": "\"Constituiciones de las Provincias franciscanas de San Gabriel y San José\"",
+      "pagina": 193
+    },
+    {
+      "id": "3_1_3",
+      "indent": 2,
+      "texto": "Comentario al salmo \"Miserere mei, Domine\"",
+      "pagina": 194
+    },
+    {
+      "id": "3_1_4",
+      "indent": 2,
+      "texto": "Epistolario",
+      "pagina": 195
+    },
+    {
+      "id": "3_1_5",
+      "indent": 2,
+      "texto": "Traducción de los \"Soliloquios\", de San Buenaventura",
+      "pagina": 196
+    },
+    {
+      "id": "3_2",
+      "indent": 1,
+      "texto": "Tratado de la Oración y Meditación",
+      "pagina": 199
+    },
+    {
+      "id": "3_3",
+      "indent": 1,
+      "texto": "Introducción",
+      "pagina": 201
+    },
+    {
+      "id": "3_4",
+      "indent": 1,
+      "texto": "Apéndice",
+      "pagina": 241
+    },
+    {
+      "id": "3_5",
+      "indent": 1,
+      "texto": "Texto del Tratado de la Oración y Meditación",
+      "pagina": 249
+    },
+    {
+      "id": "3_6",
+      "indent": 1,
+      "texto": "Cartas de San Pedro de Alcántara",
+      "pagina": 361
+    },
+    {
+      "id": "3_7",
+      "indent": 1,
+      "texto": "Ordenaciones de las Provincias de San Gabriel y de San José",
+      "pagina": 389
+    },
+    {
+      "id": "3_8",
+      "indent": 1,
+      "texto": "Super Psalmum Miserere",
+      "pagina": 409
+    },
+    {
+      "id": "3_9",
+      "indent": 1,
+      "texto": "Obras atribuidas: Breve introducción ara los que comienzan a servir a Nuestro Señor",
+      "pagina": 421
+    },
+    {
+      "id": "3_10",
+      "indent": 1,
+      "texto": "Soliloquios de San Buenaventura",
+      "pagina": 433
+    },
+    {
+      "id": "3_11",
+      "indent": 1,
+      "texto": "Indices",
+      "pagina": 523
+    },
+    {
+      "id": "3_11_1",
+      "indent": 2,
+      "texto": "Indice bíblico",
+      "pagina": 525
+    },
+    {
+      "id": "3_11_2",
+      "indent": 2,
+      "texto": "Indice de conceptos, lugares y personas",
+      "pagina": 531
+    }
+  ]
+}
