@@ -1,0 +1,410 @@
+{
+  "titulo": "A vida intelectual",
+  "autor": "Antonin-Dalmace Sertillanges",
+  "editora": "Kírion",
+  "ano": "2019",
+  "estrutura": [
+    {
+      "id": "1",
+      "indent": 0,
+      "texto": "Título",
+      "pagina": "Página"
+    },
+    {
+      "id": "2",
+      "indent": 0,
+      "texto": "Sumário",
+      "pagina": 5
+    },
+    {
+      "id": "3",
+      "indent": 0,
+      "texto": "Prefácio à edição brasileira",
+      "pagina": 11
+    },
+    {
+      "id": "4",
+      "indent": 0,
+      "texto": "Prefácio à terceira edição",
+      "pagina": 15
+    },
+    {
+      "id": "5",
+      "indent": 0,
+      "texto": "Prefácio à segunda edição",
+      "pagina": 17
+    },
+    {
+      "id": "6",
+      "indent": 0,
+      "texto": "Prefácio",
+      "pagina": 25
+    },
+    {
+      "id": "7",
+      "indent": 0,
+      "texto": "I. A vocação intelectual",
+      "pagina": 27
+    },
+    {
+      "id": "7_1",
+      "indent": 1,
+      "texto": "I. O intelectual é um consagrado",
+      "pagina": 27
+    },
+    {
+      "id": "7_2",
+      "indent": 1,
+      "texto": "II. O intelectual não é um isolado",
+      "pagina": 33
+    },
+    {
+      "id": "7_3",
+      "indent": 1,
+      "texto": "III. O intelectual pertence a seu tempo",
+      "pagina": 34
+    },
+    {
+      "id": "8",
+      "indent": 0,
+      "texto": "II. As virtudes de um intelectual cristão",
+      "pagina": 37
+    },
+    {
+      "id": "8_1",
+      "indent": 1,
+      "texto": "I. As virtudes comuns",
+      "pagina": 37
+    },
+    {
+      "id": "8_2",
+      "indent": 1,
+      "texto": "II. A virtude própria do intelectual",
+      "pagina": 42
+    },
+    {
+      "id": "8_3",
+      "indent": 1,
+      "texto": "III. O espírito de oração",
+      "pagina": 45
+    },
+    {
+      "id": "8_4",
+      "indent": 1,
+      "texto": "IV. A disciplina do corpo",
+      "pagina": 48
+    },
+    {
+      "id": "9",
+      "indent": 0,
+      "texto": "III. A organização da vida",
+      "pagina": 55
+    },
+    {
+      "id": "9_1",
+      "indent": 1,
+      "texto": "I. Simplificar",
+      "pagina": 55
+    },
+    {
+      "id": "9_2",
+      "indent": 1,
+      "texto": "II. Guardar a solidão",
+      "pagina": 58
+    },
+    {
+      "id": "9_3",
+      "indent": 1,
+      "texto": "III. Cooperar com seus pares",
+      "pagina": 63
+    },
+    {
+      "id": "9_4",
+      "indent": 1,
+      "texto": "IV. Cultivar as relações necessárias",
+      "pagina": 66
+    },
+    {
+      "id": "9_5",
+      "indent": 1,
+      "texto": "V, Conservar a dose necessária de ação",
+      "pagina": 69
+    },
+    {
+      "id": "9_6",
+      "indent": 1,
+      "texto": "VI. Manter em tudo o silêncio interior",
+      "pagina": 73
+    },
+    {
+      "id": "10",
+      "indent": 0,
+      "texto": "IV. O tempo do trabalho",
+      "pagina": 75
+    },
+    {
+      "id": "10_1",
+      "indent": 1,
+      "texto": "I. O trabalho permanente",
+      "pagina": 75
+    },
+    {
+      "id": "10_2",
+      "indent": 1,
+      "texto": "II. O trabalho noturno",
+      "pagina": 84
+    },
+    {
+      "id": "10_3",
+      "indent": 1,
+      "texto": "III. As manhãs e as noites",
+      "pagina": 88
+    },
+    {
+      "id": "10_4",
+      "indent": 1,
+      "texto": "IV. Os momentos de plenitude",
+      "pagina": 92
+    },
+    {
+      "id": "11",
+      "indent": 0,
+      "texto": "V. O campo de trabalho",
+      "pagina": 99
+    },
+    {
+      "id": "11_1",
+      "indent": 1,
+      "texto": "I. A ciência comparada",
+      "pagina": 99
+    },
+    {
+      "id": "11_2",
+      "indent": 1,
+      "texto": "II. O tomismo, quadro ideal do saber",
+      "pagina": 108
+    },
+    {
+      "id": "11_3",
+      "indent": 1,
+      "texto": "III. A especialidade",
+      "pagina": 111
+    },
+    {
+      "id": "11_4",
+      "indent": 1,
+      "texto": "IV. Os sacrifícios necessários",
+      "pagina": 113
+    },
+    {
+      "id": "12",
+      "indent": 0,
+      "texto": "VI. O espírito de trabalho",
+      "pagina": 115
+    },
+    {
+      "id": "12_1",
+      "indent": 1,
+      "texto": "I. O fervor da investigação",
+      "pagina": 115
+    },
+    {
+      "id": "12_2",
+      "indent": 1,
+      "texto": "II. A concentração",
+      "pagina": 118
+    },
+    {
+      "id": "12_3",
+      "indent": 1,
+      "texto": "III. A submissão à verdade",
+      "pagina": 120
+    },
+    {
+      "id": "12_4",
+      "indent": 1,
+      "texto": "IV. Os desenvolvimentos",
+      "pagina": 124
+    },
+    {
+      "id": "12_5",
+      "indent": 1,
+      "texto": "V. O senso do mistério",
+      "pagina": 127
+    },
+    {
+      "id": "13",
+      "indent": 0,
+      "texto": "VII. A preparação do trabalho",
+      "pagina": 131
+    },
+    {
+      "id": "13_1",
+      "indent": 1,
+      "texto": "A - A leitura",
+      "pagina": 131
+    },
+    {
+      "id": "13_1_1",
+      "indent": 2,
+      "texto": "I. Ler pouco",
+      "pagina": 131
+    },
+    {
+      "id": "13_1_2",
+      "indent": 2,
+      "texto": "II. Escolher",
+      "pagina": 134
+    },
+    {
+      "id": "13_1_3",
+      "indent": 2,
+      "texto": "III. Quatro espécies de leitura",
+      "pagina": 136
+    },
+    {
+      "id": "13_1_4",
+      "indent": 2,
+      "texto": "IV. O contato com os gênios",
+      "pagina": 139
+    },
+    {
+      "id": "13_1_5",
+      "indent": 2,
+      "texto": "V. Conciliar em vez de opor",
+      "pagina": 144
+    },
+    {
+      "id": "13_1_6",
+      "indent": 2,
+      "texto": "VI. Apropriar-se e viver",
+      "pagina": 146
+    },
+    {
+      "id": "13_2",
+      "indent": 1,
+      "texto": "B - A organização da memória",
+      "pagina": 152
+    },
+    {
+      "id": "13_2_1",
+      "indent": 2,
+      "texto": "I. O que se deve reter",
+      "pagina": 152
+    },
+    {
+      "id": "13_2_2",
+      "indent": 2,
+      "texto": "II. Em que ordem reter",
+      "pagina": 154
+    },
+    {
+      "id": "13_2_3",
+      "indent": 2,
+      "texto": "III. Como fazer para reter",
+      "pagina": 157
+    },
+    {
+      "id": "13_3",
+      "indent": 1,
+      "texto": "C - As notas",
+      "pagina": 161
+    },
+    {
+      "id": "13_3_1",
+      "indent": 2,
+      "texto": "I. Como anotar",
+      "pagina": 161
+    },
+    {
+      "id": "13_3_2",
+      "indent": 2,
+      "texto": "II. Como classificar suas notas",
+      "pagina": 166
+    },
+    {
+      "id": "13_3_3",
+      "indent": 2,
+      "texto": "III. Como utilizar suas notas",
+      "pagina": 168
+    },
+    {
+      "id": "14",
+      "indent": 0,
+      "texto": "VIII. O trabalho criador",
+      "pagina": 171
+    },
+    {
+      "id": "14_1",
+      "indent": 1,
+      "texto": "I. Escrever",
+      "pagina": 171
+    },
+    {
+      "id": "14_2",
+      "indent": 1,
+      "texto": "II. Desapegar-se de si mesmo e do mundo",
+      "pagina": 177
+    },
+    {
+      "id": "14_3",
+      "indent": 1,
+      "texto": "III. Ser constante, paciente e perseverante",
+      "pagina": 182
+    },
+    {
+      "id": "14_4",
+      "indent": 1,
+      "texto": "IV. Tudo fazer bem e tudo terminar",
+      "pagina": 190
+    },
+    {
+      "id": "14_5",
+      "indent": 1,
+      "texto": "V. Não empreender nada que esteja acima da sua capacidade",
+      "pagina": 193
+    },
+    {
+      "id": "15",
+      "indent": 0,
+      "texto": "IX. O trabalhador e o homem",
+      "pagina": 197
+    },
+    {
+      "id": "15_1",
+      "indent": 1,
+      "texto": "I. Manter contato com a vida",
+      "pagina": 197
+    },
+    {
+      "id": "15_2",
+      "indent": 1,
+      "texto": "II. Saber se descontrair",
+      "pagina": 202
+    },
+    {
+      "id": "15_3",
+      "indent": 1,
+      "texto": "III. Aceitar as provações",
+      "pagina": 206
+    },
+    {
+      "id": "15_4",
+      "indent": 1,
+      "texto": "IV. Gozar as alegrias",
+      "pagina": 211
+    },
+    {
+      "id": "15_5",
+      "indent": 1,
+      "texto": "V. Anelar os frutos",
+      "pagina": 212
+    },
+    {
+      "id": "16",
+      "indent": 0,
+      "texto": "Dezesseis conselhos de São Tomás de Aquino para adquirir o tesouro da ciência",
+      "pagina": 217
+    }
+  ]
+}

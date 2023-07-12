@@ -1,75 +1,79 @@
 Set-Location $PSScriptRoot
 
 $result = [ordered]@{
-    id = "VidaYEscritosDeSanPedroDeAlcantara"
-    titulo = "Vida y Escritos de San Pedro de Alcantara"
-    autor = "Rafael Sanz Valdivieso"
-    editora = "BAC"
-    ano = "1996"
+    id = "AVidaIntelectual"
+    titulo = "A vida intelectual"
+    autor = "Antonin-Dalmace Sertillanges"
+    editora = "Kírion"
+    ano = "2019"
     textoEstrutura = @"
-Indice General	IX
- 	Presentación de la serie	XIII
- 	La mística del recogimiento	XVII
- 	 	1. La espiritualidad de San Francisco	XVII
- 	 	2. La vivencia espiritual franciscana	XVIII
- 	 	3. La Observancia en España	XIX
- 	 	4. Espiritualidad de la Observancia	XX
- 	 	5. Seis grados de pobreza	XXII
- 	 	6. La mística del recogimiento	XXV
- 	 	7. Orígenes de la mística del recogimiento	XXVII
- 	 	8. El recogimiento como novedad	XXIX
- 	 	9. Historia y geografía	XXXI
- 	 	10. Fuentes de la mística del recogimiento	XXXIV
- 	 	11. Los cuatro primeros ensayos	XXXVI
- 	 	12. Las codificaciones	XXXVIII
- 	 	13. El nombre	XXXIX
- 	 	14. Líneas internas de fuerza	XLI
- 	 	15. Las fórmulas	XLIII
- 	 	16. Recogidos y alumbrados de 1525	XLV
- 	 	17. Recogimiento, erasmismo, luteranismo	XLVIII
- 	 	18. Mística recogida y espiritualidad tradicional	LI
- 	 	19. Mística recogida y teresiana	LII
- 	 	Bibliografia fundamental	LIV
- 	Introducción general	LV
- 	Bibliografía general	LIX
- 	Siglas	LXVII
- 	Cronología de San Pedro de Alcántara y de otros acontecimientos franciscanos	LXIX
-Parte primera - Vida de San Pedro de Alcantara	3
- 	Capítulo 1. Familia y nacimiento	5
- 	Capítulo 2. Educación y estudios	15
- 	Capítulo 3. Toma de hábito y juventud religiosa	21
- 	Capítulo 4. Oficios de San Pedro de Alcántara	31
- 	Capítulo 5. Ministro provincial	37
- 	Capítulo 6. Por tierras de Portugal	45
- 	Capítulo 7. Apostolado en Extremadura	55
- 	Capítulo 8. Por los desiertos de Santa Cruz y el Palancar	65
- 	Capítulo 9. Sementera religiosa desde el Palancar	75
- 	Capítulo 10. Comisario general de los Conventuales de vida reformada	91
- 	Capítulo 11. Santidad de Fray Pedro de Alcántara	107
- 	Capítulo 12. Muerte de Fray Pedro de Alcántara en Arenas	121
- 	Capítulo 13. Glorificación y patronatos de San Pedro	141
- 	Apéndice documental	151
- 	 	Apéndice I: Cartas dirigidas a San Pedro de Alcántara	153
- 	 	Apéndice II: Otros documentos	167
-Parte segunda - Escritos de San Pedro de Alcantara	189
- 	Producción literaria de San Pedro de Alcántara	191
- 	 	Tratado de la Oración y Meditación	191
- 	 	"Constituiciones de las Provincias franciscanas de San Gabriel y San José"	193
- 	 	Comentario al salmo "Miserere mei, Domine"	194
- 	 	Epistolario	195
- 	 	Traducción de los "Soliloquios", de San Buenaventura	196
- 	Tratado de la Oración y Meditación	199
- 	Introducción	201
- 	Apéndice	241
- 	Texto del Tratado de la Oración y Meditación	249
- 	Cartas de San Pedro de Alcántara	361
- 	Ordenaciones de las Provincias de San Gabriel y de San José	389
- 	Super Psalmum Miserere	409
- 	Obras atribuidas: Breve introducción ara los que comienzan a servir a Nuestro Señor	421
- 	Soliloquios de San Buenaventura	433
- 	Indices	523
- 	 	Indice bíblico	525
- 	 	Indice de conceptos, lugares y personas	531
+Título	Página
+Sumário	5
+Prefácio à edição brasileira	11
+Prefácio à terceira edição	15
+Prefácio à segunda edição	17
+Prefácio	25
+I. A vocação intelectual	27
+ 	I. O intelectual é um consagrado	27
+ 	II. O intelectual não é um isolado	33
+ 	III. O intelectual pertence a seu tempo	34
+II. As virtudes de um intelectual cristão	37
+ 	I. As virtudes comuns	37
+ 	II. A virtude própria do intelectual	42
+ 	III. O espírito de oração	45
+ 	IV. A disciplina do corpo	48
+III. A organização da vida	55
+ 	I. Simplificar	55
+ 	II. Guardar a solidão	58
+ 	III. Cooperar com seus pares	63
+ 	IV. Cultivar as relações necessárias	66
+ 	V, Conservar a dose necessária de ação	69
+ 	VI. Manter em tudo o silêncio interior	73
+IV. O tempo do trabalho	75
+ 	I. O trabalho permanente	75
+ 	II. O trabalho noturno	84
+ 	III. As manhãs e as noites	88
+ 	IV. Os momentos de plenitude	92
+V. O campo de trabalho	99
+ 	I. A ciência comparada	99
+ 	II. O tomismo, quadro ideal do saber	108
+ 	III. A especialidade	111
+ 	IV. Os sacrifícios necessários	113
+VI. O espírito de trabalho	115
+ 	I. O fervor da investigação	115
+ 	II. A concentração	118
+ 	III. A submissão à verdade	120
+ 	IV. Os desenvolvimentos	124
+ 	V. O senso do mistério	127
+VII. A preparação do trabalho	131
+ 	A - A leitura	131
+ 	 	I. Ler pouco	131
+ 	 	II. Escolher	134
+ 	 	III. Quatro espécies de leitura	136
+ 	 	IV. O contato com os gênios	139
+ 	 	V. Conciliar em vez de opor	144
+ 	 	VI. Apropriar-se e viver	146
+ 	B - A organização da memória	152
+ 	 	I. O que se deve reter	152
+ 	 	II. Em que ordem reter	154
+ 	 	III. Como fazer para reter	157
+ 	C - As notas	161
+ 	 	I. Como anotar	161
+ 	 	II. Como classificar suas notas	166
+ 	 	III. Como utilizar suas notas	168
+VIII. O trabalho criador	171
+ 	I. Escrever	171
+ 	II. Desapegar-se de si mesmo e do mundo	177
+ 	III. Ser constante, paciente e perseverante	182
+ 	IV. Tudo fazer bem e tudo terminar	190
+ 	V. Não empreender nada que esteja acima da sua capacidade	193
+IX. O trabalhador e o homem	197
+ 	I. Manter contato com a vida	197
+ 	II. Saber se descontrair	202
+ 	III. Aceitar as provações	206
+ 	IV. Gozar as alegrias	211
+ 	V. Anelar os frutos	212
+Dezesseis conselhos de São Tomás de Aquino para adquirir o tesouro da ciência	217
 "@
         estrutura = @()
 }
