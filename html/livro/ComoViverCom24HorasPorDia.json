@@ -1,0 +1,98 @@
+{
+  "titulo": "Como Viver com 24 Horas por Dia",
+  "autor": "Arnold Bennett",
+  "editora": "Auster",
+  "ano": "2019",
+  "estrutura": [
+    {
+      "id": "1",
+      "indent": 0,
+      "texto": "Título",
+      "pagina": "Página"
+    },
+    {
+      "id": "2",
+      "indent": 0,
+      "texto": "Sumário",
+      "pagina": 5
+    },
+    {
+      "id": "3",
+      "indent": 0,
+      "texto": "Prefácio a esta edição",
+      "pagina": 9
+    },
+    {
+      "id": "4",
+      "indent": 0,
+      "texto": "Capítulo I - O milagre diário",
+      "pagina": 17
+    },
+    {
+      "id": "5",
+      "indent": 0,
+      "texto": "Capítulo II - O desejo de ir além da rotina",
+      "pagina": 23
+    },
+    {
+      "id": "6",
+      "indent": 0,
+      "texto": "Capítulo III - Precauções para antes de começar",
+      "pagina": 29
+    },
+    {
+      "id": "7",
+      "indent": 0,
+      "texto": "Capítulo IV - A causa dos problemas",
+      "pagina": 35
+    },
+    {
+      "id": "8",
+      "indent": 0,
+      "texto": "Capítulo V - O tênis e a alma imortal",
+      "pagina": 41
+    },
+    {
+      "id": "9",
+      "indent": 0,
+      "texto": "Capítulo VI - Relembrando a natureza humana",
+      "pagina": 47
+    },
+    {
+      "id": "10",
+      "indent": 0,
+      "texto": "Capítulo VII - Controlando a mente",
+      "pagina": 53
+    },
+    {
+      "id": "11",
+      "indent": 0,
+      "texto": "Capítulo VIII - A disposição reflexiva",
+      "pagina": 59
+    },
+    {
+      "id": "12",
+      "indent": 0,
+      "texto": "Capítulo IX - O interesse nas artes",
+      "pagina": 65
+    },
+    {
+      "id": "13",
+      "indent": 0,
+      "texto": "Capítulo X - Nada na vida é enfadonho",
+      "pagina": 71
+    },
+    {
+      "id": "14",
+      "indent": 0,
+      "texto": "Capítulo XI - Leitura séria",
+      "pagina": 77
+    },
+    {
+      "id": "15",
+      "indent": 0,
+      "texto": "Capítulo XII - Os perigos a evitar",
+      "pagina": 83
+    }
+  ]
+}
