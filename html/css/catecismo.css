@@ -21,15 +21,6 @@
     width: 0;
 }
 
-#anotacoes {
-    background-color: #ddd;
-}
-
-#anotacoes label {
-    font-style: italic;
-    font-weight: bold;
-}
-
 #preview {
     background-color: #ddd;
 }

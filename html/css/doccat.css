@@ -9,17 +9,22 @@
     text-decoration: underline;
 }
 
-#anotacoes_editor {
+#anotacoes {
     background-color: #ddd;
 }
 
-#anotacoes_editor label {
+#anotacoes label {
+    font-style: italic;
+    font-weight: bold;
+}
+
+#anotacoes label {
     font-style: italic;
     font-weight: bold;
     width: 100%;
 }
 
-#anotacoes_editor label a img {
+#anotacoes label a img {
     width: 20px;
     margin-left: 5px;
 }
@@ -58,11 +63,16 @@ footer a:hover {
     text-decoration: underline;
 }
 
-
 thead th {
     text-align: center;
 }
 
 #template_anotacoesPreview {
     display: none;
+}
+
+@media print {
+    .no-print, .no-print * {
+        display: none !important;
+    }
 }
