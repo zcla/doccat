@@ -2177,7 +2177,636 @@
 			{
 				"sigla": "Sl",
 				"nomeCurto": "Salmos",
-				"nomeLongo": "Salmos"
+				"nomeLongo": "Salmos",
+				"divisoes": [
+					{
+						"nome": "Livro I",
+						"capituloInicial": 1,
+						"capituloFinal": 41
+					},
+					{
+						"nome": "Livro II",
+						"capituloInicial": 42,
+						"capituloFinal": 72
+					},
+					{
+						"nome": "Livro III",
+						"capituloInicial": 73,
+						"capituloFinal": 89
+					},
+					{
+						"nome": "Livro IV",
+						"capituloInicial": 90,
+						"capituloFinal": 106
+					},
+					{
+						"nome": "Livro V",
+						"capituloInicial": 107,
+						"capituloFinal": 150
+					}
+				],
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 6
+					},
+					{
+						"numero": "2",
+						"versiculos": 12
+					},
+					{
+						"numero": "3",
+						"versiculos": 9
+					},
+					{
+						"numero": "4",
+						"versiculos": 9
+					},
+					{
+						"numero": "5",
+						"versiculos": 13
+					},
+					{
+						"numero": "6",
+						"versiculos": 11
+					},
+					{
+						"numero": "7",
+						"versiculos": 18
+					},
+					{
+						"numero": "8",
+						"versiculos": 10
+					},
+					{
+						"numero": "9",
+						"versiculos": 21
+					},
+					{
+						"numero": "10",
+						"versiculos": 18
+					},
+					{
+						"numero": "11",
+						"versiculos": 7
+					},
+					{
+						"numero": "12",
+						"versiculos": 8
+					},
+					{
+						"numero": "13",
+						"versiculos": 6
+					},
+					{
+						"numero": "14",
+						"versiculos": 7
+					},
+					{
+						"numero": "15",
+						"versiculos": 5
+					},
+					{
+						"numero": "16",
+						"versiculos": 11
+					},
+					{
+						"numero": "17",
+						"versiculos": 15
+					},
+					{
+						"numero": "18",
+						"versiculos": 51
+					},
+					{
+						"numero": "19",
+						"versiculos": 15
+					},
+					{
+						"numero": "20",
+						"versiculos": 10
+					},
+					{
+						"numero": "21",
+						"versiculos": 14
+					},
+					{
+						"numero": "22",
+						"versiculos": 32
+					},
+					{
+						"numero": "23",
+						"versiculos": 6
+					},
+					{
+						"numero": "24",
+						"versiculos": 10
+					},
+					{
+						"numero": "25",
+						"versiculos": 22
+					},
+					{
+						"numero": "26",
+						"versiculos": 12
+					},
+					{
+						"numero": "27",
+						"versiculos": 14
+					},
+					{
+						"numero": "28",
+						"versiculos": 9
+					},
+					{
+						"numero": "29",
+						"versiculos": 11
+					},
+					{
+						"numero": "30",
+						"versiculos": 13
+					},
+					{
+						"numero": "31",
+						"versiculos": 25
+					},
+					{
+						"numero": "32",
+						"versiculos": 11
+					},
+					{
+						"numero": "33",
+						"versiculos": 22
+					},
+					{
+						"numero": "34",
+						"versiculos": 23
+					},
+					{
+						"numero": "35",
+						"versiculos": 28
+					},
+					{
+						"numero": "36",
+						"versiculos": 13
+					},
+					{
+						"numero": "37",
+						"versiculos": 40
+					},
+					{
+						"numero": "38",
+						"versiculos": 23
+					},
+					{
+						"numero": "39",
+						"versiculos": 14
+					},
+					{
+						"numero": "40",
+						"versiculos": 18
+					},
+					{
+						"numero": "41",
+						"versiculos": 14
+					},
+					{
+						"numero": "42",
+						"versiculos": 12
+					},
+					{
+						"numero": "43",
+						"versiculos": 5
+					},
+					{
+						"numero": "44",
+						"versiculos": 26
+					},
+					{
+						"numero": "45",
+						"versiculos": 18
+					},
+					{
+						"numero": "46",
+						"versiculos": 12
+					},
+					{
+						"numero": "47",
+						"versiculos": 10
+					},
+					{
+						"numero": "48",
+						"versiculos": 15
+					},
+					{
+						"numero": "49",
+						"versiculos": 21
+					},
+					{
+						"numero": "50",
+						"versiculos": 23
+					},
+					{
+						"numero": "51",
+						"versiculos": 21
+					},
+					{
+						"numero": "52",
+						"versiculos": 11
+					},
+					{
+						"numero": "53",
+						"versiculos": 7
+					},
+					{
+						"numero": "54",
+						"versiculos": 9
+					},
+					{
+						"numero": "55",
+						"versiculos": 24
+					},
+					{
+						"numero": "56",
+						"versiculos": 14
+					},
+					{
+						"numero": "57",
+						"versiculos": 12
+					},
+					{
+						"numero": "58",
+						"versiculos": 12
+					},
+					{
+						"numero": "59",
+						"versiculos": 18
+					},
+					{
+						"numero": "60",
+						"versiculos": 13
+					},
+					{
+						"numero": "61",
+						"versiculos": 9
+					},
+					{
+						"numero": "62",
+						"versiculos": 13
+					},
+					{
+						"numero": "63",
+						"versiculos": 12
+					},
+					{
+						"numero": "64",
+						"versiculos": 11
+					},
+					{
+						"numero": "65",
+						"versiculos": 14
+					},
+					{
+						"numero": "66",
+						"versiculos": 20
+					},
+					{
+						"numero": "67",
+						"versiculos": 8
+					},
+					{
+						"numero": "68",
+						"versiculos": 36
+					},
+					{
+						"numero": "69",
+						"versiculos": 37
+					},
+					{
+						"numero": "70",
+						"versiculos": 6
+					},
+					{
+						"numero": "71",
+						"versiculos": 24
+					},
+					{
+						"numero": "72",
+						"versiculos": 19
+					},
+					{
+						"numero": "73",
+						"versiculos": 28
+					},
+					{
+						"numero": "74",
+						"versiculos": 23
+					},
+					{
+						"numero": "75",
+						"versiculos": 11
+					},
+					{
+						"numero": "76",
+						"versiculos": 13
+					},
+					{
+						"numero": "77",
+						"versiculos": 21
+					},
+					{
+						"numero": "78",
+						"versiculos": 72
+					},
+					{
+						"numero": "79",
+						"versiculos": 13
+					},
+					{
+						"numero": "80",
+						"versiculos": 20
+					},
+					{
+						"numero": "81",
+						"versiculos": 17
+					},
+					{
+						"numero": "82",
+						"versiculos": 8
+					},
+					{
+						"numero": "83",
+						"versiculos": 19
+					},
+					{
+						"numero": "84",
+						"versiculos": 13
+					},
+					{
+						"numero": "85",
+						"versiculos": 14
+					},
+					{
+						"numero": "86",
+						"versiculos": 17
+					},
+					{
+						"numero": "87",
+						"versiculos": 7
+					},
+					{
+						"numero": "88",
+						"versiculos": 19
+					},
+					{
+						"numero": "89",
+						"versiculos": 53
+					},
+					{
+						"numero": "90",
+						"versiculos": 17
+					},
+					{
+						"numero": "91",
+						"versiculos": 16
+					},
+					{
+						"numero": "92",
+						"versiculos": 16
+					},
+					{
+						"numero": "93",
+						"versiculos": 5
+					},
+					{
+						"numero": "94",
+						"versiculos": 24
+					},
+					{
+						"numero": "95",
+						"versiculos": 11
+					},
+					{
+						"numero": "96",
+						"versiculos": 13
+					},
+					{
+						"numero": "97",
+						"versiculos": 12
+					},
+					{
+						"numero": "98",
+						"versiculos": 9
+					},
+					{
+						"numero": "99",
+						"versiculos": 9
+					},
+					{
+						"numero": "100",
+						"versiculos": 5
+					},
+					{
+						"numero": "101",
+						"versiculos": 8
+					},
+					{
+						"numero": "102",
+						"versiculos": 29
+					},
+					{
+						"numero": "103",
+						"versiculos": 22
+					},
+					{
+						"numero": "104",
+						"versiculos": 35
+					},
+					{
+						"numero": "105",
+						"versiculos": 45
+					},
+					{
+						"numero": "106",
+						"versiculos": 48
+					},
+					{
+						"numero": "107",
+						"versiculos": 43
+					},
+					{
+						"numero": "108",
+						"versiculos": 14
+					},
+					{
+						"numero": "109",
+						"versiculos": 31
+					},
+					{
+						"numero": "110",
+						"versiculos": 7
+					},
+					{
+						"numero": "111",
+						"versiculos": 10
+					},
+					{
+						"numero": "112",
+						"versiculos": 10
+					},
+					{
+						"numero": "113",
+						"versiculos": 9
+					},
+					{
+						"numero": "114",
+						"versiculos": 8
+					},
+					{
+						"numero": "115",
+						"versiculos": 18
+					},
+					{
+						"numero": "116",
+						"versiculos": 19
+					},
+					{
+						"numero": "117",
+						"versiculos": 2
+					},
+					{
+						"numero": "118",
+						"versiculos": 29
+					},
+					{
+						"numero": "119",
+						"versiculos": 176
+					},
+					{
+						"numero": "120",
+						"versiculos": 7
+					},
+					{
+						"numero": "121",
+						"versiculos": 8
+					},
+					{
+						"numero": "122",
+						"versiculos": 9
+					},
+					{
+						"numero": "123",
+						"versiculos": 4
+					},
+					{
+						"numero": "124",
+						"versiculos": 8
+					},
+					{
+						"numero": "125",
+						"versiculos": 5
+					},
+					{
+						"numero": "126",
+						"versiculos": 6
+					},
+					{
+						"numero": "127",
+						"versiculos": 5
+					},
+					{
+						"numero": "128",
+						"versiculos": 6
+					},
+					{
+						"numero": "129",
+						"versiculos": 8
+					},
+					{
+						"numero": "130",
+						"versiculos": 8
+					},
+					{
+						"numero": "131",
+						"versiculos": 3
+					},
+					{
+						"numero": "132",
+						"versiculos": 18
+					},
+					{
+						"numero": "133",
+						"versiculos": 3
+					},
+					{
+						"numero": "134",
+						"versiculos": 3
+					},
+					{
+						"numero": "135",
+						"versiculos": 21
+					},
+					{
+						"numero": "136",
+						"versiculos": 26
+					},
+					{
+						"numero": "137",
+						"versiculos": 9
+					},
+					{
+						"numero": "138",
+						"versiculos": 8
+					},
+					{
+						"numero": "139",
+						"versiculos": 24
+					},
+					{
+						"numero": "140",
+						"versiculos": 14
+					},
+					{
+						"numero": "141",
+						"versiculos": 10
+					},
+					{
+						"numero": "142",
+						"versiculos": 8
+					},
+					{
+						"numero": "143",
+						"versiculos": 12
+					},
+					{
+						"numero": "144",
+						"versiculos": 15
+					},
+					{
+						"numero": "145",
+						"versiculos": 21
+					},
+					{
+						"numero": "146",
+						"versiculos": 10
+					},
+					{
+						"numero": "147",
+						"versiculos": 20
+					},
+					{
+						"numero": "148",
+						"versiculos": 14
+					},
+					{
+						"numero": "149",
+						"versiculos": 9
+					},
+					{
+						"numero": "150",
+						"versiculos": 5
+					}
+				]
 			},
 			{
 				"sigla": "Pr",
