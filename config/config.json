@@ -1884,7 +1884,73 @@
 			{
 				"sigla": "Jt",
 				"nomeCurto": "Judite",
-				"nomeLongo": "Judite"
+				"nomeLongo": "Judite",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 16
+					},
+					{
+						"numero": "2",
+						"versiculos": 28
+					},
+					{
+						"numero": "3",
+						"versiculos": 10
+					},
+					{
+						"numero": "4",
+						"versiculos": 15
+					},
+					{
+						"numero": "5",
+						"versiculos": 24
+					},
+					{
+						"numero": "6",
+						"versiculos": 21
+					},
+					{
+						"numero": "7",
+						"versiculos": 32
+					},
+					{
+						"numero": "8",
+						"versiculos": 36
+					},
+					{
+						"numero": "9",
+						"versiculos": 14
+					},
+					{
+						"numero": "10",
+						"versiculos": 23
+					},
+					{
+						"numero": "11",
+						"versiculos": 23
+					},
+					{
+						"numero": "12",
+						"versiculos": 20
+					},
+					{
+						"numero": "13",
+						"versiculos": 20
+					},
+					{
+						"numero": "14",
+						"versiculos": 19
+					},
+					{
+						"numero": "15",
+						"versiculos": 14
+					},
+					{
+						"numero": "16",
+						"versiculos": 25
+					}
+				]
 			},
 			{
 				"sigla": "Est",
