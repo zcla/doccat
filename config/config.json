@@ -2997,7 +2997,41 @@
 			{
 				"sigla": "Ct",
 				"nomeCurto": "Cântico dos Cânticos",
-				"nomeLongo": "Cântico dos Cânticos"
+				"nomeLongo": "Cântico dos Cânticos",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 17
+					},
+					{
+						"numero": "2",
+						"versiculos": 17
+					},
+					{
+						"numero": "3",
+						"versiculos": 11
+					},
+					{
+						"numero": "4",
+						"versiculos": 16
+					},
+					{
+						"numero": "5",
+						"versiculos": 16
+					},
+					{
+						"numero": "6",
+						"versiculos": 12
+					},
+					{
+						"numero": "7",
+						"versiculos": 14
+					},
+					{
+						"numero": "8",
+						"versiculos": 14
+					}
+				]
 			},
 			{
 				"sigla": "Sb",
