@@ -981,7 +981,25 @@
 			{
 				"sigla": "Rt",
 				"nomeCurto": "Rute",
-				"nomeLongo": "Rute"
+				"nomeLongo": "Rute",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 22
+					},
+					{
+						"numero": "2",
+						"versiculos": 23
+					},
+					{
+						"numero": "3",
+						"versiculos": 18
+					},
+					{
+						"numero": "4",
+						"versiculos": 22
+					}
+				]
 			},
 			{
 				"sigla": "1Sm",
