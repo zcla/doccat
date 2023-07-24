@@ -2002,7 +2002,177 @@
 			{
 				"sigla": "Jó",
 				"nomeCurto": "Jó",
-				"nomeLongo": "Jó"
+				"nomeLongo": "Jó",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 22
+					},
+					{
+						"numero": "2",
+						"versiculos": 13
+					},
+					{
+						"numero": "3",
+						"versiculos": 26
+					},
+					{
+						"numero": "4",
+						"versiculos": 21
+					},
+					{
+						"numero": "5",
+						"versiculos": 27
+					},
+					{
+						"numero": "6",
+						"versiculos": 30
+					},
+					{
+						"numero": "7",
+						"versiculos": 21
+					},
+					{
+						"numero": "8",
+						"versiculos": 22
+					},
+					{
+						"numero": "9",
+						"versiculos": 35
+					},
+					{
+						"numero": "10",
+						"versiculos": 22
+					},
+					{
+						"numero": "11",
+						"versiculos": 20
+					},
+					{
+						"numero": "12",
+						"versiculos": 25
+					},
+					{
+						"numero": "13",
+						"versiculos": 28
+					},
+					{
+						"numero": "14",
+						"versiculos": 22
+					},
+					{
+						"numero": "15",
+						"versiculos": 35
+					},
+					{
+						"numero": "16",
+						"versiculos": 22
+					},
+					{
+						"numero": "17",
+						"versiculos": 16
+					},
+					{
+						"numero": "18",
+						"versiculos": 21
+					},
+					{
+						"numero": "19",
+						"versiculos": 29
+					},
+					{
+						"numero": "20",
+						"versiculos": 29
+					},
+					{
+						"numero": "21",
+						"versiculos": 34
+					},
+					{
+						"numero": "22",
+						"versiculos": 30
+					},
+					{
+						"numero": "23",
+						"versiculos": 17
+					},
+					{
+						"numero": "24",
+						"versiculos": 25
+					},
+					{
+						"numero": "25",
+						"versiculos": 6
+					},
+					{
+						"numero": "26",
+						"versiculos": 14
+					},
+					{
+						"numero": "27",
+						"versiculos": 23
+					},
+					{
+						"numero": "28",
+						"versiculos": 28
+					},
+					{
+						"numero": "29",
+						"versiculos": 25
+					},
+					{
+						"numero": "30",
+						"versiculos": 31
+					},
+					{
+						"numero": "31",
+						"versiculos": 40
+					},
+					{
+						"numero": "32",
+						"versiculos": 22
+					},
+					{
+						"numero": "33",
+						"versiculos": 33
+					},
+					{
+						"numero": "34",
+						"versiculos": 37
+					},
+					{
+						"numero": "35",
+						"versiculos": 16
+					},
+					{
+						"numero": "36",
+						"versiculos": 33
+					},
+					{
+						"numero": "37",
+						"versiculos": 24
+					},
+					{
+						"numero": "38",
+						"versiculos": 41
+					},
+					{
+						"numero": "39",
+						"versiculos": 30
+					},
+					{
+						"numero": "40",
+						"versiculos": 32
+					},
+					{
+						"numero": "41",
+						"versiculos": 26
+					},
+					{
+						"numero": "42",
+						"versiculos": 16
+					}
+				]
 			},
 			{
 				"sigla": "Sl",
