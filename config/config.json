@@ -1762,7 +1762,61 @@
 			{
 				"sigla": "Ne",
 				"nomeCurto": "Neemias",
-				"nomeLongo": "Neemias"
+				"nomeLongo": "Neemias",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 11
+					},
+					{
+						"numero": "2",
+						"versiculos": 20
+					},
+					{
+						"numero": "3",
+						"versiculos": 38
+					},
+					{
+						"numero": "4",
+						"versiculos": 17
+					},
+					{
+						"numero": "5",
+						"versiculos": 19
+					},
+					{
+						"numero": "6",
+						"versiculos": 19
+					},
+					{
+						"numero": "7",
+						"versiculos": 72
+					},
+					{
+						"numero": "8",
+						"versiculos": 18
+					},
+					{
+						"numero": "9",
+						"versiculos": 37
+					},
+					{
+						"numero": "10",
+						"versiculos": 40
+					},
+					{
+						"numero": "11",
+						"versiculos": 36
+					},
+					{
+						"numero": "12",
+						"versiculos": 47
+					},
+					{
+						"numero": "13",
+						"versiculos": 31
+					}
+				]
 			},
 			{
 				"sigla": "Tb",
