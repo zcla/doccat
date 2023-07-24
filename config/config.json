@@ -1298,7 +1298,7 @@
 					},
 					{
 						"numero": "15",
-						"versiculos": 34,
+						"versiculos": [ "1", "2", "3", "4", "5", "(6)", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18a", "18b", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34" ],
 						"nota": "Versículo 6 do hebraico omitido por ser repetição de 14,30 [CNBB2019]."
 					},
 					{
@@ -1564,7 +1564,153 @@
 			{
 				"sigla": "2Cr",
 				"nomeCurto": "II Crônicas",
-				"nomeLongo": "Segundo Livro das Crônicas"
+				"nomeLongo": "Segundo Livro das Crônicas",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 18
+					},
+					{
+						"numero": "2",
+						"versiculos": 17
+					},
+					{
+						"numero": "3",
+						"versiculos": 17
+					},
+					{
+						"numero": "4",
+						"versiculos": 22
+					},
+					{
+						"numero": "5",
+						"versiculos": 14
+					},
+					{
+						"numero": "6",
+						"versiculos": 42
+					},
+					{
+						"numero": "7",
+						"versiculos": 22
+					},
+					{
+						"numero": "8",
+						"versiculos": 18
+					},
+					{
+						"numero": "9",
+						"versiculos": 31
+					},
+					{
+						"numero": "10",
+						"versiculos": 19
+					},
+					{
+						"numero": "11",
+						"versiculos": 23
+					},
+					{
+						"numero": "12",
+						"versiculos": 16
+					},
+					{
+						"numero": "13",
+						"versiculos": 23
+					},
+					{
+						"numero": "14",
+						"versiculos": 14
+					},
+					{
+						"numero": "15",
+						"versiculos": 19
+					},
+					{
+						"numero": "16",
+						"versiculos": 14
+					},
+					{
+						"numero": "17",
+						"versiculos": 19
+					},
+					{
+						"numero": "18",
+						"versiculos": 34
+					},
+					{
+						"numero": "19",
+						"versiculos": 11
+					},
+					{
+						"numero": "20",
+						"versiculos": 37
+					},
+					{
+						"numero": "21",
+						"versiculos": 20
+					},
+					{
+						"numero": "22",
+						"versiculos": 12
+					},
+					{
+						"numero": "23",
+						"versiculos": 21
+					},
+					{
+						"numero": "24",
+						"versiculos": 27
+					},
+					{
+						"numero": "25",
+						"versiculos": 28
+					},
+					{
+						"numero": "26",
+						"versiculos": 23
+					},
+					{
+						"numero": "27",
+						"versiculos": 9
+					},
+					{
+						"numero": "28",
+						"versiculos": 27
+					},
+					{
+						"numero": "29",
+						"versiculos": 36
+					},
+					{
+						"numero": "30",
+						"versiculos": 27
+					},
+					{
+						"numero": "31",
+						"versiculos": 21
+					},
+					{
+						"numero": "32",
+						"versiculos": 33
+					},
+					{
+						"numero": "33",
+						"versiculos": 25
+					},
+					{
+						"numero": "34",
+						"versiculos": 33
+					},
+					{
+						"numero": "35",
+						"versiculos": 27
+					},
+					{
+						"numero": "36",
+						"versiculos": 23
+					}
+				]
 			},
 			{
 				"sigla": "Esd",
