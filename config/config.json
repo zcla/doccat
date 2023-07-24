@@ -644,7 +644,145 @@
 			{
 				"sigla": "Dt",
 				"nomeCurto": "Deuteronômio",
-				"nomeLongo": "Deuteronômio"
+				"nomeLongo": "Deuteronômio",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 46
+					},
+					{
+						"numero": "2",
+						"versiculos": 37
+					},
+					{
+						"numero": "3",
+						"versiculos": 29
+					},
+					{
+						"numero": "4",
+						"versiculos": 49
+					},
+					{
+						"numero": "5",
+						"versiculos": 33
+					},
+					{
+						"numero": "6",
+						"versiculos": 25
+					},
+					{
+						"numero": "7",
+						"versiculos": 26
+					},
+					{
+						"numero": "8",
+						"versiculos": 20
+					},
+					{
+						"numero": "9",
+						"versiculos": 29
+					},
+					{
+						"numero": "10",
+						"versiculos": 22
+					},
+					{
+						"numero": "11",
+						"versiculos": 32
+					},
+					{
+						"numero": "12",
+						"versiculos": 31
+					},
+					{
+						"numero": "13",
+						"versiculos": 19
+					},
+					{
+						"numero": "14",
+						"versiculos": 29
+					},
+					{
+						"numero": "15",
+						"versiculos": 23
+					},
+					{
+						"numero": "16",
+						"versiculos": 22
+					},
+					{
+						"numero": "17",
+						"versiculos": 20
+					},
+					{
+						"numero": "18",
+						"versiculos": 22
+					},
+					{
+						"numero": "19",
+						"versiculos": 21
+					},
+					{
+						"numero": "20",
+						"versiculos": 20
+					},
+					{
+						"numero": "21",
+						"versiculos": 23
+					},
+					{
+						"numero": "22",
+						"versiculos": 29
+					},
+					{
+						"numero": "23",
+						"versiculos": 26
+					},
+					{
+						"numero": "24",
+						"versiculos": 22
+					},
+					{
+						"numero": "25",
+						"versiculos": 19
+					},
+					{
+						"numero": "26",
+						"versiculos": 19
+					},
+					{
+						"numero": "27",
+						"versiculos": 26
+					},
+					{
+						"numero": "28",
+						"versiculos": 69
+					},
+					{
+						"numero": "29",
+						"versiculos": 28
+					},
+					{
+						"numero": "30",
+						"versiculos": 20
+					},
+					{
+						"numero": "31",
+						"versiculos": 30
+					},
+					{
+						"numero": "32",
+						"versiculos": 52
+					},
+					{
+						"numero": "33",
+						"versiculos": 29
+					},
+					{
+						"numero": "34",
+						"versiculos": 12
+					}
+				]
 			},
 			{
 				"sigla": "Js",
