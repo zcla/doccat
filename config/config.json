@@ -1135,7 +1135,105 @@
 			{
 				"sigla": "2Sm",
 				"nomeCurto": "II Samuel",
-				"nomeLongo": "Segundo Livro de Samuel"
+				"nomeLongo": "Segundo Livro de Samuel",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 27
+					},
+					{
+						"numero": "2",
+						"versiculos": 32
+					},
+					{
+						"numero": "3",
+						"versiculos": 39
+					},
+					{
+						"numero": "4",
+						"versiculos": 12
+					},
+					{
+						"numero": "5",
+						"versiculos": 25
+					},
+					{
+						"numero": "6",
+						"versiculos": 23
+					},
+					{
+						"numero": "7",
+						"versiculos": 29
+					},
+					{
+						"numero": "8",
+						"versiculos": 18
+					},
+					{
+						"numero": "9",
+						"versiculos": 13
+					},
+					{
+						"numero": "10",
+						"versiculos": 19
+					},
+					{
+						"numero": "11",
+						"versiculos": 27
+					},
+					{
+						"numero": "12",
+						"versiculos": 31
+					},
+					{
+						"numero": "13",
+						"versiculos": 39
+					},
+					{
+						"numero": "14",
+						"versiculos": 33
+					},
+					{
+						"numero": "15",
+						"versiculos": 37
+					},
+					{
+						"numero": "16",
+						"versiculos": 23
+					},
+					{
+						"numero": "17",
+						"versiculos": 29
+					},
+					{
+						"numero": "18",
+						"versiculos": 32
+					},
+					{
+						"numero": "19",
+						"versiculos": 44
+					},
+					{
+						"numero": "20",
+						"versiculos": 26
+					},
+					{
+						"numero": "21",
+						"versiculos": 22
+					},
+					{
+						"numero": "22",
+						"versiculos": 51
+					},
+					{
+						"numero": "23",
+						"versiculos": 39
+					},
+					{
+						"numero": "24",
+						"versiculos": 25
+					}
+				]
 			},
 			{
 				"sigla": "1Rs",
