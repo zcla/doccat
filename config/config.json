@@ -787,7 +787,105 @@
 			{
 				"sigla": "Js",
 				"nomeCurto": "Josué",
-				"nomeLongo": "Josué"
+				"nomeLongo": "Josué",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 18
+					},
+					{
+						"numero": "2",
+						"versiculos": 24
+					},
+					{
+						"numero": "3",
+						"versiculos": 17
+					},
+					{
+						"numero": "4",
+						"versiculos": 25
+					},
+					{
+						"numero": "5",
+						"versiculos": 16
+					},
+					{
+						"numero": "6",
+						"versiculos": 27
+					},
+					{
+						"numero": "7",
+						"versiculos": 26
+					},
+					{
+						"numero": "8",
+						"versiculos": 35
+					},
+					{
+						"numero": "9",
+						"versiculos": 27
+					},
+					{
+						"numero": "10",
+						"versiculos": 43
+					},
+					{
+						"numero": "11",
+						"versiculos": 23
+					},
+					{
+						"numero": "12",
+						"versiculos": 24
+					},
+					{
+						"numero": "13",
+						"versiculos": 33
+					},
+					{
+						"numero": "14",
+						"versiculos": 15
+					},
+					{
+						"numero": "15",
+						"versiculos": 63
+					},
+					{
+						"numero": "16",
+						"versiculos": 10
+					},
+					{
+						"numero": "17",
+						"versiculos": 18
+					},
+					{
+						"numero": "18",
+						"versiculos": 28
+					},
+					{
+						"numero": "19",
+						"versiculos": 51
+					},
+					{
+						"numero": "20",
+						"versiculos": 9
+					},
+					{
+						"numero": "21",
+						"versiculos": 45
+					},
+					{
+						"numero": "22",
+						"versiculos": 34
+					},
+					{
+						"numero": "23",
+						"versiculos": 16
+					},
+					{
+						"numero": "24",
+						"versiculos": 33
+					}
+				]
 			},
 			{
 				"sigla": "Jz",
