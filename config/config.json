@@ -890,7 +890,93 @@
 			{
 				"sigla": "Jz",
 				"nomeCurto": "Juízes",
-				"nomeLongo": "Juízes"
+				"nomeLongo": "Juízes",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 36
+					},
+					{
+						"numero": "2",
+						"versiculos": 23
+					},
+					{
+						"numero": "3",
+						"versiculos": 31
+					},
+					{
+						"numero": "4",
+						"versiculos": 24
+					},
+					{
+						"numero": "5",
+						"versiculos": 32
+					},
+					{
+						"numero": "6",
+						"versiculos": 40
+					},
+					{
+						"numero": "7",
+						"versiculos": 25
+					},
+					{
+						"numero": "8",
+						"versiculos": 35
+					},
+					{
+						"numero": "9",
+						"versiculos": 57
+					},
+					{
+						"numero": "10",
+						"versiculos": 18
+					},
+					{
+						"numero": "11",
+						"versiculos": 40
+					},
+					{
+						"numero": "12",
+						"versiculos": 15
+					},
+					{
+						"numero": "13",
+						"versiculos": 25
+					},
+					{
+						"numero": "14",
+						"versiculos": 20
+					},
+					{
+						"numero": "15",
+						"versiculos": 20
+					},
+					{
+						"numero": "16",
+						"versiculos": 31
+					},
+					{
+						"numero": "17",
+						"versiculos": 13
+					},
+					{
+						"numero": "18",
+						"versiculos": 31
+					},
+					{
+						"numero": "19",
+						"versiculos": 30
+					},
+					{
+						"numero": "20",
+						"versiculos": 48
+					},
+					{
+						"numero": "21",
+						"versiculos": 25
+					}
+				]
 			},
 			{
 				"sigla": "Rt",
