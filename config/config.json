@@ -4312,7 +4312,37 @@
 			{
 				"sigla": "Mq",
 				"nomeCurto": "Miqueias",
-				"nomeLongo": "Miqueias"
+				"nomeLongo": "Miqueias",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 16
+					},
+					{
+						"numero": "2",
+						"versiculos": 13
+					},
+					{
+						"numero": "3",
+						"versiculos": 12
+					},
+					{
+						"numero": "4",
+						"versiculos": 14
+					},
+					{
+						"numero": "5",
+						"versiculos": 14
+					},
+					{
+						"numero": "6",
+						"versiculos": 16
+					},
+					{
+						"numero": "7",
+						"versiculos": 20
+					}
+				]
 			},
 			{
 				"sigla": "Na",
