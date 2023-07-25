@@ -4366,7 +4366,21 @@
 			{
 				"sigla": "Hab",
 				"nomeCurto": "Habacuc",
-				"nomeLongo": "Habacuc"
+				"nomeLongo": "Habacuc",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 17
+					},
+					{
+						"numero": "2",
+						"versiculos": 20
+					},
+					{
+						"numero": "3",
+						"versiculos": 19
+					}
+				]
 			},
 			{
 				"sigla": "Sf",
