@@ -4087,7 +4087,65 @@
 			{
 				"sigla": "Dn",
 				"nomeCurto": "Daniel",
-				"nomeLongo": "Daniel"
+				"nomeLongo": "Daniel",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 21
+					},
+					{
+						"numero": "2",
+						"versiculos": 49
+					},
+					{
+						"numero": "3",
+						"versiculos": 100
+					},
+					{
+						"numero": "4",
+						"versiculos": 34
+					},
+					{
+						"numero": "5",
+						"versiculos": 30
+					},
+					{
+						"numero": "6",
+						"versiculos": 29
+					},
+					{
+						"numero": "7",
+						"versiculos": 28
+					},
+					{
+						"numero": "8",
+						"versiculos": 27
+					},
+					{
+						"numero": "9",
+						"versiculos": 27
+					},
+					{
+						"numero": "10",
+						"versiculos": 21
+					},
+					{
+						"numero": "11",
+						"versiculos": 45
+					},
+					{
+						"numero": "12",
+						"versiculos": 13
+					},
+					{
+						"numero": "13",
+						"versiculos": 64
+					},
+					{
+						"numero": "14",
+						"versiculos": 42
+					}
+				]
 			},
 			{
 				"sigla": "Os",
