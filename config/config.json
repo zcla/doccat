@@ -3614,7 +3614,217 @@
 			{
 				"sigla": "Jr",
 				"nomeCurto": "Jeremias",
-				"nomeLongo": "Jeremias"
+				"nomeLongo": "Jeremias",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 19
+					},
+					{
+						"numero": "2",
+						"versiculos": 37
+					},
+					{
+						"numero": "3",
+						"versiculos": 25
+					},
+					{
+						"numero": "4",
+						"versiculos": 31
+					},
+					{
+						"numero": "5",
+						"versiculos": 31
+					},
+					{
+						"numero": "6",
+						"versiculos": 30
+					},
+					{
+						"numero": "7",
+						"versiculos": 34
+					},
+					{
+						"numero": "8",
+						"versiculos": 23
+					},
+					{
+						"numero": "9",
+						"versiculos": 25
+					},
+					{
+						"numero": "10",
+						"versiculos": 25
+					},
+					{
+						"numero": "11",
+						"versiculos": 23
+					},
+					{
+						"numero": "12",
+						"versiculos": 17
+					},
+					{
+						"numero": "13",
+						"versiculos": 27
+					},
+					{
+						"numero": "14",
+						"versiculos": 22
+					},
+					{
+						"numero": "15",
+						"versiculos": 21
+					},
+					{
+						"numero": "16",
+						"versiculos": 21
+					},
+					{
+						"numero": "17",
+						"versiculos": 27
+					},
+					{
+						"numero": "18",
+						"versiculos": 23
+					},
+					{
+						"numero": "19",
+						"versiculos": 15
+					},
+					{
+						"numero": "20",
+						"versiculos": 18
+					},
+					{
+						"numero": "21",
+						"versiculos": 14
+					},
+					{
+						"numero": "22",
+						"versiculos": 30
+					},
+					{
+						"numero": "23",
+						"versiculos": 40
+					},
+					{
+						"numero": "24",
+						"versiculos": 10
+					},
+					{
+						"numero": "25",
+						"versiculos": 38
+					},
+					{
+						"numero": "26",
+						"versiculos": 24
+					},
+					{
+						"numero": "27",
+						"versiculos": 22
+					},
+					{
+						"numero": "28",
+						"versiculos": 17
+					},
+					{
+						"numero": "29",
+						"versiculos": 32
+					},
+					{
+						"numero": "30",
+						"versiculos": 24
+					},
+					{
+						"numero": "31",
+						"versiculos": 40
+					},
+					{
+						"numero": "32",
+						"versiculos": 44
+					},
+					{
+						"numero": "33",
+						"versiculos": 26
+					},
+					{
+						"numero": "34",
+						"versiculos": 22
+					},
+					{
+						"numero": "35",
+						"versiculos": 19
+					},
+					{
+						"numero": "36",
+						"versiculos": 32
+					},
+					{
+						"numero": "37",
+						"versiculos": 21
+					},
+					{
+						"numero": "38",
+						"versiculos": 28
+					},
+					{
+						"numero": "39",
+						"versiculos": 18
+					},
+					{
+						"numero": "40",
+						"versiculos": 16
+					},
+					{
+						"numero": "41",
+						"versiculos": 18
+					},
+					{
+						"numero": "42",
+						"versiculos": 22
+					},
+					{
+						"numero": "43",
+						"versiculos": 13
+					},
+					{
+						"numero": "44",
+						"versiculos": 30
+					},
+					{
+						"numero": "45",
+						"versiculos": 5
+					},
+					{
+						"numero": "46",
+						"versiculos": 28
+					},
+					{
+						"numero": "47",
+						"versiculos": 7
+					},
+					{
+						"numero": "48",
+						"versiculos": 47
+					},
+					{
+						"numero": "49",
+						"versiculos": 39
+					},
+					{
+						"numero": "50",
+						"versiculos": 46
+					},
+					{
+						"numero": "51",
+						"versiculos": 64
+					},
+					{
+						"numero": "52",
+						"versiculos": 34
+					}
+				]
 			},
 			{
 				"sigla": "Lm",
