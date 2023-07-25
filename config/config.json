@@ -4761,7 +4761,77 @@
 			{
 				"sigla": "Mc",
 				"nomeCurto": "Marcos",
-				"nomeLongo": "Evangelho Segundo São Marcos"
+				"nomeLongo": "Evangelho Segundo São Marcos",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 45
+					},
+					{
+						"numero": "2",
+						"versiculos": 28
+					},
+					{
+						"numero": "3",
+						"versiculos": 35
+					},
+					{
+						"numero": "4",
+						"versiculos": 41
+					},
+					{
+						"numero": "5",
+						"versiculos": 43
+					},
+					{
+						"numero": "6",
+						"versiculos": 56
+					},
+					{
+						"numero": "7",
+						"versiculos": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "(16)", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37" ],
+						"nota": "Alguns massoréticos acrescentam o versículo 16 (Mt 13,9) [CNBB2019]."
+					},
+					{
+						"numero": "8",
+						"versiculos": 38
+					},
+					{
+						"numero": "9",
+						"versiculos": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "(44)", "45", "(46)", "47", "48", "49", "50" ],
+						"nota": "Falta os versículos 44 e 46. Não encontrei explicação."
+					},
+					{
+						"numero": "10",
+						"versiculos": 52
+					},
+					{
+						"numero": "11",
+						"versiculos": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "(26)", "27", "28", "29", "30", "31", "32" ],
+						"nota": "O versículo 26 (cf. Mt 6,15) está ausente nos melhores massoréticos [CNBB2019]."
+					},
+					{
+						"numero": "12",
+						"versiculos": 44
+					},
+					{
+						"numero": "13",
+						"versiculos": 37
+					},
+					{
+						"numero": "14",
+						"versiculos": 72
+					},
+					{
+						"numero": "15",
+						"versiculos": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "(28)", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47" ],
+						"nota": "Muitos massoréticos, mas não os mais antigos, acrescentam o versículo 26 (cf. Lc 22,37) [CNBB2019]."
+					},
+					{
+						"numero": "16",
+						"versiculos": 20
+					}
+				]
 			},
 			{
 				"sigla": "Lc",
