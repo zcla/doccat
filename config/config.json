@@ -4501,7 +4501,73 @@
 			{
 				"sigla": "1Mc",
 				"nomeCurto": "I Macabeus",
-				"nomeLongo": "Primeiro Livro dos Macabeus"
+				"nomeLongo": "Primeiro Livro dos Macabeus",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 64
+					},
+					{
+						"numero": "2",
+						"versiculos": 70
+					},
+					{
+						"numero": "3",
+						"versiculos": 60
+					},
+					{
+						"numero": "4",
+						"versiculos": 61
+					},
+					{
+						"numero": "5",
+						"versiculos": 68
+					},
+					{
+						"numero": "6",
+						"versiculos": 63
+					},
+					{
+						"numero": "7",
+						"versiculos": 50
+					},
+					{
+						"numero": "8",
+						"versiculos": 32
+					},
+					{
+						"numero": "9",
+						"versiculos": 73
+					},
+					{
+						"numero": "10",
+						"versiculos": 89
+					},
+					{
+						"numero": "11",
+						"versiculos": 74
+					},
+					{
+						"numero": "12",
+						"versiculos": 54
+					},
+					{
+						"numero": "13",
+						"versiculos": 54
+					},
+					{
+						"numero": "14",
+						"versiculos": 49
+					},
+					{
+						"numero": "15",
+						"versiculos": 41
+					},
+					{
+						"numero": "16",
+						"versiculos": 24
+					}
+				]
 			},
 			{
 				"sigla": "2Mc",
