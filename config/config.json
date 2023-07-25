@@ -3856,7 +3856,33 @@
 			{
 				"sigla": "Br",
 				"nomeCurto": "Baruc",
-				"nomeLongo": "Baruc"
+				"nomeLongo": "Baruc",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 22
+					},
+					{
+						"numero": "2",
+						"versiculos": 35
+					},
+					{
+						"numero": "3",
+						"versiculos": 38
+					},
+					{
+						"numero": "4",
+						"versiculos": 37
+					},
+					{
+						"numero": "5",
+						"versiculos": 9
+					},
+					{
+						"numero": "6",
+						"versiculos": 72
+					}
+				]
 			},
 			{
 				"sigla": "Ez",
