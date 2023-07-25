@@ -4482,7 +4482,21 @@
 			{
 				"sigla": "Ml",
 				"nomeCurto": "Malaquias",
-				"nomeLongo": "Malaquias"
+				"nomeLongo": "Malaquias",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 14
+					},
+					{
+						"numero": "2",
+						"versiculos": 17
+					},
+					{
+						"numero": "3",
+						"versiculos": 24
+					}
+				]
 			},
 			{
 				"sigla": "1Mc",
