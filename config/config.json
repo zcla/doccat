@@ -4236,7 +4236,45 @@
 			{
 				"sigla": "Am",
 				"nomeCurto": "Amós",
-				"nomeLongo": "Amós"
+				"nomeLongo": "Amós",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 15
+					},
+					{
+						"numero": "2",
+						"versiculos": 16
+					},
+					{
+						"numero": "3",
+						"versiculos": 15
+					},
+					{
+						"numero": "4",
+						"versiculos": 13
+					},
+					{
+						"numero": "5",
+						"versiculos": 27
+					},
+					{
+						"numero": "6",
+						"versiculos": 14
+					},
+					{
+						"numero": "7",
+						"versiculos": 17
+					},
+					{
+						"numero": "8",
+						"versiculos": 14
+					},
+					{
+						"numero": "9",
+						"versiculos": 15
+					}
+				]
 			},
 			{
 				"sigla": "Ab",
