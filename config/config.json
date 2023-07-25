@@ -4836,7 +4836,107 @@
 			{
 				"sigla": "Lc",
 				"nomeCurto": "Lucas",
-				"nomeLongo": "Evangelho Segundo São Lucas"
+				"nomeLongo": "Evangelho Segundo São Lucas",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 80
+					},
+					{
+						"numero": "2",
+						"versiculos": 52
+					},
+					{
+						"numero": "3",
+						"versiculos": 38
+					},
+					{
+						"numero": "4",
+						"versiculos": 44
+					},
+					{
+						"numero": "5",
+						"versiculos": 39
+					},
+					{
+						"numero": "6",
+						"versiculos": 49
+					},
+					{
+						"numero": "7",
+						"versiculos": 50
+					},
+					{
+						"numero": "8",
+						"versiculos": 59
+					},
+					{
+						"numero": "9",
+						"versiculos": 62
+					},
+					{
+						"numero": "10",
+						"versiculos": 42
+					},
+					{
+						"numero": "11",
+						"versiculos": 54
+					},
+					{
+						"numero": "12",
+						"versiculos": 59
+					},
+					{
+						"numero": "13",
+						"versiculos": 35
+					},
+					{
+						"numero": "14",
+						"versiculos": 35
+					},
+					{
+						"numero": "15",
+						"versiculos": 32
+					},
+					{
+						"numero": "16",
+						"versiculos": 31
+					},
+					{
+						"numero": "17",
+						"versiculos": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "(36)", "37" ],
+						"nota": "Alguns massoréticos acrescentam o versículo 36 (Mt 24,40) [CNBB2019]."
+					},
+					{
+						"numero": "18",
+						"versiculos": 43
+					},
+					{
+						"numero": "19",
+						"versiculos": 48
+					},
+					{
+						"numero": "20",
+						"versiculos": 47
+					},
+					{
+						"numero": "21",
+						"versiculos": 38
+					},
+					{
+						"numero": "22",
+						"versiculos": 71
+					},
+					{
+						"numero": "23",
+						"versiculos": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "(17)", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56" ],
+						"nota": "Alguns massoréticos acrescentam o versículo 17 (Mt 27,15) [CNBB2019]."
+					},
+					{
+						"numero": "24",
+						"versiculos": 53
+					}
+				]
 			},
 			{
 				"sigla": "Jo",
