@@ -4639,7 +4639,124 @@
 			{
 				"sigla": "Mt",
 				"nomeCurto": "Mateus",
-				"nomeLongo": "Evangelho Segundo São Mateus"
+				"nomeLongo": "Evangelho Segundo São Mateus",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 25
+					},
+					{
+						"numero": "2",
+						"versiculos": 23
+					},
+					{
+						"numero": "3",
+						"versiculos": 17
+					},
+					{
+						"numero": "4",
+						"versiculos": 25
+					},
+					{
+						"numero": "5",
+						"versiculos": 48
+					},
+					{
+						"numero": "6",
+						"versiculos": 34
+					},
+					{
+						"numero": "7",
+						"versiculos": 29
+					},
+					{
+						"numero": "8",
+						"versiculos": 34
+					},
+					{
+						"numero": "9",
+						"versiculos": 38
+					},
+					{
+						"numero": "10",
+						"versiculos": 42
+					},
+					{
+						"numero": "11",
+						"versiculos": 30
+					},
+					{
+						"numero": "12",
+						"versiculos": 50
+					},
+					{
+						"numero": "13",
+						"versiculos": 58
+					},
+					{
+						"numero": "14",
+						"versiculos": 36
+					},
+					{
+						"numero": "15",
+						"versiculos": 39
+					},
+					{
+						"numero": "16",
+						"versiculos": 28
+					},
+					{
+						"numero": "17",
+						"versiculos": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "(21)", "22", "23", "24", "25", "26", "27" ],
+						"nota": "Muitos massoréticos acrescentam o versículo 21 (Mc 9,29) [CNBB2019]."
+					},
+					{
+						"numero": "18",
+						"versiculos": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "(11)", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35" ],
+						"nota": "Muitos massoréticos tardios acrescentam o versículo 11 [CNBB2019]."
+					},
+					{
+						"numero": "19",
+						"versiculos": 30
+					},
+					{
+						"numero": "20",
+						"versiculos": 34
+					},
+					{
+						"numero": "21",
+						"versiculos": 46
+					},
+					{
+						"numero": "22",
+						"versiculos": 46
+					},
+					{
+						"numero": "23",
+						"versiculos": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "(14)", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39" ],
+						"nota": "Falta o versículo 14. Não encontrei explicação."
+					},
+					{
+						"numero": "24",
+						"versiculos": 51
+					},
+					{
+						"numero": "25",
+						"versiculos": 46
+					},
+					{
+						"numero": "26",
+						"versiculos": 75
+					},
+					{
+						"numero": "27",
+						"versiculos": 66
+					},
+					{
+						"numero": "28",
+						"versiculos": 20
+					}
+				]
 			},
 			{
 				"sigla": "Mc",
