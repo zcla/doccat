@@ -5033,7 +5033,125 @@
 			{
 				"sigla": "At",
 				"nomeCurto": "Atos dos Apóstolos",
-				"nomeLongo": "Atos dos Apóstolos"
+				"nomeLongo": "Atos dos Apóstolos",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 26
+					},
+					{
+						"numero": "2",
+						"versiculos": 47
+					},
+					{
+						"numero": "3",
+						"versiculos": 26
+					},
+					{
+						"numero": "4",
+						"versiculos": 37
+					},
+					{
+						"numero": "5",
+						"versiculos": 42
+					},
+					{
+						"numero": "6",
+						"versiculos": 15
+					},
+					{
+						"numero": "7",
+						"versiculos": 60
+					},
+					{
+						"numero": "8",
+						"versiculos": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "(37)", "38", "39", "40" ],
+						"nota": "Uma glosa, atestada nas antigas versões, acrescentam o versículo 37 [CNBB2019]."
+					},
+					{
+						"numero": "9",
+						"versiculos": 43
+					},
+					{
+						"numero": "10",
+						"versiculos": 48
+					},
+					{
+						"numero": "11",
+						"versiculos": 30
+					},
+					{
+						"numero": "12",
+						"versiculos": 25
+					},
+					{
+						"numero": "13",
+						"versiculos": 52
+					},
+					{
+						"numero": "14",
+						"versiculos": 28
+					},
+					{
+						"numero": "15",
+						"versiculos": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "(34)", "35", "36", "37", "38", "39", "40", "41" ],
+						"nota": "O versículo 34 é uma glosa, ausente nos massoréticos mais antigos [CNBB2019]."
+					},
+					{
+						"numero": "16",
+						"versiculos": 40
+					},
+					{
+						"numero": "17",
+						"versiculos": 34
+					},
+					{
+						"numero": "18",
+						"versiculos": 28
+					},
+					{
+						"numero": "19",
+						"versiculos": 40
+					},
+					{
+						"numero": "20",
+						"versiculos": 38
+					},
+					{
+						"numero": "21",
+						"versiculos": 40
+					},
+					{
+						"numero": "22",
+						"versiculos": 30
+					},
+					{
+						"numero": "23",
+						"versiculos": 35
+					},
+					{
+						"numero": "24",
+						"versiculos": [ "1", "2", "3", "4", "5", "6", "(7)", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27" ],
+						"nota": "Alguns massoréticos acrescentam o versículo 7 [CNBB2019]."
+					},
+					{
+						"numero": "25",
+						"versiculos": 27
+					},
+					{
+						"numero": "26",
+						"versiculos": 32
+					},
+					{
+						"numero": "27",
+						"versiculos": 44
+					},
+					{
+						"numero": "28",
+						"versiculos": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "(29)", "30", "31" ],
+						"nota": "O versículo 29 é uma acréscimo, ausente dos melhores massoréticos [CNBB2019]."
+					}
+				]
 			},
 			{
 				"sigla": "Rm",
