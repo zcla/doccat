@@ -4289,7 +4289,25 @@
 			{
 				"sigla": "Jn",
 				"nomeCurto": "Jonas",
-				"nomeLongo": "Jonas"
+				"nomeLongo": "Jonas",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 16
+					},
+					{
+						"numero": "2",
+						"versiculos": 11
+					},
+					{
+						"numero": "3",
+						"versiculos": 10
+					},
+					{
+						"numero": "4",
+						"versiculos": 11
+					}
+				]
 			},
 			{
 				"sigla": "Mq",
