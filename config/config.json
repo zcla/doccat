@@ -4385,12 +4385,36 @@
 			{
 				"sigla": "Sf",
 				"nomeCurto": "Sofonias",
-				"nomeLongo": "Sofonias"
+				"nomeLongo": "Sofonias",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 18
+					},
+					{
+						"numero": "2",
+						"versiculos": 15
+					},
+					{
+						"numero": "3",
+						"versiculos": 20
+					}
+				]
 			},
 			{
 				"sigla": "Ag",
 				"nomeCurto": "Ageu",
-				"nomeLongo": "Ageu"
+				"nomeLongo": "Ageu",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 15
+					},
+					{
+						"numero": "2",
+						"versiculos": 23
+					}
+				]
 			},
 			{
 				"sigla": "Zc",
