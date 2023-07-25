@@ -4347,7 +4347,21 @@
 			{
 				"sigla": "Na",
 				"nomeCurto": "Naum",
-				"nomeLongo": "Naum"
+				"nomeLongo": "Naum",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 14
+					},
+					{
+						"numero": "2",
+						"versiculos": 14
+					},
+					{
+						"numero": "3",
+						"versiculos": 19
+					}
+				]
 			},
 			{
 				"sigla": "Hab",
