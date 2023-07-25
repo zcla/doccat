@@ -3119,7 +3119,226 @@
 			{
 				"sigla": "Eclo",
 				"nomeCurto": "Eclesiástico",
-				"nomeLongo": "Eclesiástico (Sirácida)"
+				"nomeLongo": "Eclesiástico (Sirácida)",
+				"capitulos": [
+					{
+						"numero": "Prólogo"
+					},
+					{
+						"numero": "1",
+						"versiculos": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "(19)", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40" ],
+						"nota": "O versículo 19 existe na Vulgata, mas não no texto grego [CNBB2019]."
+					},
+					{
+						"numero": "2",
+						"versiculos": 23
+					},
+					{
+						"numero": "3",
+						"versiculos": 34
+					},
+					{
+						"numero": "4",
+						"versiculos": 36
+					},
+					{
+						"numero": "5",
+						"versiculos": 17
+					},
+					{
+						"numero": "6",
+						"versiculos": 37
+					},
+					{
+						"numero": "7",
+						"versiculos": 40
+					},
+					{
+						"numero": "8",
+						"versiculos": 22
+					},
+					{
+						"numero": "9",
+						"versiculos": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "(10)", "(11)", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25" ],
+						"nota": "Os versículos 10 e 11 existem na Vulgata [CNBB2019]."
+					},
+					{
+						"numero": "10",
+						"versiculos": 34
+					},
+					{
+						"numero": "11",
+						"versiculos": 36
+					},
+					{
+						"numero": "12",
+						"versiculos": 19
+					},
+					{
+						"numero": "13",
+						"versiculos": 32
+					},
+					{
+						"numero": "14",
+						"versiculos": 27
+					},
+					{
+						"numero": "15",
+						"versiculos": 22
+					},
+					{
+						"numero": "16",
+						"versiculos": 31
+					},
+					{
+						"numero": "17",
+						"versiculos": 31
+					},
+					{
+						"numero": "18",
+						"versiculos": 33
+					},
+					{
+						"numero": "19",
+						"versiculos": [ "1", "2", "3", "4", "5", "(6)", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28" ],
+						"nota": "O versículo 6 existe na Vulgata, mas foi incluído no versículo 5 [CNBB2019]."
+					},
+					{
+						"numero": "20",
+						"versiculos": 33
+					},
+					{
+						"numero": "21",
+						"versiculos": 31
+					},
+					{
+						"numero": "22",
+						"versiculos": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "(23)", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33" ],
+						"nota": "Repetição de 19b.21 [CNBB2019]."
+					},
+					{
+						"numero": "23",
+						"versiculos": 38
+					},
+					{
+						"numero": "24",
+						"versiculos": 47
+					},
+					{
+						"numero": "25",
+						"versiculos": 36
+					},
+					{
+						"numero": "26",
+						"versiculos": 28
+					},
+					{
+						"numero": "27",
+						"versiculos": [ "1", "2", "(3)", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33" ],
+						"nota": "Falta o versículo 3. Não encontrei explicação."
+					},
+					{
+						"numero": "28",
+						"versiculos": 30
+					},
+					{
+						"numero": "29",
+						"versiculos": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "(16)", "(17)", "18", "19", "20", "(21)", "22", "(23)", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35" ],
+						"nota": "Faltam os versículo 16, 17, 21, e 23. Não encontrei explicação."
+					},
+					{
+						"numero": "30",
+						"versiculos": 27
+					},
+					{
+						"numero": "31",
+						"versiculos": 42
+					},
+					{
+						"numero": "32",
+						"versiculos": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "(23)", "24", "25", "26", "27", "28" ],
+						"nota": "Falta o versículo 23. Não encontrei explicação."
+					},
+					{
+						"numero": "33",
+						"versiculos": 33
+					},
+					{
+						"numero": "34",
+						"versiculos": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "(11)", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" ],
+						"nota": "Falta o versículo 11. Não encontrei explicação."
+					},
+					{
+						"numero": "35",
+						"versiculos": [ "1", "2", "(3)", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26" ],
+						"nota": "Falta o versículo 3. Não encontrei explicação."
+					},
+					{
+						"numero": "36",
+						"versiculos": 28
+					},
+					{
+						"numero": "37",
+						"versiculos": 34
+					},
+					{
+						"numero": "38",
+						"versiculos": 39
+					},
+					{
+						"numero": "39",
+						"versiculos": 41
+					},
+					{
+						"numero": "40",
+						"versiculos": 32
+					},
+					{
+						"numero": "41",
+						"versiculos": 28
+					},
+					{
+						"numero": "42",
+						"versiculos": 26
+					},
+					{
+						"numero": "43",
+						"versiculos": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "(33)", "34", "35", "36", "37" ],
+						"nota": "Falta o versículo 33. Não encontrei explicação."
+					},
+					{
+						"numero": "44",
+						"versiculos": 27
+					},
+					{
+						"numero": "45",
+						"versiculos": 31
+					},
+					{
+						"numero": "46",
+						"versiculos": 23
+					},
+					{
+						"numero": "47",
+						"versiculos": 31
+					},
+					{
+						"numero": "48",
+						"versiculos": 28
+					},
+					{
+						"numero": "49",
+						"versiculos": 19
+					},
+					{
+						"numero": "50",
+						"versiculos": 31
+					},
+					{
+						"numero": "51",
+						"versiculos": 38
+					}
+				]
 			},
 			{
 				"sigla": "Is",
