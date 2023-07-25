@@ -4572,7 +4572,69 @@
 			{
 				"sigla": "2Mc",
 				"nomeCurto": "II Macabeus",
-				"nomeLongo": "Segundo Livro dos Macabeus"
+				"nomeLongo": "Segundo Livro dos Macabeus",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 36
+					},
+					{
+						"numero": "2",
+						"versiculos": 32
+					},
+					{
+						"numero": "3",
+						"versiculos": 40
+					},
+					{
+						"numero": "4",
+						"versiculos": 50
+					},
+					{
+						"numero": "5",
+						"versiculos": 27
+					},
+					{
+						"numero": "6",
+						"versiculos": 31
+					},
+					{
+						"numero": "7",
+						"versiculos": 42
+					},
+					{
+						"numero": "8",
+						"versiculos": 36
+					},
+					{
+						"numero": "9",
+						"versiculos": 29
+					},
+					{
+						"numero": "10",
+						"versiculos": 38
+					},
+					{
+						"numero": "11",
+						"versiculos": 38
+					},
+					{
+						"numero": "12",
+						"versiculos": 46
+					},
+					{
+						"numero": "13",
+						"versiculos": 26
+					},
+					{
+						"numero": "14",
+						"versiculos": 46
+					},
+					{
+						"numero": "15",
+						"versiculos": 39
+					}
+				]
 			},
 			{
 				"sigla": "Mt",
