@@ -4419,7 +4419,65 @@
 			{
 				"sigla": "Zc",
 				"nomeCurto": "Zacarias",
-				"nomeLongo": "Zacarias"
+				"nomeLongo": "Zacarias",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 17
+					},
+					{
+						"numero": "2",
+						"versiculos": 17
+					},
+					{
+						"numero": "3",
+						"versiculos": 10
+					},
+					{
+						"numero": "4",
+						"versiculos": 14
+					},
+					{
+						"numero": "5",
+						"versiculos": 11
+					},
+					{
+						"numero": "6",
+						"versiculos": 15
+					},
+					{
+						"numero": "7",
+						"versiculos": 14
+					},
+					{
+						"numero": "8",
+						"versiculos": 23
+					},
+					{
+						"numero": "9",
+						"versiculos": 17
+					},
+					{
+						"numero": "10",
+						"versiculos": 12
+					},
+					{
+						"numero": "11",
+						"versiculos": 17
+					},
+					{
+						"numero": "12",
+						"versiculos": 14
+					},
+					{
+						"numero": "13",
+						"versiculos": 9
+					},
+					{
+						"numero": "14",
+						"versiculos": 21
+					}
+				]
 			},
 			{
 				"sigla": "Ml",
