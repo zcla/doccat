@@ -4213,7 +4213,25 @@
 			{
 				"sigla": "Jl",
 				"nomeCurto": "Joel",
-				"nomeLongo": "Joel"
+				"nomeLongo": "Joel",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 20
+					},
+					{
+						"numero": "2",
+						"versiculos": 27
+					},
+					{
+						"numero": "3",
+						"versiculos": 5
+					},
+					{
+						"numero": "4",
+						"versiculos": 21
+					}
+				]
 			},
 			{
 				"sigla": "Am",
