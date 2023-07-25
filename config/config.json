@@ -4941,7 +4941,94 @@
 			{
 				"sigla": "Jo",
 				"nomeCurto": "João",
-				"nomeLongo": "Evangelho Segundo São João"
+				"nomeLongo": "Evangelho Segundo São João",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 51
+					},
+					{
+						"numero": "2",
+						"versiculos": 25
+					},
+					{
+						"numero": "3",
+						"versiculos": 36
+					},
+					{
+						"numero": "4",
+						"versiculos": 54
+					},
+					{
+						"numero": "5",
+						"versiculos": [ "1", "2", "3", "(4)", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47" ],
+						"nota": "Muitos massoréticos tardios acrescentam o versículo 4 [CNBB2019]."
+					},
+					{
+						"numero": "6",
+						"versiculos": 71
+					},
+					{
+						"numero": "7",
+						"versiculos": 53
+					},
+					{
+						"numero": "8",
+						"versiculos": 59
+					},
+					{
+						"numero": "9",
+						"versiculos": 41
+					},
+					{
+						"numero": "10",
+						"versiculos": 42
+					},
+					{
+						"numero": "11",
+						"versiculos": 57
+					},
+					{
+						"numero": "12",
+						"versiculos": 50
+					},
+					{
+						"numero": "13",
+						"versiculos": 38
+					},
+					{
+						"numero": "14",
+						"versiculos": 31
+					},
+					{
+						"numero": "15",
+						"versiculos": 27
+					},
+					{
+						"numero": "16",
+						"versiculos": 33
+					},
+					{
+						"numero": "17",
+						"versiculos": 26
+					},
+					{
+						"numero": "18",
+						"versiculos": 40
+					},
+					{
+						"numero": "19",
+						"versiculos": 42
+					},
+					{
+						"numero": "20",
+						"versiculos": 31
+					},
+					{
+						"numero": "21",
+						"versiculos": 25
+					}
+				]
 			},
 			{
 				"sigla": "At",
