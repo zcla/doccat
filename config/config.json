@@ -3829,7 +3829,29 @@
 			{
 				"sigla": "Lm",
 				"nomeCurto": "Lamentações",
-				"nomeLongo": "Lamentações"
+				"nomeLongo": "Lamentações",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 22
+					},
+					{
+						"numero": "2",
+						"versiculos": 22
+					},
+					{
+						"numero": "3",
+						"versiculos": 66
+					},
+					{
+						"numero": "4",
+						"versiculos": 22
+					},
+					{
+						"numero": "5",
+						"versiculos": 22
+					}
+				]
 			},
 			{
 				"sigla": "Br",
