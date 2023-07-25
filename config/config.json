@@ -4279,7 +4279,12 @@
 			{
 				"sigla": "Ab",
 				"nomeCurto": "Abdias",
-				"nomeLongo": "Abdias"
+				"nomeLongo": "Abdias",
+				"capitulos": [
+					{
+						"versiculos": 21
+					}
+				]
 			},
 			{
 				"sigla": "Jn",
