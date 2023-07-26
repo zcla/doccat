@@ -5358,22 +5358,110 @@
 			{
 				"sigla": "Gl",
 				"nomeCurto": "Gálatas",
-				"nomeLongo": "Epístola aos Gálatas"
+				"nomeLongo": "Epístola aos Gálatas",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 24
+					},
+					{
+						"numero": "2",
+						"versiculos": 21
+					},
+					{
+						"numero": "3",
+						"versiculos": 29
+					},
+					{
+						"numero": "4",
+						"versiculos": 31
+					},
+					{
+						"numero": "5",
+						"versiculos": 26
+					},
+					{
+						"numero": "6",
+						"versiculos": 18
+					}
+				]
 			},
 			{
 				"sigla": "Ef",
 				"nomeCurto": "Efésios",
-				"nomeLongo": "Epístola aos Efésios"
+				"nomeLongo": "Epístola aos Efésios",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 23
+					},
+					{
+						"numero": "2",
+						"versiculos": 22
+					},
+					{
+						"numero": "3",
+						"versiculos": 21
+					},
+					{
+						"numero": "4",
+						"versiculos": 32
+					},
+					{
+						"numero": "5",
+						"versiculos": 33
+					},
+					{
+						"numero": "6",
+						"versiculos": 24
+					}
+				]
 			},
 			{
 				"sigla": "Fl",
 				"nomeCurto": "Filipenses",
-				"nomeLongo": "Epístola aos Filipenses"
+				"nomeLongo": "Epístola aos Filipenses",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 30
+					},
+					{
+						"numero": "2",
+						"versiculos": 30
+					},
+					{
+						"numero": "3",
+						"versiculos": 21
+					},
+					{
+						"numero": "4",
+						"versiculos": 23
+					}
+				]
 			},
 			{
 				"sigla": "Cl",
 				"nomeCurto": "Colossenses",
-				"nomeLongo": "Epístola aos Colossenses"
+				"nomeLongo": "Epístola aos Colossenses",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 29
+					},
+					{
+						"numero": "2",
+						"versiculos": 23
+					},
+					{
+						"numero": "3",
+						"versiculos": 25
+					},
+					{
+						"numero": "4",
+						"versiculos": 18
+					}
+				]
 			},
 			{
 				"sigla": "1Ts",
