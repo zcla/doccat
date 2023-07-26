@@ -5228,12 +5228,132 @@
 			{
 				"sigla": "1Cor",
 				"nomeCurto": "I Coríntios",
-				"nomeLongo": "Primeira Epístola aos Coríntios"
+				"nomeLongo": "Primeira Epístola aos Coríntios",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 31
+					},
+					{
+						"numero": "2",
+						"versiculos": 16
+					},
+					{
+						"numero": "3",
+						"versiculos": 23
+					},
+					{
+						"numero": "4",
+						"versiculos": 21
+					},
+					{
+						"numero": "5",
+						"versiculos": 13
+					},
+					{
+						"numero": "6",
+						"versiculos": 20
+					},
+					{
+						"numero": "7",
+						"versiculos": 40
+					},
+					{
+						"numero": "8",
+						"versiculos": 13
+					},
+					{
+						"numero": "9",
+						"versiculos": 27
+					},
+					{
+						"numero": "10",
+						"versiculos": 33
+					},
+					{
+						"numero": "11",
+						"versiculos": 34
+					},
+					{
+						"numero": "12",
+						"versiculos": 31
+					},
+					{
+						"numero": "13",
+						"versiculos": 13
+					},
+					{
+						"numero": "14",
+						"versiculos": 40
+					},
+					{
+						"numero": "15",
+						"versiculos": 58
+					},
+					{
+						"numero": "16",
+						"versiculos": 24
+					}
+				]
 			},
 			{
 				"sigla": "2Cor",
 				"nomeCurto": "II Coríntios",
-				"nomeLongo": "Segunda Epístola aos Coríntios"
+				"nomeLongo": "Segunda Epístola aos Coríntios",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 24
+					},
+					{
+						"numero": "2",
+						"versiculos": 17
+					},
+					{
+						"numero": "3",
+						"versiculos": 18
+					},
+					{
+						"numero": "4",
+						"versiculos": 18
+					},
+					{
+						"numero": "5",
+						"versiculos": 21
+					},
+					{
+						"numero": "6",
+						"versiculos": 18
+					},
+					{
+						"numero": "7",
+						"versiculos": 16
+					},
+					{
+						"numero": "8",
+						"versiculos": 24
+					},
+					{
+						"numero": "9",
+						"versiculos": 15
+					},
+					{
+						"numero": "10",
+						"versiculos": 18
+					},
+					{
+						"numero": "11",
+						"versiculos": 33
+					},
+					{
+						"numero": "12",
+						"versiculos": 21
+					},
+					{
+						"numero": "13",
+						"versiculos": 13
+					}
+				]
 			},
 			{
 				"sigla": "Gl",
