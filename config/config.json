@@ -5466,32 +5466,131 @@
 			{
 				"sigla": "1Ts",
 				"nomeCurto": "I Tessalonicenses",
-				"nomeLongo": "Primeira Epístola aos Tessalonicenses"
+				"nomeLongo": "Primeira Epístola aos Tessalonicenses",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 10
+					},
+					{
+						"numero": "2",
+						"versiculos": 20
+					},
+					{
+						"numero": "3",
+						"versiculos": 13
+					},
+					{
+						"numero": "4",
+						"versiculos": 18
+					},
+					{
+						"numero": "5",
+						"versiculos": 28
+					}
+				]
 			},
 			{
 				"sigla": "2Ts",
 				"nomeCurto": "II Tessalonicenses",
-				"nomeLongo": "Segunda Epístola aos Tessalonicenses"
+				"nomeLongo": "Segunda Epístola aos Tessalonicenses",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 12
+					},
+					{
+						"numero": "2",
+						"versiculos": 17
+					},
+					{
+						"numero": "3",
+						"versiculos": 18
+					}
+				]
 			},
 			{
 				"sigla": "1Tm",
 				"nomeCurto": "I Timóteo",
-				"nomeLongo": "Primeira Epístola a Timóteo"
+				"nomeLongo": "Primeira Epístola a Timóteo",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 20
+					},
+					{
+						"numero": "2",
+						"versiculos": 15
+					},
+					{
+						"numero": "3",
+						"versiculos": 16
+					},
+					{
+						"numero": "4",
+						"versiculos": 16
+					},
+					{
+						"numero": "5",
+						"versiculos": 25
+					},
+					{
+						"numero": "6",
+						"versiculos": 21
+					}
+				]
 			},
 			{
 				"sigla": "2Tm",
 				"nomeCurto": "II Timóteo",
-				"nomeLongo": "Segunda Epístola a Timóteo"
+				"nomeLongo": "Segunda Epístola a Timóteo",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 18
+					},
+					{
+						"numero": "2",
+						"versiculos": 26
+					},
+					{
+						"numero": "3",
+						"versiculos": 17
+					},
+					{
+						"numero": "4",
+						"versiculos": 22
+					}
+				]
 			},
 			{
 				"sigla": "Tt",
 				"nomeCurto": "Tito",
-				"nomeLongo": "Epístola a Tito"
+				"nomeLongo": "Epístola a Tito",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 16
+					},
+					{
+						"numero": "2",
+						"versiculos": 15
+					},
+					{
+						"numero": "3",
+						"versiculos": 15
+					}
+				]
 			},
 			{
 				"sigla": "Fm",
 				"nomeCurto": "Filêmon",
-				"nomeLongo": "Epístola a Filêmon"
+				"nomeLongo": "Epístola a Filêmon",
+				"capitulos": [
+					{
+						"versiculos": 25
+					}
+				]
 			},
 			{
 				"sigla": "Hb",
