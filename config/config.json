@@ -5654,37 +5654,132 @@
 			{
 				"sigla": "Tg",
 				"nomeCurto": "Tiago",
-				"nomeLongo": "Epístola de São Tiago"
+				"nomeLongo": "Epístola de São Tiago",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 27
+					},
+					{
+						"numero": "2",
+						"versiculos": 26
+					},
+					{
+						"numero": "3",
+						"versiculos": 18
+					},
+					{
+						"numero": "4",
+						"versiculos": 17
+					},
+					{
+						"numero": "5",
+						"versiculos": 20
+					}
+				]
 			},
 			{
 				"sigla": "1Pd",
 				"nomeCurto": "I Pedro",
-				"nomeLongo": "Primeira Epístola de São Pedro"
+				"nomeLongo": "Primeira Epístola de São Pedro",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 25
+					},
+					{
+						"numero": "2",
+						"versiculos": 25
+					},
+					{
+						"numero": "3",
+						"versiculos": 22
+					},
+					{
+						"numero": "4",
+						"versiculos": 19
+					},
+					{
+						"numero": "5",
+						"versiculos": 14
+					}
+				]
 			},
 			{
 				"sigla": "2Pd",
 				"nomeCurto": "II Pedro",
-				"nomeLongo": "Segunda Epístola de São Pedro"
+				"nomeLongo": "Segunda Epístola de São Pedro",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 21
+					},
+					{
+						"numero": "2",
+						"versiculos": 22
+					},
+					{
+						"numero": "3",
+						"versiculos": 18
+					}
+				]
 			},
 			{
 				"sigla": "1Jo",
 				"nomeCurto": "I João",
-				"nomeLongo": "Primeira Epístola de São João"
+				"nomeLongo": "Primeira Epístola de São João",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 10
+					},
+					{
+						"numero": "2",
+						"versiculos": 29
+					},
+					{
+						"numero": "3",
+						"versiculos": 24
+					},
+					{
+						"numero": "4",
+						"versiculos": 21
+					},
+					{
+						"numero": "5",
+						"versiculos": 21
+					}
+				]
 			},
 			{
 				"sigla": "2Jo",
 				"nomeCurto": "II João",
-				"nomeLongo": "Segunda Epístola de São João"
+				"nomeLongo": "Segunda Epístola de São João",
+				"capitulos": [
+					{
+						"versiculos": 13
+					}
+				]
 			},
 			{
 				"sigla": "3Jo",
 				"nomeCurto": "III João",
-				"nomeLongo": "Terceira Epístola de São João"
+				"nomeLongo": "Terceira Epístola de São João",
+				"capitulos": [
+					{
+						"versiculos": 15
+					}
+				]
 			},
 			{
 				"sigla": "Jd",
 				"nomeCurto": "Judas",
-				"nomeLongo": "Epístola de São Judas"
+				"nomeLongo": "Epístola de São Judas",
+				"capitulos": [
+					{
+						"versiculos": 25
+					}
+				]
 			},
 			{
 				"sigla": "Ap",
