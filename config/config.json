@@ -5156,7 +5156,74 @@
 			{
 				"sigla": "Rm",
 				"nomeCurto": "Romanos",
-				"nomeLongo": "Epístola aos Romanos"
+				"nomeLongo": "Epístola aos Romanos",
+				"capitulos": [
+					{
+						"numero": "1",
+						"versiculos": 32
+					},
+					{
+						"numero": "2",
+						"versiculos": 29
+					},
+					{
+						"numero": "3",
+						"versiculos": 31
+					},
+					{
+						"numero": "4",
+						"versiculos": 25
+					},
+					{
+						"numero": "5",
+						"versiculos": 21
+					},
+					{
+						"numero": "6",
+						"versiculos": 23
+					},
+					{
+						"numero": "7",
+						"versiculos": 25
+					},
+					{
+						"numero": "8",
+						"versiculos": 39
+					},
+					{
+						"numero": "9",
+						"versiculos": 33
+					},
+					{
+						"numero": "10",
+						"versiculos": 21
+					},
+					{
+						"numero": "11",
+						"versiculos": 36
+					},
+					{
+						"numero": "12",
+						"versiculos": 21
+					},
+					{
+						"numero": "13",
+						"versiculos": 14
+					},
+					{
+						"numero": "14",
+						"versiculos": 23
+					},
+					{
+						"numero": "15",
+						"versiculos": 33
+					},
+					{
+						"numero": "16",
+						"versiculos": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "(24)", "25", "26", "27" ],
+						"nota": "A Vulgata acrescenta o versículo 24 (2Ts 3,18; 1Cor 16,23) [CNBB2019]."
+					}
+				]
 			},
 			{
 				"sigla": "1Cor",
