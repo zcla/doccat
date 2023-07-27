@@ -4,10 +4,10 @@ $fileName = ".\$($scriptPath.Name.split('.')[0]).json"
 
 Write-Host "Inicializando" -ForegroundColor Cyan -NoNewline
 $config = Get-Content -Path .\config.json | ConvertFrom-Json -AsHashtable
-$dataHora = Get-Date
 $result = [ordered]@{
 	livros = [ordered]@{}
-	dataHora = $dataHora
+	ordemLivros = @()
+	dataHora = (Get-Date)
 }
 Write-Host " ok" -ForegroundColor Green
 
@@ -18,7 +18,6 @@ if (Test-Path $fileName) {
 	Write-Host " fazendo..." -ForegroundColor Yellow
 	foreach ($url in $config.urls) {
 		Write-Host "  $url" -ForegroundColor Cyan -NoNewline
-		$dataHora = Get-Date
 		$iwr = Invoke-WebRequest $url
 		$urlsLivros = $iwr.Links | Where-Object { $_.href -match '^nova-vulgata_(v|n)t_' }
 		Write-Host " $($urlsLivros.Count) livros" -ForegroundColor Green
@@ -30,8 +29,9 @@ if (Test-Path $fileName) {
 			$result.livros.$livro = @{
 				texto = "$($iwrLivro.Content)"
 				fonte = $urlLivro
-				dataHora = $dataHora
+				dataHora = (Get-Date)
 			}
+			$result.ordemLivros += $config.'mapa-livro'.$livro
 			Write-Host " $($result.livros.$livro.texto.Length) bytes" -ForegroundColor Green
 		}
 	}
