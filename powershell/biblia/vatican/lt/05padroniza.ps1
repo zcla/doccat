@@ -15,8 +15,8 @@ if (Test-Path $fileName) {
     Write-Host " fazendo..." -ForegroundColor Yellow
 
     $result = [ordered]@{
-        livros = [ordered]@{
-        }
+        livros = [ordered]@{}
+        ordemLivros = $dados.ordemLivros
     }
     foreach ($livro in $biblia.livros) {
         $sigla = $livro.sigla

@@ -15,6 +15,7 @@ if (Test-Path $fileName) {
 
 	$result = [ordered]@{
 		livros = [ordered]@{}
+		ordemLivros = $dados.ordemLivros
 	}
 	foreach ($keyLivro in $dados.livros.Keys) {
 		Write-Host "  $keyLivro" -ForegroundColor Cyan -NoNewline

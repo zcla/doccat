@@ -36,9 +36,6 @@ if (Test-Path $fileName) {
             $versiculosKeys = $capitulo.versiculos.Keys | Where-Object -FilterScript { $true } # copia, pra não dar erro "Collection was modified"
             foreach ($keyVersiculo in $versiculosKeys) {
                 $versiculo = $capitulo.versiculos.$keyVersiculo
-# if ("$keyLivro $keyCapitulo $keyVersiculo" -eq 'ecclesiasticus 9 9') {
-# Write-Host "!"
-# }
 
                 $proximoVersiculo = '?'
                 # 1, 2, ...
