@@ -97,3 +97,12 @@
 #tribosDeIsrael .semHeranca {
     background-color: #fcc !important;
 }
+
+/* Bênção/maldição */
+#tribosDeIsrael .exaltada {
+    background-color: #cfc !important;
+}
+
+#tribosDeIsrael .repreendida {
+    background-color: #fcc !important;
+}
