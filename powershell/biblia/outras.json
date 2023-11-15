@@ -1,0 +1,16 @@
+{
+    "vatican.va": {
+        "": "Site oficial do Vaticano",
+        "es": "https://www.vatican.va/archive/ESL0506/_INDEX.HTM",
+        "en": "https://www.vatican.va/archive/ENG0839/_INDEX.HTM",
+        "it": "https://www.vatican.va/archive/ITA0001/_INDEX.HTM"
+    },
+    "newadvent.org": {
+        "": "3 versões diferentes; a versão latina parece ser a Vulgata",
+        "el/en/la": "https://www.newadvent.org/bible/"
+    },
+    "bibliacatolica.com.br": {
+        "": "33 versões diferentes",
+        "14 idiomas": "https://www.bibliacatolica.com.br/"
+    }
+}

@@ -5,6 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "DocCatApplication",
+            "request": "launch",
+            "mainClass": "zcla71.doccat.DocCatApplication",
+            "projectName": "doccat"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "zcla71.doccat.App",
+            "projectName": "doccat"
+        },
+        {
             "name": "PowerShell: Launch Current File",
             "type": "PowerShell",
             "request": "launch",

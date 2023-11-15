@@ -6,6 +6,7 @@ $result = [ordered]@{
     autor = "Arnold Bennett"
     editora = "Auster"
     ano = "2019"
+    # TODO Verificar se - como abaixo - a primeira linha contém "Título" e/ou "Página", e alertar
     textoEstrutura = @"
 Título	Página
 Sumário	5
