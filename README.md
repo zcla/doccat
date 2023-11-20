@@ -19,6 +19,11 @@
 		* https://www.bibliacatolica.com.br/ (já tem scripts em [/powershell/old](/powershell/old))
 		* https://www.newadvent.org/bible/
 		* https://www.liturgiacatolica.com/ (também Catecismo e vários documentos oficiais)
+		* https://www.paulus.com.br/biblia-pastoral/_INDEX.HTM Edição Pastoral (Paulus)
+		* https://www.intratext.com/IXT/POR0013/ Edição IntraText
+		* https://www.intratext.com/IXT/LAT0001/ Vulgata
+		* https://www.intratext.com/IXT/LAT0669/ Neovulgata
+		* https://www.bibliaonline.com.br/vc/livros "Versão católica"
 	* https://liturgiadashoras.online/biblia/biblia-jerusalem/
 	* Catecismo
 		* http://www.clerus.org/bibliaclerusonline/pt/on.htm
