@@ -1,0 +1,23 @@
+#canon .testamento {
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	width: 1.5em;
+}
+
+#canon .testamento div {
+	transform: rotate(-90.0deg);
+	width: 1.5em;
+}
+
+#canon .protocanonico {
+	background-color: #cfc;
+}
+
+#canon .deuterocanonico {
+	background-color: #ccf;
+}
+
+#canon .apocrifo {
+	background-color: #fcc;
+}
