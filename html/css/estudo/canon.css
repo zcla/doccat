@@ -19,6 +19,12 @@
 	width: 1px;
 }
 
+#canon .ordem {
+	text-align: right;
+}
+
+/* Canonicidade */
+
 #canon .protocanonico {
 	background-color: #cfc;
 }
