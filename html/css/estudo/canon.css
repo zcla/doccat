@@ -19,10 +19,6 @@
 	width: 1px;
 }
 
-#canon .ordem {
-	text-align: right;
-}
-
 #canon .separador {
 	background-color: #000;
 }
@@ -43,4 +39,27 @@
 
 #canon .apocrifo {
 	background-color: #fcc;
+}
+
+/* Sim / não */
+
+#canon .nao {
+	background-color: #fcc;
+	text-align: center;
+}
+
+#canon .sim {
+	background-color: #cfc;
+	text-align: center;
+}
+
+/* Outros */
+
+#canon .naoSeAplica {
+	text-align: center;
+}
+
+#canon .ordem {
+	background-color: #cfc;
+	text-align: right;
 }
