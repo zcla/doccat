@@ -53,6 +53,11 @@
 	text-align: center;
 }
 
+#canon .duvida {
+	background-color: #ffc;
+	text-align: center;
+}
+
 /* Outros */
 
 #canon .naoSeAplica {
@@ -61,5 +66,5 @@
 
 #canon .ordem {
 	background-color: #cfc;
-	text-align: right;
+	text-align: center;
 }
