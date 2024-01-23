@@ -23,6 +23,14 @@
 	text-align: right;
 }
 
+#canon .separador {
+	background-color: #000;
+}
+
+#canon .separador th {
+	padding: 1px;
+}
+
 /* Canonicidade */
 
 #canon .protocanonico {
