@@ -46,25 +46,30 @@
 #canon .nao {
 	background-color: #fcc;
 	text-align: center;
+	vertical-align: middle;
 }
 
 #canon .sim {
 	background-color: #cfc;
 	text-align: center;
+	vertical-align: middle;
 }
 
 #canon .duvida {
 	background-color: #ffc;
 	text-align: center;
+	vertical-align: middle;
 }
 
 /* Outros */
 
 #canon .naoSeAplica {
 	text-align: center;
+	vertical-align: middle;
 }
 
 #canon .ordem {
 	background-color: #cfc;
 	text-align: center;
+	vertical-align: middle;
 }
