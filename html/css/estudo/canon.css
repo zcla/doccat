@@ -61,6 +61,12 @@
 	vertical-align: middle;
 }
 
+#canon .permitido {
+	background-color: #cff;
+	text-align: center;
+	vertical-align: middle;
+}
+
 /* Outros */
 
 #canon .naoSeAplica {
