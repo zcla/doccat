@@ -1,3 +1,7 @@
+#canon thead th {
+	vertical-align: middle;
+}
+
 #canon .testamento {
 	text-align: center;
 	white-space: nowrap;
