@@ -6,6 +6,16 @@
 	vertical-align: middle;
 }
 
+#canon tfoot td {
+	padding: 0;
+}
+
+#canon tfoot .list-group-item {
+    border-left-width: 1px;
+	margin: 4px;
+	padding: 4px;
+}
+
 #canon .testamento {
 	text-align: center;
 	white-space: nowrap;
