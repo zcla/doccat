@@ -27,11 +27,9 @@
 	width: 1px;
 }
 
-#canon .separador {
-	background-color: #000;
-}
-
+#canon .separador,
 #canon .separador th {
+	background-color: #000;
 	padding: 1px;
 }
 
