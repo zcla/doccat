@@ -2,6 +2,11 @@
     font-size: .8em;
 }
 
+#canon thead,
+#canon tbody {
+    font-family: "Helvetica Narrow","Arial Narrow",Tahoma,Arial,Helvetica,sans-serif;
+}
+
 #canon thead th {
 	vertical-align: middle;
 }
